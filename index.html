@@ -3,141 +3,1378 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Joel Randriamangatsalama</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Wells TODISON | Assistant Virtuel & Commercial Freelance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
+        :root {
+            --primary: #0056b3;
+            --secondary: #003366;
+            --dark: #121212;
+            --light: #ffffff;
+            --accent: #00a0e9;
+            --gray: #f5f5f5;
+        }
+        
+        * {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #000000, #1a1a1a);
-            color: #f5f5f5;
-        }
-        header {
-            background: #111;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 4px solid red;
-        }
-        .photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid red;
-            object-fit: cover;
-            margin-top: 20px;
-        }
-        section {
-            max-width: 1000px;
-            margin: 30px auto;
-            background: #222;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.7);
-        }
-        h2 {
-            border-left: 6px solid red;
-            padding-left: 12px;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style: none;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        ul li {
-            margin-bottom: 10px;
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--light);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
             position: relative;
         }
-        ul li::before {
-            content: '\2022';
-            color: red;
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            background: var(--accent);
+            color: var(--light);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-btn i {
             margin-right: 8px;
         }
-        .contact-buttons a {
-            background: red;
-            color: white;
-            padding: 14px 24px;
-            margin: 8px;
-            border-radius: 8px;
-            display: inline-block;
-            text-decoration: none;
-            transition: transform 0.3s ease, background 0.3s ease;
+        
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        .contact-buttons a:hover {
-            background: #b30000;
-            transform: scale(1.05);
+        
+        .btn-whatsapp {
+            background: #25D366;
         }
-        footer {
+        
+        .btn-email {
+            background: #D44638;
+        }
+        
+        .btn-phone {
+            background: #34B7F1;
+        }
+        
+        .btn-skype {
+            background: #00AFF0;
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 5rem 0;
+            background-color: var(--gray);
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             text-align: center;
-            padding: 25px;
-            background: #111;
-            color: white;
-            border-top: 4px solid red;
+        }
+        
+        .stat-item {
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Pricing Calculator */
+        .calculator {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            padding: 5rem 0;
+            color: var(--light);
+        }
+        
+        .calculator-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .calculator-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .calculator-title h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        /* FORCE la visibilité */
+.contact-info, 
+.contact-form, 
+.contact-form *:not(script) {
+    color: #333 !important; /* Texte foncé */
+    background-color: #f8f9fa !important; /* Fond clair */
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* Style spécifique pour les inputs */
+.contact-form input, 
+.contact-form textarea {
+    border: 2px solid #0056b3 !important;
+    padding: 12px !important;
+    margin: 8px 0 !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+/* Bouton visible */
+.contact-btn {
+    background: #0056b3 !important;
+    color: white !important;
+    padding: 12px 24px !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        .form-control {
+    color: #333; /* Couleur de texte foncée */
+    background-color: #fff; /* Fond blanc */
+    border: 1px solid #ddd; /* Bordure visible */
+    padding: 12px;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-control:focus {
+    outline: 2px solid var(--accent);
+    background-color: #fff;
+}
+
+/* Pour le placeholder */
+.form-control::placeholder {
+    color: #666; /* Gris moyen */
+}
+
+.contact {
+    padding: 5rem 0;
+    background-color: #f8f9fa; /* Fond légèrement gris */
+    color: #333; /* Texte foncé */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+    font-weight: 500;
+}
+
+.alert {
+    padding: 12px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.alert.success {
+    background-color: #e6ffed;
+    color: #0e4429;
+    border: 1px solid #2ecc40;
+}
+
+.alert.error {
+    background-color: #ffebee;
+    color: #b71c1c;
+    border: 1px solid #ff5252;
+}
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--light);
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            outline: 2px solid var(--accent);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        /* Style pour le statut du formulaire */
+#form-status {
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+
+#form-status.success {
+    background-color: #d4edda;
+    color: #155724;
+    display: block;
+}
+
+#form-status.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    display: block;
+}
+
+.contact-btn {
+    position: relative;
+}
+
+.loading-icon, .success-icon {
+    margin-left: 8px;
+}
+        .calculator-result {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin-top: 2rem;
+            display: none;
+        }
+        
+        .calculator-result.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .result-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .result-total {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 1rem;
+            color: var(--accent);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background-color: var(--gray);
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-slide {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            display: none;
+        }
+        
+        .testimonial-slide.active {
+            display: block;
+            animation: fadeIn 1s ease;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            background: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-right: 1rem;
+            margin-top: 5px;
+        }
+        
+        .contact-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+        
+        .contact-form .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--light);
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--light);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--secondary);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                transition: all 0.5s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+                font-size: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-btn {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Joel Randriamangatsalama</h1>
-        <img src="joel1.png" alt="Photo de Joel" class="photo">
-        <p>Contact : +261 34 50 167 94 | mickaelleandriantsoa@gmail.com</p>
-        <div class="contact-buttons">
-            <a href="tel:+261345016794">Appeler</a>
-            <a href="https://wa.me/261345016794" target="_blank">WhatsApp</a>
-            <a href="mailto:mickaelleandriantsoa@gmail.com">Email</a>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>Wells TODISON</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#calculator">Tarifs</a></li>
+                    <li><a href="#testimonials">Expérience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
     </header>
-    <section>
-        <h2>À propos de moi</h2>
-        <p>Étudiant diplômé en marketing, sérieux et motivé, bénéficiant d'une expérience pratique et d'une grande capacité d'adaptation. Proactif et digne de confiance, je sais m'investir pleinement dans mes missions.</p>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Wells TODISON</h1>
+                <p>Assistant Virtuel & Commercial Freelance - Prospection B2B Multicanal & Support Client</p>
+                <div class="contact-buttons">
+                    <a href="https://wa.me/261326412338" class="contact-btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="mailto:wellstodison@gmail.com" class="contact-btn btn-email">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="tel:+261326412338" class="contact-btn btn-phone">
+                        <i class="fas fa-phone"></i> Appeler
+                    </a>
+                    <a href="skype:wellstodison?call" class="contact-btn btn-skype">
+                        <i class="fab fa-skype"></i> Skype
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
-    <section>
-        <h2>Parcours Professionnel</h2>
-        <ul>
-            <li>2022 : Vente de pièces motocyclettes et motos en ligne (Compte personnel)</li>
-            <li>2023 : Stage cuisinier, pâtissier et accueil clients à l'hôtel Laingotsoa, Ambatondrazaka</li>
-        </ul>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" id="clients-count">0</div>
+                    <div class="stat-text">Clients satisfaits</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="projects-count">0</div>
+                    <div class="stat-text">Projets réalisés</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="revenue-count">0</div>
+                    <div class="stat-text">€ générés</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="hours-count">0</div>
+                    <div class="stat-text">Heures de support</div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section>
-        <h2>Formations</h2>
-        <ul>
-            <li>2017 : Baccalauréat</li>
-            <li>2021 : Licence commerce et marketing, IMGAM Ivandy</li>
-            <li>2022 : Certificat Anglais Niveau A2, LFC Antsahabe</li>
-            <li>2022 : DELF B2, Alliance Française</li>
-            <li>2023-2024 : L2 Tourisme et Hôtellerie, LTA Ampefiloha</li>
-        </ul>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mes Services</h2>
+                <p>Des solutions sur mesure pour répondre à tous vos besoins en prospection commerciale et support client</p>
+            </div>
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Prospection B2B">
+                    </div>
+                    <div class="service-content">
+                        <h3>Prospection B2B Multicanal</h3>
+                        <p>Campagnes de prospection par email, téléphone, LinkedIn et réseaux sociaux pour générer des leads qualifiés.</p>
+                        <div class="service-price">À partir de 9€/h</div>
+                        <a href="#calculator" class="contact-btn">Demander un devis</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Support Client">
+                    </div>
+                    <div class="service-content">
+                        <h3>Support Client Premium</h3>
+                        <p>Gestion des demandes clients par chat, email et téléphone avec suivi et reporting détaillé.</p>
+                        <div class="service-price">À partir de 8€/h</div>
+                        <a href="#calculator" class="contact-btn">Demander un devis</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Assistant Virtuel">
+                    </div>
+                    <div class="service-content">
+                        <h3>Assistant Virtuel Complet</h3>
+                        <p>Gestion administrative, prise de rendez-vous, organisation et suivi des tâches au quotidien.</p>
+                        <div class="service-price">À partir de 7€/h</div>
+                        <a href="#calculator" class="contact-btn">Demander un devis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section>
-        <h2>Compétences</h2>
-        <ul>
-            <li>Permis de conduire A, A’, B</li>
-            <li>Maîtrise outils informatiques et smartphone</li>
-            <li>Excellent condition physique</li>
-            <li>Travail en équipe</li>
-            <li>Gestion de situation de crise</li>
-            <li>Bon sens relationnel</li>
-        </ul>
+
+    <!-- Pricing Calculator -->
+    <section class="calculator" id="calculator">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="calculator-title">
+                    <h2>Calculateur de Tarifs</h2>
+                    <p>Estimez le coût de mes services en fonction de vos besoins spécifiques</p>
+                </div>
+                <form id="pricing-form">
+                    <div class="form-group">
+                        <label for="service-type">Type de service</label>
+                        <select id="service-type" class="form-control" required>
+                            <option value="" disabled selected>Sélectionnez un service</option>
+                            <option value="prospection">Prospection B2B Multicanal</option>
+                            <option value="support">Support Client Premium</option>
+                            <option value="assistant">Assistant Virtuel Complet</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Durée estimée (heures/semaine)</label>
+                        <input type="number" id="duration" class="form-control" min="1" max="40" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="period">Période d'engagement (semaines)</label>
+                        <input type="number" id="period" class="form-control" min="1" max="52" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="priority">Priorité/niveau d'urgence</label>
+                        <select id="priority" class="form-control" required>
+                            <option value="standard">Standard (délai normal)</option>
+                            <option value="urgent">Urgent (+15%)</option>
+                            <option value="very-urgent">Très urgent (+25%)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="contact-btn" style="width: 100%;">Calculer le devis</button>
+                </form>
+                <div class="calculator-result" id="calculator-result">
+                    <h3>Récapitulatif de votre devis</h3>
+                    <div class="result-line">
+                        <span>Type de service:</span>
+                        <span id="result-service">Prospection B2B</span>
+                    </div>
+                    <div class="result-line">
+                        <span>Tarif horaire:</span>
+                        <span id="result-rate">25€</span>
+                    </div>
+                    <div class="result-line">
+                        <span>Volume horaire total:</span>
+                        <span id="result-hours">20h</span>
+                    </div>
+                    <div class="result-line">
+                        <span>Majoration urgence:</span>
+                        <span id="result-priority">0€</span>
+                    </div>
+                    <div class="result-line result-total">
+                        <span>Total estimé:</span>
+                        <span id="result-total">500€</span>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Ce devis est une estimation. Contactez-moi pour une proposition personnalisée.</p>
+                    <div class="contact-buttons" style="margin-top: 1.5rem; justify-content: center;">
+                        <a href="https://wa.me/261326412338" class="contact-btn btn-whatsapp" target="_blank" style="width: auto;">
+                            <i class="fab fa-whatsapp"></i> Discuter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section>
-        <h2>Langues</h2>
-        <ul>
-            <li>Français : excellent</li>
-            <li>Anglais : intermédiaire</li>
-        </ul>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mon Expérience</h2>
+                <p>3 années d'expérience en support client, télévente et prospection commerciale</p>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial-slide active">
+                    <p class="testimonial-text">"Conseiller en immigration - Mada Marketing (Vivez au Canada)<br>Mars 2025 – Juillet 2025<br><br>Mission de closing et conseil client dans le cadre d'un programme d'immigration vers le Canada. Prise en charge d'appels entrants et sortants, présentation des programmes d'immigration adaptés aux profils clients."</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"Commercial Indépendant – Freelance (Agro-business)<br>Octobre 2024 – Aujourd'hui<br><br>Développement commercial à l'export dans le secteur agroalimentaire. Prospection et négociation avec des sociétés d'import/export internationales. Vente de produits locaux (B2B) à des entreprises exportatrices."</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">"Télévendeur – Eufonie<br>Septembre – Octobre 2024<br><br>Mission de prospection téléphonique et développement de portefeuille client. Étude de marché ciblée pour qualifier les prospects. Génération de leads et création d'un portefeuille commercial."</p>
+                </div>
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active" data-slide="0"></div>
+                    <div class="testimonial-dot" data-slide="1"></div>
+                    <div class="testimonial-dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section>
-        <h2>Centres d’intérêt</h2>
-        <ul>
-            <li>Lire</li>
-            <li>Basketball</li>
-            <li>Randonnée moto</li>
-            <li>Internet</li>
-        </ul>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactez-moi</h2>
+                <p>Disponible immédiatement pour vos projets en télétravail</p>
+            </div>
+        <div class="contact-container">
+            <!-- Partie Contacts - Version cliquable -->
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Localisation</h3>
+                        <p>Behoririka, Antananarivo, 101 Madagascar</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Email</h3>
+                        <a href="mailto:wellstodison@gmail.com" class="contact-link">wellstodison@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Téléphone</h3>
+                        <a href="tel:+261326412338" class="contact-link">+261 32 64 123 38</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h3>Horaires</h3>
+                        <p>Lundi-Vendredi: 10h-00h<br>Urgences: 7j/7 sur demande</p>
+                    </div>
+                </div>
+                
+                <!-- Icônes sociales visibles -->
+                <div class="social-icons">
+                    <a href="https://wa.me/261326412338" target="_blank" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://facebook.com/" target="_blank" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="skype:wellstodison?call" class="social-link">
+                        <i class="fab fa-skype"></i>
+                    </a>
+                    <a href="https://twitter.com/" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Partie Formulaire - Version visible -->
+            <div class="contact-form">
+                <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Votre nom" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Votre email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" name="subject" class="form-control" placeholder="Sujet">
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" placeholder="Votre message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="contact-btn">
+                        <span class="btn-text">Envoyer le message</span>
+                        <span class="loading-icon" style="display:none;">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+                    
+                    <div id="form-status" style="margin-top:15px;"></div>
+                </form>
+            </div>
+        </div>
+
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- Footer -->
     <footer>
-        &copy; 2025 Joel Randriamangatsalama – Portfolio professionnel
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Wells TODISON</h3>
+                    <p>Assistant Virtuel & Commercial Freelance spécialisé en prospection B2B et support client.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/261326412338" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="skype:wellstodison?call"><i class="fab fa-skype"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Prospection B2B</a></li>
+                        <li><a href="#services">Support Client</a></li>
+                        <li><a href="#services">Assistant Virtuel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Accueil</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#calculator">Tarifs</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Abonnez-vous pour recevoir des conseils et offres exclusives.</p>
+                    <form id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Votre email" required>
+                        </div>
+                        <button type="submit" class="contact-btn">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Wells TODISON. Tous droits réservés.</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if(navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+                // Animated Counter for Stats
+        const animateCount = (element, target, duration = 2000) => {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            const el = document.getElementById(element);
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if(current >= target) {
+                    clearInterval(timer);
+                    current = target;
+                }
+                
+                if(element === 'revenue-count') {
+                    el.textContent = Math.floor(current).toLocaleString() + 'K';
+                } else {
+                    el.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        };
+        
+        // Intersection Observer for Stats Animation
+        const statsSection = document.querySelector('.stats');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    // Valeurs réalistes adaptées à 3 ans d'expérience
+                    animateCount('clients-count', 15);
+                    animateCount('projects-count', 25);
+                    animateCount('revenue-count', 23); // 80K€
+                    animateCount('hours-count', 680);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(statsSection);
+        
+        // Pricing Calculator
+        const pricingForm = document.getElementById('pricing-form');
+        const calculatorResult = document.getElementById('calculator-result');
+        
+        const serviceRates = {
+            prospection: 9,
+            support: 8,
+            assistant: 7
+        };
+        
+        const priorityMultipliers = {
+            standard: 0,
+            urgent: 0.15,
+            'very-urgent': 0.25
+        };
+        
+        pricingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const serviceType = document.getElementById('service-type').value;
+            const duration = parseInt(document.getElementById('duration').value);
+            const period = parseInt(document.getElementById('period').value);
+            const priority = document.getElementById('priority').value;
+            
+            const rate = serviceRates[serviceType];
+            const totalHours = duration * period;
+            const baseAmount = rate * totalHours;
+            const priorityAmount = baseAmount * priorityMultipliers[priority];
+            const totalAmount = baseAmount + priorityAmount;
+            
+            // Update result display
+            document.getElementById('result-service').textContent = 
+                document.getElementById('service-type').options[document.getElementById('service-type').selectedIndex].text;
+            document.getElementById('result-rate').textContent = rate + '€';
+            document.getElementById('result-hours').textContent = totalHours + 'h';
+            document.getElementById('result-priority').textContent = priorityAmount.toFixed(0) + '€';
+            document.getElementById('result-total').textContent = totalAmount.toFixed(0) + '€';
+            
+            // Show result
+            calculatorResult.classList.add('show');
+            
+            // Scroll to result
+            calculatorResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+        
+        // Testimonial Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // Auto slide change
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+        
+// Form Submission with Formspree
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const loadingIcon = submitBtn.querySelector('.loading-icon');
+    const successIcon = submitBtn.querySelector('.success-icon');
+    const statusElement = document.getElementById('form-status');
+    
+    // Show loading state
+    btnText.style.display = 'none';
+    loadingIcon.style.display = 'inline-block';
+    submitBtn.disabled = true;
+    statusElement.style.display = 'none';
+    
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            // Success
+            statusElement.textContent = "Message envoyé avec succès! Je vous répondrai dès que possible.";
+            statusElement.className = 'success';
+            statusElement.style.display = 'block';
+            
+            loadingIcon.style.display = 'none';
+            successIcon.style.display = 'inline-block';
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                form.reset();
+                successIcon.style.display = 'none';
+                btnText.style.display = 'inline';
+                submitBtn.disabled = false;
+            }, 3000);
+        } else {
+            throw new Error('Erreur lors de l\'envoi');
+        }
+    } catch (error) {
+        statusElement.textContent = "Une erreur s'est produite. Veuillez réessayer ou me contacter directement par email.";
+        statusElement.className = 'error';
+        statusElement.style.display = 'block';
+        
+        loadingIcon.style.display = 'none';
+        btnText.style.display = 'inline';
+        submitBtn.disabled = false;
+    }
+});
+        
+        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Merci !';
+            submitBtn.style.backgroundColor = '#4CAF50';
+            
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.backgroundColor = '';
+                e.target.reset();
+            }, 3000);
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.service-card, .section-title');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.service-card, .section-title').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+        
+        // Social media hover effects
+        document.querySelectorAll('.social-links a').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.transform = 'scale(1.2) translateY(-5px)';
+            });
+            
+            link.addEventListener('mouseleave', () => {
+                link.style.transform = '';
+            });
+        });
+        
+        // Contact buttons hover effects
+        document.querySelectorAll('.contact-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transform = 'translateY(-3px)';
+                btn.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = '';
+                btn.style.boxShadow = '';
+            });
+        });
+        
+        // Initialize animations
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', () => {
+            animateOnScroll();
+            
+            // Pulse animation for CTA buttons
+            setInterval(() => {
+                const heroBtn = document.querySelector('.hero .contact-btn');
+                heroBtn.classList.toggle('pulse');
+            }, 2000);
+        });
+    </script>
 </body>
 </html>
