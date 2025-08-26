@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wells TODISON | Assistant Virtuel & Création Web</title>
+    <title>TEAM Acquisition | Solutions Digitales pour Hôtels & Restaurants</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0056b3;
-            --secondary: #003366;
-            --dark: #121212;
+            --primary: #0d6efd;
+            --secondary: #198754;
+            --dark: #212529;
             --light: #ffffff;
-            --accent: #00a0e9;
-            --gray: #f5f5f5;
+            --accent: #fd7e14;
+            --gray: #f8f9fa;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
@@ -109,7 +109,7 @@
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
             color: var(--light);
             display: flex;
             align-items: center;
@@ -343,93 +343,56 @@
             margin-bottom: 1.5rem;
         }
 
-        /* FORCE la visibilité */
-.contact-info, 
-.contact-form, 
-.contact-form *:not(script) {
-    color: #333 !important; /* Texte foncé */
-    background-color: #f8f9fa !important; /* Fond clair */
-    opacity: 1 !important;
-    visibility: visible !important;
-    position: relative !important;
-    z-index: 10 !important;
-}
+        .form-control {
+            color: #333;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 12px;
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
 
-/* Style spécifique pour les inputs */
-.contact-form input, 
-.contact-form textarea {
-    border: 2px solid #0056b3 !important;
-    padding: 12px !important;
-    margin: 8px 0 !important;
-    width: 100% !important;
-    display: block !important;
-}
+        .form-control:focus {
+            outline: 2px solid var(--accent);
+            background-color: #fff;
+        }
 
-/* Bouton visible */
-.contact-btn {
-    background: #0056b3 !important;
-    color: white !important;
-    padding: 12px 24px !important;
-    border: none !important;
-    cursor: pointer !important;
-}
-        
+        .form-control::placeholder {
+            color: #666;
+        }
+
+        .contact {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 8px;
+            color: #444;
             font-weight: 500;
         }
-        .form-control {
-    color: #333; /* Couleur de texte foncée */
-    background-color: #fff; /* Fond blanc */
-    border: 1px solid #ddd; /* Bordure visible */
-    padding: 12px;
-    border-radius: 4px;
-    width: 100%;
-    margin-bottom: 15px;
-}
 
-.form-control:focus {
-    outline: 2px solid var(--accent);
-    background-color: #fff;
-}
+        .alert {
+            padding: 12px;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 15px;
+        }
 
-/* Pour le placeholder */
-.form-control::placeholder {
-    color: #666; /* Gris moyen */
-}
+        .alert.success {
+            background-color: #e6ffed;
+            color: #0e4429;
+            border: 1px solid #2ecc40;
+        }
 
-.contact {
-    padding: 5rem 0;
-    background-color: #f8f9fa; /* Fond légèrement gris */
-    color: #333; /* Texte foncé */
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #444;
-    font-weight: 500;
-}
-
-.alert {
-    padding: 12px;
-    border-radius: 4px;
-    text-align: center;
-    margin-top: 15px;
-}
-
-.alert.success {
-    background-color: #e6ffed;
-    color: #0e4429;
-    border: 1px solid #2ecc40;
-}
-
-.alert.error {
-    background-color: #ffebee;
-    color: #b71c1c;
-    border: 1px solid #ff5252;
-}
+        .alert.error {
+            background-color: #ffebee;
+            color: #b71c1c;
+            border: 1px solid #ff5252;
+        }
 
         .form-control {
             width: 100%;
@@ -451,86 +414,87 @@
         }
 
         .contact-form {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
 
-.form-label {
-  color: #333 !important;
-  margin-bottom: 0.5rem;
-  display: block;
-}
+        .form-label {
+            color: #333 !important;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
 
-.form-control {
-  background-color: #fff !important;
-  color: #333 !important;
-  border: 2px solid #0056b3 !important;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
+        .form-control {
+            background-color: #fff !important;
+            color: #333 !important;
+            border: 2px solid #0056b3 !important;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
 
-.form-control:focus {
-  border-color: #00a0e9 !important;
-  box-shadow: 0 0 0 0.25rem rgba(0, 160, 233, 0.25) !important;
-}
+        .form-control:focus {
+            border-color: #00a0e9 !important;
+            box-shadow: 0 0 0 0.25rem rgba(0, 160, 233, 0.25) !important;
+        }
 
-.form-control::placeholder {
-  color: #6c757d !important;
-  opacity: 1 !important;
-}
+        .form-control::placeholder {
+            color: #6c757d !important;
+            opacity: 1 !important;
+        }
 
-#form-status.success {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-}
+        #form-status.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
 
-#form-status.error {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-}
+        #form-status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
 
-.btn-primary {
-  background-color: #0056b3 !important;
-  border: none !important;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
+        .btn-primary {
+            background-color: #0056b3 !important;
+            border: none !important;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
 
-.btn-primary:hover {
-  background-color: #003366 !important;
-  transform: translateY(-2px);
-}
-        /* Style pour le statut du formulaire */
-#form-status {
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    display: none;
-}
+        .btn-primary:hover {
+            background-color: #003366 !important;
+            transform: translateY(-2px);
+        }
 
-#form-status.success {
-    background-color: #d4edda;
-    color: #155724;
-    display: block;
-}
+        #form-status {
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
 
-#form-status.error {
-    background-color: #f8d7da;
-    color: #721c24;
-    display: block;
-}
+        #form-status.success {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+        }
 
-.contact-btn {
-    position: relative;
-}
+        #form-status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
 
-.loading-icon, .success-icon {
-    margin-left: 8px;
-}
+        .contact-btn {
+            position: relative;
+        }
+
+        .loading-icon, .success-icon {
+            margin-left: 8px;
+        }
+        
         .calculator-result {
             background: rgba(0, 0, 0, 0.2);
             padding: 1.5rem;
@@ -559,10 +523,78 @@
             color: var(--accent);
         }
         
+        /* Portfolio Section */
+        .portfolio {
+            padding: 5rem 0;
+            background-color: var(--gray);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .portfolio-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 1.5rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        .portfolio-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-desc {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
         /* Testimonials */
         .testimonials {
             padding: 5rem 0;
-            background-color: var(--gray);
+            background-color: var(--light);
         }
         
         .testimonial-container {
@@ -805,14 +837,15 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <i class="fas fa-robot"></i>
-                    <span>Wells TODISON</span>
+                    <i class="fas fa-globe"></i>
+                    <span>TEAM Acquisition</span>
                 </div>
                 <ul class="nav-links">
                     <li><a href="#home">Accueil</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Réalisations</a></li>
                     <li><a href="#calculator">Tarifs</a></li>
-                    <li><a href="#testimonials">Expérience</a></li>
+                    <li><a href="#testimonials">Témoignages</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="hamburger">
@@ -826,20 +859,17 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Wells TODISON</h1>
-                <p>Assistant Virtuel & Création Web - Prospection B2B, Support Client et Solutions Digitales</p>
+                <h1>TEAM Acquisition</h1>
+                <p>Solutions digitales sur mesure pour hôtels et restaurants - Sites web, réservations en ligne et marketing digital</p>
                 <div class="contact-buttons">
                     <a href="https://wa.me/261326412338" class="contact-btn btn-whatsapp" target="_blank">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
-                    <a href="mailto:wellstodison@gmail.com" class="contact-btn btn-email">
+                    <a href="mailto:contact@teamacquisition.com" class="contact-btn btn-email">
                         <i class="fas fa-envelope"></i> Email
                     </a>
                     <a href="tel:+261326412338" class="contact-btn btn-phone">
                         <i class="fas fa-phone"></i> Appeler
-                    </a>
-                    <a href="skype:wellstodison?call" class="contact-btn btn-skype">
-                        <i class="fab fa-skype"></i> Skype
                     </a>
                 </div>
             </div>
@@ -856,11 +886,11 @@
                 </div>
                 <div class="stat-item">
                     <div class="stat-number" id="projects-count">0</div>
-                    <div class="stat-text">Projets réalisés</div>
+                    <div class="stat-text">Sites réalisés</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number" id="revenue-count">0</div>
-                    <div class="stat-text">€ générés</div>
+                    <div class="stat-text">€ d'économies clients</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number" id="hours-count">0</div>
@@ -874,74 +904,116 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Mes Services</h2>
-                <p>Des solutions sur mesure pour répondre à tous vos besoins en prospection commerciale, support client et création digitale</p>
+                <h2>Nos Services</h2>
+                <p>Des solutions digitales complètes spécialement conçues pour les hôtels, restaurants et établissements de l'hôtellerie</p>
             </div>
             <div class="services-container">
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Prospection B2B">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Site Web Restaurant">
                     </div>
                     <div class="service-content">
-                        <h3>Prospection B2B Multicanal</h3>
-                        <p>Campagnes de prospection par email, téléphone, LinkedIn et réseaux sociaux pour générer des leads qualifiés.</p>
-                        <div class="service-price">À partir de 9€/h</div>
+                        <h3>Site Web Restaurant</h3>
+                        <p>Site élégant avec menu interactif, galerie photos, formulaire de réservation et intégration des avis clients.</p>
+                        <div class="service-price">À partir de 150€</div>
                         <a href="#calculator" class="contact-btn">Demander un devis</a>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Support Client">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Site Hôtel Premium">
                     </div>
                     <div class="service-content">
-                        <h3>Support Client Premium</h3>
-                        <p>Gestion des demandes clients par chat, email et téléphone avec suivi et reporting détaillé.</p>
-                        <div class="service-price">À partir de 8€/h</div>
-                        <a href="#calculator" class="contact-btn">Demander un devis</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Assistant Virtuel">
-                    </div>
-                    <div class="service-content">
-                        <h3>Assistant Virtuel Complet</h3>
-                        <p>Gestion administrative, prise de rendez-vous, organisation et suivi des tâches au quotidien.</p>
-                        <div class="service-price">À partir de 7€/h</div>
-                        <a href="#calculator" class="contact-btn">Demander un devis</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" alt="Création de site web">
-                    </div>
-                    <div class="service-content">
-                        <h3>Création de Sites Web</h3>
-                        <p>Sites vitrines et professionnels sur mesure pour PME, avec référencement de base et responsive design.</p>
+                        <h3>Site Hôtel Premium</h3>
+                        <p>Site complet avec galerie, disponibilité en temps réel, réservations en ligne et système de gestion.</p>
                         <div class="service-price">À partir de 299€</div>
                         <a href="#calculator" class="contact-btn">Demander un devis</a>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Portfolio en ligne">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="E-commerce Meubles">
                     </div>
                     <div class="service-content">
-                        <h3>Portfolios Professionnels</h3>
-                        <p>Portfolios élégants pour artistes, photographes et freelances, avec galerie et formulaire de contact.</p>
-                        <div class="service-price">À partir de 199€</div>
+                        <h3>Boutique en Ligne</h3>
+                        <p>Site e-commerce complet pour vendeurs de meubles avec catalogue, panier et système de paiement sécurisé.</p>
+                        <div class="service-price">À partir de 399€</div>
                         <a href="#calculator" class="contact-btn">Demander un devis</a>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Logiciel de gestion">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Gestion Réservations">
                     </div>
                     <div class="service-content">
-                        <h3>Logiciels de Gestion</h3>
-                        <p>Solutions logicielles personnalisées pour la gestion de stocks, clients ou rendez-vous.</p>
-                        <div class="service-price">À partir de 599€</div>
+                        <h3>Gestion de Réservations</h3>
+                        <p>Application web sur mesure pour gérer les réservations, disponibilités et clients de votre établissement.</p>
+                        <div class="service-price">À partir de 499€</div>
                         <a href="#calculator" class="contact-btn">Demander un devis</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Marketing Digital">
+                    </div>
+                    <div class="service-content">
+                        <h3>Marketing Digital</h3>
+                        <p>Stratégies de référencement, publicités ciblées et gestion des réseaux sociaux pour attirer plus de clients.</p>
+                        <div class="service-price">À partir de 199€/mois</div>
+                        <a href="#calculator" class="contact-btn">Demander un devis</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1462826303086-329426d1aef5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Support Technique">
+                    </div>
+                    <div class="service-content">
+                        <h3>Support Technique</h3>
+                        <p>Maintenance, mises à jour et support technique pour garantir le bon fonctionnement de votre site.</p>
+                        <div class="service-price">À partir de 49€/mois</div>
+                        <a href="#calculator" class="contact-btn">Demander un devis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Réalisations</h2>
+                <p>Découvrez des exemples de sites que nous avons créés pour nos clients de l'hôtellerie et de la restauration</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Restaurant Parisien">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Le Bistrot Parisien</h3>
+                        <p class="portfolio-desc">Site élégant avec réservations en ligne et menu interactif</p>
+                        <a href="#" class="contact-btn">Voir le projet</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Hôtel de Luxe">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Hôtel Côte d'Azur</h3>
+                        <p class="portfolio-desc">Site premium avec galerie virtuelle et système de réservation</p>
+                        <a href="#" class="contact-btn">Voir le projet</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Boutique Meubles">
+                    </div>
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Design Mobilier</h3>
+                        <p class="portfolio-desc">Boutique en ligne avec catalogue produits et paiement sécurisé</p>
+                        <a href="#" class="contact-btn">Voir le projet</a>
                     </div>
                 </div>
             </div>
@@ -954,21 +1026,21 @@
             <div class="calculator-container">
                 <div class="calculator-title">
                     <h2>Calculateur de Tarifs</h2>
-                    <p>Estimez le coût de mes services en fonction de vos besoins spécifiques</p>
+                    <p>Estimez le coût de nos services en fonction de vos besoins spécifiques</p>
                 </div>
                 <form id="pricing-form">
                     <div class="form-group">
                         <label for="service-type">Type de service</label>
                         <select id="service-type" class="form-control" required>
                             <option value="" disabled selected>Sélectionnez un service</option>
-                            <option value="prospection">Prospection B2B Multicanal</option>
-                            <option value="support">Support Client Premium</option>
-                            <option value="assistant">Assistant Virtuel Complet</option>
-                            <option value="website">Création de Site Web</option>
-                            <option value="portfolio">Portfolio Professionnel</option>
-                            <option value="software">Logiciel de Gestion</option>
+                            <option value="restaurant">Site Web Restaurant</option>
+                            <option value="hotel">Site Hôtel Premium</option>
+                            <option value="ecommerce">Boutique en Ligne</option>
+                            <option value="reservation">Gestion de Réservations</option>
+                            <option value="marketing">Marketing Digital</option>
+                            <option value="support">Support Technique</option>
                         </select>
-                    </div>
+                         </div>
                     <div class="form-group" id="hourly-fields">
                         <label for="duration">Durée estimée (heures/semaine)</label>
                         <input type="number" id="duration" class="form-control" min="1" max="40">
@@ -980,9 +1052,9 @@
                     <div class="form-group" id="project-fields" style="display:none;">
                         <label for="complexity">Complexité du projet</label>
                         <select id="complexity" class="form-control">
-                            <option value="simple">Simple (20% de réduction PME)</option>
+                            <option value="simple">Simple (10% de réduction PME)</option>
                             <option value="medium">Moyenne</option>
-                            <option value="complex">Complexe (+30%)</option>
+                            <option value="complex">Complexe (+25%)</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -999,11 +1071,11 @@
                     <h3>Récapitulatif de votre devis</h3>
                     <div class="result-line">
                         <span>Type de service:</span>
-                        <span id="result-service">Prospection B2B</span>
+                        <span id="result-service">Site Web Restaurant</span>
                     </div>
                     <div class="result-line">
                         <span>Tarif de base:</span>
-                        <span id="result-rate">25€</span>
+                        <span id="result-rate">150€</span>
                     </div>
                     <div class="result-line" id="result-hours-line">
                         <span>Volume horaire total:</span>
@@ -1021,7 +1093,7 @@
                         <span>Total estimé:</span>
                         <span id="result-total">500€</span>
                     </div>
-                    <p style="margin-top: 1rem; font-size: 0.9rem;">Ce devis est une estimation. Contactez-moi pour une proposition personnalisée.</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Ce devis est une estimation. Contactez-nous pour une proposition personnalisée.</p>
                     <div class="contact-buttons" style="margin-top: 1.5rem; justify-content: center;">
                         <a href="https://wa.me/261326412338" class="contact-btn btn-whatsapp" target="_blank" style="width: auto;">
                             <i class="fab fa-whatsapp"></i> Discuter
@@ -1036,27 +1108,26 @@
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>Mon Expérience</h2>
-                <p>3 années d'expérience en support client, télévente, prospection commerciale et développement web</p>
+                <h2>Témoignages Clients</h2>
+                <p>Découvrez ce que nos clients disent de nos services</p>
             </div>
             <div class="testimonial-container">
                 <div class="testimonial-slide active">
-                                        <p class="testimonial-text">"Conseiller en immigration - Mada Marketing (Vivez au Canada)<br>Mars 2025 – Juillet 2025<br><br>Mission de closing et conseil client dans le cadre d'un programme d'immigration vers le Canada. Prise en charge d'appels entrants et sortants, présentation des programmes d'immigration adaptés aux profils clients."</p>
+                    <p class="testimonial-text">"TEAM Acquisition a créé un site magnifique pour notre restaurant. Les réservations en ligne ont augmenté de 40% dès le premier mois. Leur équipe est réactive et professionnelle."</p>
+                    <p class="testimonial-author">Pierre Martin, Le Bistrot Parisien</p>
                 </div>
                 <div class="testimonial-slide">
-                    <p class="testimonial-text">"Commercial Indépendant – Freelance (Agro-business)<br>Octobre 2024 – Aujourd'hui<br><br>Développement commercial à l'export dans le secteur agroalimentaire. Prospection et négociation avec des sociétés d'import/export internationales. Vente de produits locaux (B2B) à des entreprises exportatrices."</p>
+                    <p class="testimonial-text">"Notre système de gestion de réservations a transformé notre façon de travailler. Plus de double réservation, une gestion simplifiée et des clients satisfaits. Je recommande vivement!"</p>
+                    <p class="testimonial-author">Sophie Dubois, Hôtel Côte d'Azur</p>
                 </div>
                 <div class="testimonial-slide">
-                    <p class="testimonial-text">"Développeur Web Freelance<br>2023 – Aujourd'hui<br><br>Création de sites vitrines, portfolios et solutions de gestion sur mesure pour PME et indépendants. Technologies utilisées : HTML5, CSS3, JavaScript, PHP et WordPress."</p>
-                </div>
-                <div class="testimonial-slide">
-                    <p class="testimonial-text">"Télévendeur – Eufonie<br>Septembre – Octobre 2024<br><br>Mission de prospection téléphonique et développement de portefeuille client. Étude de marché ciblée pour qualifier les prospects. Génération de leads et création d'un portefeuille commercial."</p>
+                    <p class="testimonial-text">"La boutique en ligne créée par TEAM Acquisition a permis à notre entreprise de meubles de tripler nos ventes en ligne. L'interface est intuitive et le processus de paiement sécurisé."</p>
+                    <p class="testimonial-author">Thomas Leroy, Design Mobilier</p>
                 </div>
                 <div class="testimonial-nav">
                     <div class="testimonial-dot active" data-slide="0"></div>
                     <div class="testimonial-dot" data-slide="1"></div>
                     <div class="testimonial-dot" data-slide="2"></div>
-                    <div class="testimonial-dot" data-slide="3"></div>
                 </div>
             </div>
         </div>
@@ -1066,8 +1137,8 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contactez-moi</h2>
-                <p>Disponible immédiatement pour vos projets en télétravail</p>
+                <h2>Contactez-nous</h2>
+                <p>Disponible pour répondre à toutes vos questions et démarrer votre projet</p>
             </div>
             <div class="contact-container">
                 <!-- Partie Contacts - Version cliquable -->
@@ -1078,7 +1149,7 @@
                         </div>
                         <div class="contact-text">
                             <h3>Localisation</h3>
-                            <p>Behoririka, Antananarivo, 101 Madagascar</p>
+                            <p>Antananarivo, Madagascar</p>
                         </div>
                     </div>
                     
@@ -1088,7 +1159,7 @@
                         </div>
                         <div class="contact-text">
                             <h3>Email</h3>
-                            <a href="mailto:wellstodison@gmail.com" class="contact-link">wellstodison@gmail.com</a>
+                            <a href="mailto:contact@teamacquisition.com" class="contact-link">contact@teamacquisition.com</a>
                         </div>
                     </div>
                     
@@ -1108,23 +1179,23 @@
                         </div>
                         <div class="contact-text">
                             <h3>Horaires</h3>
-                            <p>Lundi-Vendredi: 10h-00h<br>Urgences: 7j/7 sur demande</p>
+                            <p>Lundi-Vendredi: 9h-18h<br>Week-end: Sur rendez-vous</p>
                         </div>
                     </div>
                     
                     <!-- Icônes sociales visibles -->
-                    <div class="social-icons">
-                        <a href="https://wa.me/261326412338" target="_blank" class="social-link">
-                            <i class="fab fa-whatsapp"></i>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="https://wa.me/261326412338" target="_blank" class="social-link" style="color: #25D366;">
+                            <i class="fab fa-whatsapp fa-2x"></i>
                         </a>
-                        <a href="https://facebook.com/" target="_blank" class="social-link">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="https://facebook.com/" target="_blank" class="social-link" style="color: #3b5998;">
+                            <i class="fab fa-facebook-f fa-2x"></i>
                         </a>
-                        <a href="skype:wellstodison?call" class="social-link">
-                            <i class="fab fa-skype"></i>
+                        <a href="https://instagram.com/" target="_blank" class="social-link" style="color: #E1306C;">
+                            <i class="fab fa-instagram fa-2x"></i>
                         </a>
-                        <a href="https://twitter.com/" target="_blank" class="social-link">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://twitter.com/" target="_blank" class="social-link" style="color: #1DA1F2;">
+                            <i class="fab fa-twitter fa-2x"></i>
                         </a>
                     </div>
                 </div>
@@ -1167,21 +1238,21 @@
         <div class="container">
             <div class="footer-container">
                 <div class="footer-col">
-                    <h3>Wells TODISON</h3>
-                    <p>Assistant Virtuel & Développeur Web Freelance spécialisé en prospection B2B, support client et création digitale.</p>
+                    <h3>TEAM Acquisition</h3>
+                    <p>Solutions digitales sur mesure pour hôtels, restaurants et commerces. Création de sites web, applications de gestion et stratégies marketing.</p>
                     <div class="social-links">
                         <a href="https://wa.me/261326412338" target="_blank"><i class="fab fa-whatsapp"></i></a>
                         <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="skype:wellstodison?call"><i class="fab fa-skype"></i></a>
+                        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#services">Prospection B2B</a></li>
-                        <li><a href="#services">Support Client</a></li>
-                        <li><a href="#services">Création Web</a></li>
-                        <li><a href="#services">Logiciels sur mesure</a></li>
+                        <li><a href="#services">Sites Web Restaurant</a></li>
+                        <li><a href="#services">Sites Hôtel Premium</a></li>
+                        <li><a href="#services">Boutiques en Ligne</a></li>
+                        <li><a href="#services">Gestion de Réservations</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1189,7 +1260,7 @@
                     <ul class="footer-links">
                         <li><a href="#home">Accueil</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#calculator">Tarifs</a></li>
+                        <li><a href="#portfolio">Réalisations</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -1205,7 +1276,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Wells TODISON. Tous droits réservés.</p>
+                <p>&copy; 2025 TEAM Acquisition. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -1269,11 +1340,10 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
-                    // Valeurs réalistes adaptées à 3 ans d'expérience
-                    animateCount('clients-count', 25);
-                    animateCount('projects-count', 42);
-                    animateCount('revenue-count', 35); // 35K€
-                    animateCount('hours-count', 1200);
+                    animateCount('clients-count', 42);
+                    animateCount('projects-count', 68);
+                    animateCount('revenue-count', 85); // 85K€
+                    animateCount('hours-count', 1500);
                     observer.unobserve(entry.target);
                 }
             });
@@ -1291,18 +1361,18 @@
         const resultComplexityLine = document.getElementById('result-complexity-line');
         
         const serviceRates = {
-            prospection: 9,
-            support: 8,
-            assistant: 7,
-            website: 299,
-            portfolio: 199,
-            software: 599
+            restaurant: 150,
+            hotel: 299,
+            ecommerce: 399,
+            reservation: 499,
+            marketing: 199,
+            support: 49
         };
         
         const complexityMultipliers = {
-            simple: -0.2,
+            simple: -0.1,
             medium: 0,
-            complex: 0.3
+            complex: 0.25
         };
         
         const priorityMultipliers = {
@@ -1315,7 +1385,7 @@
         document.getElementById('service-type').addEventListener('change', function() {
             const serviceType = this.value;
             
-            if(['prospection', 'support', 'assistant'].includes(serviceType)) {
+            if(['marketing', 'support'].includes(serviceType)) {
                 hourlyFields.style.display = 'block';
                 periodField.style.display = 'block';
                 projectFields.style.display = 'none';
@@ -1341,7 +1411,7 @@
             
             let baseAmount, totalAmount, priorityAmount = 0;
             
-            if(['prospection', 'support', 'assistant'].includes(serviceType)) {
+            if(['marketing', 'support'].includes(serviceType)) {
                 const rate = serviceRates[serviceType];
                 const totalHours = duration * period;
                 baseAmount = rate * totalHours;
@@ -1349,7 +1419,7 @@
                 totalAmount = baseAmount + priorityAmount;
                 
                 // Update result display
-                document.getElementById('result-rate').textContent = rate + '€/h';
+                document.getElementById('result-rate').textContent = rate + '€/mois';
                 document.getElementById('result-hours').textContent = totalHours + 'h';
             } else {
                 baseAmount = serviceRates[serviceType];
@@ -1411,7 +1481,6 @@
             const submitBtn = form.querySelector('button[type="submit"]');
             const btnText = submitBtn.querySelector('.btn-text');
             const loadingIcon = submitBtn.querySelector('.loading-icon');
-            const successIcon = submitBtn.querySelector('.success-icon');
             const statusElement = document.getElementById('form-status');
             
             // Show loading state
@@ -1431,17 +1500,15 @@
                 
                 if (response.ok) {
                     // Success
-                    statusElement.textContent = "Message envoyé avec succès! Je vous répondrai dès que possible.";
+                    statusElement.textContent = "Message envoyé avec succès! Nous vous répondrons dès que possible.";
                     statusElement.className = 'success';
                     statusElement.style.display = 'block';
                     
                     loadingIcon.style.display = 'none';
-                    successIcon.style.display = 'inline-block';
                     
                     // Reset form after 3 seconds
                     setTimeout(() => {
                         form.reset();
-                        successIcon.style.display = 'none';
                         btnText.style.display = 'inline';
                         submitBtn.disabled = false;
                     }, 3000);
@@ -1449,7 +1516,7 @@
                     throw new Error('Erreur lors de l\'envoi');
                 }
             } catch (error) {
-                statusElement.textContent = "Une erreur s'est produite. Veuillez réessayer ou me contacter directement par email.";
+                statusElement.textContent = "Une erreur s'est produite. Veuillez réessayer ou nous contacter directement par email.";
                 statusElement.className = 'error';
                 statusElement.style.display = 'block';
                 
@@ -1477,7 +1544,7 @@
         
         // Animation on scroll
         const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.service-card, .section-title');
+            const elements = document.querySelectorAll('.service-card, .section-title, .portfolio-item');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -1491,7 +1558,7 @@
         };
         
         // Set initial state for animated elements
-        document.querySelectorAll('.service-card, .section-title').forEach(element => {
+        document.querySelectorAll('.service-card, .section-title, .portfolio-item').forEach(element => {
             element.style.opacity = '0';
             element.style.transform = 'translateY(20px)';
             element.style.transition = 'all 0.6s ease';
