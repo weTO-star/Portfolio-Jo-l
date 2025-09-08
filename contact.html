@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - TEAM Acquisition</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2196f3;
+        }
+
+        header {
+            background: linear-gradient(90deg, #000000, #1e1e1e);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            animation: rainbow-border 5s infinite linear;
+        }
+
+        @keyframes rainbow-border {
+            0% { border-bottom: 2px solid red; }
+            14% { border-bottom: 2px solid orange; }
+            28% { border-bottom: 2px solid yellow; }
+            42% { border-bottom: 2px solid green; }
+            57% { border-bottom: 2px solid blue; }
+            71% { border-bottom: 2px solid indigo; }
+            85% { border-bottom: 2px solid violet; }
+            100% { border-bottom: 2px solid red; }
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #40E0D0; /* Turquoise blue */
+            text-shadow: 0 0 10px rgba(64, 224, 208, 0.7);
+            animation: pulse-logo 2s infinite;
+        }
+
+        @keyframes pulse-logo {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            font-size: 18px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff5722;
+            transform: scale(1.1) rotate(5deg);
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #2196f3, #4fc3f7);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-5px); }
+            60% { transform: translateY(-3px); }
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) rotate(3deg);
+            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.6);
+            background: linear-gradient(45deg, #1976d2, #29b6f6);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            animation: rainbow-shift 10s infinite linear;
+        }
+
+        section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
+            animation: rainbow-shift-reverse 10s infinite linear;
+        }
+
+        @keyframes rainbow-shift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        @keyframes rainbow-shift-reverse {
+            0% { background-position: 200% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #contact {
+            background: linear-gradient(135deg, #1e1e1e, #2c2c2c, #121212);
+            text-align: center;
+            animation: fadeInUp 1.5s ease-out, color-shift 5s infinite;
+        }
+
+        @keyframes color-shift {
+            0% { background-color: #1e1e1e; }
+            50% { background-color: #2c2c2c; }
+            100% { background-color: #1e1e1e; }
+        }
+
+        #contact h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            animation: text-glow 2s infinite alternate;
+        }
+
+        @keyframes text-glow {
+            from { text-shadow: 0 0 10px #ffffff; }
+            to { text-shadow: 0 0 20px #40E0D0; }
+        }
+
+        #contact p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: #e0e0e0;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            animation: form-pulse 3s infinite;
+        }
+
+        @keyframes form-pulse {
+            0% { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); }
+            50% { box-shadow: 0 4px 30px rgba(64, 224, 208, 0.7); }
+            100% { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); }
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #4fc3f7;
+            background-color: #333333;
+            color: #ffffff;
+            border-radius: 8px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #ff5722;
+            box-shadow: 0 0 10px rgba(255, 87, 34, 0.5);
+            outline: none;
+            animation: input-focus 1s infinite alternate;
+        }
+
+        @keyframes input-focus {
+            from { box-shadow: 0 0 10px rgba(255, 87, 34, 0.5); }
+            to { box-shadow: 0 0 15px rgba(64, 224, 208, 0.7); }
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .info-item {
+            background: linear-gradient(135deg, #333333, #4a4a4a);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            flex: 1 1 250px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: slideIn 1s ease-out;
+        }
+
+        .info-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-item h3 {
+            font-size: 24px;
+            color: #40E0D0; /* Turquoise blue */
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #000000, #1e1e1e);
+            padding: 50px 0;
+            text-align: center;
+            animation: footer-slide 2s ease-in;
+        }
+
+        @keyframes footer-slide {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            transition: color 0.3s, transform 0.3s;
+            animation: icon-bounce 2s infinite;
+        }
+
+        .social-icons img {
+            width: 32px;
+            height: 32px;
+        }
+
+        @keyframes icon-bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2) rotate(360deg);
+            transition: transform 0.5s;
+        }
+
+        .social-btns {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn, .messenger-btn {
+            background: transparent;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            text-align: center;
+            animation: btn-attention 2s infinite;
+        }
+
+        .whatsapp-btn img, .messenger-btn img {
+            width: 32px;
+            height: 32px;
+        }
+
+        @keyframes btn-attention {
+            0% { transform: scale(1); box-shadow: 0 0 10px #40E0D0; }
+            50% { transform: scale(1.1); box-shadow: 0 0 20px #ff5722; }
+            100% { transform: scale(1); box-shadow: 0 0 10px #40E0D0; }
+        }
+
+        .whatsapp-btn {
+            background: #25D366; /* Green for WhatsApp */
+        }
+
+        .messenger-btn {
+            background: #0084ff; /* Blue for Messenger */
+        }
+
+        .whatsapp-btn:hover, .messenger-btn:hover {
+            transform: scale(1.2) rotate(360deg);
+            transition: transform 0.5s;
+        }
+
+        .chatbot {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background: #1e1e1e;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            animation: chatbot-pop 1s ease-out;
+        }
+
+        @keyframes chatbot-pop {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .chatbot-header {
+            background: linear-gradient(45deg, #2196f3, #4fc3f7);
+            padding: 10px;
+            border-radius: 15px 15px 0 0;
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+            animation: header-glow 2s infinite alternate;
+        }
+
+        @keyframes header-glow {
+            from { box-shadow: 0 0 5px #2196f3; }
+            to { box-shadow: 0 0 15px #40E0D0; }
+        }
+
+        .chatbot-body {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+            color: #ffffff;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            background: #333333;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .chatbot-input input {
+            flex-grow: 1;
+            margin: 0;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .chatbot-input button {
+            background: #2196f3;
+            border: none;
+            padding: 10px;
+            color: #ffffff;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+            animation: button-pulse 1.5s infinite;
+        }
+
+        @keyframes button-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 200px;
+            right: 20px;
+            background: #ff5722;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            transition: transform 0.3s;
+            animation: toggle-spin 5s infinite linear;
+            text-align: center;
+        }
+
+        .chatbot-toggle img {
+            width: 32px;
+            height: 32px;
+        }
+
+        @keyframes toggle-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .success-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4caf50;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            #contact h1 {
+                font-size: 36px;
+            }
+
+            #contact p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">TEAM Acquisition</div>
+            <div class="nav-links">
+                <a href="index.html#hero">Accueil</a>
+                <a href="about.html">À propos</a>
+                <a href="realisations.html">Réalisations</a>
+                <a href="contact.html">Contact</a>
+                <a href="index.html#calculator" class="btn">Devis Gratuit</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="contact">
+        <div class="container">
+            <h1>Contactez-nous</h1>
+            <p>Prêt à transformer votre présence en ligne ? Remplissez le formulaire ci-dessous ou contactez-nous directement via WhatsApp, Messenger, ou par email. Nous vous répondrons dans les 24 heures pour discuter de votre projet.</p>
+            <div class="contact-form">
+                <input type="text" placeholder="Nom complet" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Téléphone" required>
+                <input type="text" placeholder="Nom de l'établissement" required>
+                <textarea placeholder="Votre message (optionnel)" rows="5"></textarea>
+                <p>Nous vous contacterons dans les 24 heures pour finaliser votre projet.</p>
+                <button class="btn" onclick="submitForm()">Envoyer la demande</button>
+            </div>
+            <div class="contact-info">
+                <div class="info-item">
+                    <h3>Adresse</h3>
+                    <p>Lot II J 123, Ankorahotra<br>Antananarivo 101, Madagascar</p>
+                </div>
+                <div class="info-item">
+                    <h3>Téléphone</h3>
+                    <p>+261 34 00 000 00<br>Lun-Ven: 9h-17h</p>
+                </div>
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p>contact@team-acquisition.mg</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>TEAM Acquisition</h3>
+                    <p>Spécialistes en création de sites web pour hôtels et restaurants à Madagascar. Nous transformons votre établissement avec une présence en ligne professionnelle.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com"><img src="https://simpleicons.org/icons/facebook.svg" alt="Facebook"></a>
+                        <a href="https://twitter.com"><img src="https://simpleicons.org/icons/x.svg" alt="Twitter"></a>
+                        <a href="https://instagram.com"><img src="https://simpleicons.org/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="https://linkedin.com"><img src="https://simpleicons.org/icons/linkedin.svg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="index.html#hero">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="realisations.html">Réalisations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Nos services</h3>
+                    <ul>
+                        <li>Site Vitrine</li>
+                        <li>E-commerce</li>
+                        <li>Réservation en ligne</li>
+                        <li>Maintenance</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contactez-nous</h3>
+                    <p>Antananarivo, Madagascar</p>
+                    <p>+261 34 00 000 00</p>
+                    <p>contact@team-acquisition.mg</p>
+                    <p>Lun-Ven: 9h-17h</p>
+                </div>
+            </div>
+            <p>© 2023 TEAM Acquisition. Tous droits réservés.</p>
+            <p>Conçu avec ❤️ à Madagascar</p>
+        </div>
+    </footer>
+
+    <div class="social-btns">
+        <a href="https://wa.me/+261340000000" class="whatsapp-btn"><img src="https://simpleicons.org/icons/whatsapp.svg" alt="WhatsApp"></a>
+        <a href="https://m.me/yourpage" class="messenger-btn"><img src="https://simpleicons.org/icons/facebookmessenger.svg" alt="Messenger"></a>
+    </div>
+
+    <div class="chatbot-toggle"><img src="https://www.svgrepo.com/show/90728/robot.svg" alt="Chatbot"></div>
+    <div class="chatbot">
+        <div class="chatbot-header">Chatbot TEAM Acquisition</div>
+        <div class="chatbot-body" id="chatbot-body">
+            <p>Bonjour ! Comment puis-je vous aider avec votre projet de site web ?</p>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Tapez votre message...">
+            <button onclick="sendMessage()">Envoyer</button>
+        </div>
+    </div>
+
+    <div class="success-message" id="success-message">Votre message a été envoyé avec succès!</div>
+
+    <script>
+        // Chatbot Logic
+        const chatbotResponses = {
+            'bonjour': 'Bonjour ! Comment puis-je vous aider avec votre site web ?',
+            'prix': 'Nos prix commencent à 600000 AR pour un site vitrine. Consultez notre calculateur de devis pour une estimation personnalisée !',
+            'délai': 'Un site vitrine peut être livré en 72 heures. Les sites e-commerce prennent 1 à 2 semaines.',
+            'services': 'Nous proposons des sites vitrines, e-commerce, optimisation SEO, réservation et commande en ligne, et maintenance.',
+            'contact': 'Vous pouvez nous contacter via le formulaire, par WhatsApp, Messenger, ou email à contact@team-acquisition.mg.',
+            default: 'Désolé, je n’ai pas compris. Pouvez-vous préciser ? Essayez des mots comme "prix", "délai", "services", ou "contact".'
+        };
+
+        function sendMessage() {
+            const input = document.getElementById('chatbot-input');
+            const message = input.value.trim().toLowerCase();
+            if (!message) return;
+
+            const chatBody = document.getElementById('chatbot-body');
+            const userMessage = document.createElement('p');
+            userMessage.textContent = `Vous: ${message}`;
+            chatBody.appendChild(userMessage);
+
+            const response = Object.keys(chatbotResponses).find(key => message.includes(key)) 
+                ? chatbotResponses[Object.keys(chatbotResponses).find(key => message.includes(key))]
+                : chatbotResponses.default;
+            const botMessage = document.createElement('p');
+            botMessage.textContent = `Bot: ${response}`;
+            chatBody.appendChild(botMessage);
+
+            chatBody.scrollTop = chatBody.scrollHeight;
+            input.value = '';
+        }
+
+        // Chatbot Toggle
+        document.querySelector('.chatbot-toggle').addEventListener('click', () => {
+            const chatbot = document.querySelector('.chatbot');
+            chatbot.style.display = chatbot.style.display === 'none' ? 'flex' : 'none';
+        });
+
+        // Auto message after 2 minutes
+        setTimeout(() => {
+            const chatbot = document.querySelector('.chatbot');
+            chatbot.style.display = 'flex';
+            const chatBody = document.getElementById('chatbot-body');
+            const autoMessage = document.createElement('p');
+            autoMessage.textContent = `Bot: Bonjour ! Avez-vous des questions sur nos services ? N'hésitez pas à demander !`;
+            chatBody.appendChild(autoMessage);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }, 120000); // 2 minutes = 120000 ms
+
+        // Form Submission
+        function submitForm() {
+            const inputs = document.querySelectorAll('.contact-form input[required]');
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#ff0000';
+                } else {
+                    input.style.borderColor = '#4fc3f7';
+                }
+            });
+            if (isValid) {
+                const successMessage = document.getElementById('success-message');
+                successMessage.style.display = 'block';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+                document.querySelector('.contact-form').reset();
+            }
+        }
+    </script>
+</body>
+</html>

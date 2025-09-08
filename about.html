@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - TEAM Acquisition</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2196f3;
+        }
+
+        header {
+            background: linear-gradient(90deg, #000000, #1e1e1e);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            animation: rainbow-border 5s infinite linear;
+        }
+
+        @keyframes rainbow-border {
+            0% { border-bottom: 2px solid red; }
+            14% { border-bottom: 2px solid orange; }
+            28% { border-bottom: 2px solid yellow; }
+            42% { border-bottom: 2px solid green; }
+            57% { border-bottom: 2px solid blue; }
+            71% { border-bottom: 2px solid indigo; }
+            85% { border-bottom: 2px solid violet; }
+            100% { border-bottom: 2px solid red; }
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #40E0D0; /* Turquoise blue */
+            text-shadow: 0 0 10px rgba(64, 224, 208, 0.7);
+            animation: pulse-logo 2s infinite;
+        }
+
+        @keyframes pulse-logo {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            font-size: 18px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ff5722;
+            transform: scale(1.1) rotate(5deg);
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #2196f3, #4fc3f7);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.4);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-5px); }
+            60% { transform: translateY(-3px); }
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) rotate(3deg);
+            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.6);
+            background: linear-gradient(45deg, #1976d2, #29b6f6);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            animation: rainbow-shift 10s infinite linear;
+        }
+
+        section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
+            animation: rainbow-shift-reverse 10s infinite linear;
+        }
+
+        @keyframes rainbow-shift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        @keyframes rainbow-shift-reverse {
+            0% { background-position: 200% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #about {
+            background: linear-gradient(135deg, #1e1e1e, #2c2c2c, #121212);
+            text-align: center;
+            animation: fadeInUp 1.5s ease-out, color-shift 5s infinite;
+        }
+
+        @keyframes color-shift {
+            0% { background-color: #1e1e1e; }
+            50% { background-color: #2c2c2c; }
+            100% { background-color: #1e1e1e; }
+        }
+
+        #about h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            animation: text-glow 2s infinite alternate;
+        }
+
+        @keyframes text-glow {
+            from { text-shadow: 0 0 10px #ffffff; }
+            to { text-shadow: 0 0 20px #40E0D0; }
+        }
+
+        #about p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: #e0e0e0;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .about-item {
+            background: linear-gradient(135deg, #333333, #4a4a4a);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            flex: 1 1 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: slideIn 1s ease-out, stat-bounce 2s infinite;
+        }
+
+        @keyframes stat-bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .about-item:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-item h3 {
+            font-size: 28px;
+            color: #40E0D0; /* Turquoise blue */
+            margin-bottom: 15px;
+        }
+
+        .about-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            animation: zoom-in-out 3s infinite;
+        }
+
+        @keyframes zoom-in-out {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .value-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .value-list li {
+            background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .value-list li:hover {
+            transform: translateX(10px);
+        }
+
+        .value-list li strong {
+            color: #40E0D0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(33, 150, 243, 0.5);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #000000, #1e1e1e);
+            padding: 50px 0;
+            text-align: center;
+            animation: footer-slide 2s ease-in;
+        }
+
+        @keyframes footer-slide {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            transition: color 0.3s, transform 0.3s;
+            animation: icon-bounce 2s infinite;
+        }
+
+        .social-icons img {
+            width: 32px;
+            height: 32px;
+        }
+
+        @keyframes icon-bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2) rotate(360deg);
+            transition: transform 0.5s;
+        }
+
+        .social-btns {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn, .messenger-btn {
+            background: transparent;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            text-align: center;
+            animation: btn-attention 2s infinite;
+        }
+
+        .whatsapp-btn img, .messenger-btn img {
+            width: 32px;
+            height: 32px;
+        }
+
+        @keyframes btn-attention {
+            0% { transform: scale(1); box-shadow: 0 0 10px #40E0D0; }
+            50% { transform: scale(1.1); box-shadow: 0 0 20px #ff5722; }
+            100% { transform: scale(1); box-shadow: 0 0 10px #40E0D0; }
+        }
+
+        .whatsapp-btn {
+            background: #25D366; /* Green for WhatsApp */
+        }
+
+        .messenger-btn {
+            background: #0084ff; /* Blue for Messenger */
+        }
+
+        .whatsapp-btn:hover, .messenger-btn:hover {
+            transform: scale(1.2) rotate(360deg);
+            transition: transform 0.5s;
+        }
+
+        .chatbot {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            width: 300px;
+            height: 400px;
+            background: #1e1e1e;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            display: none;
+            flex-direction: column;
+            z-index: 1000;
+            animation: chatbot-pop 1s ease-out;
+        }
+
+        @keyframes chatbot-pop {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .chatbot-header {
+            background: linear-gradient(45deg, #2196f3, #4fc3f7);
+            padding: 10px;
+            border-radius: 15px 15px 0 0;
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+            animation: header-glow 2s infinite alternate;
+        }
+
+        @keyframes header-glow {
+            from { box-shadow: 0 0 5px #2196f3; }
+            to { box-shadow: 0 0 15px #40E0D0; }
+        }
+
+        .chatbot-body {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+            color: #ffffff;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 10px;
+            background: #333333;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .chatbot-input input {
+            flex-grow: 1;
+            margin: 0;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .chatbot-input button {
+            background: #2196f3;
+            border: none;
+            padding: 10px;
+            color: #ffffff;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+            animation: button-pulse 1.5s infinite;
+        }
+
+        @keyframes button-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 200px;
+            right: 20px;
+            background: #ff5722;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            transition: transform 0.3s;
+            animation: toggle-spin 5s infinite linear;
+            text-align: center;
+        }
+
+        .chatbot-toggle img {
+            width: 32px;
+            height: 32px;
+        }
+
+        @keyframes toggle-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .success-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4caf50;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .about-content, .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            #about h1 {
+                font-size: 36px;
+            }
+
+            #about p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">TEAM Acquisition</div>
+            <div class="nav-links">
+                <a href="index.html#hero">Accueil</a>
+                <a href="about.html">À propos</a>
+                <a href="realisations.html">Réalisations</a>
+                <a href="contact.html">Contact</a>
+                <a href="index.html#calculator" class="btn">Devis Gratuit</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h1>À propos de TEAM Acquisition</h1>
+            <p>TEAM Acquisition est une agence digitale innovante basée à Antananarivo, Madagascar, spécialisée dans la création de sites web professionnels pour les hôtels et restaurants. Notre équipe d'experts combine créativité, technologie et connaissance approfondie du marché local pour offrir des solutions sur mesure qui boostent la visibilité en ligne et les revenus de nos clients. Nous sommes fiers d'être le partenaire privilégié des établissements hôteliers et de restauration à Madagascar.</p>
+            
+            <h2>Pourquoi nous choisissons les restaurants et hôtels à Madagascar ?</h2>
+            <p>Madagascar est un joyau touristique avec une croissance rapide du secteur hôtelier et de la restauration, grâce à sa biodiversité unique, ses plages paradisiaques et sa culture riche. Cependant, de nombreux établissements manquent d'une présence en ligne forte, ce qui limite leur potentiel. Nous avons choisi ce focus pour plusieurs raisons :</p>
+            <ul class="value-list">
+                <li><strong>Potentiel inexploité :</strong> 80% des touristes recherchent des hébergements et restaurants en ligne avant leur voyage. Sans site web optimisé, les établissements malgaches perdent une part importante de ce marché.</li>
+                <li><strong>Économie locale :</strong> En aidant les hôtels et restaurants à digitaliser, nous contribuons à l'économie malgache, créant des emplois et boostant le tourisme durable.</li>
+                <li><strong>Expertise locale :</strong> Basés à Madagascar, nous comprenons les défis spécifiques comme l'accès internet limité et les besoins en multilinguisme (français, anglais, malgache).</li>
+                <li><strong>Impact mesurable :</strong> Nos clients voient en moyenne +85% de visibilité en ligne et +60% de réservations, transformant leur business.</li>
+                <li><strong>Passion pour l'hospitalité :</strong> Nous aimons valoriser la cuisine malgache et l'hospitalité unique de l'île, en les rendant accessibles au monde entier via le digital.</li>
+            </ul>
+            
+            <h2>Nos Valeurs Ajoutées</h2>
+            <ul class="value-list">
+                <li><strong>Innovation constante :</strong> Nous utilisons les dernières technologies (responsive design, SEO avancé, intégrations e-commerce) pour des sites performants et sécurisés.</li>
+                <li><strong>Approche personnalisée :</strong> Chaque projet est unique, adapté à votre marque, avec une formation gratuite pour gérer votre site indépendamment.</li>
+                <li><strong>Rapport qualité-prix imbattable :</strong> Des prix accessibles dès 600000 AR, avec hébergement et domaine inclus, et une garantie satisfaction ou remboursé.</li>
+                <li><strong>Support local 24/7 :</strong> Assistance technique rapide en français et malgache, avec maintenance mensuelle optionnelle.</li>
+                <li><strong>Impact environnemental :</strong> Nous promouvons des pratiques éco-responsables dans nos designs, comme l'optimisation pour réduire la consommation énergétique des sites.</li>
+                <li><strong>Résultats prouvés :</strong> Nos clients rapportent une augmentation moyenne de 45% du chiffre d'affaires grâce à nos solutions.</li>
+                <li><strong>Partenariats stratégiques :</strong> Collaborations avec des plateformes comme Google My Business et TripAdvisor pour maximiser votre visibilité.</li>
+            </ul>
+            
+            <div class="about-content">
+                <div class="about-item">
+                    <img src="https://images.unsplash.com/photo-1516321310763-4b6f4b81c0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Notre mission">
+                    <h3>Notre Mission</h3>
+                    <p>Offrir des solutions digitales sur mesure qui permettent aux hôtels et restaurants de se démarquer dans un marché compétitif, en augmentant leur visibilité et leurs revenus grâce à des sites web optimisés. Nous visons à démocratiser l'accès au digital pour les PME malgaches, en rendant la technologie accessible et rentable.</p>
+                </div>
+                <div class="about-item">
+                    <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Notre vision">
+                    <h3>Notre Vision</h3>
+                    <p>Devenir le leader incontesté en solutions web pour l'hôtellerie et la restauration à Madagascar, en exportant notre expertise vers l'océan Indien. Nous imaginons un Madagascar où chaque établissement touristique est connecté, prospère et visible mondialement.</p>
+                </div>
+                <div class="about-item">
+                    <img src="https://images.unsplash.com/photo-1516321165247-7b3895a84a3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Nos valeurs">
+                    <h3>Nos Valeurs</h3>
+                    <p>Qualité, créativité et satisfaction client sont au cœur de notre approche. Nous croyons en des partenariats durables et en des solutions qui évoluent avec les besoins de nos clients. Intégrité, innovation et engagement local guident toutes nos actions.</p>
+                </div>
+            </div>
+            <h2>Notre Équipe</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://www.svgrepo.com/show/452030/avatar-default.svg" alt="Membre 1">
+                    <h3>Jean Rakoto</h3>
+                    <p>Fondateur & Développeur Web</p>
+                    <p>Expert en création de sites web avec plus de 10 ans d'expérience dans le développement digital. Passionné par le tourisme malgache, Jean a fondé TEAM Acquisition pour combler le gap digital dans le secteur.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://www.svgrepo.com/show/452030/avatar-default.svg" alt="Membre 2">
+                    <h3>Maria Andria</h3>
+                    <p>Designer UI/UX</p>
+                    <p>Passionnée par la création de designs modernes et intuitifs qui captivent les utilisateurs. Maria intègre les éléments culturels malgaches dans ses designs pour une expérience authentique.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://www.svgrepo.com/show/452030/avatar-default.svg" alt="Membre 3">
+                    <h3>Luc Rabe</h3>
+                    <p>Spécialiste SEO</p>
+                    <p>Expert en optimisation pour les moteurs de recherche, garantissant une visibilité maximale. Luc utilise des stratégies locales pour cibler les touristes internationaux intéressés par Madagascar.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://www.svgrepo.com/show/452030/avatar-default.svg" alt="Membre 4">
+                    <h3>Sophie Razafy</h3>
+                    <p>Chef de Projet</p>
+                    <p>Gère les projets de A à Z, assurant une livraison dans les délais et une satisfaction client optimale. Avec son background en hôtellerie, Sophie comprend parfaitement les besoins du secteur.</p>
+                </div>
+            </div>
+            <a href="contact.html" class="btn">Contactez-nous</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>TEAM Acquisition</h3>
+                    <p>Spécialistes en création de sites web pour hôtels et restaurants à Madagascar. Nous transformons votre établissement avec une présence en ligne professionnelle.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com"><img src="https://simpleicons.org/icons/facebook.svg" alt="Facebook"></a>
+                        <a href="https://twitter.com"><img src="https://simpleicons.org/icons/x.svg" alt="Twitter"></a>
+                        <a href="https://instagram.com"><img src="https://simpleicons.org/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="https://linkedin.com"><img src="https://simpleicons.org/icons/linkedin.svg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="index.html#hero">Accueil</a></li>
+                        <li><a href="about.html">À propos</a></li>
+                        <li><a href="realisations.html">Réalisations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Nos services</h3>
+                    <ul>
+                        <li>Site Vitrine</li>
+                        <li>E-commerce</li>
+                        <li>Réservation en ligne</li>
+                        <li>Maintenance</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contactez-nous</h3>
+                    <p>Antananarivo, Madagascar</p>
+                    <p>+261 34 00 000 00</p>
+                    <p>contact@team-acquisition.mg</p>
+                    <p>Lun-Ven: 9h-17h</p>
+                </div>
+            </div>
+            <p>© 2023 TEAM Acquisition. Tous droits réservés.</p>
+            <p>Conçu avec ❤️ à Madagascar</p>
+        </div>
+    </footer>
+
+    <div class="social-btns">
+        <a href="https://wa.me/+261340000000" class="whatsapp-btn"><img src="https://simpleicons.org/icons/whatsapp.svg" alt="WhatsApp"></a>
+        <a href="https://m.me/yourpage" class="messenger-btn"><img src="https://simpleicons.org/icons/facebookmessenger.svg" alt="Messenger"></a>
+    </div>
+
+    <div class="chatbot-toggle"><img src="https://www.svgrepo.com/show/90728/robot.svg" alt="Chatbot"></div>
+    <div class="chatbot">
+        <div class="chatbot-header">Chatbot TEAM Acquisition</div>
+        <div class="chatbot-body" id="chatbot-body">
+            <p>Bonjour ! Comment puis-je vous aider avec votre projet de site web ?</p>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Tapez votre message...">
+            <button onclick="sendMessage()">Envoyer</button>
+        </div>
+    </div>
+
+    <div class="success-message">Votre message a été envoyé avec succès!</div>
+
+    <script>
+        // Chatbot Logic
+        const chatbotResponses = {
+            'bonjour': 'Bonjour ! Comment puis-je vous aider avec votre site web ?',
+            'prix': 'Nos prix commencent à 600000 AR pour un site vitrine. Consultez notre calculateur de devis pour une estimation personnalisée !',
+            'délai': 'Un site vitrine peut être livré en 72 heures. Les sites e-commerce prennent 1 à 2 semaines.',
+            'services': 'Nous proposons des sites vitrines, e-commerce, optimisation SEO, réservation et commande en ligne, et maintenance.',
+            'contact': 'Vous pouvez nous contacter via le formulaire, par WhatsApp, Messenger, ou email à contact@team-acquisition.mg.',
+            default: 'Désolé, je n’ai pas compris. Pouvez-vous préciser ? Essayez des mots comme "prix", "délai", "services", ou "contact".'
+        };
+
+        function sendMessage() {
+            const input = document.getElementById('chatbot-input');
+            const message = input.value.trim().toLowerCase();
+            if (!message) return;
+
+            const chatBody = document.getElementById('chatbot-body');
+            const userMessage = document.createElement('p');
+            userMessage.textContent = `Vous: ${message}`;
+            chatBody.appendChild(userMessage);
+
+            const response = Object.keys(chatbotResponses).find(key => message.includes(key)) 
+                ? chatbotResponses[Object.keys(chatbotResponses).find(key => message.includes(key))]
+                : chatbotResponses.default;
+            const botMessage = document.createElement('p');
+            botMessage.textContent = `Bot: ${response}`;
+            chatBody.appendChild(botMessage);
+
+            chatBody.scrollTop = chatBody.scrollHeight;
+            input.value = '';
+        }
+
+        // Chatbot Toggle
+        document.querySelector('.chatbot-toggle').addEventListener('click', () => {
+            const chatbot = document.querySelector('.chatbot');
+            chatbot.style.display = chatbot.style.display === 'none' ? 'flex' : 'none';
+        });
+
+        // Auto message after 2 minutes
+        setTimeout(() => {
+            const chatbot = document.querySelector('.chatbot');
+            chatbot.style.display = 'flex';
+            const chatBody = document.getElementById('chatbot-body');
+            const autoMessage = document.createElement('p');
+            autoMessage.textContent = `Bot: Bonjour ! Avez-vous des questions sur nos services ? N'hésitez pas à demander !`;
+            chatBody.appendChild(autoMessage);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }, 120000); // 2 minutes = 120000 ms
+    </script>
+</body>
+</html>
