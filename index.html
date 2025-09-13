@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-   <!-- Global site tag (gtag.js) - Google Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11140500339"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Ads -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11140500339"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  // Configuration Google Ads
-  gtag('config', 'AW-11140500339');
-</script>
+      // Configuration Google Ads
+      gtag('config', 'AW-11140500339');
+    </script>
 
-<!-- Event snippet for Annonce Appel Direct (3) conversion -->
-<script>
-  function gtag_report_conversion(url) {
-    var callback = function () {
-      if (typeof url !== 'undefined') {
-        window.location = url;
+    <!-- Event snippet for Annonce Appel Direct (3) conversion -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof url !== 'undefined') {
+            window.location = url;
+          }
+        };
+
+        gtag('event', 'conversion', {
+            'send_to': 'AW-11140500339/Cm8WCIuE_pkbEPOWmsAp', // <-- ID conversion correct
+            'value': 1.0,
+            'currency': 'USD',
+            'event_callback': callback
+        });
       }
-    };
-
-    gtag('event', 'conversion', {
-        'send_to': 'AW-11140500339/Cm8WCIuE_pkbEPOWmsAp', // <-- ID conversion correct
-        'value': 1.0,
-        'currency': 'USD',
-        'event_callback': callback
-    });
-  }
-</script>
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEAM Acquisition - Spécialiste Sites Web Hôtels & Restaurants</title>
@@ -491,6 +491,7 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-top: 50px;
+            display: none; /* Caché car les images ne sont pas disponibles */
         }
 
         .team-member {
@@ -1080,82 +1081,7 @@
             color: #ccc;
         }
 
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: rgba(0, 0, 0, 0.95);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                transition: var(--transition);
-                gap: 30px;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .chatbot-container {
-                width: calc(100% - 40px);
-                right: 20px;
-                bottom: 80px;
-            }
-
-           /* Bannière cookies */
+        /* Bannière cookies */
         #cookie-banner {
             position: fixed;
             bottom: 0;
@@ -1376,6 +1302,97 @@
             gap: 15px;
             margin-top: 20px;
         }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .cookie-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cookie-content {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+                gap: 30px;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .chatbot-container {
+                width: calc(100% - 40px);
+                right: 20px;
+                bottom: 80px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cookie-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .cookie-btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
@@ -1550,36 +1567,10 @@
                 </div>
                 <div class="about-text">
                     <h2>Notre histoire</h2>
-                    <p>Avant de devenir TEAM Acquisition, nous étions connus sous le nom de CrystalFlux. Avec le temps, nous avons évolué, appris, et compris qu’au-delà des technologies et du digital, ce qui compte vraiment, c’est l’humain.</p>
+                    <p>Avant de devenir TEAM Acquisition, nous étions connus sous le nom de CrystalFlux. Avec le temps, nous avons évolué, appris, et compris qu'au-delà des technologies et du digital, ce qui compte vraiment, c'est l'humain.</p>
                     <p>Basés à Behoririka, Antananarivo (IVD 23 BIS), nous restons accessibles et disponibles à tout moment, que ce soit par téléphone, WhatsApp ou par mail.</p>
                     <p>Nous avons choisi de nous concentrer sur les hôtels et restaurants car ce sont des établissements qui vivent de la relation directe et humaine avec leurs clients – exactement ce qui nous inspire.</p>
                     <a href="#contact" class="btn btn-primary">Rencontrons-nous</a>
-                </div>
-            </div>
-            <div class="team-grid">
-                <div class="team-member glow-border">
-                    <img src="pic.png" alt="Wells TODISON" class="team-img">
-                    <h3>Wells TODISON</h3>
-                    <p>CEO & PDG, Développeur Web & Application</p>
-                    <p>Expert en acquisition client, passionné par la création de solutions concrètes.</p>
-                </div>
-                <div class="team-member glow-border">
-                    <img src="Anna.jpg" alt="Anna MARIE" class="team-img">
-                    <h3>Anna MARIE</h3>
-                    <p>Directrice commerciale</p>
-                    <p>Responsable communication et service client, toujours à l’écoute pour bâtir des relations durables.</p>
-                </div>
-                <div class="team-member glow-border">
-                    <img src="joel1.png" alt="Joel" class="team-img">
-                    <h3>Joel</h3>
-                    <p>Expert en IA et automatisation</p>
-                    <p>Convaincu que la technologie doit rester simple et utile pour servir les clients.</p>
-                </div>
-                <div class="team-member glow-border">
-                    <img src="eric.jpg" alt="Florent RAHARINIRINA" class="team-img">
-                    <h3>Florent RAHARINIRINA</h3>
-                    <p>Consultant stratégique</p>
-                    <p>CEO de Reflet HQD, formateur et enseignant à l’Université de Toamasina.</p>
                 </div>
             </div>
         </div>
@@ -1852,7 +1843,7 @@
                         <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Oui, nous travaillons avec des photographes professionnels spécialisés dans l'hôtellerie et la restauration. Si vous n'avez pas de photos professionnelles de votre établissement, nous pouvons organiser une séance photo pour mettre en valeur vos espaces, chambres et plats (service supplémentaire).</p>
+                        <p>Oui, nous travaillons avec des photographes professionnels spécialisés dans l'hôtellerie et la restauration. If vous n'avez pas de photos professionnelles de votre établissement, nous pouvons organiser une séance photo pour mettre en valeur vos espaces, chambres et plats (service supplémentaire).</p>
                     </div>
                 </div>
                 
@@ -2203,167 +2194,6 @@
 
         // Calculateur de devis
         function setupCalculator() {
-            const checkboxes = document.querySelectorAll('.option-checkbox');
-            const totalElement = document.getElementById('total-price');
-            
-            checkboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', updateTotal);
-            });
-            
-            function updateTotal() {
-                let total = 0;
-                
-                checkboxes.forEach(checkbox => {
-                    if (checkbox.checked) {
-                        total += parseInt(checkbox.getAttribute('data-price'));
-                    }
-                });
-                
-                totalElement.textContent = `${total.toLocaleString()} AR`;
-            }
-        }
-
-        // FAQ Accordéon
-        function setupFAQ() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                question.addEventListener('click', () => {
-                    item.classList.toggle('active');
-                });
-            });
-        }
-
-        // Chatbot
-        function setupChatbot() {
-            const chatbotToggle = document.getElementById('chatbotToggle');
-            const chatbotContainer = document.getElementById('chatbotContainer');
-            const chatbotClose = document.getElementById('chatbotClose');
-            const chatbotSend = document.getElementById('chatbotSend');
-            const chatbotInput = document.getElementById('chatbotInput');
-            const chatbotMessages = document.getElementById('chatbotMessages');
-            
-            chatbotToggle.addEventListener('click', () => {
-                chatbotContainer.classList.toggle('active');
-            });
-            
-            chatbotClose.addEventListener('click', () => {
-                chatbotContainer.classList.remove('active');
-            });
-            
-            function addMessage(message, isUser = false) {
-                const messageDiv = document.createElement('div');
-                messageDiv.classList.add('message');
-                messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
-                messageDiv.textContent = message;
-                
-                chatbotMessages.appendChild(messageDiv);
-                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-            }
-            
-            function botResponse(userMessage) {
-                userMessage = userMessage.toLowerCase();
-                
-                if (userMessage.includes('bonjour') || userMessage.includes('salut')) {
-                    return 'Bonjour ! Comment puis-je vous aider aujourd\'hui ?';
-                } else if (userMessage.includes('prix') || userMessage.includes('tarif') || userMessage.includes('coût')) {
-                    return 'Nos prix commencent à 600 000 AR pour un site vitrine. Utilisez notre calculateur de devis pour une estimation précise!';
-                } else if (userMessage.includes('temps') || userMessage.includes('délai') || userMessage.includes('livraison')) {
-                    return 'La création d\'un site web prend généralement entre 1 et 6 semaines selon la complexité du projet.';
-                } else if (userMessage.includes('contact') || userMessage.includes('téléphone') || userMessage.includes('email')) {
-                    return 'Vous pouvez nous contacter au +261 32 64 123 38 ou par email à wellstodison@gmail.com. Nous sommes disponibles tous les jours de 8h à 20h.';
-                } else if (userMessage.includes('service') || userMessage.includes('offre')) {
-                    return 'Nous proposons des sites vitrine, e-commerce, maintenance, référencement SEO et hébergement web. Quel service vous intéresse?';
-                } else if (userMessage.includes('équipe') || userMessage.includes('qui êtes-vous')) {
-                    return 'Nous sommes une équipe de passionnés basée à Madagascar, spécialisée dans les solutions digitales pour hôtels et restaurants. Notre équipe comprend Wells, Anna, Joel et Florent.';
-                } else {
-                    return 'Je ne suis pas sûr de comprendre. Pouvez-vous reformuler votre question? Ou contactez-nous directement au +261 32 64 123 38 pour une assistance personnalisée.';
-                }
-            }
-            
-            function sendMessage() {
-                const message = chatbotInput.value.trim();
-                
-                if (message) {
-                    addMessage(message, true);
-                    chatbotInput.value = '';
-                    
-                    // Réponse du bot avec un délai
-                    setTimeout(() => {
-                        const response = botResponse(message);
-                        addMessage(response);
-                    }, 1000);
-                }
-            }
-            
-            chatbotSend.addEventListener('click', sendMessage);
-            
-            chatbotInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    sendMessage();
-                }
-            });
-            
-            // Message automatique après 2 minutes
-            setTimeout(() => {
-                if (!document.querySelector('.chatbot-container.active')) {
-                    chatbotContainer.classList.add('active');
-                    addMessage("Bonjour ! Vous naviguez sur notre site depuis un moment. Avez-vous des questions sur nos services? Je suis là pour vous aider!");
-                }
-            }, 120000); // 2 minutes
-        }
-
-        // Animation au défilement
-        function setupAnimations() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            // Observer les éléments à animer
-            document.querySelectorAll('.glow-border, .section-title, .stat-item, .service-item, .portfolio-item, .team-member, .value-item').forEach(el => {
-                el.style.opacity = 0;
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(el);
-            });
-        }
-
-        // Formulaire de contact
-        function setupContactForm() {
-            const contactForm = document.getElementById('contactForm');
-            
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                // Simulation d'envoi
-                alert('Merci pour votre message! Nous vous contacterons très bientôt.');
-                contactForm.reset();
-            });
-        }
-
-        // Initialisation
-        document.addEventListener('DOMContentLoaded', () => {
-            createStars();
-            setupMobileNav();
-            setupCalculator();
-            setupFAQ();
-            setupChatbot();
-            setupAnimations();
-            setupContactForm();
-            document.addEventListener('DOMContentLoaded', function() {
             const siteTypeCheckboxes = document.querySelectorAll('input[name="site-type"]');
             const optionCheckboxes = document.querySelectorAll('.option-checkbox:not([name="site-type"])');
             const totalElement = document.getElementById('total-price');
@@ -2473,11 +2303,144 @@
                 message += "\nTotal: " + total.toLocaleString() + " AR\n\n";
                 message += "Merci de me recontacter pour finaliser ce projet.";
                 
-                alert("Demande de devis envoyée! Nous vous contacterons sous 24h.\n\nDétails:\n" + message);
+                // Redirection vers WhatsApp avec le message pré-rempli
+                const whatsappUrl = `https://wa.me/261326412338?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
             });
-        });
-       
-       // Fonction pour afficher la bannière
+        }
+
+        // FAQ Accordéon
+        function setupFAQ() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        }
+
+        // Chatbot
+        function setupChatbot() {
+            const chatbotToggle = document.getElementById('chatbotToggle');
+            const chatbotContainer = document.getElementById('chatbotContainer');
+            const chatbotClose = document.getElementById('chatbotClose');
+            const chatbotSend = document.getElementById('chatbotSend');
+            const chatbotInput = document.getElementById('chatbotInput');
+            const chatbotMessages = document.getElementById('chatbotMessages');
+            
+            chatbotToggle.addEventListener('click', () => {
+                chatbotContainer.classList.toggle('active');
+            });
+            
+            chatbotClose.addEventListener('click', () => {
+                chatbotContainer.classList.remove('active');
+            });
+            
+            function addMessage(message, isUser = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message');
+                messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+                messageDiv.textContent = message;
+                
+                chatbotMessages.appendChild(messageDiv);
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+            
+            function botResponse(userMessage) {
+                userMessage = userMessage.toLowerCase();
+                
+                if (userMessage.includes('bonjour') || userMessage.includes('salut')) {
+                    return 'Bonjour ! Comment puis-je vous aider aujourd\'hui ?';
+                } else if (userMessage.includes('prix') || userMessage.includes('tarif') || userMessage.includes('coût')) {
+                    return 'Nos prix commencent à 600 000 AR pour un site vitrine. Utilisez notre calculateur de devis pour une estimation précise!';
+                } else if (userMessage.includes('temps') || userMessage.includes('délai') || userMessage.includes('livraison')) {
+                    return 'La création d\'un site web prend généralement entre 1 et 6 semaines selon la complexité du projet.';
+                } else if (userMessage.includes('contact') || userMessage.includes('téléphone') || userMessage.includes('email')) {
+                    return 'Vous pouvez nous contacter au +261 32 64 123 38 ou par email à wellstodison@gmail.com. Nous sommes disponibles tous les jours de 8h à 20h.';
+                } else if (userMessage.includes('service') || userMessage.includes('offre')) {
+                    return 'Nous proposons des sites vitrine, e-commerce, maintenance, référencement SEO et hébergement web. Quel service vous intéresse?';
+                } else if (userMessage.includes('équipe') || userMessage.includes('qui êtes-vous')) {
+                    return 'Nous sommes une équipe de passionnés basée à Madagascar, spécialisée dans les solutions digitales pour hôtels et restaurants.';
+                } else {
+                    return 'Je ne suis pas sûr de comprendre. Pouvez-vous reformuler votre question? Ou contactez-nous directement au +261 32 64 123 38 pour une assistance personnalisée.';
+                }
+            }
+            
+            function sendMessage() {
+                const message = chatbotInput.value.trim();
+                
+                if (message) {
+                    addMessage(message, true);
+                    chatbotInput.value = '';
+                    
+                    // Réponse du bot avec un délai
+                    setTimeout(() => {
+                        const response = botResponse(message);
+                        addMessage(response);
+                    }, 1000);
+                }
+            }
+            
+            chatbotSend.addEventListener('click', sendMessage);
+            
+            chatbotInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // Message automatique après 2 minutes
+            setTimeout(() => {
+                if (!document.querySelector('.chatbot-container.active')) {
+                    chatbotContainer.classList.add('active');
+                    addMessage("Bonjour ! Vous naviguez sur notre site depuis un moment. Avez-vous des questions sur nos services? Je suis là pour vous aider!");
+                }
+            }, 120000); // 2 minutes
+        }
+
+        // Animation au défilement
+        function setupAnimations() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observer les éléments à animer
+            document.querySelectorAll('.glow-border, .section-title, .stat-item, .service-item, .portfolio-item, .value-item').forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Formulaire de contact
+        function setupContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simulation d'envoi
+                alert('Merci pour votre message! Nous vous contacterons très bientôt.');
+                contactForm.reset();
+            });
+        }
+        
+        // Fonction pour afficher la bannière
         function showCookieBanner() {
             const banner = document.getElementById('cookie-banner');
             banner.style.display = 'block';
@@ -2574,24 +2537,28 @@
             if (performanceCookies === "true") {
                 console.log("Chargement de Google Analytics...");
                 
-                var gtag = document.createElement("script");
-                gtag.async = true;
-                gtag.src = "https://www.googletagmanager.com/gtag/js?id=AW-11140500339";
-                document.head.appendChild(gtag);
-
-                gtag.onload = function() {
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', 'AW-11140500339');
-                };
+                // Le script Google Analytics est déjà chargé dans le head
+                // On s'assure simplement que la configuration est bien appliquée
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'AW-11140500339');
             } else {
                 console.log("Les cookies de performance sont désactivés. Google Analytics ne sera pas chargé.");
             }
         }
-        
-        // Au chargement de la page
-        window.onload = function() {
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            createStars();
+            setupMobileNav();
+            setupCalculator();
+            setupFAQ();
+            setupChatbot();
+            setupAnimations();
+            setupContactForm();
+            
+            // Gestion des cookies
             let consent = localStorage.getItem("cookies_consent");
             
             if (consent === "accepted" || consent === "custom") {
@@ -2610,7 +2577,7 @@
                 // Afficher la bannière si aucun choix n'a été fait
                 setTimeout(showCookieBanner, 1000);
             }
-        };
+        });
         
         // Fermer le modal si on clique en dehors
         window.onclick = function(event) {
@@ -2619,17 +2586,6 @@
                 closeSettings();
             }
         };
-      });
-       
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
