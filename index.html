@@ -1,22 +1,36 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Google tag (gtag.js) -->
+   <!-- Global site tag (gtag.js) - Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11140500339"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
+  // Configuration Google Ads
   gtag('config', 'AW-11140500339');
 </script>
-    <!-- Event snippet for Annonce Appel Direct (3) conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <script> function gtag_report_conversion(url)
-{ var callback = function () 
-{ if (typeof(url) != 'undefined') { window.location = url; } }; 
- gtag('event', 'conversion', { 'send_to': 'AW-11140500339/Cm8WCIuE_pkbEPOWmsAp', 'value': 1.0, 'currency': 'USD', 'event_callback': callback }); 
- return false; } 
-    </script>
+
+<!-- Event snippet for Annonce Appel Direct (3) conversion -->
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof url !== 'undefined') {
+        window.location = url;
+      }
+    };
+
+    gtag('event', 'conversion', {
+        'send_to': 'AW-11140500339/Cm8WCIuE_pkbEPOWmsAp', // <-- ID conversion correct
+        'value': 1.0,
+        'currency': 'USD',
+        'event_callback': callback
+    });
+
+    return false; // Empêche l'action par défaut avant l'appel de callback
+  }
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEAM Acquisition - Spécialiste Sites Web Hôtels & Restaurants</title>
@@ -1817,12 +1831,14 @@
         <a href="https://wa.me/261326412338" class="quick-btn whatsapp-btn" target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="https://m.me/teamacquisition.mg" class="quick-btn messenger-btn" target="_blank">
+        <a href="https://m.me/61556596780311" class="quick-btn messenger-btn" target="_blank">
             <i class="fab fa-facebook-messenger"></i>
         </a>
-        <a onclick="return gtag_report_conversion('tel:+261326412338');" href="tel:+261326412338" class="quick-btn phone-btn">
-            <i class="fas fa-phone"></i>
-        </a>
+        <a href="tel:+261326412338" 
+   onclick="return gtag_report_conversion('tel:+261326412338');" 
+   class="quick-btn phone-btn">
+    <i class="fas fa-phone"></i>
+</a>
     </div>
 
     <script>
@@ -2159,6 +2175,7 @@
     </script>
 </body>
 </html>
+
 
 
 
