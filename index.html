@@ -10,6 +10,13 @@
 
   gtag('config', 'AW-11140500339');
 </script>
+    <!-- Event snippet for Annonce Appel Direct (3) conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script> function gtag_report_conversion(url)
+{ var callback = function () 
+{ if (typeof(url) != 'undefined') { window.location = url; } }; 
+ gtag('event', 'conversion', { 'send_to': 'AW-11140500339/Cm8WCIuE_pkbEPOWmsAp', 'value': 1.0, 'currency': 'USD', 'event_callback': callback }); 
+ return false; } 
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEAM Acquisition - Spécialiste Sites Web Hôtels & Restaurants</title>
@@ -1813,7 +1820,7 @@
         <a href="https://m.me/teamacquisition.mg" class="quick-btn messenger-btn" target="_blank">
             <i class="fab fa-facebook-messenger"></i>
         </a>
-        <a href="tel:+261326412338" class="quick-btn phone-btn">
+        <a onclick="return gtag_report_conversion('tel:+261326412338');" href="tel:+261326412338" class="quick-btn phone-btn">
             <i class="fas fa-phone"></i>
         </a>
     </div>
@@ -2152,6 +2159,7 @@
     </script>
 </body>
 </html>
+
 
 
 
