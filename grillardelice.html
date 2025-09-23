@@ -222,13 +222,13 @@
     <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 navbar" id="navbar">
         <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.php" class="text-2xl font-bold text-white font-serif">Grillardelice</a>
+            <a href="index.html" class="text-2xl font-bold text-white font-serif">Grillardelice</a>
             <ul class="hidden md:flex space-x-6">
-                <li><a href="index.php#about" class="text-lg nav-link hover:text-gray-400 transition-colors">À Propos</a></li>
-                <li><a href="index.php#menu" class="text-lg nav-link hover:text-gray-400 transition-colors">Menu</a></li>
-                <li><a href="index.php#testimonials" class="text-lg nav-link hover:text-gray-400 transition-colors">Témoignages</a></li>
-                <li><a href="index.php#contact" class="text-lg nav-link hover:text-gray-400 transition-colors">Contact</a></li>
-                <li><a href="reservation.php" class="text-lg hover:text-gray-400 transition-colors btn-primary py-2 px-6 rounded-full">Réservation</a></li>
+                <li><a href="#about" class="text-lg nav-link hover:text-gray-400 transition-colors">À Propos</a></li>
+                <li><a href="#menu" class="text-lg nav-link hover:text-gray-400 transition-colors">Menu</a></li>
+                <li><a href="#testimonials" class="text-lg nav-link hover:text-gray-400 transition-colors">Témoignages</a></li>
+                <li><a href="#contact" class="text-lg nav-link hover:text-gray-400 transition-colors">Contact</a></li>
+                <li><a href="reservation.html" class="text-lg hover:text-gray-400 transition-colors btn-primary py-2 px-6 rounded-full">Réservation</a></li>
             </ul>
             <button id="menu-toggle" class="md:hidden text-2xl text-white">
                 <i class="fas fa-bars"></i>
@@ -236,11 +236,11 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-gray-900 bg-opacity-90 z-40 flex flex-col items-center justify-center space-y-8 text-xl">
-            <a href="index.php#about" class="hover:text-gray-400 transition-colors" data-close-menu>À Propos</a>
-            <a href="index.php#menu" class="hover:text-gray-400 transition-colors" data-close-menu>Menu</a>
-            <a href="index.php#testimonials" class="hover:text-gray-400 transition-colors" data-close-menu>Témoignages</a>
-            <a href="index.php#contact" class="hover:text-gray-400 transition-colors" data-close-menu>Contact</a>
-            <a href="reservation.php" class="hover:text-gray-400 transition-colors" data-close-menu>Réservation</a>
+            <a href="#about" class="hover:text-gray-400 transition-colors" data-close-menu>À Propos</a>
+            <a href="#menu" class="hover:text-gray-400 transition-colors" data-close-menu>Menu</a>
+            <a href="#testimonials" class="hover:text-gray-400 transition-colors" data-close-menu>Témoignages</a>
+            <a href="#contact" class="hover:text-gray-400 transition-colors" data-close-menu>Contact</a>
+            <a href="reservation.html" class="hover:text-gray-400 transition-colors" data-close-menu>Réservation</a>
             <button class="absolute top-4 right-4 text-3xl text-white" data-close-menu>
                 <i class="fas fa-times"></i>
             </button>
@@ -252,7 +252,7 @@
         <div class="bg-black bg-opacity-50 p-8 md:p-12 rounded-lg shadow-2xl animate-fade-in-up">
             <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white font-serif">Grillardelice</h1>
             <p class="text-xl md:text-2xl mb-8 font-light text-gray-200">Une expérience culinaire unique à Antananarivo</p>
-            <a href="reservation.php" class="btn-primary py-3 px-6 rounded-full text-lg font-semibold shadow-lg hover:bg-opacity-90 transition-opacity">Réserver une Table</a>
+            <a href="reservation.html" class="btn-primary py-3 px-6 rounded-full text-lg font-semibold shadow-lg hover:bg-opacity-90 transition-opacity">Réserver une Table</a>
         </div>
     </section>
 
@@ -264,7 +264,7 @@
                 <p>Depuis notre ouverture en 2023, le Grillardelice s'est imposé comme une référence gastronomique à Antananarivo.</p>
                 <p>Notre passion pour la cuisine authentique et notre engagement à utiliser des ingrédients frais et locaux font de chaque repas une expérience mémorable. Notre chef exécutif, formé aux meilleures techniques internationales, réinterprète les classiques malgaches avec créativité et respect des traditions.</p>
                 <p>Dans un cadre élégant et chaleureux, nous vous invitons à découvrir une cuisine raffinée où le grill est à l'honneur, sublimant les saveurs naturelles des produits.</p>
-                <a href="about.php" class="inline-block mt-6 btn-primary py-3 px-6 rounded-full text-lg font-semibold shadow-lg">En savoir plus</a>
+                <a href="about.html" class="inline-block mt-6 btn-primary py-3 px-6 rounded-full text-lg font-semibold shadow-lg">En savoir plus</a>
             </div>
             <div class="relative overflow-hidden rounded-xl shadow-lg hover-effect-scale" data-aos="fade-left">
                 <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Intérieur du restaurant" class="w-full h-auto rounded-xl transition-transform duration-500">
@@ -289,41 +289,88 @@
             
             <!-- Menu Items -->
             <div id="menu-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <?php
-                // Connexion à la base de données
-                require_once 'db_config.php';
+                <!-- Exemples de plats -->
+                <div class="menu-item rounded-lg shadow-xl overflow-hidden cursor-pointer hover:bg-gray-700 bg-gray-800" data-category="grillades" data-aos="fade-up">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Brochettes de Zébu" class="w-full h-48 object-cover">
+                        <div class="price-tag">35 000 AR</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Brochettes de Zébu</h3>
+                        <p class="text-accent-color font-bold mb-4">35 000 AR</p>
+                        <p class="description text-gray-400 text-sm">Viande de zébu marinée aux épices malgaches, grillée à la perfection. Servie avec riz parfumé et achards.</p>
+                        <a href="reservation.html" class="mt-4 inline-block btn-secondary py-2 px-4 rounded-full text-sm font-semibold">Réserver maintenant</a>
+                    </div>
+                </div>
                 
-                // Récupération des plats depuis la base de données
-                $sql = "SELECT * FROM menu_items ORDER BY category, name";
-                $result = $conn->query($sql);
+                <div class="menu-item rounded-lg shadow-xl overflow-hidden cursor-pointer hover:bg-gray-700 bg-gray-800" data-category="grillades" data-aos="fade-up">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1606755962773-d324e4c6c37a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cochon de Lait à la Broche" class="w-full h-48 object-cover">
+                        <div class="price-tag">65 000 AR</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Cochon de Lait à la Broche</h3>
+                        <p class="text-accent-color font-bold mb-4">65 000 AR</p>
+                        <p class="description text-gray-400 text-sm">Cochon de lait entier rôti lentement sur broche, croustillant à l'extérieur et tendre à l'intérieur.</p>
+                        <a href="reservation.html" class="mt-4 inline-block btn-secondary py-2 px-4 rounded-full text-sm font-semibold">Réserver maintenant</a>
+                    </div>
+                </div>
                 
-                if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-                        $category_class = strtolower($row['category']);
-                        echo '
-                        <div class="menu-item rounded-lg shadow-xl overflow-hidden cursor-pointer hover:bg-gray-700 bg-gray-800" data-category="' . $category_class . '" data-aos="fade-up">
-                            <div class="relative overflow-hidden">
-                                <img src="' . htmlspecialchars($row['image_url']) . '" alt="' . htmlspecialchars($row['name']) . '" class="w-full h-48 object-cover">
-                                <div class="price-tag">' . number_format($row['price'], 0, ',', ' ') . ' AR</div>
-                            </div>
-                            <div class="p-6">
-                                <h3 class="text-xl font-semibold mb-2 text-white">' . htmlspecialchars($row['name']) . '</h3>
-                                <p class="text-accent-color font-bold mb-4">' . number_format($row['price'], 0, ',', ' ') . ' AR</p>
-                                <p class="description text-gray-400 text-sm">' . htmlspecialchars($row['description']) . '</p>
-                                <a href="reservation.php" class="mt-4 inline-block btn-secondary py-2 px-4 rounded-full text-sm font-semibold">Réserver maintenant</a>
-                            </div>
-                        </div>';
-                    }
-                } else {
-                    echo '<div class="col-12 text-center"><p class="text-gray-300">Aucun plat disponible pour le moment.</p></div>';
-                }
+                <div class="menu-item rounded-lg shadow-xl overflow-hidden cursor-pointer hover:bg-gray-700 bg-gray-800" data-category="entrées" data-aos="fade-up">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Salade de Foza" class="w-full h-48 object-cover">
+                        <div class="price-tag">18 000 AR</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Salade de Foza</h3>
+                        <p class="text-accent-color font-bold mb-4">18 000 AR</p>
+                        <p class="description text-gray-400 text-sm">Crevettes fraîches marinées au citron vert et coriandre, servies sur un lit de salade croquante.</p>
+                        <a href="reservation.html" class="mt-4 inline-block btn-secondary py-2 px-4 rounded-full text-sm font-semibold">Réserver maintenant</a>
+                    </div>
+                </div>
                 
-                $conn->close();
-                ?>
+                <div class="menu-item rounded-lg shadow-xl overflow-hidden cursor-pointer hover:bg-gray-700 bg-gray-800" data-category="entrées" data-aos="fade-up">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Samoussas de Légumes" class="w-full h-48 object-cover">
+                        <div class="price-tag">12 000 AR</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Samoussas de Légumes</h3>
+                        <p class="text-accent-color font-bold mb-4">12 000 AR</p>
+                        <p class="description text-gray-400 text-sm">Triangle de pâte fine farci de légumes locaux épicés, frit à la perfection.</p>
+                        <a href="reservation.html" class="mt-4 inline-block btn-secondary py-2 px-4 rounded-full text-sm font-semibold">Réserver maintenant</a>
+                    </div>
+                </div>
+                
+                <div class="menu-item rounded-lg shadow-xl overflow-hidden cursor-pointer hover:bg-gray-700 bg-gray-800" data-category="spécialités" data-aos="fade-up">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Romazava Royal" class="w-full h-48 object-cover">
+                        <div class="price-tag">28 000 AR</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Romazava Royal</h3>
+                        <p class="text-accent-color font-bold mb-4">28 000 AR</p>
+                        <p class="description text-gray-400 text-sm">Plat traditionnel malgache revisité avec trois viandes mijotées avec des brèdes et épices.</p>
+                        <a href="reservation.html" class="mt-4 inline-block btn-secondary py-2 px-4 rounded-full text-sm font-semibold">Réserver maintenant</a>
+                    </div>
+                </div>
+                
+                <div class="menu-item rounded-lg shadow-xl overflow-hidden cursor-pointer hover:bg-gray-700 bg-gray-800" data-category="desserts" data-aos="fade-up">
+                    <div class="relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Crème de Mangue" class="w-full h-48 object-cover">
+                        <div class="price-tag">15 000 AR</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-white">Crème de Mangue</h3>
+                        <p class="text-accent-color font-bold mb-4">15 000 AR</p>
+                        <p class="description text-gray-400 text-sm">Crème légère à la mangue fraîche de Madagascar, accompagnée de copeaux de noix de coco.</p>
+                        <a href="reservation.html" class="mt-4 inline-block btn-secondary py-2 px-4 rounded-full text-sm font-semibold">Réserver maintenant</a>
+                    </div>
+                </div>
             </div>
             
             <div class="text-center mt-10">
-                <a href="reservation.php" class="btn-primary py-3 px-8 rounded-full text-lg font-semibold shadow-lg">Réserver une table</a>
+                <a href="reservation.html" class="btn-primary py-3 px-8 rounded-full text-lg font-semibold shadow-lg">Réserver une table</a>
             </div>
         </div>
     </section>
@@ -335,7 +382,7 @@
                 <div class="col-lg-8 text-center">
                     <h2 class="mb-4 text-3xl font-serif">Une expérience culinaire mémorable</h2>
                     <p class="text-xl mb-4">Réservez votre table pour découvrir l'authenticité des saveurs malgaches revisitées avec élégance.</p>
-                    <a href="reservation.php" class="btn-primary py-3 px-8 rounded-full text-lg font-semibold shadow-lg">Réserver maintenant</a>
+                    <a href="reservation.html" class="btn-primary py-3 px-8 rounded-full text-lg font-semibold shadow-lg">Réserver maintenant</a>
                 </div>
             </div>
         </div>
@@ -511,111 +558,95 @@
         </div>
     </footer>
 
-    <!-- Back to top button -->
-    <button id="backToTop" class="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full bg-accent-color text-white shadow-lg flex items-center justify-center hidden">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS Library -->
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
     <script>
-        // Initialisation AOS
+        // Initialize AOS
         AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
         });
-        
-        // Navigation scroll effect
+
+        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
-            const backToTop = document.getElementById('backToTop');
-            
-            if (window.scrollY > 50) {
+            if (window.scrollY > 100) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-            
-            // Back to top button
-            if (window.scrollY > 300) {
-                backToTop.classList.remove('hidden');
-            } else {
-                backToTop.classList.add('hidden');
-            }
-            
-            // Loading bar animation
-            const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-            document.querySelector('.loading-bar').style.width = scrollPercent + '%';
         });
-        
-        // Back to top button
-        document.getElementById('backToTop').addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuButtons = document.querySelectorAll('[data-close-menu]');
+
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
         });
-        
-        // Menu filtering
-        document.querySelectorAll('.category-btn').forEach(button => {
+
+        closeMenuButtons.forEach(button => {
             button.addEventListener('click', function() {
-                document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Loading bar
+        window.addEventListener('load', function() {
+            const loadingBar = document.querySelector('.loading-bar');
+            loadingBar.style.width = '100%';
+            setTimeout(() => {
+                loadingBar.style.opacity = '0';
+            }, 500);
+        });
+
+        // Menu filtering
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
                 this.classList.add('active');
                 
-                const category = this.dataset.category;
-                const menuItems = document.querySelectorAll('.menu-item');
+                const category = this.getAttribute('data-category');
                 
                 menuItems.forEach(item => {
-                    if (category === 'all' || item.dataset.category === category) {
-                        item.classList.remove('hidden');
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
                     } else {
-                        item.classList.add('hidden');
+                        item.style.display = 'none';
                     }
                 });
             });
         });
-        
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    const offsetTop = targetElement.offsetTop - 100;
                     window.scrollTo({
-                        top: offsetTop,
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
             });
         });
-        
-        // Form submission
+
+        // Contact form submission
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
             this.reset();
-        });
-        
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        document.querySelectorAll('[data-close-menu]').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
         });
     </script>
 </body>
