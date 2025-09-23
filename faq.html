@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | TEAM Acquisition - Questions Fréquentes</title>
+    <meta name="description" content="Toutes les réponses à vos questions sur nos services de création de sites web pour hôtels et restaurants, nos tarifs et notre processus de travail.">
+    <meta name="keywords" content="FAQ agence web, questions fréquentes, tarif site web, processus création site, hébergement, formation site internet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Styles supplémentaires pour améliorer l'expérience FAQ */
+        .faq-category {
+            background: rgba(26, 26, 48, 0.8);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .faq-category h2 {
+            color: #00FFFF;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+        }
+        
+        .faq-search-container {
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+        }
+        
+        .faq-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00FFFF;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #9cecfb;
+        }
+        
+        .accordion-button {
+            font-weight: 500;
+            padding: 1.25rem 1.5rem;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background: rgba(0, 255, 255, 0.1);
+            color: #00FFFF;
+        }
+        
+        .accordion-body {
+            line-height: 1.7;
+            padding: 1.5rem;
+        }
+        
+        .faq-icon {
+            color: #00FFFF;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #00FFFF;
+            color: #0A0A1F;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.4);
+        }
+        
+        .contact-prompt {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(79, 195, 247, 0.05) 100%);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .faq-stats {
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                padding: 0.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container" aria-hidden="true">
+        <div class="gradient-overlay"></div>
+        <div id="particles-js"></div>
+        <canvas id="star-field"></canvas>
+    </div>
+
+    <header class="sticky-top" role="banner">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark-transparent py-3" aria-label="Menu principal">
+            <div class="container">
+                <a href="index.html" class="navbar-brand logo" aria-label="Aller à la page d'accueil de TEAM Acquisition">
+                <img src="URL_DE_VOTRE_LOGO" alt="Logo de l'agence TEAM Acquisition" class="img-fluid logo-img">
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#about">À Propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="realisations.html">Réalisations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="equipe.html">Notre Équipe</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="faq.html" aria-current="page">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="faq-hero" class="d-flex align-items-center justify-content-center text-center py-5 position-relative text-white animated-section fade-in-up">
+            <div class="container hero-content">
+                <h1 class="display-3 fw-bold mb-3">Questions Fréquentes</h1>
+                <p class="lead mb-4">Trouvez rapidement les réponses à toutes vos questions sur nos services</p>
+                
+                <div class="faq-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Questions répondues</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">72h</span>
+                        <span class="stat-label">Délai site vitrine</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Satisfait ou remboursé</span>
+                    </div>
+                </div>
+                
+                <div class="faq-search-container">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="faqSearch" placeholder="Rechercher une question...">
+                        <button class="btn btn-primary custom-btn" type="button" id="searchButton">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-5 animated-section fade-in-up">
+            <div class="container">
+                <!-- Catégorie : Général et Tarifs -->
+                <div class="faq-category">
+                    <h2><i class="fas fa-info-circle"></i> Général et Tarifs</h2>
+                    <div class="accordion" id="faqGeneral">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Combien de temps faut-il pour créer mon site web ?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqGeneral">
+                                <div class="accordion-body">
+                                    <p>Pour un <strong>site vitrine standard</strong>, nous livrons en <strong>72 heures</strong> après validation du projet et réception de tous les éléments (textes, photos, etc.).</p>
+                                    <p>Les <strong>projets complexes</strong> (e-commerce, réservation) prennent entre <strong>1 et 2 semaines</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Qu'est-ce qui est inclus dans le prix du site vitrine ?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqGeneral">
+                                <div class="accordion-body">
+                                    <p>Le forfait à <strong>600 000 AR</strong> comprend :</p>
+                                    <ul>
+                                        <li>Design responsive moderne</li>
+                                        <li>5 pages (Accueil, À propos, Services/Menu, Galerie, Contact)</li>
+                                        <li>Intégration réseaux sociaux</li>
+                                        <li>Formulaire de contact</li>
+                                        <li>Hébergement professionnel 1 an</li>
+                                        <li>2 adresses email professionnelles</li>
+                                        <li>Formation à l'utilisation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Proposez-vous l'hébergement et le nom de domaine ?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqGeneral">
+                                <div class="accordion-body">
+                                    <p><strong>Oui</strong>, l'hébergement 1 an est inclus dans tous nos forfaits.</p>
+                                    <p>Le nom de domaine (<strong>.mg</strong> ou <strong>.com</strong>) est offert la 1ère année.</p>
+                                    <p>Le renouvellement annuel (hébergement + domaine) est de <strong>120 000 AR</strong> à partir de la 2ème année.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Catégorie : Fonctionnalités et Techniques -->
+                <div class="faq-category">
+                    <h2><i class="fas fa-cogs"></i> Fonctionnalités et Techniques</h2>
+                    <div class="accordion" id="faqTechnical">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Puis-je modifier mon site moi-même après la livraison ?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqTechnical">
+                                <div class="accordion-body">
+                                    <p><strong>Absolument !</strong> Nous vous formons gratuitement à l'interface d'administration.</p>
+                                    <p>Vous pourrez modifier :</p>
+                                    <ul>
+                                        <li>Textes et contenus</li>
+                                        <li>Images et galeries</li>
+                                        <li>Actualités et nouveautés</li>
+                                        <li>Produits (pour l'e-commerce)</li>
+                                    </ul>
+                                    <p>Tout cela de manière simple et intuitive.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Mon site sera-t-il adapté aux mobiles ?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqTechnical">
+                                <div class="accordion-body">
+                                    <p><strong>Oui</strong>, tous nos sites sont "<strong>responsive</strong>" et s'adaptent parfaitement à tous les écrans :</p>
+                                    <ul>
+                                        <li>Ordinateur</li>
+                                        <li>Tablette</li>
+                                        <li>Smartphone</li>
+                                    </ul>
+                                    <p>L'expérience utilisateur est optimisée pour chaque appareil.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Proposez-vous des solutions de paiement en ligne ?
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqTechnical">
+                                <div class="accordion-body">
+                                    <p><strong>Oui</strong>, pour l'e-commerce, nous intégrons les solutions malgaches :</p>
+                                    <ul>
+                                        <li>MVola</li>
+                                        <li>Orange Money</li>
+                                        <li>Airtel Money</li>
+                                        <li>Cartes bancaires</li>
+                                    </ul>
+                                    <p>Nous gérons la configuration technique pour vous.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSeven">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Comment fonctionne le référencement (SEO) inclus ?
+                                </button>
+                            </h2>
+                            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqTechnical">
+                                <div class="accordion-body">
+                                    <p>Nous appliquons les <strong>bonnes pratiques Google de base</strong> :</p>
+                                    <ul>
+                                        <li>Structure technique optimisée</li>
+                                        <li>Balises appropriées</li>
+                                        <li>Optimisation de la vitesse</li>
+                                    </ul>
+                                    <p>Pour une <strong>optimisation avancée</strong> (mots-clés, netlinking), une option payante existe à <strong>200 000 AR</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Catégorie : Processus et Support -->
+                <div class="faq-category">
+                    <h2><i class="fas fa-headset"></i> Processus et Support</h2>
+                    <div class="accordion" id="faqProcess">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingEight">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Comment se déroule le processus de création ?
+                                </button>
+                            </h2>
+                            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqProcess">
+                                <div class="accordion-body">
+                                    <p>Notre processus se déroule en <strong>4 étapes collaboratives</strong> :</p>
+                                    <ol>
+                                        <li><strong>Consultation & Analyse</strong> : Échange pour comprendre vos besoins</li>
+                                        <li><strong>Conception & Validation</strong> : Création de maquette avec votre approbation</li>
+                                        <li><strong>Développement & Intégration</strong> : Développement avec votre contenu</li>
+                                        <li><strong>Formation & Mise en ligne</strong> : Formation et lancement officiel</li>
+                                    </ol>
+                                    <p>Nous validons chaque étape avec vous.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingNine">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Que se passe-t-il si mon site rencontre un problème technique ?
+                                </button>
+                            </h2>
+                            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqProcess">
+                                <div class="accordion-body">
+                                    <p>Une <strong>garantie de 3 mois</strong> couvre toute correction technique gratuite.</p>
+                                    <p>Ensuite, vous pouvez souscrire à notre service de maintenance à <strong>50 000 AR/mois</strong> qui inclut :</p>
+                                    <ul>
+                                        <li>Assistance technique 24/7</li>
+                                        <li>Mises à jour régulières</li>
+                                        <li>Sauvegardes automatiques</li>
+                                        <li>Optimisations continues</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTen">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Comment puis-je suivre l'avancement de mon projet ?
+                                </button>
+                            </h2>
+                            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#faqProcess">
+                                <div class="accordion-body">
+                                    <p>Un <strong>chef de projet dédié</strong> est votre interlocuteur unique.</p>
+                                    <p>Il vous donne des nouvelles régulières via :</p>
+                                    <ul>
+                                        <li>WhatsApp</li>
+                                        <li>Email</li>
+                                        <li>Téléphone</li>
+                                    </ul>
+                                    <p>Vous êtes informé à chaque étape importante du projet.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingEleven">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Proposez-vous des formations pour utiliser le site ?
+                                </button>
+                            </h2>
+                            <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#faqProcess">
+                                <div class="accordion-body">
+                                    <p><strong>Oui</strong>, une formation complète de <strong>1h à 2h</strong> est incluse dans tous les forfaits.</p>
+                                    <p>Cette formation est disponible :</p>
+                                    <ul>
+                                        <li>En présentiel à Antananarivo</li>
+                                        <li>À distance (visioconférence)</li>
+                                    </ul>
+                                    <p>Vous apprendrez à gérer tous les aspects de votre site en toute autonomie.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Catégorie : Préparation et Garanties -->
+                <div class="faq-category">
+                    <h2><i class="fas fa-shield-alt"></i> Préparation et Garanties</h2>
+                    <div class="accordion" id="faqPreparation">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwelve">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Que dois-je préparer pour commencer le projet ?
+                                </button>
+                            </h2>
+                            <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#faqPreparation">
+                                <div class="accordion-body">
+                                    <p>Idéalement, préparez :</p>
+                                    <ul>
+                                        <li>Vos textes (présentation, menus, descriptions)</li>
+                                        <li>Vos photos en haute qualité</li>
+                                        <li>Votre logo (si vous en avez un)</li>
+                                        <li>Vos coordonnées complètes</li>
+                                    </ul>
+                                    <p><strong>Nous pouvons vous aider</strong> si vous avez besoin d'assistance pour préparer ces éléments.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThirteen">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Faut-il payer des frais supplémentaires pour la mise en ligne ?
+                                </button>
+                            </h2>
+                            <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#faqPreparation">
+                                <div class="accordion-body">
+                                    <p><strong>Non</strong>, la mise en ligne, l'hébergement et le nom de domaine la 1ère année sont inclus dans tous nos forfaits.</p>
+                                    <p>Seules les <strong>options supplémentaires</strong> (SEO, réservations, etc.) sont payantes.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFourteen">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Quelle est votre politique de confidentialité ?
+                                </button>
+                            </h2>
+                            <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#faqPreparation">
+                                <div class="accordion-body">
+                                    <p>Nous respectons <strong>scrupuleusement la confidentialité</strong> de vos données.</p>
+                                    <ul>
+                                        <li>Tous les sites ont un certificat SSL (https)</li>
+                                        <li>Aucune information n'est partagée avec des tiers</li>
+                                        <li>Vos données sont protégées conformément à la réglementation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFifteen">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                                    <span class="faq-icon"><i class="fas fa-question-circle"></i></span> Quelle est votre garantie de satisfaction ?
+                                </button>
+                            </h2>
+                            <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#faqPreparation">
+                                <div class="accordion-body">
+                                    <p>Nous offrons une garantie <strong>100% satisfait ou remboursé sous 15 jours</strong>.</p>
+                                    <p>De plus, une <strong>garantie technique gratuite de 3 mois</strong> est incluse sur tous les sites.</p>
+                                    <p>Votre satisfaction est notre priorité absolue.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section de contact -->
+                <div class="contact-prompt">
+                    <h3 class="mb-3">Vous ne trouvez pas la réponse à votre question ?</h3>
+                    <p class="mb-4">Notre équipe est à votre disposition pour répondre à toutes vos interrogations.</p>
+                    <a href="index.html#contact" class="btn btn-primary custom-btn me-3">Nous contacter</a>
+                    <a href="tel:+261326412338" class="btn btn-outline-primary">Appeler maintenant</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">À propos de nous</h5>
+                    <p class="text-white-50">
+                        TEAM Acquisition est une agence web spécialisée dans la création de solutions digitales sur mesure pour le secteur de l'hôtellerie et de la restauration à Madagascar.
+                    </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Accès rapide</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html#services" class="text-white-50 text-decoration-none">Nos Services</a></li>
+                        <li><a href="realisations.html" class="text-white-50 text-decoration-none">Nos Réalisations</a></li>
+                        <li><a href="faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
+                        <li><a href="index.html#contact" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li class="text-white-50">Behoririka, Antananarivo (IVD 23 BIS)</li>
+                        <li class="text-white-50">+261 32 64 123 38</li>
+                        <li class="text-white-50">wellstodison@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="text-white-50 mb-0">&copy; 2024 TEAM Acquisition. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bouton retour en haut -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // Scripts supplémentaires pour améliorer l'expérience FAQ
+        document.addEventListener('DOMContentLoaded', function() {
+            // Recherche dans la FAQ
+            const faqSearch = document.getElementById('faqSearch');
+            const searchButton = document.getElementById('searchButton');
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            
+            function searchFAQ() {
+                const searchTerm = faqSearch.value.toLowerCase().trim();
+                
+                if (searchTerm === '') {
+                    // Réinitialiser l'affichage si la recherche est vide
+                    accordionItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                    return;
+                }
+                
+                let foundResults = false;
+                
+                accordionItems.forEach(item => {
+                    const question = item.querySelector('.accordion-button').textContent.toLowerCase();
+                    const answer = item.querySelector('.accordion-body').textContent.toLowerCase();
+                    
+                    if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        foundResults = true;
+                        
+                        // Ouvrir l'élément trouvé
+                        const collapse = new bootstrap.Collapse(item.querySelector('.accordion-collapse'), {
+                            toggle: true
+                        });
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Afficher un message si aucun résultat n'est trouvé
+                if (!foundResults) {
+                    // Vous pourriez ajouter un message "Aucun résultat trouvé" ici
+                }
+            }
+            
+            searchButton.addEventListener('click', searchFAQ);
+            faqSearch.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchFAQ();
+                }
+            });
+            
+            // Bouton retour en haut
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Ouvrir automatiquement la première question de chaque catégorie
+            const firstQuestions = document.querySelectorAll('.faq-category .accordion-item:first-child .accordion-button');
+            firstQuestions.forEach(button => {
+                button.setAttribute('data-bs-toggle', 'collapse');
+            });
+            
+            // Animation des statistiques
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statNumber = entry.target;
+                        const targetNumber = parseInt(statNumber.textContent);
+                        let currentNumber = 0;
+                        const increment = targetNumber / 50;
+                        
+                        const timer = setInterval(() => {
+                            currentNumber += increment;
+                            if (currentNumber >= targetNumber) {
+                                statNumber.textContent = targetNumber + (statNumber.textContent.includes('+') ? '+' : '');
+                                clearInterval(timer);
+                            } else {
+                                statNumber.textContent = Math.floor(currentNumber) + (statNumber.textContent.includes('+') ? '+' : '');
+                            }
+                        }, 30);
+                        
+                        observer.unobserve(statNumber);
+                    }
+                });
+            }, observerOptions);
+            
+            statNumbers.forEach(stat => {
+                observer.observe(stat);
+            });
+            
+            // Amélioration de l'accessibilité
+            accordionItems.forEach(item => {
+                item.querySelector('.accordion-button').addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

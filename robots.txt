@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://proposition-services.netlify.app/sitemap.xml
