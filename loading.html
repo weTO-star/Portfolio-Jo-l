@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEAM Acquisition - Loading</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a1f 0%, #1a1a30 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Fond binaire animé - NOUVEAU STYLE */
+        .binary-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15; /* Un peu plus visible */
+            font-size: 16px;
+            color: #00FFFF;
+            line-height: 1.4;
+            pointer-events: none;
+            overflow: hidden;
+            /* Retire le overflow pour que les caractères puissent "tomber" ou se rafraîchir */
+        }
+
+        /* Colonnes pour le fond binaire */
+        .binary-column {
+            position: absolute;
+            height: 100%;
+            white-space: pre; /* Pour préserver les espaces et les sauts de ligne */
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        /* Animation des chiffres binaires */
+        .binary-char {
+            display: block; /* Chaque chiffre sur une nouvelle ligne */
+            animation: binaryChange 0.1s linear infinite; /* Animation de changement rapide */
+        }
+
+        .loading-container {
+            position: relative;
+            width: 500px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            background: rgba(10, 10, 31, 0.7);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.2);
+        }
+
+        /* Reste du CSS pour le logo et la barre de progression (inchangé) */
+        .logo-animation {
+            position: relative;
+            width: 250px;
+            height: 140px;
+            margin-bottom: 30px;
+        }
+
+        .logo-text {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            color: transparent;
+            background: linear-gradient(135deg, #00FFFF 0%, #4FC3F7 50%, #00FFFF 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            opacity: 0;
+            animation: textReveal 8s ease-in-out forwards;
+        }
+
+        .team-text {
+            font-size: 3rem;
+            top: 0;
+            animation-delay: 0.5s;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .acquisition-text {
+            font-size: 1.5rem;
+            bottom: 0;
+            letter-spacing: 4px;
+            animation-delay: 1s;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+        }
+
+        /* Graphique de trading */
+        .trading-chart {
+            width: 350px;
+            height: 120px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+        }
+
+        .grid-line {
+            position: absolute;
+            background: rgba(0, 255, 255, 0.1);
+            width: 100%;
+            height: 1px;
+        }
+
+        .candlestick {
+            position: absolute;
+            width: 6px;
+            background: #00FF00;
+            border-radius: 2px;
+            bottom: 0;
+            opacity: 0;
+            /* Retiré : animation: candleGrow 8s ease-in-out forwards; */
+            transition: height 0.3s ease-out, opacity 0.5s; /* Transition pour la croissance en JS */
+        }
+
+        .candle-wick {
+            position: absolute;
+            width: 1px;
+            background: #00FF00;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .chart-line {
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00FFFF, #4FC3F7);
+            width: 0%;
+            animation: chartLineProgress 8s ease-in-out forwards;
+        }
+
+        /* Barre de progression */
+        .progress-container {
+            width: 350px;
+            margin-top: 20px;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #00FFFF;
+            font-weight: bold;
+        }
+
+        .loading-bar-container {
+            width: 100%;
+            height: 10px;
+            background: rgba(0, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loading-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #00FFFF, #4FC3F7, #00FFFF);
+            border-radius: 10px;
+            animation: loadingProgress 8s ease-in-out forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        .percentage {
+            color: #00FFFF;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 15px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Animations */
+        @keyframes textReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+            20% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            80% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes loadingProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(-100px) translateX(20px);
+                opacity: 0;
+            }
+        }
+
+        /* NOUVELLE ANIMATION pour les chiffres binaires */
+        @keyframes binaryChange {
+            0%, 100% { content: '0'; }
+            50% { content: '1'; }
+        }
+
+        /* Mettre à jour l'animation pour chaque chiffre binaire */
+        .binary-char {
+            animation: none; /* Retirer l'animation CSS par défaut */
+            transition: color 0.1s;
+        }
+
+        /* Effets lumineux */
+        .glow-effect {
+            position: absolute;
+            width: 300px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.4) 0%, transparent 70%);
+            filter: blur(30px);
+            opacity: 0;
+            animation: glowPulse 3s ease-in-out infinite alternate;
+            animation-delay: 2s;
+        }
+
+        @keyframes glowPulse {
+            0% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0.7;
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="binary-background" id="binaryBackground"></div>
+
+    <div class="loading-container">
+        <div class="glow-effect"></div>
+
+        <div class="logo-animation">
+            <div class="logo-text team-text">TEAM</div>
+            <div class="logo-text acquisition-text">ACQUISITION</div>
+        </div>
+
+        <div class="trading-chart">
+            <div class="chart-grid" id="chartGrid"></div>
+            <div class="chart-line" id="chartLine"></div>
+            <div class="candlesticks-container" id="candlesticks"></div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-info">
+                <span>Chargement</span>
+                <span id="percentageText">0%</span>
+            </div>
+            <div class="loading-bar-container">
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+
+        <div class="percentage" id="finalPercentage">0%</div>
+    </div>
+
+    <script>
+        // --- 1. Changement du Fond Binaire (Matrix Style) ---
+        function createBinaryBackground() {
+            const container = document.getElementById('binaryBackground');
+            const columnCount = 50; // Nombre de colonnes
+            const charCount = 30;    // Nombre de chiffres par colonne
+
+            for (let i = 0; i < columnCount; i++) {
+                const column = document.createElement('div');
+                column.className = 'binary-column';
+                // Positionner les colonnes de manière uniforme
+                column.style.left = (i * (100 / columnCount)) + '%';
+                
+                for (let j = 0; j < charCount; j++) {
+                    const char = document.createElement('span');
+                    char.className = 'binary-char';
+                    char.textContent = Math.random() > 0.5 ? '1' : '0';
+                    column.appendChild(char);
+                }
+
+                container.appendChild(column);
+            }
+            
+            // Animation de changement de 0 à 1 en JS (plus facile à contrôler)
+            setInterval(() => {
+                const chars = container.querySelectorAll('.binary-char');
+                chars.forEach(char => {
+                    if (Math.random() < 0.05) { // 5% de chance de changement à chaque intervalle
+                        char.textContent = char.textContent === '0' ? '1' : '0';
+                        // Optionnel: ajouter un effet de couleur pour les changements
+                        char.style.color = Math.random() < 0.1 ? '#FFFFFF' : '#00FFFF';
+                    } else {
+                        char.style.color = '#00FFFF';
+                    }
+                });
+            }, 100); // Rafraîchissement rapide
+        }
+
+        // Création de la grille du graphique (inchangée)
+        function createChartGrid() {
+            const grid = document.getElementById('chartGrid');
+            const lines = 5;
+
+            for (let i = 0; i <= lines; i++) {
+                const line = document.createElement('div');
+                line.className = 'grid-line';
+                line.style.top = (i * 20) + '%';
+                grid.appendChild(line);
+            }
+        }
+
+        // --- 2. Changement de la Croissance Séquentielle des Chandeliers ---
+        const candleData = [];
+
+        function createCandlesticks() {
+            const container = document.getElementById('candlesticks');
+            const candleCount = 15;
+            const containerWidth = 350;
+            const candleWidth = 6;
+            const spacing = (containerWidth - candleCount * candleWidth) / (candleCount + 1);
+            
+            for (let i = 0; i < candleCount; i++) {
+                const candle = document.createElement('div');
+                candle.className = 'candlestick';
+                
+                const left = spacing + i * (candleWidth + spacing);
+                candle.style.left = left + 'px';
+                
+                // Préparer une hauteur cible pour chaque bougie (croissance générale)
+                const baseHeight = 20 + (i / (candleCount - 1)) * 60; // Croissance de 20% à 80%
+                const variation = (Math.random() * 20) - 10; // Variation de +/- 10%
+                const finalHeight = Math.max(10, baseHeight + variation); // Minimum 10%
+
+                // Mèche
+                const wick = document.createElement('div');
+                wick.className = 'candle-wick';
+                const wickHeight = Math.random() * 10 + 5;
+                wick.style.height = wickHeight + 'px';
+                // La position de la mèche sera mise à jour pendant l'animation
+                
+                candle.appendChild(wick);
+                container.appendChild(candle);
+                
+                candleData.push({
+                    element: candle,
+                    wickElement: wick,
+                    finalHeight: finalHeight,
+                    isGrowing: false // Indicateur de croissance
+                });
+            }
+        }
+        
+        function animateCandles() {
+            const totalDuration = 8000; // 8 secondes (doit correspondre à loadingProgress)
+            const candleDuration = totalDuration / candleData.length;
+            
+            let i = 0;
+            const candleTimer = setInterval(() => {
+                if (i >= candleData.length) {
+                    clearInterval(candleTimer);
+                    return;
+                }
+                
+                const current = candleData[i];
+                const prev = candleData[i - 1];
+
+                // 1. Arrêter la croissance de la bougie précédente (si elle existe)
+                if (prev && prev.isGrowing) {
+                    prev.isGrowing = false;
+                    // Assurer que la précédente est à sa hauteur finale
+                    prev.element.style.height = prev.finalHeight + '%';
+                    prev.wickElement.style.bottom = prev.finalHeight + '%';
+                }
+
+                // 2. Commencer la croissance de la bougie actuelle
+                current.isGrowing = true;
+                current.element.style.opacity = '1';
+                
+                let currentHeight = 0;
+                const startTime = Date.now();
+                
+                // Fonction de croissance progressive (pour un effet fluide)
+                function growStep() {
+                    const elapsed = Date.now() - startTime;
+                    const progress = Math.min(1, elapsed / (candleDuration * 0.7)); // 70% de la durée
+                    
+                    currentHeight = current.finalHeight * progress;
+                    current.element.style.height = currentHeight + '%';
+                    current.wickElement.style.bottom = currentHeight + '%';
+                    
+                    if (progress < 1 && current.isGrowing) {
+                        requestAnimationFrame(growStep);
+                    } else {
+                        // Fixer la hauteur finale si l'animation s'arrête
+                        current.element.style.height = current.finalHeight + '%';
+                        current.wickElement.style.bottom = current.finalHeight + '%';
+                    }
+                }
+                requestAnimationFrame(growStep);
+
+                i++;
+            }, candleDuration);
+        }
+
+        // Animation du pourcentage en temps réel (inchangée)
+        function animatePercentage() {
+            const percentageText = document.getElementById('percentageText');
+            const finalPercentage = document.getElementById('finalPercentage');
+            let percentage = 0;
+            const duration = 8000;
+            
+            const timer = setInterval(() => {
+                percentage += 1;
+                percentageText.textContent = percentage + '%';
+                finalPercentage.textContent = percentage + '%';
+                
+                if (percentage >= 100) {
+                    clearInterval(timer);
+                    // Redirection après l'animation
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1000);
+                }
+            }, duration / 100);
+        }
+
+        // Création de particules (inchangée)
+        function createParticles() {
+            const container = document.querySelector('.loading-container');
+            const particleCount = 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + 100 + '%';
+                particle.style.animationDelay = Math.random() * 4 + 's';
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            createBinaryBackground();
+            createChartGrid();
+            createCandlesticks();
+            createParticles();
+            animatePercentage();
+            animateCandles(); // Lancer la nouvelle animation de croissance
+        });
+    </script>
+</body>
+</html>
