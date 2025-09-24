@@ -13,6 +13,602 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Animations spécifiques pour la page Réalisations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes slideInFromLeft {
+            0% { opacity: 0; transform: translateX(-50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInFromRight {
+            0% { opacity: 0; transform: translateX(50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: 200px 0; }
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); }
+            100% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.5); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes lightBeam {
+            0% { transform: translateX(-100%) skewX(-15deg); }
+            100% { transform: translateX(200%) skewX(-15deg); }
+        }
+        
+        .realisations-hero {
+            position: relative;
+            overflow: hidden;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(10, 10, 31, 0.9) 0%, rgba(26, 26, 48, 0.8) 100%);
+        }
+        
+        .realisations-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgwLCAyNTUsIDI1NSwgMC4wNSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInScale 1.5s ease-out;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #00FFFF 0%, #4FC3F7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #E0E0E0;
+        }
+        
+        .portfolio-section {
+            padding: 100px 0;
+            background: rgba(10, 10, 31, 0.95);
+            position: relative;
+        }
+        
+        .portfolio-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iODAiIGhlaWdodD0iODAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxyZWN0IHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0icmdiYSgwLCAyNTUsIDI1NSwgMC4wMikiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+            opacity: 0.2;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #00FFFF;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #00FFFF, transparent);
+        }
+        
+        .section-title p {
+            font-size: 1.2rem;
+            color: #E0E0E0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .realisation-card {
+            background: rgba(26, 26, 48, 0.8);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            height: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .realisation-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .realisation-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 255, 255, 0.5);
+            border-color: rgba(0, 255, 255, 0.8);
+            animation: glow 2s infinite;
+        }
+        
+        .card-img-container {
+            position: relative;
+            overflow: hidden;
+            height: 320px; /* Augmenté pour plus d'espace image */
+        }
+        
+        .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .realisation-card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+        
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 31, 0.9) 100%);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            padding: 20px;
+        }
+        
+        .realisation-card:hover .card-overlay {
+            opacity: 1;
+        }
+        
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #00FFFF 0%, #4FC3F7 100%);
+            color: #0A0A1F;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+            animation: pulse 2s infinite;
+        }
+        
+        .card-body {
+            padding: 20px; /* Réduit pour donner plus d'espace aux images */
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card-title {
+            font-size: 1.3rem; /* Légèrement réduit */
+            font-weight: 600;
+            color: #00FFFF;
+            margin-bottom: 10px;
+        }
+        
+        .card-text {
+            color: #E0E0E0;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-size: 0.9rem; /* Légèrement réduit */
+        }
+        
+        .card-features {
+            margin-bottom: 15px;
+        }
+        
+        .card-features li {
+            color: #E0E0E0;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem; /* Légèrement réduit */
+        }
+        
+        .card-features i {
+            color: #00FFFF;
+            margin-right: 8px;
+            font-size: 0.8rem;
+        }
+        
+        .card-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #00FFFF 0%, #4FC3F7 100%);
+            color: #0A0A1F;
+            padding: 8px 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            font-size: 0.9rem;
+        }
+        
+        .card-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .card-btn:hover::before {
+            left: 100%;
+        }
+        
+        .card-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+            animation: pulse 0.5s;
+        }
+        
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .filter-btn {
+            background: rgba(26, 26, 48, 0.7);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            color: #E0E0E0;
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .filter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .filter-btn:hover::before {
+            left: 100%;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: linear-gradient(135deg, #00FFFF 0%, #4FC3F7 100%);
+            color: #0A0A1F;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+        }
+        
+        .stats-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(10, 10, 31, 0.9) 0%, rgba(26, 26, 48, 0.8) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgcGF0dGVyblRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHJlY3Qgd2lkdGg9IjUwIiBoZWlnaHQ9IjUwIiBmaWxsPSJyZ2JhKDAsIDI1NSwgMjU1LCAwLjAyKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.2;
+        }
+        
+        .stat-item {
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #00FFFF 0%, #4FC3F7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .stat-text {
+            font-size: 1.2rem;
+            color: #E0E0E0;
+            font-weight: 500;
+        }
+        
+        .testimonial-section {
+            padding: 100px 0;
+            background: rgba(10, 10, 31, 0.95);
+        }
+        
+        .testimonial-card {
+            background: rgba(26, 26, 48, 0.8);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(0, 255, 255, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 255, 255, 0.3);
+            border-color: rgba(0, 255, 255, 0.6);
+        }
+        
+        .testimonial-text {
+            color: #E0E0E0;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 2px solid #00FFFF;
+            transition: transform 0.3s ease;
+        }
+        
+        .testimonial-card:hover .author-avatar {
+            transform: scale(1.1);
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h5 {
+            color: #00FFFF;
+            margin: 0;
+            font-size: 1.1rem;
+        }
+        
+        .author-info p {
+            color: #E0E0E0;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1) 0%, rgba(79, 195, 247, 0.05) 100%);
+            text-align: center;
+            position: relative;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00FFFF;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            color: #E0E0E0;
+            margin-bottom: 30px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #00FFFF 0%, #4FC3F7 100%);
+            color: #0A0A1F;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-btn:hover::before {
+            left: 100%;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.4);
+            animation: pulse 0.5s;
+        }
+        
+        /* Effets lumineux supplémentaires */
+        .light-beam {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: skewX(-15deg);
+            animation: lightBeam 3s infinite;
+            pointer-events: none;
+        }
+        
+        .hover-glow {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hover-glow::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .hover-glow:hover::after {
+            opacity: 1;
+        }
+        
+        /* Animation pour les éléments au scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .card-img-container {
+                height: 250px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="background-container" aria-hidden="true">
@@ -24,7 +620,7 @@
     <header class="sticky-top" role="banner">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark-transparent py-3" aria-label="Menu principal">
             <div class="container">
-                <a href="#hero" class="navbar-brand logo" aria-label="Aller à la page d'accueil de TEAM Acquisition">
+                <a href="index.html" class="navbar-brand logo" aria-label="Aller à la page d'accueil de TEAM Acquisition">
                 <img src="logo.png" alt="Logo de l'agence TEAM Acquisition" class="img-fluid logo-img" style="height: 40px; width: auto; max-width: 120px;" >
                 </a>
                 
@@ -59,65 +655,606 @@
     </header>
 
     <main>
-        <section id="realisations-hero" class="d-flex align-items-center justify-content-center text-center py-5 position-relative text-white animated-section fade-in-up">
+        <section class="realisations-hero">
             <div class="container hero-content">
-                <h1 class="display-3 fw-bold mb-3">Nos Réalisations</h1>
-                <p class="lead mb-4">Découvrez nos projets et le résultat de notre expertise pour l'hôtellerie et la restauration.</p>
+                <h1>Nos Réalisations</h1>
+                <p>Découvrez notre portfolio d'excellence pour l'hôtellerie et la restauration. Des sites web qui transforment les visiteurs en clients fidèles.</p>
             </div>
         </section>
 
-        <section id="portfolio" class="py-5 animated-section fade-in-up">
+        <section class="portfolio-section">
             <div class="container">
-                <div class="row g-4">
-                    <div class="col-lg-6 mb-4">
-                        <div class="realisation-card card h-100">
-                            <img src="images/hotel-mockup.jpg" class="card-img-top img-fluid" alt="Maquette d'un site web d'hôtel">
+                <div class="section-title">
+                    <h2>Notre Portfolio</h2>
+                    <p>Explorez nos dernières créations pour des établissements prestigieux à Madagascar et au-delà.</p>
+                </div>
+                
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all">Tous les projets</button>
+                    <button class="filter-btn" data-filter="hotel">Hôtels</button>
+                    <button class="filter-btn" data-filter="restaurant">Restaurants</button>
+                    <button class="filter-btn" data-filter="resort">Résorts</button>
+                </div>
+                
+                <div class="row g-4" id="portfolio-grid">
+                    <!-- Hôtel Rive Gauche -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-category="hotel">
+                        <div class="realisation-card hover-glow">
+                            <div class="light-beam"></div>
+                            <div class="card-img-container">
+                                <img src="images/hotel-mockup.jpg" class="card-img-top" alt="Site web de l'Hôtel Rive Gauche">
+                                <div class="card-overlay">
+                                    <a href="https://example.com/hotel-rive-gauche" class="card-btn" target="_blank">Voir le site</a>
+                                </div>
+                                <div class="card-badge">Hôtel</div>
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Hôtel Rive Gauche</h5>
                                 <p class="card-text">Un site élégant et fonctionnel, conçu pour mettre en valeur les chambres et les services, et optimisé pour augmenter les réservations directes.</p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fas fa-check-circle text-primary me-2"></i> Moteur de réservation intégré</li>
-                                    <li><i class="fas fa-check-circle text-primary me-2"></i> Galerie photo haute résolution</li>
-                                    <li><i class="fas fa-check-circle text-primary me-2"></i> Visite virtuelle 360°</li>
-                                    <li><i class="fas fa-check-circle text-primary me-2"></i> Page de services et d'activités</li>
+                                <ul class="card-features list-unstyled">
+                                    <li><i class="fas fa-check-circle"></i> Moteur de réservation intégré</li>
+                                    <li><i class="fas fa-check-circle"></i> Galerie photo haute résolution</li>
+                                    <li><i class="fas fa-check-circle"></i> Visite virtuelle 360°</li>
                                 </ul>
-                                <a href="#" class="btn btn-primary mt-3" target="_blank">Voir le site <i class="fas fa-external-link-alt ms-2"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 mb-4">
-                        <div class="realisation-card card h-100">
-                            <img src="rest1.png" class="card-img-top img-fluid" alt="Maquette d'un site web de restaurant">
+                    
+                    <!-- Grillardelice -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-category="restaurant">
+                        <div class="realisation-card hover-glow">
+                            <div class="light-beam"></div>
+                            <div class="card-img-container">
+                                <img src="rest1.png" class="card-img-top" alt="Site web du restaurant Grillardelice">
+                                <div class="card-overlay">
+                                    <a href="grillardelice.html" class="card-btn" target="_blank">Voir le site</a>
+                                </div>
+                                <div class="card-badge">Restaurant</div>
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">Grillardelice</h5>
                                 <p class="card-text">Un site qui capture l'essence du menu, l'ambiance et de faciliter les réservations et commandes à emporter.</p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fas fa-check-circle text-primary me-2"></i> Menu interactif en ligne</li>
-                                    <li><i class="fas fa-check-circle text-primary me-2"></i> Formulaire de réservation et de commande</li>
-                                    <li><i class="fas fa-check-circle text-primary me-2"></i> Optimisation locale "restaurant [type de cuisine] [ville]"</li>
-                                    <li><i class="fas fa-check-circle text-primary me-2"></i> Intégration des avis clients</li>
+                                <ul class="card-features list-unstyled">
+                                    <li><i class="fas fa-check-circle"></i> Menu interactif en ligne</li>
+                                    <li><i class="fas fa-check-circle"></i> Formulaire de réservation et de commande</li>
+                                    <li><i class="fas fa-check-circle"></i> Optimisation locale</li>
                                 </ul>
-                                <a href="grillardelice.html" class="btn btn-primary mt-3" target="_blank">Voir le site <i class="fas fa-external-link-alt ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Résort Tropical -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-category="resort">
+                        <div class="realisation-card hover-glow">
+                            <div class="light-beam"></div>
+                            <div class="card-img-container">
+                                <img src="https://placehold.co/600x400/0a0a1f/00ffff?text=Résort+Tropical" class="card-img-top" alt="Site web du Résort Tropical">
+                                <div class="card-overlay">
+                                    <a href="https://example.com/resort-tropical" class="card-btn" target="_blank">Voir le site</a>
+                                </div>
+                                <div class="card-badge">Résort</div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Résort Tropical</h5>
+                                <p class="card-text">Site immersif présentant un complexe de luxe avec spa, restaurants et activités nautiques. Design élégant et expérience utilisateur optimale.</p>
+                                <ul class="card-features list-unstyled">
+                                    <li><i class="fas fa-check-circle"></i> Galerie immersive</li>
+                                    <li><i class="fas fa-check-circle"></i> Réservation en temps réel</li>
+                                    <li><i class="fas fa-check-circle"></i> Présentation des activités</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hôtel des Plages -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-category="hotel">
+                        <div class="realisation-card hover-glow">
+                            <div class="light-beam"></div>
+                            <div class="card-img-container">
+                                <img src="https://placehold.co/600x400/0a0a1f/00ffff?text=Hôtel+des+Plages" class="card-img-top" alt="Site web de l'Hôtel des Plages">
+                                <div class="card-overlay">
+                                    <a href="https://example.com/hotel-des-plages" class="card-btn" target="_blank">Voir le site</a>
+                                </div>
+                                <div class="card-badge">Hôtel</div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Hôtel des Plages</h5>
+                                <p class="card-text">Site web mettant en valeur la proximité avec la mer et les activités balnéaires. Design épuré et navigation intuitive.</p>
+                                <ul class="card-features list-unstyled">
+                                    <li><i class="fas fa-check-circle"></i> Carte interactive</li>
+                                    <li><i class="fas fa-check-circle"></i> Galerie vidéo</li>
+                                    <li><i class="fas fa-check-circle"></i> Tarifs dynamiques</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Le Gourmet Français -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-category="restaurant">
+                        <div class="realisation-card hover-glow">
+                            <div class="light-beam"></div>
+                            <div class="card-img-container">
+                                <img src="https://placehold.co/600x400/0a0a1f/00ffff?text=Le+Gourmet+Français" class="card-img-top" alt="Site web du restaurant Le Gourmet Français">
+                                <div class="card-overlay">
+                                    <a href="https://example.com/gourmet-francais" class="card-btn" target="_blank">Voir le site</a>
+                                </div>
+                                <div class="card-badge">Restaurant</div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Le Gourmet Français</h5>
+                                <p class="card-text">Site élégant pour un restaurant gastronomique français. Mise en avant de la carte, des chefs et de l'ambiance raffinée.</p>
+                                <ul class="card-features list-unstyled">
+                                    <li><i class="fas fa-check-circle"></i> Menu détaillé avec photos</li>
+                                    <li><i class="fas fa-check-circle"></i> Présentation de l'équipe</li>
+                                    <li><i class="fas fa-check-circle"></i> Réservation en ligne</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mountain Lodge -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-category="hotel">
+                        <div class="realisation-card hover-glow">
+                            <div class="light-beam"></div>
+                            <div class="card-img-container">
+                                <img src="https://placehold.co/600x400/0a0a1f/00ffff?text=Mountain+Lodge" class="card-img-top" alt="Site web du Mountain Lodge">
+                                <div class="card-overlay">
+                                    <a href="https://example.com/mountain-lodge" class="card-btn" target="_blank">Voir le site</a>
+                                </div>
+                                <div class="card-badge">Hôtel</div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Mountain Lodge</h5>
+                                <p class="card-text">Site web pour un lodge de montagne mettant en avant l'authenticité, le calme et les activités en pleine nature.</p>
+                                <ul class="card-features list-unstyled">
+                                    <li><i class="fas fa-check-circle"></i> Design naturel et épuré</li>
+                                    <li><i class="fas fa-check-circle"></i> Présentation des randonnées</li>
+                                    <li><i class="fas fa-check-circle"></i> Galerie saisonnière</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sushi Zen -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-category="restaurant">
+                        <div class="realisation-card hover-glow">
+                            <div class="light-beam"></div>
+                            <div class="card-img-container">
+                                <img src="https://placehold.co/600x400/0a0a1f/00ffff?text=Sushi+Zen" class="card-img-top" alt="Site web du restaurant Sushi Zen">
+                                <div class="card-overlay">
+                                    <a href="https://example.com/sushi-zen" class="card-btn" target="_blank">Voir le site</a>
+                                </div>
+                                <div class="card-badge">Restaurant</div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Sushi Zen</h5>
+                                <p class="card-text">Site minimaliste et élégant pour un restaurant de sushis. Design inspiré de l'esthétique japonaise avec une navigation fluide.</p>
+                                <ul class="card-features list-unstyled">
+                                    <li><i class="fas fa-check-circle"></i> Design japonais épuré</li>
+                                    <li><i class="fas fa-check-circle"></i> Menu interactif avec filtres</li>
+                                    <li><i class="fas fa-check-circle"></i> Commande en ligne</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Villa Paradisio -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-category="resort">
+                        <div class="realisation-card hover-glow">
+                            <div class="light-beam"></div>
+                            <div class="card-img-container">
+                                <img src="https://placehold.co/600x400/0a0a1f/00ffff?text=Villa+Paradisio" class="card-img-top" alt="Site web de la Villa Paradisio">
+                                <div class="card-overlay">
+                                    <a href="https://example.com/villa-paradisio" class="card-btn" target="_blank">Voir le site</a>
+                                </div>
+                                <div class="card-badge">Résort</div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Villa Paradisio</h5>
+                                <p class="card-text">Site luxueux pour une villa d'exception avec piscine privée et services sur mesure. Design élégant mettant en valeur le prestige.</p>
+                                <ul class="card-features list-unstyled">
+                                    <li><i class="fas fa-check-circle"></i> Design luxueux</li>
+                                    <li><i class="fas fa-check-circle"></i> Visite virtuelle</li>
+                                    <li><i class="fas fa-check-circle"></i> Présentation des services</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Café Central -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-category="restaurant">
+                        <div class="realisation-card hover-glow">
+                            <div class="light-beam"></div>
+                            <div class="card-img-container">
+                                <img src="https://placehold.co/600x400/0a0a1f/00ffff?text=Café+Central" class="card-img-top" alt="Site web du Café Central">
+                                <div class="card-overlay">
+                                    <a href="https://example.com/cafe-central" class="card-btn" target="_blank">Voir le site</a>
+                                </div>
+                                <div class="card-badge">Restaurant</div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Café Central</h5>
+                                <p class="card-text">Site chaleureux et convivial pour un café-restaurant. Mise en avant de l'ambiance, des produits frais et des événements.</p>
+                                <ul class="card-features list-unstyled">
+                                    <li><i class="fas fa-check-circle"></i> Design chaleureux</li>
+                                    <li><i class="fas fa-check-circle"></i> Présentation des produits</li>
+                                    <li><i class="fas fa-check-circle"></i> Calendrier des événements</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hôtel du Lac -->
+                    <div class="col-lg-4 col-md-6 mb-4" data-category="hotel">
+                        <div class="realisation-card hover-glow">
+                            <div class="light-beam"></div>
+                            <div class="card-img-container">
+                                <img src="https://placehold.co/600x400/0a0a1f/00ffff?text=Hôtel+du+Lac" class="card-img-top" alt="Site web de l'Hôtel du Lac">
+                                <div class="card-overlay">
+                                    <a href="https://example.com/hotel-du-lac" class="card-btn" target="_blank">Voir le site</a>
+                                </div>
+                                <div class="card-badge">Hôtel</div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Hôtel du Lac</h5>
+                                <p class="card-text">Site apaisant pour un hôtel au bord de l'eau. Design fluide et couleurs douces reflétant la sérénité du lieu.</p>
+                                <ul class="card-features list-unstyled">
+                                    <li><i class="fas fa-check-circle"></i> Design apaisant</li>
+                                    <li><i class="fas fa-check-circle"></i> Galerie des chambres</li>
+                                    <li><i class="fas fa-check-circle"></i> Présentation des services spa</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item fade-in">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-text">Projets Réalisés</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item fade-in">
+                            <span class="stat-number" data-count="95">0</span>
+                            <span class="stat-text">Clients Satisfaits</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item fade-in">
+                            <span class="stat-number" data-count="15">0</span>
+                            <span class="stat-text">Années d'Expérience</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-item fade-in">
+                            <span class="stat-number" data-count="24">0</span>
+                            <span class="stat-text">Support 24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonial-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Témoignages Clients</h2>
+                    <p>Découvrez ce que nos clients disent de notre travail et de leur expérience.</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="testimonial-card fade-in">
+                            <p class="testimonial-text">"L'équipe de TEAM Acquisition a transformé notre présence en ligne. Notre site web attire maintenant plus de réservations directes que jamais auparavant."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="https://placehold.co/100x100/0a0a1f/00ffff?text=PDG" alt="Photo du PDG de l'Hôtel Rive Gauche">
+                                </div>
+                                <div class="author-info">
+                                    <h5>Jean Dupont</h5>
+                                    <p>PDG, Hôtel Rive Gauche</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="testimonial-card fade-in">
+                            <p class="testimonial-text">"Le site créé par TEAM Acquisition a considérablement augmenté notre visibilité en ligne. Les réservations en ligne ont augmenté de 40% en seulement 3 mois."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="https://placehold.co/100x100/0a0a1f/00ffff?text=DG" alt="Photo du Directeur Général de Grillardelice">
+                                </div>
+                                <div class="author-info">
+                                    <h5>Marie Lambert</h5>
+                                    <p>Directrice, Grillardelice</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4">
+                        <div class="testimonial-card fade-in">
+                            <p class="testimonial-text">"Professionalisme, créativité et respect des délais. TEAM Acquisition a su comprendre nos besoins et créer un site qui représente parfaitement notre établissement."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="https://placehold.co/100x100/0a0a1f/00ffff?text=Manager" alt="Photo du Manager du Résort Tropical">
+                                </div>
+                                <div class="author-info">
+                                    <h5>Thomas Moreau</h5>
+                                    <p>Manager, Résort Tropical</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Prêt à transformer votre présence en ligne ?</h2>
+                    <p class="cta-text">Contactez-nous dès aujourd'hui pour discuter de votre projet et obtenir un site web qui impressionnera vos clients et augmentera vos réservations.</p>
+                    <a href="index.html#contact" class="cta-btn">Démarrer mon projet</a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="container py-4 text-center">
-            <p>&copy; 2024 TEAM Acquisition. Tous droits réservés.</p>
+    <footer class="footer bg-dark text-light py-4" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>TEAM Acquisition</h5>
+                    <p>Votre partenaire pour des sites web d'exception dans l'hôtellerie et la restauration.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Suivez-nous sur Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Suivez-nous sur Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Suivez-nous sur LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html#about">À propos</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="realisations.html">Réalisations</a></li>
+                        <li><a href="equipe.html">Notre équipe</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt"></i> Antananarivo, Madagascar</li>
+                        <li><i class="fas fa-phone"></i> +261 34 00 000 00</li>
+                        <li><i class="fas fa-envelope"></i> contact@teamacquisition.mg</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2023 TEAM Acquisition. Tous droits réservés.</p>
+            </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Animation des cartes au défilement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation des cartes de réalisations
+            const cards = document.querySelectorAll('.realisation-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Filtrage des projets
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('#portfolio-grid > div');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Retirer la classe active de tous les boutons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Ajouter la classe active au bouton cliqué
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // Animation des statistiques
+            const statNumbers = document.querySelectorAll('.stat-number');
+            let animated = false;
+            
+            function animateStats() {
+                if (animated) return;
+                
+                const statsSection = document.querySelector('.stats-section');
+                const sectionPosition = statsSection.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (sectionPosition < screenPosition) {
+                    statNumbers.forEach(stat => {
+                        const target = parseInt(stat.getAttribute('data-count'));
+                        let current = 0;
+                        const increment = target / 100;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            stat.textContent = Math.floor(current);
+                        }, 20);
+                    });
+                    
+                    animated = true;
+                }
+            }
+            
+            // Animation au scroll pour les éléments avec classe fade-in
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            function checkFade() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', function() {
+                animateStats();
+                checkFade();
+            });
+            
+            // Initialiser les animations au chargement
+            animateStats();
+            checkFade();
+            
+            // Initialiser les particules
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 80, density: { enable: true, value_area: 800 } },
+                        color: { value: "#00ffff" },
+                        shape: { type: "circle" },
+                        opacity: { value: 0.5, random: true },
+                        size: { value: 3, random: true },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: "#00ffff",
+                            opacity: 0.2,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 2,
+                            direction: "none",
+                            random: true,
+                            straight: false,
+                            out_mode: "out",
+                            bounce: false
+                        }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                            onhover: { enable: true, mode: "repulse" },
+                            onclick: { enable: true, mode: "push" },
+                            resize: true
+                        }
+                    },
+                    retina_detect: true
+                });
+            }
+            
+            // Champ d'étoiles
+            const canvas = document.getElementById('star-field');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                let width = window.innerWidth;
+                let height = window.innerHeight;
+                
+                canvas.width = width;
+                canvas.height = height;
+                
+                const stars = [];
+                const starCount = 100;
+                
+                for (let i = 0; i < starCount; i++) {
+                    stars.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        radius: Math.random() * 1.5,
+                        speed: Math.random() * 0.5,
+                        opacity: Math.random() * 0.5 + 0.2
+                    });
+                }
+                
+                function drawStars() {
+                    ctx.clearRect(0, 0, width, height);
+                    
+                    stars.forEach(star => {
+                        ctx.beginPath();
+                        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = `rgba(0, 255, 255, ${star.opacity})`;
+                        ctx.fill();
+                        
+                        star.x -= star.speed;
+                        
+                        if (star.x < 0) {
+                            star.x = width;
+                            star.y = Math.random() * height;
+                        }
+                    });
+                    
+                    requestAnimationFrame(drawStars);
+                }
+                
+                drawStars();
+                
+                window.addEventListener('resize', function() {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                    canvas.width = width;
+                    canvas.height = height;
+                });
+            }
+            
+            // Effet de pulse sur les boutons au survol
+            const buttons = document.querySelectorAll('.card-btn, .cta-btn, .filter-btn');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function() {
+                    this.style.animation = 'pulse 0.5s';
+                });
+                
+                button.addEventListener('mouseleave', function() {
+                    this.style.animation = '';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-
-
