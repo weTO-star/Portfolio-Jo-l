@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notre Équipe & Valeurs | TEAM Acquisition</title>
-    <meta name="description" content="Découvrez l'histoire de TEAM Acquisition, nos valeurs fondamentales et l'équipe qui se cache derrière nos solutions digitales pour les hôtels et restaurants à Madagascar.">
-    <meta name="keywords" content="équipe TEAM Acquisition, valeurs agence web, histoire Crystal Flux, agence web Madagascar, expertise hôtellerie restauration">
+    <meta name="description" content="Découvrez l'histoire de TEAM Acquisition, nos valeurs fondamentales, notre processus de création et l'équipe qui se cache derrière nos solutions digitales pour les hôtels et restaurants à Madagascar.">
+    <meta name="keywords" content="équipe TEAM Acquisition, valeurs agence web, histoire Crystal Flux, agence web Madagascar, expertise hôtellerie restauration, processus création site web">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,6 +13,179 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles personnalisés pour la page équipe */
+        .team-section {
+            padding: 5rem 0;
+        }
+        
+        .history-section, .values-section, .process-section, .location-section {
+            padding: 4rem 0;
+        }
+        
+        .history-section {
+            background-color: rgba(26, 26, 48, 0.7);
+        }
+        
+        .values-section {
+            background-color: rgba(10, 10, 31, 0.8);
+        }
+        
+        .process-section {
+            background-color: rgba(26, 26, 48, 0.7);
+        }
+        
+        .location-section {
+            background-color: rgba(10, 10, 31, 0.8);
+        }
+        
+        .section-content {
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: rgba(10, 10, 31, 0.5);
+            border: 1px solid var(--eff-border-glow);
+            box-shadow: 0 0 15px var(--eff-shadow-glow);
+            margin-bottom: 2rem;
+        }
+        
+        .section-img {
+            border-radius: 0.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .section-img:hover {
+            transform: scale(1.03);
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: 1rem;
+            background-color: rgba(26, 26, 48, 0.8);
+            border: 1px solid var(--eff-border-glow);
+            transition: var(--trans-slow);
+            height: 100%;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px var(--eff-shadow-glow);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            color: var(--clr-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .process-step {
+            position: relative;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background-color: rgba(10, 10, 31, 0.6);
+            border-radius: 1rem;
+            border-left: 4px solid var(--clr-primary);
+        }
+        
+        .process-step-number {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--clr-primary);
+            color: var(--clr-background-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 0 10px var(--eff-shadow-glow);
+        }
+        
+        .location-map {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            height: 300px;
+            background-color: #1a1a30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--clr-text-light);
+            font-size: 1.2rem;
+        }
+        
+        .team-member-card {
+            background-color: var(--clr-background-mid);
+            border: 1px solid var(--eff-border-glow);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--trans-fast);
+            height: 100%;
+        }
+        
+        .team-member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px var(--eff-shadow-glow);
+        }
+        
+        .team-member-card img {
+            border: 3px solid var(--clr-primary);
+            box-shadow: 0 0 15px var(--eff-shadow-glow);
+            margin-bottom: 1rem;
+        }
+        
+        .team-member-card h5 {
+            color: var(--clr-primary);
+            font-weight: 600;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 2rem 0;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: var(--clr-primary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--clr-primary);
+            box-shadow: 0 0 10px var(--eff-shadow-glow);
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--clr-primary);
+            margin-bottom: 0.5rem;
+        }
+    </style>
 </head>
 <body>
     <div class="background-container" aria-hidden="true">
@@ -24,7 +197,7 @@
     <header class="sticky-top" role="banner">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark-transparent py-3" aria-label="Menu principal">
             <div class="container">
-                <a href="#hero" class="navbar-brand logo" aria-label="Aller à la page d'accueil de TEAM Acquisition">
+                <a href="index.html" class="navbar-brand logo" aria-label="Aller à la page d'accueil de TEAM Acquisition">
                 <img src="logo.png" alt="Logo de l'agence TEAM Acquisition" class="img-fluid logo-img" style="height: 40px; width: auto; max-width: 120px;" >
                 </a>
                 
@@ -59,14 +232,552 @@
     </header>
 
     <main>
+        <!-- Section Hero -->
         <section id="equipe-hero" class="d-flex align-items-center justify-content-center text-center py-5 position-relative text-white animated-section fade-in-up">
             <div class="container hero-content">
-                <h1 class="display-3 fw-bold mb-3">Notre Équipe</h1>
-                <p class="lead mb-4">L'expertise, la passion et l'engagement de nos professionnels à votre service.</p>
+                <h1 class="display-3 fw-bold mb-3">Notre Équipe & Valeurs</h1>
+                <p class="lead mb-4">Découvrez l'histoire, les valeurs et l'équipe derrière TEAM Acquisition</p>
             </div>
         </section>
 
-        <section id="team" class="py-5 animated-section fade-in-up">
+        <!-- Section Histoire -->
+        <section id="history" class="history-section animated-section fade-in-up">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="section-content">
+                            <h2 class="section-title text-start">Notre Histoire</h2>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-date">Avant 2024</div>
+                                    <h4>CrystalFlux</h4>
+                                    <p>Notre agence a commencé sous le nom de CrystalFlux, développant une expertise solide dans les solutions digitales pour divers secteurs.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">2024</div>
+                                    <h4>TEAM Acquisition</h4>
+                                    <p>Nous avons évolué pour devenir TEAM Acquisition, en affinant notre expertise et en nous spécialisant exclusivement dans les solutions digitales pour les hôtels et restaurants.</p>
+                                </div>
+                            </div>
+                            <p><strong>Notre philosophie :</strong> Nous croyons que la vraie réussite naît de la proximité et de la confiance. Notre mission est de transformer votre établissement avec des outils digitaux performants, en plaçant l'humain au centre de toutes nos préoccupations.</p>
+                            <p>Nous sommes plus qu'un prestataire ; nous sommes un partenaire de votre croissance.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="https://via.placeholder.com/600x400/1a1a30/00ffff?text=Notre+Histoire" alt="Évolution de CrystalFlux à TEAM Acquisition" class="section-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Valeurs -->
+        <section id="values" class="values-section animated-section fade-in-up">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-5">
+                        <h2 class="section-title">Nos Valeurs</h2>
+                        <p class="lead">Les principes qui guident notre travail et notre relation avec nos clients</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h4>Proximité</h4>
+                            <p>Relations directes et authentiques, basées sur l'écoute et la confiance. Nous sommes toujours disponibles pour nos clients.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Approche Humaine</h4>
+                            <p>La technologie au service de l'humain. Nous plaçons vos besoins réels au centre de nos solutions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h4>Innovation Utile</h4>
+                            <p>Nous développons des solutions digitales qui ont du sens et apportent une réelle valeur ajoutée à votre établissement.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h4>Excellence Opérationnelle</h4>
+                            <p>Engagement sur la qualité, le suivi personnalisé et une réactivité optimale pour garantir votre satisfaction.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-hotel"></i>
+                            </div>
+                            <h4>Expertise Sectorielle</h4>
+                            <p>Spécialisation exclusive dans l'hôtellerie et la restauration pour une compréhension profonde de vos enjeux.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4>Accessibilité</h4>
+                            <p>Basés à Behoririka, Antananarivo, nous sommes disponibles et joignables à tout moment par téléphone, WhatsApp ou email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Processus -->
+<section id="process" class="process-section animated-section fade-in-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title">Notre Processus de Création</h2>
+                <p class="lead">Une méthodologie collaborative, transparente et conçue pour garantir votre entière satisfaction</p>
+            </div>
+        </div>
+        
+        <!-- Indicateur de progression -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="progress-indicator d-flex justify-content-between position-relative">
+                    <div class="progress-line"></div>
+                    <div class="step-indicator active" data-step="0">
+                        <div class="indicator-circle">1</div>
+                        <span>Consultation</span>
+                    </div>
+                    <div class="step-indicator" data-step="1">
+                        <div class="indicator-circle">2</div>
+                        <span>Conception</span>
+                    </div>
+                    <div class="step-indicator" data-step="2">
+                        <div class="indicator-circle">3</div>
+                        <span>Développement</span>
+                    </div>
+                    <div class="step-indicator" data-step="3">
+                        <div class="indicator-circle">4</div>
+                        <span>Formation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row process-steps-container">
+            <!-- Les étapes seront injectées ici par JavaScript -->
+        </div>
+        
+        <div class="row mt-4 justify-content-center">
+            <div class="col-auto d-flex gap-3">
+                <button id="prev-step-btn" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-arrow-left me-2"></i>Étape précédente
+                </button>
+                <button id="next-step-btn" class="btn btn-primary btn-lg">
+                    Découvrir la prochaine étape<i class="fas fa-arrow-right ms-2"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="section-content text-center">
+                    <h4>Délais de Livraison</h4>
+                    <p><strong>Site vitrine standard :</strong> Livré en <span class="text-primary">72 heures</span> après validation du projet et réception de tous les éléments.</p>
+                    <p><strong>Projets complexes (e-commerce, réservation) :</strong> Entre <span class="text-primary">1 et 2 semaines</span>.</p>
+                    <p class="mt-3"><strong>Garantie :</strong> 100% satisfait ou remboursé sous 15 jours. Garantie technique gratuite de 3 mois incluse sur tous les sites.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Styles pour la section Processus */
+.process-section {
+    padding: 4rem 0;
+    background-color: rgba(26, 26, 48, 0.7);
+}
+
+.process-steps-container {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    min-height: 500px;
+    margin-bottom: 2rem;
+}
+
+.process-step-item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    background: rgba(10, 10, 31, 0.6);
+    border-radius: 1rem;
+    border: 1px solid var(--eff-border-glow);
+    box-shadow: 0 5px 15px var(--eff-shadow-glow);
+    width: 100%;
+}
+
+.process-step-item.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.process-step-item img {
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 25px;
+    border: 2px solid var(--clr-primary);
+}
+
+.process-step-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--clr-primary);
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px var(--eff-shadow-glow);
+}
+
+.process-step-item h4 {
+    color: var(--clr-primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.process-step-description p {
+    color: var(--clr-text-light);
+    max-width: 700px;
+    margin: 0 auto 15px;
+    line-height: 1.6;
+}
+
+.process-step-deliverable {
+    background: rgba(0, 255, 255, 0.1);
+    border-left: 4px solid var(--clr-primary);
+    padding: 15px;
+    border-radius: 0 5px 5px 0;
+    margin-top: 20px;
+}
+
+.process-step-deliverable strong {
+    color: var(--clr-primary);
+}
+
+/* Indicateur de progression */
+.progress-indicator {
+    position: relative;
+    padding: 0 20px;
+    margin-bottom: 40px;
+}
+
+.progress-line {
+    position: absolute;
+    top: 25px;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    background: rgba(79, 195, 247, 0.3);
+    z-index: 1;
+}
+
+.step-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    flex: 1;
+}
+
+.indicator-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(79, 195, 247, 0.3);
+    color: var(--clr-text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.step-indicator.active .indicator-circle {
+    background: var(--clr-primary);
+    color: var(--clr-background-dark);
+    box-shadow: 0 0 15px var(--eff-shadow-glow);
+    border-color: var(--clr-primary);
+}
+
+.step-indicator span {
+    color: var(--clr-text-subtle);
+    font-size: 0.9rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.step-indicator.active span {
+    color: var(--clr-primary);
+    font-weight: 600;
+}
+
+/* Média queries pour une parfaite réactivité */
+@media (max-width: 768px) {
+    .process-steps-container {
+        min-height: 550px;
+    }
+    
+    .process-step-item {
+        padding: 20px;
+    }
+    
+    .process-step-item img {
+        height: 200px;
+    }
+    
+    .progress-indicator {
+        padding: 0 10px;
+    }
+    
+    .indicator-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .step-indicator span {
+        font-size: 0.8rem;
+    }
+    
+    #prev-step-btn, #next-step-btn {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(20px); }
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 255, 255, 0); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+</style>
+
+<script>
+// JavaScript pour gérer les étapes et les animations
+document.addEventListener('DOMContentLoaded', () => {
+    const stepsData = [
+        {
+            title: 'Consultation & Analyse',
+            description: 'Nous échangeons avec vous pour comprendre vos besoins, vos objectifs et votre public cible. Nous analysons le marché pour positionner votre projet de manière optimale et établissons une stratégie sur mesure.',
+            deliverable: 'Définition claire des objectifs du projet et stratégie de développement.',
+            image: 'https://images.unsplash.com/photo-1552664730-d307aa9082b2?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        },
+        {
+            title: 'Conception & Validation',
+            description: 'Nos designers créent une maquette interactive qui donne une vision claire de l\'apparence et de la structure de votre futur site. Cette étape est cruciale pour que le résultat final corresponde parfaitement à vos attentes.',
+            deliverable: 'Maquette graphique détaillée et validée par vous avant le développement.',
+            image: 'https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=1825&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        },
+        {
+            title: 'Développement & Intégration',
+            description: 'Notre équipe technique transforme le design validé en un site web fonctionnel, réactif et optimisé pour tous les appareils. Nous intégrons les textes, images et logos que vous nous avez fournis.',
+            deliverable: 'Site web fonctionnel et accessible en environnement de test pour revue.',
+            image: 'https://images.unsplash.com/photo-1587620962725-abab7fe55152?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        },
+        {
+            title: 'Formation & Mise en Ligne',
+            description: 'Une fois que le site est prêt, nous vous formons pour que vous puissiez facilement mettre à jour le contenu. Après votre approbation finale, nous procédons à la mise en ligne officielle du site, le rendant accessible à tous.',
+            deliverable: 'Site live et opérationnel. Formation personnalisée d\'1 à 2 heures.',
+            image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        }
+    ];
+
+    const stepsContainer = document.querySelector('.process-steps-container');
+    const nextStepBtn = document.getElementById('next-step-btn');
+    const prevStepBtn = document.getElementById('prev-step-btn');
+    const stepIndicators = document.querySelectorAll('.step-indicator');
+    let currentStepIndex = 0;
+
+    // Crée le HTML pour chaque étape
+    const createStepElement = (step, index) => {
+        const stepDiv = document.createElement('div');
+        stepDiv.classList.add('col-lg-10', 'col-md-12', 'process-step-item');
+        stepDiv.setAttribute('data-step-index', index);
+
+        stepDiv.innerHTML = `
+            <img src="${step.image}" alt="Étape ${index + 1}: ${step.title}" loading="lazy">
+            <div class="process-step-content">
+                <div class="process-step-number">${index + 1}</div>
+                <h4>${step.title}</h4>
+                <div class="process-step-description">
+                    <p>${step.description}</p>
+                    <div class="process-step-deliverable">
+                        <p><strong>Livrable :</strong> ${step.deliverable}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+        return stepDiv;
+    };
+
+    // Met à jour l'indicateur de progression
+    const updateProgressIndicator = (index) => {
+        stepIndicators.forEach((indicator, i) => {
+            if (i <= index) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
+    };
+
+    // Affiche une étape spécifique avec une animation
+    const showStep = (index) => {
+        const allSteps = document.querySelectorAll('.process-step-item');
+        
+        // Cache l'étape actuelle avec une animation
+        if (allSteps.length > 0) {
+            const currentStep = allSteps[currentStepIndex];
+            if (currentStep) {
+                currentStep.style.animation = 'fadeOut 0.5s forwards';
+                setTimeout(() => {
+                    currentStep.classList.remove('active');
+                    currentStep.style.animation = ''; // Réinitialise l'animation
+                }, 500);
+            }
+        }
+
+        // Affiche la nouvelle étape avec une animation d'entrée
+        const newStep = document.querySelector(`[data-step-index='${index}']`);
+        if (newStep) {
+            setTimeout(() => {
+                newStep.classList.add('active');
+                newStep.style.animation = 'fadeIn 0.5s forwards';
+            }, 500);
+        }
+        
+        // Met à jour l'indicateur de progression
+        updateProgressIndicator(index);
+        
+        // Met à jour l'état des boutons
+        prevStepBtn.disabled = index === 0;
+        nextStepBtn.textContent = index === stepsData.length - 1 ? 'Recommencer' : 'Découvrir la prochaine étape';
+        
+        // Ajoute un effet de pulse à l'indicateur actif
+        const activeIndicator = document.querySelector(`.step-indicator[data-step="${index}"] .indicator-circle`);
+        activeIndicator.classList.add('pulse');
+        
+        // Retire l'effet pulse des autres indicateurs
+        stepIndicators.forEach((indicator, i) => {
+            if (i !== index) {
+                indicator.querySelector('.indicator-circle').classList.remove('pulse');
+            }
+        });
+    };
+
+    // Initialise les étapes et la première
+    stepsData.forEach((step, index) => {
+        stepsContainer.appendChild(createStepElement(step, index));
+    });
+
+    showStep(currentStepIndex); // Affiche la première étape au chargement
+
+    // Gestionnaire d'événement pour le bouton suivant
+    nextStepBtn.addEventListener('click', () => {
+        currentStepIndex++;
+        if (currentStepIndex >= stepsData.length) {
+            currentStepIndex = 0; // Revient à la première étape à la fin
+        }
+        showStep(currentStepIndex);
+    });
+
+    // Gestionnaire d'événement pour le bouton précédent
+    prevStepBtn.addEventListener('click', () => {
+        if (currentStepIndex > 0) {
+            currentStepIndex--;
+            showStep(currentStepIndex);
+        }
+    });
+
+    // Permet de cliquer sur les indicateurs pour naviguer
+    stepIndicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentStepIndex = index;
+            showStep(currentStepIndex);
+        });
+    });
+});
+</script>
+
+        <!-- Section Localisation -->
+        <section id="location" class="location-section animated-section fade-in-up">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="location-map">
+                            <div class="text-center">
+                                <i class="fas fa-map-marked-alt fa-3x mb-3" style="color: var(--clr-primary);"></i>
+                                <h4>Behoririka, Antananarivo</h4>
+                                <p>IVD 23 BIS, Madagascar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="section-content">
+                            <h2 class="section-title text-start">Notre Localisation</h2>
+                            <p>Nous sommes situés au cœur d'Antananarivo, à Behoririka, pour être au plus près de nos clients et de leurs besoins.</p>
+                            <div class="contact-info mt-4">
+                                <p><i class="fas fa-phone-alt text-primary me-2"></i> <strong>Téléphone :</strong> +261 32 64 123 38</p>
+                                <p><i class="fas fa-envelope text-primary me-2"></i> <strong>Email :</strong> wellstodison@gmail.com</p>
+                                <p><i class="fas fa-clock text-primary me-2"></i> <strong>Horaires :</strong> Lundi - Dimanche: 9h30 - 19h30</p>
+                                <p class="mt-3"><i class="fas fa-comment-alt text-primary me-2"></i> <strong>Contact rapide :</strong> WhatsApp, Messenger, Appel direct</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Équipe -->
+        <section id="team" class="team-section animated-section fade-in-up">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-8 text-center">
@@ -77,26 +788,41 @@
                 <div class="row justify-content-center g-4">
                     <div class="col-md-4">
                         <div class="team-member-card">
-                            <img src="pic.png" class="img-fluid rounded-circle mb-3" alt="Membre de l'équipe 1" style="width: 150px; height: 150px; object-fit: cover;">
+                            <img src="pic.png" class="img-fluid rounded-circle mb-3" alt="Wells TODISON - Fondateur & CEO" style="width: 150px; height: 150px; object-fit: cover;">
                             <h5>Wells TODISON</h5>
                             <p class="text-primary">Fondateur & CEO</p>
-                            <p class="text-muted">Gestion de l'agenge et dévellopement du site, Expert en SEO et application Mobile.</p>
+                            <p class="text-muted">Gestion de l'agence et développement du site, Expert en SEO et application Mobile. Wells est le pilier de notre agence, garantissant que chaque projet respecte nos standards d'excellence.</p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="social-icon me-2"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-icon me-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="team-member-card">
-                            <img src="joel1.png" class="img-fluid rounded-circle mb-3" alt="Membre de l'équipe 2" style="width: 150px; height: 150px; object-fit: cover;">
+                            <img src="joel1.png" class="img-fluid rounded-circle mb-3" alt="Joel RANDRIA - Designer UX/UI" style="width: 150px; height: 150px; object-fit: cover;">
                             <h5>Joel RANDRIA</h5>
                             <p class="text-primary">Designer UX/UI</p>
-                            <p class="text-muted">Spécialiste en Design, IA et Automatisation</p>
+                            <p class="text-muted">Spécialiste en Design, IA et Automatisation. Joel transforme vos idées en interfaces intuitives et esthétiques qui captivent vos clients.</p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="social-icon me-2"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-icon me-2"><i class="fab fa-dribbble"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="team-member-card">
-                            <img src="Anna.jpg" class="img-fluid rounded-circle mb-3" alt="Membre de l'équipe 3" style="width: 150px; height: 150px; object-fit: cover;">
+                            <img src="Anna.jpg" class="img-fluid rounded-circle mb-3" alt="Marie ANNA - Lead Developer" style="width: 150px; height: 150px; object-fit: cover;">
                             <h5>Marie ANNA</h5>
                             <p class="text-primary">Lead Developer</p>
-                            <p class="text-muted">Dvellopement commercial de l'activité et apporteur de projet.</p>
+                            <p class="text-muted">Développement commercial de l'activité et apporteur de projet. Marie assure que chaque solution technique répond parfaitement à vos besoins business.</p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="social-icon me-2"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="social-icon me-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -113,8 +839,50 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Scripts personnalisés pour la page équipe
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation pour les images au défilement
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observer les images de section
+            document.querySelectorAll('.section-img').forEach(img => {
+                img.style.opacity = '0';
+                img.style.transform = 'translateY(20px)';
+                img.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                observer.observe(img);
+            });
+            
+            // Animation pour les cartes de valeurs
+            document.querySelectorAll('.value-card').forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `opacity 0.8s ease ${index * 0.1}s, transform 0.8s ease ${index * 0.1}s`;
+                
+                const cardObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+                
+                cardObserver.observe(card);
+            });
+        });
+    </script>
 </body>
-
 </html>
-
-
