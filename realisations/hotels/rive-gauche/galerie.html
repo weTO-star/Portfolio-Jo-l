@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie - Hôtel Rive Gauche | Photos & Visite Virtuelle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="demo-banner">🚧 Démonstration OFT Agence - Galerie Haute Résolution</div>
+    
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">Hôtel Rive Gauche</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="chambres.html">Chambres</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="reservation.html" class="btn">Réserver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Galerie d'Exception</h1>
+                <p>Découvrez l'univers raffiné de l'Hôtel Rive Gauche en images</p>
+                <div class="hero-btns">
+                    <a href="#gallery" class="btn">Explorer la Galerie</a>
+                    <a href="#virtual-tour" class="btn btn-secondary">Visite Virtuelle</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Notre Univers en Images</h2>
+            <p class="section-subtitle">Plongez dans l'ambiance unique de notre établissement à travers ces clichés exclusifs</p>
+
+            <!-- Filtres de la galerie -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Toutes les Photos</button>
+                <button class="filter-btn" data-filter="chambres">Chambres</button>
+                <button class="filter-btn" data-filter="suites">Suites</button>
+                <button class="filter-btn" data-filter="espaces">Espaces Communs</button>
+                <button class="filter-btn" data-filter="restaurant">Restaurant</button>
+                <button class="filter-btn" data-filter="spa">Spa & Wellness</button>
+            </div>
+
+            <!-- Galerie principale -->
+            <div class="gallery-grid">
+                <!-- Chambres -->
+                <div class="gallery-item" data-category="chambres" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gallery-caption">
+                        <h3>Chambre Classique</h3>
+                        <p>20m² avec vue sur cour calme</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="chambres" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gallery-caption">
+                        <h3>Chambre Supérieure</h3>
+                        <p>25m² avec vue sur Paris</p>
+                    </div>
+                </div>
+
+                <!-- Suites -->
+                <div class="gallery-item" data-category="suites" style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gallery-caption">
+                        <h3>Suite Deluxe</h3>
+                        <p>40m² avec salon séparé</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="suites" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gallery-caption">
+                        <h3>Suite Présidentielle</h3>
+                        <p>80m² d'espace luxueux</p>
+                    </div>
+                </div>
+
+                <!-- Espaces Communs -->
+                <div class="gallery-item" data-category="espaces" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gallery-caption">
+                        <h3>Hall d'Entrée</h3>
+                        <p>Accueil chaleureux et élégant</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="espaces" style="background-image: url('https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gallery-caption">
+                        <h3>Salon Bibliothèque</h3>
+                        <p>Espace détente et lecture</p>
+                    </div>
+                </div>
+
+                <!-- Restaurant -->
+                <div class="gallery-item" data-category="restaurant" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gallery-caption">
+                        <h3>Restaurant Gastronomique</h3>
+                        <p>Cuisine française étoilée</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="restaurant" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gallery-caption">
+                        <h3>Terrasse du Restaurant</h3>
+                        <p>Dîner aux chandelles</p>
+                    </div>
+                </div>
+
+                <!-- Spa & Wellness -->
+                <div class="gallery-item" data-category="spa" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gallery-caption">
+                        <h3>Espace Spa</h3>
+                        <p>Détente et bien-être absolu</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="spa" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gallery-caption">
+                        <h3>Piscine Intérieure</h3>
+                        <p>Baignade relaxante</p>
+                    </div>
+                </div>
+
+                <!-- Additional Images -->
+                <div class="gallery-item" data-category="espaces" style="background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gallery-caption">
+                        <h3>Bar Lounge</h3>
+                        <p>Ambiance cosy et raffinée</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="chambres" style="background-image: url('https://images.unsplash.com/photo-1586105251261-72a756497a11?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                    <div class="gallery-caption">
+                        <h3>Salle de Bain Luxury</h3>
+                        <p>Marbre et équipements premium</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="virtual-tour" class="features" style="background: var(--primary); color: var(--white);">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--white);">Visite Virtuelle 360°</h2>
+            <p class="section-subtitle" style="color: var(--white);">Explorez nos espaces comme si vous y étiez</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                    <span class="feature-icon">🏨</span>
+                    <h3>Suite Deluxe Interactive</h3>
+                    <p>Parcourez chaque détail de notre suite phare en vision 360°</p>
+                    <button class="btn" style="margin-top: 1rem;" onclick="openVirtualTour('suite')">Lancer la Visite</button>
+                </div>
+                
+                <div class="feature-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                    <span class="feature-icon">🍽️</span>
+                    <h3>Restaurant Gastronomique</h3>
+                    <p>Découvrez l'ambiance unique de notre restaurant étoilé</p>
+                    <button class="btn" style="margin-top: 1rem;" onclick="openVirtualTour('restaurant')">Lancer la Visite</button>
+                </div>
+                
+                <div class="feature-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+                    <span class="feature-icon">🏊</span>
+                    <h3>Espace Spa & Wellness</h3>
+                    <p>Explorez notre centre de bien-être exclusif</p>
+                    <button class="btn" style="margin-top: 1rem;" onclick="openVirtualTour('spa')">Lancer la Visite</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Visite Virtuelle -->
+    <div id="virtualTourModal" class="lightbox">
+        <div class="lightbox-content" style="max-width: 90%; max-height: 90%;">
+            <span class="close-lightbox" onclick="closeVirtualTour()">&times;</span>
+            <div id="tourContent" style="width: 100%; height: 70vh; background: #f0f0f0; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                <h3 style="margin-bottom: 1rem;">Visite Virtuelle 360°</h3>
+                <p style="margin-bottom: 2rem;">Fonctionnalité de visite interactive</p>
+                <div style="width: 100%; height: 400px; background: linear-gradient(45deg, #8b7355, #d4af37); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                    🔄 Intégration Visite 360° - Fonctionnalité Premium
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <button class="btn" onclick="rotateTour('left')">↶ Gauche</button>
+                    <button class="btn" onclick="rotateTour('right')">↷ Droite</button>
+                    <button class="btn btn-secondary" onclick="closeVirtualTour()">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="parallax" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+        <div class="parallax-content">
+            <h2 style="font-size: 3rem; margin-bottom: 1rem;">Convaincu par l'Excellence ?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;">Réservez votre séjour dès aujourd'hui</p>
+            <a href="reservation.html" class="btn">Réserver Maintenant</a>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+    <script>
+        // Fonctionnalités spécifiques à la galerie
+        function openVirtualTour(tourType) {
+            const modal = document.getElementById('virtualTourModal');
+            const content = document.getElementById('tourContent');
+            
+            let title = '';
+            switch(tourType) {
+                case 'suite':
+                    title = 'Suite Deluxe - Visite 360°';
+                    break;
+                case 'restaurant':
+                    title = 'Restaurant Gastronomique - Visite 360°';
+                    break;
+                case 'spa':
+                    title = 'Spa & Wellness - Visite 360°';
+                    break;
+            }
+            
+            content.querySelector('h3').textContent = title;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeVirtualTour() {
+            const modal = document.getElementById('virtualTourModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        function rotateTour(direction) {
+            // Simulation de rotation pour la démo
+            const tourDisplay = document.querySelector('#tourContent > div');
+            if (direction === 'left') {
+                tourDisplay.style.transform = 'rotateY(-10deg)';
+            } else {
+                tourDisplay.style.transform = 'rotateY(10deg)';
+            }
+            
+            setTimeout(() => {
+                tourDisplay.style.transform = 'rotateY(0deg)';
+            }, 500);
+        }
+        
+        // Filtrage de la galerie
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.gallery-filters .filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 100);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // Animation des éléments au scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            galleryItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'all 0.6s ease-out';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

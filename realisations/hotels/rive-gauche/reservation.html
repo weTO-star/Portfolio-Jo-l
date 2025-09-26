@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réserver - Hôtel Rive Gauche | Meilleur Prix Garanti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="demo-banner">🚧 Démonstration OFT Agence - Moteur de réservation intelligent</div>
+    
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">Hôtel Rive Gauche</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="chambres.html">Chambres</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="reservation.html" class="btn">Réserver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Réservez Votre Séjour</h1>
+                <p>Meilleur prix garanti - Réservation flexible - Annulation gratuite</p>
+                <div class="hero-btns">
+                    <a href="#booking-engine" class="btn">Commencer la Réservation</a>
+                    <a href="tel:+33142222000" class="btn btn-secondary">📞 Réserver par téléphone</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking-engine" class="booking-section">
+        <div class="container">
+            <div class="booking-container">
+                <!-- Panneau de réservation fixe -->
+                <div class="booking-panel">
+                    <div class="panel-header">
+                        <h3>📅 Votre Réservation</h3>
+                        <div class="price-display">
+                            <span class="price">0€</span>
+                            <span class="price-note">pour 0 nuit</span>
+                        </div>
+                    </div>
+                    
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="checkin">
+                                    <span class="icon">📅</span>
+                                    Arrivée
+                                </label>
+                                <input type="date" id="checkin" name="checkin" required>
+                                <div class="date-info" id="checkinInfo"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="checkout">
+                                    <span class="icon">🚪</span>
+                                    Départ
+                                </label>
+                                <input type="date" id="checkout" name="checkout" required>
+                                <div class="date-info" id="checkoutInfo"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="adults">
+                                    <span class="icon">👥</span>
+                                    Adultes
+                                </label>
+                                <div class="counter">
+                                    <button type="button" class="counter-btn" data-action="decrease">-</button>
+                                    <input type="number" id="adults" name="adults" value="2" min="1" max="4" readonly>
+                                    <button type="button" class="counter-btn" data-action="increase">+</button>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="children">
+                                    <span class="icon">👶</span>
+                                    Enfants
+                                </label>
+                                <div class="counter">
+                                    <button type="button" class="counter-btn" data-action="decrease">-</button>
+                                    <input type="number" id="children" name="children" value="0" min="0" max="3" readonly>
+                                    <button type="button" class="counter-btn" data-action="increase">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sélection des chambres -->
+                        <div class="room-selection">
+                            <h4>Choisissez Votre Chambre</h4>
+                            <div class="room-options">
+                                <div class="room-option" data-room="classic" data-price="180">
+                                    <div class="room-radio">
+                                        <input type="radio" id="room-classic" name="room-type" value="classic" checked>
+                                        <label for="room-classic"></label>
+                                    </div>
+                                    <div class="room-info">
+                                        <h5>Chambre Classique</h5>
+                                        <p>20m² - Vue cour - Lit king-size</p>
+                                        <div class="room-features-mini">
+                                            <span>🛏️ 2 pers.</span>
+                                            <span>🚿 SdB marbre</span>
+                                        </div>
+                                    </div>
+                                    <div class="room-price">
+                                        <span class="price">180€</span>
+                                        <span class="period">/nuit</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="room-option" data-room="superior" data-price="240">
+                                    <div class="room-radio">
+                                        <input type="radio" id="room-superior" name="room-type" value="superior">
+                                        <label for="room-superior"></label>
+                                    </div>
+                                    <div class="room-info">
+                                        <h5>Chambre Supérieure</h5>
+                                        <p>25m² - Vue Paris - Espace travail</p>
+                                        <div class="room-features-mini">
+                                            <span>🛏️ 2-3 pers.</span>
+                                            <span>🛁 Baignoire</span>
+                                        </div>
+                                    </div>
+                                    <div class="room-price">
+                                        <span class="price">240€</span>
+                                        <span class="period">/nuit</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="room-option" data-room="suite" data-price="380">
+                                    <div class="room-radio">
+                                        <input type="radio" id="room-suite" name="room-type" value="suite">
+                                        <label for="room-suite"></label>
+                                    </div>
+                                    <div class="room-info">
+                                        <h5>Suite Deluxe</h5>
+                                        <p>40m² - Salon séparé - Terrasse</p>
+                                        <div class="room-features-mini">
+                                            <span>🛏️ 2-4 pers.</span>
+                                            <span>🌟 Service majordome</span>
+                                        </div>
+                                    </div>
+                                    <div class="room-price">
+                                        <span class="price">380€</span>
+                                        <span class="period">/nuit</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Options supplémentaires -->
+                        <div class="extra-options">
+                            <h4>Options Supplémentaires</h4>
+                            <div class="extra-option">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="breakfast" value="20">
+                                    <span class="checkmark"></span>
+                                    <span class="option-info">
+                                        <strong>Petit-déjeuner buffet</strong>
+                                        <span>20€/personne/jour</span>
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="extra-option">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="parking" value="30">
+                                    <span class="checkmark"></span>
+                                    <span class="option-info">
+                                        <strong>Parking sécurisé</strong>
+                                        <span>30€/jour</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Résumé du prix -->
+                        <div class="price-summary">
+                            <div class="summary-item">
+                                <span>Chambre x <span id="nights">0</span> nuits</span>
+                                <span id="roomTotal">0€</span>
+                            </div>
+                            <div class="summary-item" id="breakfastSummary" style="display: none;">
+                                <span>Petit-déjeuner</span>
+                                <span id="breakfastTotal">0€</span>
+                            </div>
+                            <div class="summary-item" id="parkingSummary" style="display: none;">
+                                <span>Parking</span>
+                                <span id="parkingTotal">0€</span>
+                            </div>
+                            <div class="summary-total">
+                                <strong>Total</strong>
+                                <strong id="finalTotal">0€</strong>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn booking-submit">
+                            <span class="btn-text">🔄 Vérifier la disponibilité</span>
+                            <span class="btn-loading" style="display: none;">
+                                <span class="loading-spinner"></span> Traitement...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Informations complémentaires -->
+                <div class="booking-info">
+                    <div class="info-card">
+                        <h3>✅ Meilleur Prix Garanti</h3>
+                        <p>Nous garantissons les meilleurs tarifs sur notre site officiel. Trouvez moins cher ? Nous ajustons le prix !</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🔄 Annulation Gratuite</h3>
+                        <p>Annulez gratuitement jusqu'à 24h avant votre arrivée. Flexibilité totale pour votre voyage.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>🔒 Paiement Sécurisé</h3>
+                        <p>Vos données sont protégées par un cryptage SSL 256 bits. Paiement 100% sécurisé.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📞 Service Client 24h/24</h3>
+                        <p>Notre équipe est disponible à tout moment pour vous accompagner dans votre réservation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section disponibilité en temps réel -->
+    <section class="availability-section">
+        <div class="container">
+            <h2 class="section-title">Disponibilité en Direct</h2>
+            <div class="availability-grid">
+                <div class="availability-card available">
+                    <h4>Chambre Classique</h4>
+                    <div class="availability-status">
+                        <span class="status-dot"></span>
+                        Disponible
+                    </div>
+                    <div class="availability-price">180€/nuit</div>
+                </div>
+                <div class="availability-card available">
+                    <h4>Chambre Supérieure</h4>
+                    <div class="availability-status">
+                        <span class="status-dot"></span>
+                        Disponible
+                    </div>
+                    <div class="availability-price">240€/nuit</div>
+                </div>
+                <div class="availability-card limited">
+                    <h4>Suite Deluxe</h4>
+                    <div class="availability-status">
+                        <span class="status-dot limited"></span>
+                        Dernières chambres
+                    </div>
+                    <div class="availability-price">380€/nuit</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+    <script>
+        // Script spécifique à la réservation
+        class BookingEngine {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.initDatePickers();
+                this.initCounters();
+                this.initRoomSelection();
+                this.initExtraOptions();
+                this.calculatePrice();
+                this.initFormSubmission();
+            }
+
+            initDatePickers() {
+                const today = new Date();
+                const checkinInput = document.getElementById('checkin');
+                const checkoutInput = document.getElementById('checkout');
+
+                // Définir la date minimale (aujourd'hui)
+                checkinInput.min = today.toISOString().split('T')[0];
+                
+                // Définir la date de départ par défaut (demain)
+                const tomorrow = new Date(today);
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                checkoutInput.min = tomorrow.toISOString().split('T')[0];
+                checkoutInput.value = tomorrow.toISOString().split('T')[0];
+
+                checkinInput.addEventListener('change', () => {
+                    const checkinDate = new Date(checkinInput.value);
+                    const newCheckout = new Date(checkinDate);
+                    newCheckout.setDate(newCheckout.getDate() + 1);
+                    
+                    checkoutInput.min = newCheckout.toISOString().split('T')[0];
+                    
+                    if (new Date(checkoutInput.value) < newCheckout) {
+                        checkoutInput.value = newCheckout.toISOString().split('T')[0];
+                    }
+                    
+                    this.updateDateInfo();
+                    this.calculatePrice();
+                });
+
+                checkoutInput.addEventListener('change', () => {
+                    this.updateDateInfo();
+                    this.calculatePrice();
+                });
+
+                this.updateDateInfo();
+            }
+
+            updateDateInfo() {
+                const checkin = new Date(document.getElementById('checkin').value);
+                const checkout = new Date(document.getElementById('checkout').value);
+                
+                if (checkin && checkout) {
+                    const nights = Math.ceil((checkout - checkin) / (1000 * 60 * 60 * 24));
+                    document.getElementById('checkinInfo').textContent = this.formatDate(checkin);
+                    document.getElementById('checkoutInfo').textContent = this.formatDate(checkout);
+                    document.getElementById('nights').textContent = nights;
+                }
+            }
+
+            formatDate(date) {
+                return date.toLocaleDateString('fr-FR', { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+            }
+
+            initCounters() {
+                document.querySelectorAll('.counter-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const action = btn.dataset.action;
+                        const input = btn.parentElement.querySelector('input');
+                        let value = parseInt(input.value);
+
+                        if (action === 'increase' && value < parseInt(input.max)) {
+                            input.value = value + 1;
+                        } else if (action === 'decrease' && value > parseInt(input.min)) {
+                            input.value = value - 1;
+                        }
+
+                        this.calculatePrice();
+                    });
+                });
+            }
+
+            initRoomSelection() {
+                document.querySelectorAll('input[name="room-type"]').forEach(radio => {
+                    radio.addEventListener('change', () => {
+                        this.calculatePrice();
+                    });
+                });
+            }
+
+            initExtraOptions() {
+                document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.addEventListener('change', () => {
+                        this.calculatePrice();
+                    });
+                });
+            }
+
+            calculatePrice() {
+                const roomType = document.querySelector('input[name="room-type"]:checked');
+                const roomPrice = parseInt(roomType.closest('.room-option').dataset.price);
+                const nights = parseInt(document.getElementById('nights').textContent) || 0;
+                const adults = parseInt(document.getElementById('adults').value);
+                const children = parseInt(document.getElementById('children').value);
+
+                let total = roomPrice * nights;
+
+                // Petit-déjeuner
+                const breakfast = document.querySelector('input[name="breakfast"]:checked');
+                if (breakfast) {
+                    const breakfastPrice = parseInt(breakfast.value);
+                    total += breakfastPrice * (adults + children) * nights;
+                    document.getElementById('breakfastSummary').style.display = 'flex';
+                    document.getElementById('breakfastTotal').textContent = (breakfastPrice * (adults + children) * nights) + '€';
+                } else {
+                    document.getElementById('breakfastSummary').style.display = 'none';
+                }
+
+                // Parking
+                const parking = document.querySelector('input[name="parking"]:checked');
+                if (parking) {
+                    const parkingPrice = parseInt(parking.value);
+                    total += parkingPrice * nights;
+                    document.getElementById('parkingSummary').style.display = 'flex';
+                    document.getElementById('parkingTotal').textContent = (parkingPrice * nights) + '€';
+                } else {
+                    document.getElementById('parkingSummary').style.display = 'none';
+                }
+
+                // Mise à jour des affichages
+                document.getElementById('roomTotal').textContent = (roomPrice * nights) + '€';
+                document.getElementById('finalTotal').textContent = total + '€';
+                
+                const priceDisplay = document.querySelector('.price-display .price');
+                priceDisplay.textContent = total + '€';
+                
+                const priceNote = document.querySelector('.price-note');
+                priceNote.textContent = `pour ${nights} nuit${nights > 1 ? 's' : ''}`;
+            }
+
+            initFormSubmission() {
+                document.getElementById('bookingForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.submitBooking();
+                });
+            }
+
+            submitBooking() {
+                const submitBtn = document.querySelector('.booking-submit');
+                const btnText = submitBtn.querySelector('.btn-text');
+                const btnLoading = submitBtn.querySelector('.btn-loading');
+
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'inline-flex';
+                submitBtn.disabled = true;
+
+                // Simulation de vérification de disponibilité
+                setTimeout(() => {
+                    const formData = new FormData(document.getElementById('bookingForm'));
+                    const queryString = new URLSearchParams(formData).toString();
+                    window.location.href = `confirmation.html?${queryString}`;
+                }, 2000);
+            }
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            new BookingEngine();
+        });
+    </script>
+</body>
+</html>

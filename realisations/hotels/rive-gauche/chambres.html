@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chambres & Suites - Hôtel Rive Gauche | Luxury Hotel Paris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="demo-banner">🚧 Démonstration OFT Agence</div>
+    
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">Hôtel Rive Gauche</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="chambres.html">Chambres</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="reservation.html" class="btn">Réserver</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Nos Chambres & Suites</h1>
+                <p>Découvrez notre collection exclusive d'hébergements de luxe</p>
+                <div class="hero-btns">
+                    <a href="#rooms" class="btn">Explorer</a>
+                    <a href="reservation.html" class="btn btn-secondary">Réserver Maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rooms" class="rooms-section">
+        <div class="container">
+            <h2 class="section-title">Collection d'Exception</h2>
+            <p class="section-subtitle">Chaque chambre a été conçue pour offrir une expérience unique de confort et d'élégance</p>
+
+            <!-- Filtres des chambres -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Toutes les Chambres</button>
+                <button class="filter-btn" data-filter="classique">Classique</button>
+                <button class="filter-btn" data-filter="superieure">Supérieure</button>
+                <button class="filter-btn" data-filter="suites">Suites</button>
+            </div>
+
+            <div class="rooms-grid">
+                <!-- Chambre Classique -->
+                <div class="room-card" data-category="classique">
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+                        <div class="room-badge">Économique</div>
+                        <div class="room-overlay">
+                            <a href="chambre-detail.html?type=classique" class="btn">Voir Détails</a>
+                        </div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Chambre Classique</h3>
+                        <p>20m² avec vue sur cour calme, parfaite pour un séjour romantique ou d'affaires</p>
+                        
+                        <div class="room-features">
+                            <li>Lit king-size 180x200</li>
+                            <li>Salle de bain en marbre</li>
+                            <li>Climatisation individuelle</li>
+                            <li>Wi-Fi haut débit inclus</li>
+                            <li>Mini-bar personnalisé</li>
+                            <li>Coffre-fort électronique</li>
+                        </div>
+                        
+                        <div class="room-price">180€ <small>/nuit</small></div>
+                        
+                        <div class="room-meta">
+                            <div class="room-size">20m²</div>
+                            <div class="room-capacity">👥 2 personnes</div>
+                        </div>
+                        
+                        <div class="room-actions">
+                            <a href="chambre-detail.html?type=classique" class="btn btn-secondary" style="flex: 1;">Détails Complets</a>
+                            <button class="btn check-availability" style="flex: 1;">Vérifier Disponibilité</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chambre Supérieure -->
+                <div class="room-card" data-category="superieure">
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+                        <div class="room-badge" style="background: #ff6b6b;">Plus Populaire</div>
+                        <div class="room-overlay">
+                            <a href="chambre-detail.html?type=superieure" class="btn">Voir Détails</a>
+                        </div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Chambre Supérieure</h3>
+                        <p>25m² avec vue sur les toits de Paris, espace de travail et coin détente raffiné</p>
+                        
+                        <div class="room-features">
+                            <li>Lit king-size 180x200 mémoire de forme</li>
+                            <li>Salle de bain avec baignoire balnéo</li>
+                            <li>Bureau ergonomique équipé</li>
+                            <li>TV écran plat 55" Smart TV</li>
+                            <li>Service en chambre 24h/24</li>
+                            <li>Plateau de courtoisie premium</li>
+                        </div>
+                        
+                        <div class="room-price">240€ <small>/nuit</small></div>
+                        
+                        <div class="room-meta">
+                            <div class="room-size">25m²</div>
+                            <div class="room-capacity">👥 2-3 personnes</div>
+                        </div>
+                        
+                        <div class="room-actions">
+                            <a href="chambre-detail.html?type=superieure" class="btn btn-secondary" style="flex: 1;">Détails Complets</a>
+                            <button class="btn check-availability" style="flex: 1;">Vérifier Disponibilité</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suite Deluxe -->
+                <div class="room-card" data-category="suites">
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+                        <div class="room-badge" style="background: #d4af37;">Luxe Absolu</div>
+                        <div class="room-overlay">
+                            <a href="chambre-detail.html?type=deluxe" class="btn">Voir Détails</a>
+                        </div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Suite Deluxe</h3>
+                        <p>40m² avec salon séparé, terrasse privative et service de majordome personnel</p>
+                        
+                        <div class="room-features">
+                            <li>Suite avec salon séparé</li>
+                            <li>Terrasse privative avec vue Paris</li>
+                            <li>Salle de bain en marbre avec sauna</li>
+                            <li>Service majordome dédié</li>
+                            <li>Accès au lounge privé</li>
+                            <li>Parking privé inclus</li>
+                        </div>
+                        
+                        <div class="room-price">380€ <small>/nuit</small></div>
+                        
+                        <div class="room-meta">
+                            <div class="room-size">40m²</div>
+                            <div class="room-capacity">👥 2-4 personnes</div>
+                        </div>
+                        
+                        <div class="room-actions">
+                            <a href="chambre-detail.html?type=deluxe" class="btn btn-secondary" style="flex: 1;">Détails Complets</a>
+                            <button class="btn check-availability" style="flex: 1;">Vérifier Disponibilité</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suite Présidentielle -->
+                <div class="room-card" data-category="suites">
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');">
+                        <div class="room-badge" style="background: #8b7355;">Exclusivité</div>
+                        <div class="room-overlay">
+                            <a href="chambre-detail.html?type=presidentielle" class="btn">Voir Détails</a>
+                        </div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Suite Présidentielle</h3>
+                        <p>80m² d'espace luxueux avec salon de réception, bureau et dressing privé</p>
+                        
+                        <div class="room-features">
+                            <li>Suite sur deux niveaux</li>
+                            <li>Salon de réception avec piano</li>
+                            <li>Bureau équipé dernière génération</li>
+                            <li>Dressing walk-in personnalisé</li>
+                            <li>Service de chef privé disponible</li>
+                            <li>Transfert limousine inclus</li>
+                        </div>
+                        
+                        <div class="room-price">650€ <small>/nuit</small></div>
+                        
+                        <div class="room-meta">
+                            <div class="room-size">80m²</div>
+                            <div class="room-capacity">👥 2-6 personnes</div>
+                        </div>
+                        
+                        <div class="room-actions">
+                            <a href="chambre-detail.html?type=presidentielle" class="btn btn-secondary" style="flex: 1;">Détails Complets</a>
+                            <button class="btn check-availability" style="flex: 1;">Vérifier Disponibilité</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" style="background: var(--white);">
+        <div class="container">
+            <h2 class="section-title">Services Inclus</h2>
+            <p class="section-subtitle">Tous nos séjours incluent ces services premium</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🛎️</span>
+                    <h3>Service Chambre 24h/24</h3>
+                    <p>Notre équipe est disponible à tout moment pour répondre à vos besoins</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🍽️</span>
+                    <h3>Petit-déjeuner Gourmand</h3>
+                    <p>Buffet continental ou service en chambre selon vos préférences</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🚗</span>
+                    <h3>Conciergerie Personnelle</h3>
+                    <p>Réservations, transports, et recommandations sur mesure</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🏋️</span>
+                    <h3>Accès Fitness Center</h3>
+                    <p>Équipements modernes et espace bien-être inclus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="parallax" style="background-image: url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+        <div class="parallax-content">
+            <h2 style="font-size: 3rem; margin-bottom: 1rem;">Prêt pour l'Expérience ?</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;">Réservez dès maintenant votre séjour inoubliable</p>
+            <a href="reservation.html" class="btn">Réserver Maintenant</a>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+    <script>
+        // Filtrage des chambres
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const roomCards = document.querySelectorAll('.room-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Retirer la classe active de tous les boutons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Ajouter la classe active au bouton cliqué
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filtrer les cartes de chambres
+                    roomCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // Animation au scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            roomCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'all 0.6s ease-out';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
