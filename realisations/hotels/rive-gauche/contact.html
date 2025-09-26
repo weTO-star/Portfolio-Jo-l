@@ -3,20 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Hôtel Rive Gauche</title>
-    <style>
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 3rem 0; }
-        .contact-info { background: #f9f9f9; padding: 2rem; border-radius: 8px; }
-        .contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 4px; }
-        .contact-form textarea { height: 150px; }
-    </style>
+    <title>Contact - Hôtel Rive Gauche | Nous Contacter</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="demo-banner">🚧 Démonstration OFT Agence</div>
+    <div class="demo-banner">🚧 Démonstration OFT Agence - Contact premium</div>
     
     <header class="header">
         <nav class="nav container">
-            <div class="logo">Hôtel Rive Gauche</div>
+            <a href="index.html" class="logo">Hôtel Rive Gauche</a>
             <ul class="nav-links">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="chambres.html">Chambres</a></li>
@@ -28,46 +23,432 @@
         </nav>
     </header>
 
-    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1495365200479-c4ed1d35e1aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'); padding: 4rem 0;">
+    <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1495365200479-c4ed1d35e1aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
         <div class="container">
-            <h1>Contactez-nous</h1>
-            <p>Nous sommes à votre écoute</p>
-        </div>
-    </section>
-
-    <section class="container">
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h2>Informations de contact</h2>
-                <p><strong>📍 Adresse</strong><br>12 Rue de Seine, 75006 Paris</p>
-                <p><strong>📞 Téléphone</strong><br>+33 1 42 22 20 00</p>
-                <p><strong>✉️ Email</strong><br>contact@hotelrivegauche.com</p>
-                <p><strong>🕒 Réception</strong><br>24h/24 et 7j/7</p>
-                
-                <h3 style="margin-top: 2rem;">Itinéraire</h3>
-                <div style="height: 200px; background: #eee; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                    [Carte Google Maps intégrée]
+            <div class="hero-content">
+                <h1>Contactez-Nous</h1>
+                <p>Notre équipe est à votre écoute 24h/24 et 7j/7</p>
+                <div class="hero-btns">
+                    <a href="#contact-form" class="btn">Envoyer un message</a>
+                    <a href="tel:+33142222000" class="btn btn-secondary">📞 Appeler maintenant</a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="contact-form">
-                <h2>Formulaire de contact</h2>
-                <form>
-                    <input type="text" placeholder="Votre nom" required>
-                    <input type="email" placeholder="Votre email" required>
-                    <input type="tel" placeholder="Votre téléphone">
-                    <select>
-                        <option>Sujet de votre message</option>
-                        <option>Réservation</option>
-                        <option>Informations</option>
-                        <option>Événement</option>
-                        <option>Autre</option>
-                    </select>
-                    <textarea placeholder="Votre message"></textarea>
-                    <button type="submit" class="btn">Envoyer le message</button>
-                </form>
+    <!-- Informations de contact rapides -->
+    <section class="contact-quick">
+        <div class="container">
+            <div class="quick-grid">
+                <div class="quick-card">
+                    <div class="quick-icon">📞</div>
+                    <h3>Téléphone</h3>
+                    <p>+33 1 42 22 20 00</p>
+                    <a href="tel:+33142222000" class="quick-link">Appeler</a>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>contact@hotelrivegauche.com</p>
+                    <a href="mailto:contact@hotelrivegauche.com" class="quick-link">Écrire</a>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-icon">📍</div>
+                    <h3>Adresse</h3>
+                    <p>12 Rue de Seine<br>75006 Paris</p>
+                    <a href="#map" class="quick-link">Voir le plan</a>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-icon">🕒</div>
+                    <h3>Horaires</h3>
+                    <p>Réception 24h/24<br>7 jours sur 7</p>
+                    <span class="quick-status">✅ Ouvert maintenant</span>
+                </div>
             </div>
         </div>
     </section>
-</body>
-</html>
+
+    <!-- Section contact principale -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Formulaire de contact -->
+                <div class="contact-form-section" id="contact-form">
+                    <h2>Envoyez-nous un message</h2>
+                    <p>Nous vous répondons sous 2 heures maximum</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Votre nom complet *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Votre email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Sujet *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Choisissez un sujet</option>
+                                    <option value="reservation">Réservation</option>
+                                    <option value="information">Demande d'information</option>
+                                    <option value="group">Groupe/Événement</option>
+                                    <option value="spa">Spa & Wellness</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Votre message *</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Décrivez-nous votre demande..." required></textarea>
+                            <div class="char-count"><span id="charCount">0</span>/500 caractères</div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" checked>
+                                <span class="checkmark"></span>
+                                Recevoir nos offres spéciales
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn submit-btn">
+                            <span class="btn-text">📤 Envoyer le message</span>
+                            <span class="btn-loading" style="display: none;">
+                                <span class="loading-spinner"></span> Envoi en cours...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Informations détaillées -->
+                <div class="contact-info-detailed">
+                    <div class="info-card">
+                        <h3>📍 Nous trouver</h3>
+                        <div class="address">
+                            <strong>Hôtel Rive Gauche</strong><br>
+                            12 Rue de Seine<br>
+                            75006 Paris, France
+                        </div>
+                        
+                        <div class="transport">
+                            <h4>Accès</h4>
+                            <ul>
+                                <li>🚇 Métro : Saint-Germain-des-Prés (ligne 4)</li>
+                                <li>🚌 Bus : 39, 63, 70, 86, 95</li>
+                                <li>🚗 Parking : Q-Park Saint-Germain</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🕒 Horaires détaillés</h3>
+                        <div class="schedule">
+                            <div class="schedule-item">
+                                <span>Réception</span>
+                                <span>24h/24</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span>Petit-déjeuner</span>
+                                <span>7h - 11h</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span>Restaurant</span>
+                                <span>12h - 14h30 / 19h - 22h30</span>
+                            </div>
+                            <div class="schedule-item">
+                                <span>Spa</span>
+                                <span>9h - 21h</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>📞 Contacts spécialisés</h3>
+                        <div class="specialized-contacts">
+                            <div class="contact-item">
+                                <strong>Réservations</strong>
+                                <a href="tel:+33142222001">+33 1 42 22 20 01</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Événements</strong>
+                                <a href="tel:+33142222002">+33 1 42 22 20 02</a>
+                            </div>
+                            <div class="contact-item">
+                                <strong>Spa</strong>
+                                <a href="tel:+33142222003">+33 1 42 22 20 03</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carte interactive -->
+    <section id="map" class="map-section">
+        <div class="container">
+            <h2>Plan d'accès</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="map-content">
+                        <div class="map-icon">🗺️</div>
+                        <h4>Carte Interactive</h4>
+                        <p>Localisation au cœur de Saint-Germain-des-Prés</p>
+                        <div class="map-actions">
+                            <button class="btn btn-secondary" onclick="openGoogleMaps()">
+                                📍 Ouvrir dans Google Maps
+                            </button>
+                            <button class="btn btn-secondary" onclick="getDirections()">
+                                🚗 Itinéraire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-info">
+                    <h4>Conseils d'accès</h4>
+                    <ul>
+                        <li>À 20 minutes de l'aéroport CDG en voiture</li>
+                        <li>À 15 minutes de la gare Montparnasse</li>
+                        <li>Stationnement conseillé : Q-Park Saint-Germain</li>
+                        <li>Zone piétonne à proximité</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Rapide -->
+    <section class="contact-faq">
+        <div class="container">
+            <h2>Questions fréquentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>Quels sont les horaires de check-in/check-out ?</h4>
+                    <p>Check-in à partir de 15h00, check-out avant 12h00. Bagagerie disponible.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Acceptez-vous les animaux ?</h4>
+                    <p>Oui, les animaux de petite taille sont acceptés (25€/nuit supplémentaire).</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Y a-t-il un parking ?</h4>
+                    <p>Parking partenaire à 50m (30€/jour). Réservation recommandée.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Proposez-vous des services de navette ?</h4>
+                    <p>Service voiturier sur réservation pour aéroports et gares.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+    <script>
+        // Script spécifique à la page contact
+        class ContactForm {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.initCharCount();
+                this.initFormSubmission();
+                this.initInteractiveElements();
+            }
+
+            initCharCount() {
+                const textarea = document.getElementById('message');
+                const charCount = document.getElementById('charCount');
+                
+                textarea.addEventListener('input', () => {
+                    const count = textarea.value.length;
+                    charCount.textContent = count;
+                    
+                    if (count > 500) {
+                        charCount.style.color = '#ff6b6b';
+                    } else if (count > 400) {
+                        charCount.style.color = '#ffa726';
+                    } else {
+                        charCount.style.color = '#4CAF50';
+                    }
+                });
+            }
+
+            initFormSubmission() {
+                document.getElementById('contactForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.submitForm();
+                });
+            }
+
+            submitForm() {
+                const submitBtn = document.querySelector('.submit-btn');
+                const btnText = submitBtn.querySelector('.btn-text');
+                const btnLoading = submitBtn.querySelector('.btn-loading');
+
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'inline-flex';
+                submitBtn.disabled = true;
+
+                // Simulation d'envoi
+                setTimeout(() => {
+                    this.showSuccessMessage();
+                    document.getElementById('contactForm').reset();
+                    document.getElementById('charCount').textContent = '0';
+                    
+                    btnText.style.display = 'inline-flex';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                }, 2000);
+            }
+
+            showSuccessMessage() {
+                const successDiv = document.createElement('div');
+                successDiv.className = 'success-message';
+                successDiv.innerHTML = `
+                    <div class="success-content">
+                        <span class="success-icon">✅</span>
+                        <div>
+                            <h4>Message envoyé !</h4>
+                            <p>Nous vous répondrons dans les plus brefs délais.</p>
+                        </div>
+                    </div>
+                `;
+                
+                const form = document.getElementById('contactForm');
+                form.parentNode.insertBefore(successDiv, form);
+                
+                setTimeout(() => {
+                    successDiv.remove();
+                }, 5000);
+            }
+
+            initInteractiveElements() {
+                // Animation des cartes de contact
+                document.querySelectorAll('.quick-card').forEach(card => {
+                    card.addEventListener('mouseenter', () => {
+                        card.style.transform = 'translateY(-5px)';
+                    });
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = 'translateY(0)';
+                    });
+                });
+            }
+        }
+
+        function openGoogleMaps() {
+            window.open('https://goo.gl/maps/example', '_blank');
+        }
+
+        function getDirections() {
+            alert('🚗 Itinéraire vers Hôtel Rive Gauche, 12 Rue de Seine, 75006 Paris');
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            new ContactForm();
+        });
+    </script>
+
+    <style>
+        /* Styles spécifiques à la page contact */
+        .contact-quick {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+        
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .quick-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .quick-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .quick-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .quick-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--secondary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .quick-link:hover {
+            background: var(--primary);
+        }
+        
+        .quick-status {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.3rem 1rem;
+            background: #4CAF50;
+            color: var(--white);
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-main {
+            padding: 6rem 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .contact-form-section h2 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .contact-form {
+            margin-top: 2rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0
