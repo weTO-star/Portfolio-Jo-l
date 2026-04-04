@@ -318,7 +318,6 @@
 
         <section id="calculator" class="py-5">
     <style>
-        /* Styles CSS pour le calculateur d'acquisition - Version Euro */
         .calculator-grid {
             display: grid;
             gap: 2rem;
@@ -373,71 +372,95 @@
             font-size: 1.3rem;
         }
 
-        .option-item-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
+        .talent-card {
             background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid transparent;
+            border: 1px solid rgba(0, 255, 255, 0.2);
             border-radius: 0.75rem;
             padding: 1rem;
-            margin-bottom: 0.75rem;
-            cursor: pointer;
+            margin-bottom: 1rem;
             transition: var(--trans-fast);
-            position: relative;
         }
 
-        .option-item-card:hover {
-            transform: translateY(-3px);
+        .talent-card:hover {
             border-color: var(--clr-secondary);
-            box-shadow: 0 5px 15px var(--eff-shadow-glow);
         }
 
-        .option-item-card.selected {
-            border-color: var(--clr-primary);
-            box-shadow: 0 0 20px var(--eff-shadow-glow);
-            background-color: rgba(0, 255, 255, 0.1);
+        .talent-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
         }
 
-        .option-icon {
-            font-size: 1.8rem;
+        .talent-icon {
+            font-size: 1.5rem;
             color: var(--clr-primary);
-            flex-shrink: 0;
         }
 
-        .option-content h5 {
+        .talent-info {
+            flex: 1;
+        }
+
+        .talent-info h5 {
             color: var(--clr-accent);
             font-weight: 600;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0;
             font-size: 1rem;
         }
 
-        .option-description {
-            font-size: 0.75rem;
-            color: var(--clr-text-subtle);
-            margin-bottom: 0.25rem;
-        }
-
-        .option-price-tag {
-            font-weight: 700;
+        .talent-price {
+            font-size: 0.85rem;
             color: var(--clr-primary);
-            font-size: 0.9rem;
-            display: inline-block;
-            background: rgba(0, 255, 255, 0.1);
-            padding: 0.15rem 0.6rem;
-            border-radius: 20px;
+            font-weight: 500;
         }
 
-        .market-comparison {
-            font-size: 0.65rem;
-            color: #25D366;
-            margin-left: 0.5rem;
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
         }
 
-        .roi-badge {
-            font-size: 0.7rem;
-            color: #FFD700;
-            margin-left: 0.5rem;
+        .quantity-btn {
+            background: rgba(0, 255, 255, 0.2);
+            border: none;
+            color: var(--clr-primary);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--trans-fast);
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .quantity-btn:hover {
+            background: var(--clr-primary);
+            color: var(--clr-background-dark);
+        }
+
+        .quantity-value {
+            font-weight: 600;
+            min-width: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .talent-subtotal {
+            font-size: 0.8rem;
+            color: var(--clr-text-subtle);
+            margin-top: 0.5rem;
+            text-align: right;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-top: 0.5rem;
+        }
+
+        .talent-subtotal span {
+            color: var(--clr-primary);
+            font-weight: 600;
         }
 
         .summary-container {
@@ -455,19 +478,20 @@
             list-style: none;
             padding: 0;
             margin-bottom: 1.5rem;
-            min-height: 100px;
+            max-height: 300px;
+            overflow-y: auto;
         }
 
         #summary-list li {
             background-color: rgba(255, 255, 255, 0.05);
-            padding: 0.6rem 0.8rem;
-            margin-bottom: 0.5rem;
+            padding: 0.5rem 0.8rem;
+            margin-bottom: 0.4rem;
             border-radius: 0.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-left: 3px solid var(--clr-secondary);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .summary-total-box {
@@ -485,6 +509,16 @@
             color: var(--clr-primary);
             display: block;
             margin-top: 0.3rem;
+        }
+
+        .discount-badge {
+            background: rgba(0, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 0.2rem 0.8rem;
+            font-size: 0.7rem;
+            color: #FFD700;
+            display: inline-block;
+            margin-top: 0.5rem;
         }
 
         .custom-btn {
@@ -514,16 +548,20 @@
             font-weight: bold;
         }
 
-        .euro-sign {
-            font-size: 0.9rem;
+        .total-talents {
+            font-size: 0.75rem;
+            color: var(--clr-text-subtle);
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
     
     <div class="container animated-section fade-in-up" id="devis-calculator">
         <div class="text-center mb-4">
             <div class="section-badge">🌍 Qualité européenne — Prix malgache</div>
-            <h2 class="text-white">Estimez votre <span class="highlight">croissance</span> à l'international</h2>
-            <p class="text-white-50">Des équipes opérationnelles à des tarifs défiant toute concurrence</p>
+            <h2 class="text-white">Construisez votre <span class="highlight">équipe sur mesure</span></h2>
+            <p class="text-white-50">Sélectionnez le nombre de talents dont vous avez besoin</p>
             <div class="price-advantage">
                 <i class="fas fa-chart-line me-1"></i> Jusqu'à -70% par rapport aux tarifs européens
             </div>
@@ -531,110 +569,139 @@
         
         <div class="calculator-grid">
             <div class="calculator-options-side">
-                <!-- Solution 1 : Équipe de prospection -->
+                <!-- Profil 1 : SDR -->
                 <div class="option-group">
-                    <h3 class="text-white"><i class="fas fa-chart-line me-2"></i>📞 Génération de leads</h3>
-                    <div class="option-item-card" data-price="1990" data-type="sdr" data-label="🎯 Équipe SDR dédiée (2 agents)">
-                        <div class="option-icon"><i class="fas fa-phone-alt"></i></div>
-                        <div class="option-content">
-                            <h5 class="option-label">Équipe SDR dédiée (2 agents)</h5>
-                            <p class="option-description">Prospection active, qualification de leads, prise de rendez-vous.</p>
-                            <span class="option-price-tag">€1 990 <small class="euro-sign">/mois</small></span>
-                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €6 000+</span>
-                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +150 leads qualifiés/mois</span>
+                    <h3 class="text-white"><i class="fas fa-chart-line me-2"></i>📞 SDR (Sales Development Representative)</h3>
+                    <div class="talent-card" data-type="sdr" data-price="750">
+                        <div class="talent-header">
+                            <div class="talent-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="talent-info">
+                                <h5>SDR - Prospection & qualification</h5>
+                                <div class="talent-price">€750 / agent / mois</div>
+                            </div>
+                            <div class="quantity-control">
+                                <button class="quantity-btn dec-btn" data-type="sdr">-</button>
+                                <span class="quantity-value" id="sdr-count">0</span>
+                                <button class="quantity-btn inc-btn" data-type="sdr">+</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="option-item-card" data-price="1490" data-type="callcenter" data-label="📢 Centre d'appels (3 opérateurs)">
-                        <div class="option-icon"><i class="fas fa-headset"></i></div>
-                        <div class="option-content">
-                            <h5 class="option-label">Centre d'appels (3 opérateurs)</h5>
-                            <p class="option-description">Gestion des appels entrants et campagnes sortantes.</p>
-                            <span class="option-price-tag">€1 490 <small class="euro-sign">/mois</small></span>
-                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €5 000+</span>
-                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +400 appels traités/jour</span>
-                        </div>
+                        <div class="talent-subtotal" id="sdr-subtotal">Sous-total : <span>€0</span></div>
                     </div>
                 </div>
 
-                <!-- Solution 2 : Closing & Performance -->
+                <!-- Profil 2 : Opérateur Centre d'appel -->
                 <div class="option-group">
-                    <h3 class="text-white"><i class="fas fa-handshake me-2"></i>🤝 Closing & Performance</h3>
-                    <div class="option-item-card" data-price="2490" data-type="commerciaux" data-label="🚀 2 Commerciaux terrain (full-time)">
-                        <div class="option-icon"><i class="fas fa-briefcase"></i></div>
-                        <div class="option-content">
-                            <h5 class="option-label">2 Commerciaux terrain (full-time)</h5>
-                            <p class="option-description">Force de vente expérimentée pour convertir vos prospects.</p>
-                            <span class="option-price-tag">€2 490 <small class="euro-sign">/mois</small></span>
-                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €8 000+</span>
-                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +25 rendez-vous clos/mois</span>
+                    <h3 class="text-white"><i class="fas fa-headset me-2"></i>📢 Opérateur Centre d'appel</h3>
+                    <div class="talent-card" data-type="callcenter" data-price="490">
+                        <div class="talent-header">
+                            <div class="talent-icon"><i class="fas fa-headset"></i></div>
+                            <div class="talent-info">
+                                <h5>Opérateur centre d'appel</h5>
+                                <div class="talent-price">€490 / agent / mois</div>
+                            </div>
+                            <div class="quantity-control">
+                                <button class="quantity-btn dec-btn" data-type="callcenter">-</button>
+                                <span class="quantity-value" id="callcenter-count">0</span>
+                                <button class="quantity-btn inc-btn" data-type="callcenter">+</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="option-item-card" data-price="1490" data-type="accountmanager" data-label="💼 Account Manager dédié">
-                        <div class="option-icon"><i class="fas fa-user-check"></i></div>
-                        <div class="option-content">
-                            <h5 class="option-label">Account Manager dédié</h5>
-                            <p class="option-description">Fidélisation, upselling et gestion du portefeuille client.</p>
-                            <span class="option-price-tag">€1 490 <small class="euro-sign">/mois</small></span>
-                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €4 500+</span>
-                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +35% de rétention</span>
-                        </div>
+                        <div class="talent-subtotal" id="callcenter-subtotal">Sous-total : <span>€0</span></div>
                     </div>
                 </div>
 
-                <!-- Solution 3 : Support & Fidélisation -->
+                <!-- Profil 3 : Commercial freelance -->
                 <div class="option-group">
-                    <h3 class="text-white"><i class="fas fa-heart me-2"></i>💬 Relation client & Support</h3>
-                    <div class="option-item-card" data-price="990" data-type="support" data-label="🎧 Support client 7j/7 (4 agents)">
-                        <div class="option-icon"><i class="fas fa-life-ring"></i></div>
-                        <div class="option-content">
-                            <h5 class="option-label">Support client 7j/7 (4 agents)</h5>
-                            <p class="option-description">SAV, assistance technique, réclamations.</p>
-                            <span class="option-price-tag">€990 <small class="euro-sign">/mois</small></span>
-                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €3 500+</span>
-                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> Satisfaction garantie</span>
+                    <h3 class="text-white"><i class="fas fa-handshake me-2"></i>🤝 Commercial freelance</h3>
+                    <div class="talent-card" data-type="commercial" data-price="890">
+                        <div class="talent-header">
+                            <div class="talent-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="talent-info">
+                                <h5>Commercial freelance</h5>
+                                <div class="talent-price">€890 / agent / mois</div>
+                            </div>
+                            <div class="quantity-control">
+                                <button class="quantity-btn dec-btn" data-type="commercial">-</button>
+                                <span class="quantity-value" id="commercial-count">0</span>
+                                <button class="quantity-btn inc-btn" data-type="commercial">+</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="option-item-card" data-price="590" data-type="crm" data-label="📊 CRM + Automation marketing">
-                        <div class="option-icon"><i class="fas fa-robot"></i></div>
-                        <div class="option-content">
-                            <h5 class="option-label">CRM + Automation marketing</h5>
-                            <p class="option-description">HubSpot/Pipedrive + séquences email/SMS automatisées.</p>
-                            <span class="option-price-tag">€590 <small class="euro-sign">(setup unique)</small></span>
-                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €2 000+</span>
-                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +45% de conversion</span>
-                        </div>
+                        <div class="talent-subtotal" id="commercial-subtotal">Sous-total : <span>€0</span></div>
                     </div>
                 </div>
 
-                <!-- Solution 4 : Sites web pour hôtels & restaurants -->
+                <!-- Profil 4 : Account Manager -->
                 <div class="option-group">
-                    <h3 class="text-white"><i class="fas fa-globe me-2"></i>🏨 Sites web (hôtels & restaurants)</h3>
-                    <div class="option-item-card" data-price="890" data-type="site-vitrine" data-label="🌐 Site vitrine premium">
-                        <div class="option-icon"><i class="fas fa-hotel"></i></div>
-                        <div class="option-content">
-                            <h5 class="option-label">Site vitrine premium</h5>
-                            <p class="option-description">Design responsive, galerie, réservation intégrée, SEO.</p>
-                            <span class="option-price-tag">€890 <small class="euro-sign">(unique)</small></span>
-                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €3 000+</span>
-                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> Hébergement 1 an offert</span>
+                    <h3 class="text-white"><i class="fas fa-user-check me-2"></i>💼 Account Manager</h3>
+                    <div class="talent-card" data-type="account" data-price="1190">
+                        <div class="talent-header">
+                            <div class="talent-icon"><i class="fas fa-user-tie"></i></div>
+                            <div class="talent-info">
+                                <h5>Account Manager</h5>
+                                <div class="talent-price">€1 190 / agent / mois</div>
+                            </div>
+                            <div class="quantity-control">
+                                <button class="quantity-btn dec-btn" data-type="account">-</button>
+                                <span class="quantity-value" id="account-count">0</span>
+                                <button class="quantity-btn inc-btn" data-type="account">+</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="option-item-card" data-price="1490" data-type="site-ecommerce" data-label="🛒 E-commerce complet">
-                        <div class="option-icon"><i class="fas fa-shopping-cart"></i></div>
-                        <div class="option-content">
-                            <h5 class="option-label">E-commerce complet</h5>
-                            <p class="option-description">Boutique en ligne, paiements sécurisés, gestion des commandes.</p>
-                            <span class="option-price-tag">€1 490 <small class="euro-sign">(unique)</small></span>
-                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €5 000+</span>
-                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> 2 mois de suivi inclus</span>
-                        </div>
+                        <div class="talent-subtotal" id="account-subtotal">Sous-total : <span>€0</span></div>
                     </div>
                 </div>
-                
-                <div class="text-center mt-2">
-                    <p class="text-white-50 small">
-                        <i class="fas fa-check-circle text-primary"></i> Équipes déjà opérationnelles — Formation incluse — Mise en place sous 48h
-                    </p>
+
+                <!-- Profil 5 : Support client -->
+                <div class="option-group">
+                    <h3 class="text-white"><i class="fas fa-life-ring me-2"></i>💬 Support client</h3>
+                    <div class="talent-card" data-type="support" data-price="590">
+                        <div class="talent-header">
+                            <div class="talent-icon"><i class="fas fa-headset"></i></div>
+                            <div class="talent-info">
+                                <h5>Support client (SAV)</h5>
+                                <div class="talent-price">€590 / agent / mois</div>
+                            </div>
+                            <div class="quantity-control">
+                                <button class="quantity-btn dec-btn" data-type="support">-</button>
+                                <span class="quantity-value" id="support-count">0</span>
+                                <button class="quantity-btn inc-btn" data-type="support">+</button>
+                            </div>
+                        </div>
+                        <div class="talent-subtotal" id="support-subtotal">Sous-total : <span>€0</span></div>
+                    </div>
+                </div>
+
+                <!-- Services ponctuels : Sites web -->
+                <div class="option-group">
+                    <h3 class="text-white"><i class="fas fa-globe me-2"></i>🏨 Création de sites web (hôtels & restaurants)</h3>
+                    <div class="talent-card" data-type="site" data-price="890" data-onetime="true">
+                        <div class="talent-header">
+                            <div class="talent-icon"><i class="fas fa-hotel"></i></div>
+                            <div class="talent-info">
+                                <h5>Site vitrine premium</h5>
+                                <div class="talent-price">€890 (unique)</div>
+                            </div>
+                            <div class="quantity-control">
+                                <button class="quantity-btn dec-btn" data-type="site">-</button>
+                                <span class="quantity-value" id="site-count">0</span>
+                                <button class="quantity-btn inc-btn" data-type="site">+</button>
+                            </div>
+                        </div>
+                        <div class="talent-subtotal" id="site-subtotal">Sous-total : <span>€0</span></div>
+                    </div>
+                    <div class="talent-card" data-type="ecommerce" data-price="1490" data-onetime="true" style="margin-top: 0.75rem;">
+                        <div class="talent-header">
+                            <div class="talent-icon"><i class="fas fa-shopping-cart"></i></div>
+                            <div class="talent-info">
+                                <h5>E-commerce complet</h5>
+                                <div class="talent-price">€1 490 (unique)</div>
+                            </div>
+                            <div class="quantity-control">
+                                <button class="quantity-btn dec-btn" data-type="ecommerce">-</button>
+                                <span class="quantity-value" id="ecommerce-count">0</span>
+                                <button class="quantity-btn inc-btn" data-type="ecommerce">+</button>
+                            </div>
+                        </div>
+                        <div class="talent-subtotal" id="ecommerce-subtotal">Sous-total : <span>€0</span></div>
+                    </div>
                 </div>
             </div>
 
@@ -642,32 +709,26 @@
                 <div class="summary-container">
                     <h3 class="text-white"><i class="fas fa-file-invoice-dollar me-2"></i>Votre investissement</h3>
                     <ul id="summary-list">
-                        <li style="color: #888; font-style: italic;">Aucune solution sélectionnée</li>
+                        <li style="color: #888; font-style: italic;">Aucun talent sélectionné</li>
                     </ul>
+                    
                     <div class="summary-total-box">
                         <div class="summary-total-text">
                             <h4 class="text-white">Total estimé</h4>
                             <span id="summary-total-price">€0</span>
-                            <small class="text-white-50 d-block" id="price-period">(hors taxes)</small>
+                            <small class="text-white-50 d-block" id="price-period">(par mois, hors taxes)</small>
                         </div>
                         
-                        <div class="row mt-3 g-2">
-                            <div class="col-6">
-                                <div class="bg-white-10 rounded p-2">
-                                    <small class="text-white-50">Marché Europe</small>
-                                    <p class="text-danger mb-0 small"><strike id="europe-price">€0</strike></p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="bg-white-10 rounded p-2">
-                                    <small class="text-white-50">Vous économisez</small>
-                                    <p class="text-success mb-0 small fw-bold" id="savings">€0</p>
-                                </div>
-                            </div>
+                        <div id="discount-info" class="discount-badge" style="display: none;">
+                            <i class="fas fa-tag"></i> <span id="discount-percent">0%</span> de réduction appliquée
                         </div>
 
-                        <a id="demander-devis" class="btn btn-primary custom-btn w-100 mb-2 mt-3" href="https://wa.me/261326412338?text=Bonjour%20TEAM%20Acquisition,%20je%20souhaite%20un%20devis%20pour%20mes%20besoins%20en%20acquisition%20client%20et%20solutions%20digitales." target="_blank">
-                            <i class="fab fa-whatsapp me-1"></i> Demander ce devis
+                        <div class="total-talents">
+                            <i class="fas fa-users"></i> Total talents : <strong id="total-talents-count">0</strong>
+                        </div>
+
+                        <a id="demander-devis" class="btn btn-primary custom-btn w-100 mb-2 mt-3" href="https://wa.me/261326412338?text=Bonjour%20TEAM%20Acquisition,%20je%20souhaite%20un%20devis%20pour%20constituer%20mon%20%C3%A9quipe." target="_blank">
+                            <i class="fab fa-whatsapp me-1"></i> DEMANDER CE DEVIS
                         </a>
                         <button id="reset-calculator" class="btn btn-outline-secondary w-100 btn-sm">Réinitialiser</button>
                         <div class="guarantee-text mt-2">
@@ -681,139 +742,215 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const calculatorOptions = document.querySelectorAll('.option-item-card');
-        const summaryList = document.getElementById('summary-list');
-        const summaryTotalPrice = document.getElementById('summary-total-price');
-        const europePriceSpan = document.getElementById('europe-price');
-        const savingsSpan = document.getElementById('savings');
-        const pricePeriodSpan = document.getElementById('price-period');
-        const resetBtn = document.getElementById('reset-calculator');
-        const devisLink = document.getElementById('demander-devis');
-
-        let total = 0;
-        let hasMonthly = false;
-        let hasOneTime = false;
-        const selectedItems = new Map();
-
-        // Mapping des prix européens pour comparaison
-        const europePrices = {
-            '🎯 Équipe SDR dédiée (2 agents)': 6000,
-            '📢 Centre d\'appels (3 opérateurs)': 5000,
-            '🚀 2 Commerciaux terrain (full-time)': 8000,
-            '💼 Account Manager dédié': 4500,
-            '🎧 Support client 7j/7 (4 agents)': 3500,
-            '📊 CRM + Automation marketing': 2000,
-            '🌐 Site vitrine premium': 3000,
-            '🛒 E-commerce complet': 5000
+        // Configuration des profils
+        const profiles = {
+            sdr: { name: 'SDR', price: 750, count: 0, isMonthly: true },
+            callcenter: { name: 'Opérateur centre d\'appel', price: 490, count: 0, isMonthly: true },
+            commercial: { name: 'Commercial freelance', price: 890, count: 0, isMonthly: true },
+            account: { name: 'Account Manager', price: 1190, count: 0, isMonthly: true },
+            support: { name: 'Support client', price: 590, count: 0, isMonthly: true },
+            site: { name: 'Site vitrine premium', price: 890, count: 0, isMonthly: false },
+            ecommerce: { name: 'E-commerce complet', price: 1490, count: 0, isMonthly: false }
         };
 
-        function formatEuro(price) {
-            return '€' + new Intl.NumberFormat('fr-FR').format(price);
+        // Fonction pour calculer la réduction en fonction du nombre total de talents mensuels
+        function getDiscountRate(totalTalents) {
+            if (totalTalents >= 20) return 0.05;  // 5%
+            if (totalTalents >= 10) return 0.035; // 3.5%
+            if (totalTalents >= 5) return 0.02;   // 2%
+            return 0;
         }
 
-        function updateSummary() {
-            summaryList.innerHTML = '';
-            total = 0;
-            hasMonthly = false;
-            hasOneTime = false;
-            let totalEurope = 0;
-
-            if (selectedItems.size === 0) {
-                const emptyItem = document.createElement('li');
-                emptyItem.style.color = '#888';
-                emptyItem.style.fontStyle = 'italic';
-                emptyItem.textContent = 'Aucune solution sélectionnée';
-                summaryList.appendChild(emptyItem);
-                summaryTotalPrice.textContent = '€0';
-                europePriceSpan.textContent = '€0';
-                savingsSpan.textContent = '€0';
-                pricePeriodSpan.textContent = '(hors taxes)';
-                return;
-            }
-
-            selectedItems.forEach((data, label) => {
-                const price = data.price;
-                const isMonthly = data.isMonthly;
-                total += price;
-                if (isMonthly) hasMonthly = true;
-                else hasOneTime = true;
-                
-                // Ajouter au total européen pour comparaison
-                if (europePrices[label]) {
-                    totalEurope += europePrices[label];
-                }
-                
-                const listItem = document.createElement('li');
-                const periodText = isMonthly ? '/mois' : '';
-                listItem.innerHTML = `
-                    <span>${label}</span>
-                    <span style="color: var(--clr-primary); font-weight: bold;">${formatEuro(price)}${periodText}</span>
-                `;
-                summaryList.appendChild(listItem);
-            });
-
-            // Déterminer la période d'affichage
-            if (hasMonthly && !hasOneTime) {
-                pricePeriodSpan.textContent = '(par mois, hors taxes)';
-            } else if (hasOneTime && !hasMonthly) {
-                pricePeriodSpan.textContent = '(investissement unique, hors taxes)';
-            } else {
-                pricePeriodSpan.textContent = '(mix mensuel/unique, hors taxes)';
-            }
-
-            summaryTotalPrice.textContent = formatEuro(total);
+        // Fonction pour mettre à jour l'affichage
+        function updateAll() {
+            let totalMonthly = 0;
+            let totalOneTime = 0;
+            let totalTalents = 0;
             
-            // Calculer les économies (comparaison avec marché européen)
-            const savings = totalEurope - total;
-            europePriceSpan.textContent = formatEuro(totalEurope);
-            savingsSpan.textContent = formatEuro(Math.max(0, savings));
-            
-            // Générer le message WhatsApp
-            let message = 'Bonjour TEAM Acquisition, je souhaite un devis pour mes besoins en acquisition client et solutions digitales.%0A%0A';
-            if (selectedItems.size > 0) {
-                message += '*Solutions sélectionnées :*%0A';
-                selectedItems.forEach((data, label) => {
-                    const periodText = data.isMonthly ? '/mois' : '(unique)';
-                    message += `• ${label} : ${formatEuro(data.price)} ${periodText}%0A`;
-                });
-                message += `%0A*TOTAL ESTIMÉ : ${formatEuro(total)}*%0A`;
-                message += `*Économie par rapport au marché européen : ${formatEuro(savings)}*%0A%0A`;
-            }
-            message += 'Merci de me contacter pour discuter de la mise en place.';
-            devisLink.href = `https://wa.me/261326412338?text=${message}`;
-        }
-
-        // Gestion du clic sur les options
-        calculatorOptions.forEach(option => {
-            option.addEventListener('click', function() {
-                const price = parseInt(this.dataset.price);
-                const label = this.dataset.label;
-                const type = this.dataset.type;
-                // Déterminer si c'est mensuel (prix > 500 ou type spécifique) ou unique
-                const isMonthly = type === 'sdr' || type === 'callcenter' || type === 'commerciaux' || 
-                                 type === 'accountmanager' || type === 'support';
-
-                if (this.classList.contains('selected')) {
-                    this.classList.remove('selected');
-                    selectedItems.delete(label);
+            // Calculer les totaux par profil
+            for (const [key, profile] of Object.entries(profiles)) {
+                const subtotal = profile.count * profile.price;
+                if (profile.isMonthly) {
+                    totalMonthly += subtotal;
+                    totalTalents += profile.count;
                 } else {
-                    this.classList.add('selected');
-                    selectedItems.set(label, { price: price, isMonthly: isMonthly });
+                    totalOneTime += subtotal;
                 }
-                updateSummary();
+                
+                // Mettre à jour l'affichage du compteur
+                const countElement = document.getElementById(`${key}-count`);
+                const subtotalElement = document.getElementById(`${key}-subtotal`);
+                if (countElement) countElement.textContent = profile.count;
+                if (subtotalElement) {
+                    subtotalElement.innerHTML = `Sous-total : <span>€${subtotal.toLocaleString('fr-FR')}</span>`;
+                }
+            }
+            
+            // Calculer la réduction
+            const discountRate = getDiscountRate(totalTalents);
+            const discountAmount = totalMonthly * discountRate;
+            const finalMonthly = totalMonthly - discountAmount;
+            const grandTotal = finalMonthly + totalOneTime;
+            
+            // Mettre à jour l'affichage des totaux
+            document.getElementById('summary-total-price').textContent = `€${grandTotal.toLocaleString('fr-FR')}`;
+            document.getElementById('total-talents-count').textContent = totalTalents;
+            
+            // Afficher/cacher les informations de réduction
+            const discountInfo = document.getElementById('discount-info');
+            const discountPercentSpan = document.getElementById('discount-percent');
+            if (discountRate > 0) {
+                discountInfo.style.display = 'block';
+                discountPercentSpan.textContent = `${(discountRate * 100).toFixed(1)}%`;
+            } else {
+                discountInfo.style.display = 'none';
+            }
+            
+            // Mettre à jour le résumé
+            updateSummaryList(profiles, totalMonthly, discountAmount, finalMonthly, totalOneTime, grandTotal, totalTalents);
+            
+            // Mettre à jour le lien WhatsApp
+            updateWhatsAppLink(profiles, totalMonthly, discountAmount, finalMonthly, totalOneTime, grandTotal, totalTalents, discountRate);
+        }
+        
+        // Mettre à jour la liste de résumé
+        function updateSummaryList(profiles, totalMonthly, discountAmount, finalMonthly, totalOneTime, grandTotal, totalTalents) {
+            const summaryList = document.getElementById('summary-list');
+            summaryList.innerHTML = '';
+            
+            let hasItems = false;
+            
+            // Ajouter les talents mensuels
+            for (const [key, profile] of Object.entries(profiles)) {
+                if (profile.count > 0) {
+                    hasItems = true;
+                    const subtotal = profile.count * profile.price;
+                    const period = profile.isMonthly ? '/mois' : '(unique)';
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <span>${profile.count}x ${profile.name}</span>
+                        <span style="color: var(--clr-primary); font-weight: bold;">€${subtotal.toLocaleString('fr-FR')}${period}</span>
+                    `;
+                    summaryList.appendChild(li);
+                }
+            }
+            
+            // Ajouter la ligne de réduction si applicable
+            if (discountAmount > 0) {
+                const li = document.createElement('li');
+                li.style.borderLeftColor = '#FFD700';
+                li.style.background = 'rgba(255, 215, 0, 0.1)';
+                li.innerHTML = `
+                    <span><i class="fas fa-tag"></i> Réduction (${((discountAmount/(totalMonthly+discountAmount))*100).toFixed(1)}%)</span>
+                    <span style="color: #FFD700; font-weight: bold;">-€${discountAmount.toLocaleString('fr-FR')}</span>
+                `;
+                summaryList.appendChild(li);
+            }
+            
+            // Ajouter le total mensuel après réduction
+            if (totalMonthly > 0 || totalOneTime > 0) {
+                const separator = document.createElement('li');
+                separator.style.borderTop = '1px solid rgba(255,255,255,0.2)';
+                separator.style.margin = '0.5rem 0';
+                separator.style.padding = '0';
+                separator.style.background = 'transparent';
+                summaryList.appendChild(separator);
+                
+                if (totalMonthly > 0) {
+                    const li = document.createElement('li');
+                    li.style.background = 'rgba(0, 255, 255, 0.1)';
+                    li.style.fontWeight = 'bold';
+                    li.innerHTML = `
+                        <span>📅 Total mensuel</span>
+                        <span style="color: var(--clr-primary);">€${finalMonthly.toLocaleString('fr-FR')}</span>
+                    `;
+                    summaryList.appendChild(li);
+                }
+                
+                if (totalOneTime > 0) {
+                    const li = document.createElement('li');
+                    li.style.background = 'rgba(0, 255, 255, 0.1)';
+                    li.style.fontWeight = 'bold';
+                    li.innerHTML = `
+                        <span>⚡ Prestations uniques</span>
+                        <span style="color: var(--clr-primary);">€${totalOneTime.toLocaleString('fr-FR')}</span>
+                    `;
+                    summaryList.appendChild(li);
+                }
+            }
+            
+            if (!hasItems) {
+                const li = document.createElement('li');
+                li.style.color = '#888';
+                li.style.fontStyle = 'italic';
+                li.textContent = 'Aucun talent sélectionné';
+                summaryList.appendChild(li);
+            }
+        }
+        
+        // Mettre à jour le lien WhatsApp
+        function updateWhatsAppLink(profiles, totalMonthly, discountAmount, finalMonthly, totalOneTime, grandTotal, totalTalents, discountRate) {
+            const devisLink = document.getElementById('demander-devis');
+            let message = 'Bonjour TEAM Acquisition, je souhaite un devis pour constituer mon équipe.%0A%0A';
+            message += '*Composition de l\'équipe :*%0A';
+            
+            for (const [key, profile] of Object.entries(profiles)) {
+                if (profile.count > 0) {
+                    const period = profile.isMonthly ? '/mois' : '(unique)';
+                    message += `• ${profile.count}x ${profile.name} : €${(profile.count * profile.price).toLocaleString('fr-FR')} ${period}%0A`;
+                }
+            }
+            
+            message += `%0A*Total talents mensuels :* ${totalTalents}`;
+            if (discountRate > 0) {
+                message += `%0A*Réduction :* ${(discountRate * 100).toFixed(1)}% (-€${discountAmount.toLocaleString('fr-FR')})`;
+            }
+            message += `%0A%0A*Total mensuel après réduction :* €${finalMonthly.toLocaleString('fr-FR')}`;
+            if (totalOneTime > 0) {
+                message += `%0A*Prestations uniques :* €${totalOneTime.toLocaleString('fr-FR')}`;
+            }
+            message += `%0A%0A*GRAND TOTAL :* €${grandTotal.toLocaleString('fr-FR')}`;
+            message += `%0A%0AMerci de me recontacter pour finaliser la mise en place.`;
+            
+            devisLink.href = `https://wa.me/261326412338?text=${encodeURIComponent(message)}`;
+        }
+        
+        // Initialiser les contrôleurs
+        const decrementButtons = document.querySelectorAll('.dec-btn');
+        const incrementButtons = document.querySelectorAll('.inc-btn');
+        
+        function changeQuantity(type, delta) {
+            if (profiles[type]) {
+                const newValue = Math.max(0, profiles[type].count + delta);
+                profiles[type].count = newValue;
+                updateAll();
+            }
+        }
+        
+        decrementButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const type = btn.getAttribute('data-type');
+                changeQuantity(type, -1);
             });
         });
-
-        // Réinitialisation
-        resetBtn.addEventListener('click', function() {
-            calculatorOptions.forEach(option => {
-                option.classList.remove('selected');
+        
+        incrementButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const type = btn.getAttribute('data-type');
+                changeQuantity(type, 1);
             });
-            selectedItems.clear();
-            updateSummary();
         });
-
-        updateSummary();
+        
+        // Bouton reset
+        document.getElementById('reset-calculator').addEventListener('click', () => {
+            for (const key of Object.keys(profiles)) {
+                profiles[key].count = 0;
+            }
+            updateAll();
+        });
+        
+        // Initialisation
+        updateAll();
     });
     </script>
 </section>
