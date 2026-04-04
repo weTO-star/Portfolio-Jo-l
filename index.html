@@ -318,7 +318,7 @@
 
         <section id="calculator" class="py-5">
     <style>
-        /* Styles CSS pour le nouveau calculateur d'acquisition */
+        /* Styles CSS pour le calculateur d'acquisition - Version Euro */
         .calculator-grid {
             display: grid;
             gap: 2rem;
@@ -350,6 +350,16 @@
             font-weight: 500;
             color: var(--clr-primary);
             margin-bottom: 1rem;
+        }
+
+        .price-advantage {
+            background: rgba(0, 255, 255, 0.15);
+            border-radius: 50px;
+            padding: 0.3rem 1rem;
+            font-size: 0.75rem;
+            color: var(--clr-primary);
+            display: inline-block;
+            margin-bottom: 1.5rem;
         }
 
         .option-group {
@@ -411,16 +421,22 @@
         .option-price-tag {
             font-weight: 700;
             color: var(--clr-primary);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             display: inline-block;
             background: rgba(0, 255, 255, 0.1);
-            padding: 0.15rem 0.5rem;
+            padding: 0.15rem 0.6rem;
             border-radius: 20px;
+        }
+
+        .market-comparison {
+            font-size: 0.65rem;
+            color: #25D366;
+            margin-left: 0.5rem;
         }
 
         .roi-badge {
             font-size: 0.7rem;
-            color: #25D366;
+            color: #FFD700;
             margin-left: 0.5rem;
         }
 
@@ -497,89 +513,129 @@
             color: #00FFFF;
             font-weight: bold;
         }
+
+        .euro-sign {
+            font-size: 0.9rem;
+        }
     </style>
     
     <div class="container animated-section fade-in-up" id="devis-calculator">
         <div class="text-center mb-4">
-            <div class="section-badge">🚀 Performance garantie</div>
-            <h2 class="text-white">Estimez votre future <span class="highlight">croissance</span></h2>
-            <p class="text-white-50">Sélectionnez les solutions d'acquisition qui feront décoller votre chiffre d'affaires</p>
+            <div class="section-badge">🌍 Qualité européenne — Prix malgache</div>
+            <h2 class="text-white">Estimez votre <span class="highlight">croissance</span> à l'international</h2>
+            <p class="text-white-50">Des équipes opérationnelles à des tarifs défiant toute concurrence</p>
+            <div class="price-advantage">
+                <i class="fas fa-chart-line me-1"></i> Jusqu'à -70% par rapport aux tarifs européens
+            </div>
         </div>
         
         <div class="calculator-grid">
             <div class="calculator-options-side">
                 <!-- Solution 1 : Équipe de prospection -->
                 <div class="option-group">
-                    <h3 class="text-white"><i class="fas fa-chart-line me-2"></i>Génération de leads</h3>
-                    <div class="option-item-card" data-price="1250000" data-type="sdr" data-label="📞 Équipe SDR dédiée">
+                    <h3 class="text-white"><i class="fas fa-chart-line me-2"></i>📞 Génération de leads</h3>
+                    <div class="option-item-card" data-price="1990" data-type="sdr" data-label="🎯 Équipe SDR dédiée (2 agents)">
                         <div class="option-icon"><i class="fas fa-phone-alt"></i></div>
                         <div class="option-content">
-                            <h5 class="option-label">Équipe SDR dédiée</h5>
-                            <p class="option-description">2 chargés de prospection qualifient vos leads et prennent rendez-vous.</p>
-                            <span class="option-price-tag">1 250 000 AR/mois</span>
+                            <h5 class="option-label">Équipe SDR dédiée (2 agents)</h5>
+                            <p class="option-description">Prospection active, qualification de leads, prise de rendez-vous.</p>
+                            <span class="option-price-tag">€1 990 <small class="euro-sign">/mois</small></span>
+                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €6 000+</span>
                             <span class="roi-badge"><i class="fas fa-chart-simple"></i> +150 leads qualifiés/mois</span>
                         </div>
                     </div>
-                    <div class="option-item-card" data-price="890000" data-type="callcenter" data-label="📢 Centre d'appels entrants/sortants">
+                    <div class="option-item-card" data-price="1490" data-type="callcenter" data-label="📢 Centre d'appels (3 opérateurs)">
                         <div class="option-icon"><i class="fas fa-headset"></i></div>
                         <div class="option-content">
-                            <h5 class="option-label">Centre d'appels entrants/sortants</h5>
-                            <p class="option-description">Équipe dédiée à la gestion des app entrants et à la relance sortante.</p>
-                            <span class="option-price-tag">890 000 AR/mois</span>
-                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +300 appels traités/jour</span>
+                            <h5 class="option-label">Centre d'appels (3 opérateurs)</h5>
+                            <p class="option-description">Gestion des appels entrants et campagnes sortantes.</p>
+                            <span class="option-price-tag">€1 490 <small class="euro-sign">/mois</small></span>
+                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €5 000+</span>
+                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +400 appels traités/jour</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Solution 2 : Closing & Performance -->
                 <div class="option-group">
-                    <h3 class="text-white"><i class="fas fa-handshake me-2"></i>Closing & Performance</h3>
-                    <div class="option-item-card" data-price="1800000" data-type="commerciaux" data-label="🤝 2 Commerciaux terrain">
+                    <h3 class="text-white"><i class="fas fa-handshake me-2"></i>🤝 Closing & Performance</h3>
+                    <div class="option-item-card" data-price="2490" data-type="commerciaux" data-label="🚀 2 Commerciaux terrain (full-time)">
                         <div class="option-icon"><i class="fas fa-briefcase"></i></div>
                         <div class="option-content">
-                            <h5 class="option-label">2 Commerciaux terrain</h5>
-                            <p class="option-description">Force de vente expérimentée pour convertir vos prospects en clients.</p>
-                            <span class="option-price-tag">1 800 000 AR/mois</span>
-                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +20 rendez-vous clos/mois</span>
+                            <h5 class="option-label">2 Commerciaux terrain (full-time)</h5>
+                            <p class="option-description">Force de vente expérimentée pour convertir vos prospects.</p>
+                            <span class="option-price-tag">€2 490 <small class="euro-sign">/mois</small></span>
+                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €8 000+</span>
+                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +25 rendez-vous clos/mois</span>
                         </div>
                     </div>
-                    <div class="option-item-card" data-price="990000" data-type="accountmanager" data-label="💼 Account Manager dédié">
+                    <div class="option-item-card" data-price="1490" data-type="accountmanager" data-label="💼 Account Manager dédié">
                         <div class="option-icon"><i class="fas fa-user-check"></i></div>
                         <div class="option-content">
                             <h5 class="option-label">Account Manager dédié</h5>
-                            <p class="option-description">Gestion et fidélisation de votre portefeuille clients existant.</p>
-                            <span class="option-price-tag">990 000 AR/mois</span>
-                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +30% de rétention client</span>
+                            <p class="option-description">Fidélisation, upselling et gestion du portefeuille client.</p>
+                            <span class="option-price-tag">€1 490 <small class="euro-sign">/mois</small></span>
+                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €4 500+</span>
+                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +35% de rétention</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Solution 3 : Support & Fidélisation -->
                 <div class="option-group">
-                    <h3 class="text-white"><i class="fas fa-heart me-2"></i>Relation client & Fidélisation</h3>
-                    <div class="option-item-card" data-price="650000" data-type="support" data-label="🎧 Support client 7j/7">
+                    <h3 class="text-white"><i class="fas fa-heart me-2"></i>💬 Relation client & Support</h3>
+                    <div class="option-item-card" data-price="990" data-type="support" data-label="🎧 Support client 7j/7 (4 agents)">
                         <div class="option-icon"><i class="fas fa-life-ring"></i></div>
                         <div class="option-content">
-                            <h5 class="option-label">Support client 7j/7</h5>
-                            <p class="option-description">Équipe dédiée au SAV, réclamations et assistance technique.</p>
-                            <span class="option-price-tag">650 000 AR/mois</span>
-                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> Satisfaction client garantie</span>
+                            <h5 class="option-label">Support client 7j/7 (4 agents)</h5>
+                            <p class="option-description">SAV, assistance technique, réclamations.</p>
+                            <span class="option-price-tag">€990 <small class="euro-sign">/mois</small></span>
+                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €3 500+</span>
+                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> Satisfaction garantie</span>
                         </div>
                     </div>
-                    <div class="option-item-card" data-price="350000" data-type="crm" data-label="📊 Mise en place CRM + Automation">
+                    <div class="option-item-card" data-price="590" data-type="crm" data-label="📊 CRM + Automation marketing">
                         <div class="option-icon"><i class="fas fa-robot"></i></div>
                         <div class="option-content">
                             <h5 class="option-label">CRM + Automation marketing</h5>
-                            <p class="option-description">HubSpot/Pipedrive + séquences emails/SMS automatisées.</p>
-                            <span class="option-price-tag">350 000 AR (setup unique)</span>
-                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +40% de conversion</span>
+                            <p class="option-description">HubSpot/Pipedrive + séquences email/SMS automatisées.</p>
+                            <span class="option-price-tag">€590 <small class="euro-sign">(setup unique)</small></span>
+                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €2 000+</span>
+                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +45% de conversion</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution 4 : Sites web pour hôtels & restaurants -->
+                <div class="option-group">
+                    <h3 class="text-white"><i class="fas fa-globe me-2"></i>🏨 Sites web (hôtels & restaurants)</h3>
+                    <div class="option-item-card" data-price="890" data-type="site-vitrine" data-label="🌐 Site vitrine premium">
+                        <div class="option-icon"><i class="fas fa-hotel"></i></div>
+                        <div class="option-content">
+                            <h5 class="option-label">Site vitrine premium</h5>
+                            <p class="option-description">Design responsive, galerie, réservation intégrée, SEO.</p>
+                            <span class="option-price-tag">€890 <small class="euro-sign">(unique)</small></span>
+                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €3 000+</span>
+                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> Hébergement 1 an offert</span>
+                        </div>
+                    </div>
+                    <div class="option-item-card" data-price="1490" data-type="site-ecommerce" data-label="🛒 E-commerce complet">
+                        <div class="option-icon"><i class="fas fa-shopping-cart"></i></div>
+                        <div class="option-content">
+                            <h5 class="option-label">E-commerce complet</h5>
+                            <p class="option-description">Boutique en ligne, paiements sécurisés, gestion des commandes.</p>
+                            <span class="option-price-tag">€1 490 <small class="euro-sign">(unique)</small></span>
+                            <span class="market-comparison"><i class="fas fa-tag"></i> Europe : €5 000+</span>
+                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> 2 mois de suivi inclus</span>
                         </div>
                     </div>
                 </div>
                 
-                <p class="text-white-50 small mt-3 text-center">
-                    <i class="fas fa-check-circle text-primary"></i> Équipes déjà opérationnelles, formation incluse
-                </p>
+                <div class="text-center mt-2">
+                    <p class="text-white-50 small">
+                        <i class="fas fa-check-circle text-primary"></i> Équipes déjà opérationnelles — Formation incluse — Mise en place sous 48h
+                    </p>
+                </div>
             </div>
 
             <div class="calculator-summary-side">
@@ -590,19 +646,32 @@
                     </ul>
                     <div class="summary-total-box">
                         <div class="summary-total-text">
-                            <h4 class="text-white">Budget mensuel estimé</h4>
-                            <span id="summary-total-price">0 AR</span>
-                            <small class="text-white-50 d-block">HT / par mois</small>
+                            <h4 class="text-white">Total estimé</h4>
+                            <span id="summary-total-price">€0</span>
+                            <small class="text-white-50 d-block" id="price-period">(hors taxes)</small>
                         </div>
-                        <p class="text-white-50 my-2 small">
-                            <i class="fas fa-gem text-primary"></i> Mise en place sous 48h
-                        </p>
-                        <a id="demander-devis" class="btn btn-primary custom-btn w-100 mb-2" href="https://wa.me/261326412338?text=Bonjour%20TEAM%20Acquisition,%20je%20souhaite%20un%20devis%20pour%20mes%20besoins%20en%20acquisition%20client." target="_blank">
+                        
+                        <div class="row mt-3 g-2">
+                            <div class="col-6">
+                                <div class="bg-white-10 rounded p-2">
+                                    <small class="text-white-50">Marché Europe</small>
+                                    <p class="text-danger mb-0 small"><strike id="europe-price">€0</strike></p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bg-white-10 rounded p-2">
+                                    <small class="text-white-50">Vous économisez</small>
+                                    <p class="text-success mb-0 small fw-bold" id="savings">€0</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a id="demander-devis" class="btn btn-primary custom-btn w-100 mb-2 mt-3" href="https://wa.me/261326412338?text=Bonjour%20TEAM%20Acquisition,%20je%20souhaite%20un%20devis%20pour%20mes%20besoins%20en%20acquisition%20client%20et%20solutions%20digitales." target="_blank">
                             <i class="fab fa-whatsapp me-1"></i> Demander ce devis
                         </a>
                         <button id="reset-calculator" class="btn btn-outline-secondary w-100 btn-sm">Réinitialiser</button>
-                        <div class="guarantee-text">
-                            <i class="fas fa-shield-alt"></i> Engagement de résultats : premier mois satisfait ou remboursé
+                        <div class="guarantee-text mt-2">
+                            <i class="fas fa-shield-alt"></i> 100% satisfait ou remboursé sous 15 jours
                         </div>
                     </div>
                 </div>
@@ -615,19 +684,39 @@
         const calculatorOptions = document.querySelectorAll('.option-item-card');
         const summaryList = document.getElementById('summary-list');
         const summaryTotalPrice = document.getElementById('summary-total-price');
+        const europePriceSpan = document.getElementById('europe-price');
+        const savingsSpan = document.getElementById('savings');
+        const pricePeriodSpan = document.getElementById('price-period');
         const resetBtn = document.getElementById('reset-calculator');
         const devisLink = document.getElementById('demander-devis');
 
         let total = 0;
+        let hasMonthly = false;
+        let hasOneTime = false;
         const selectedItems = new Map();
 
-        function formatPrice(price) {
-            return new Intl.NumberFormat('fr-FR').format(price) + ' AR';
+        // Mapping des prix européens pour comparaison
+        const europePrices = {
+            '🎯 Équipe SDR dédiée (2 agents)': 6000,
+            '📢 Centre d\'appels (3 opérateurs)': 5000,
+            '🚀 2 Commerciaux terrain (full-time)': 8000,
+            '💼 Account Manager dédié': 4500,
+            '🎧 Support client 7j/7 (4 agents)': 3500,
+            '📊 CRM + Automation marketing': 2000,
+            '🌐 Site vitrine premium': 3000,
+            '🛒 E-commerce complet': 5000
+        };
+
+        function formatEuro(price) {
+            return '€' + new Intl.NumberFormat('fr-FR').format(price);
         }
 
         function updateSummary() {
             summaryList.innerHTML = '';
             total = 0;
+            hasMonthly = false;
+            hasOneTime = false;
+            let totalEurope = 0;
 
             if (selectedItems.size === 0) {
                 const emptyItem = document.createElement('li');
@@ -635,39 +724,60 @@
                 emptyItem.style.fontStyle = 'italic';
                 emptyItem.textContent = 'Aucune solution sélectionnée';
                 summaryList.appendChild(emptyItem);
-            } else {
-                selectedItems.forEach((price, label) => {
-                    total += price;
-                    const listItem = document.createElement('li');
-                    listItem.innerHTML = `
-                        <span>${label}</span>
-                        <span style="color: var(--clr-primary); font-weight: bold;">${formatPrice(price)}</span>
-                    `;
-                    summaryList.appendChild(listItem);
-                });
-
-                // Ajouter le total
-                const totalItem = document.createElement('li');
-                totalItem.style.background = 'rgba(0,255,255,0.1)';
-                totalItem.style.fontWeight = 'bold';
-                totalItem.style.borderLeftColor = 'var(--clr-primary)';
-                totalItem.innerHTML = `
-                    <span>TOTAL MENSUEL :</span>
-                    <span style="color: var(--clr-primary); font-size: 1.1em;">${formatPrice(total)}</span>
-                `;
-                summaryList.appendChild(totalItem);
+                summaryTotalPrice.textContent = '€0';
+                europePriceSpan.textContent = '€0';
+                savingsSpan.textContent = '€0';
+                pricePeriodSpan.textContent = '(hors taxes)';
+                return;
             }
 
-            summaryTotalPrice.textContent = formatPrice(total);
+            selectedItems.forEach((data, label) => {
+                const price = data.price;
+                const isMonthly = data.isMonthly;
+                total += price;
+                if (isMonthly) hasMonthly = true;
+                else hasOneTime = true;
+                
+                // Ajouter au total européen pour comparaison
+                if (europePrices[label]) {
+                    totalEurope += europePrices[label];
+                }
+                
+                const listItem = document.createElement('li');
+                const periodText = isMonthly ? '/mois' : '';
+                listItem.innerHTML = `
+                    <span>${label}</span>
+                    <span style="color: var(--clr-primary); font-weight: bold;">${formatEuro(price)}${periodText}</span>
+                `;
+                summaryList.appendChild(listItem);
+            });
+
+            // Déterminer la période d'affichage
+            if (hasMonthly && !hasOneTime) {
+                pricePeriodSpan.textContent = '(par mois, hors taxes)';
+            } else if (hasOneTime && !hasMonthly) {
+                pricePeriodSpan.textContent = '(investissement unique, hors taxes)';
+            } else {
+                pricePeriodSpan.textContent = '(mix mensuel/unique, hors taxes)';
+            }
+
+            summaryTotalPrice.textContent = formatEuro(total);
             
-            // Générer le message WhatsApp personnalisé
-            let message = 'Bonjour TEAM Acquisition, je souhaite un devis pour mes besoins en acquisition client.%0A%0A';
+            // Calculer les économies (comparaison avec marché européen)
+            const savings = totalEurope - total;
+            europePriceSpan.textContent = formatEuro(totalEurope);
+            savingsSpan.textContent = formatEuro(Math.max(0, savings));
+            
+            // Générer le message WhatsApp
+            let message = 'Bonjour TEAM Acquisition, je souhaite un devis pour mes besoins en acquisition client et solutions digitales.%0A%0A';
             if (selectedItems.size > 0) {
                 message += '*Solutions sélectionnées :*%0A';
-                selectedItems.forEach((price, label) => {
-                    message += `• ${label} : ${formatPrice(price)}/mois%0A`;
+                selectedItems.forEach((data, label) => {
+                    const periodText = data.isMonthly ? '/mois' : '(unique)';
+                    message += `• ${label} : ${formatEuro(data.price)} ${periodText}%0A`;
                 });
-                message += `%0A*BUDGET MENSUEL ESTIMÉ : ${formatPrice(total)}*%0A%0A`;
+                message += `%0A*TOTAL ESTIMÉ : ${formatEuro(total)}*%0A`;
+                message += `*Économie par rapport au marché européen : ${formatEuro(savings)}*%0A%0A`;
             }
             message += 'Merci de me contacter pour discuter de la mise en place.';
             devisLink.href = `https://wa.me/261326412338?text=${message}`;
@@ -678,13 +788,17 @@
             option.addEventListener('click', function() {
                 const price = parseInt(this.dataset.price);
                 const label = this.dataset.label;
+                const type = this.dataset.type;
+                // Déterminer si c'est mensuel (prix > 500 ou type spécifique) ou unique
+                const isMonthly = type === 'sdr' || type === 'callcenter' || type === 'commerciaux' || 
+                                 type === 'accountmanager' || type === 'support';
 
                 if (this.classList.contains('selected')) {
                     this.classList.remove('selected');
                     selectedItems.delete(label);
                 } else {
                     this.classList.add('selected');
-                    selectedItems.set(label, price);
+                    selectedItems.set(label, { price: price, isMonthly: isMonthly });
                 }
                 updateSummary();
             });
