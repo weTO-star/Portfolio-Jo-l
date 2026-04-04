@@ -1,55 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index, follow"> 
-
     <title>TEAM Acquisition | Global Talent Acquisition & Digital Solutions</title>
-
-    <meta name="description" content="TEAM Acquisition provides high-performance sales teams (SDR, call center, Account Managers) and digital solutions worldwide. Quality service at competitive rates.">
-
-    <meta name="keywords" content="talent acquisition, SDR team, call center outsourcing, sales team, account manager, website development, international business, TEAM Acquisition">
+    <meta name="description" content="TEAM Acquisition provides high-performance sales teams worldwide.">
     <link rel="icon" type="image/x-icon" href="logo.png">
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-    <link rel="apple-touch-icon" href="logo.png">
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
-    <link rel="canonical" href="https://www.team-acquisition.com/">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     
     <style>
-        /* ========== NOUVELLE PALETTE : 30% BLANC ========== */
+        /* ========== FOND BLANC À 90% ========== */
         :root {
-            --bg-primary: #0B0F1A;
-            --bg-secondary: #111827;
-            --bg-card: rgba(255, 255, 255, 0.08);
-            --border-light: rgba(255, 255, 255, 0.15);
-            --text-primary: #FFFFFF;
-            --text-secondary: rgba(255, 255, 255, 0.7);
-            --accent-cyan: #00E5FF;
-            --accent-gold: #FFD700;
+            --bg-white: #FFFFFF;
+            --bg-offwhite: #F8F9FA;
+            --bg-card: #FFFFFF;
+            --border-light: #E5E7EB;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --accent-cyan: #06B6D4;
             --accent-blue: #3B82F6;
-            --success: #10B981;
-            --white-dominant: rgba(255, 255, 255, 0.9);
-            --gradient-1: linear-gradient(135deg, #00E5FF 0%, #3B82F6 100%);
-            --gradient-2: linear-gradient(135deg, #FFD700 0%, #FF6B6B 100%);
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
-            --shadow-glow: 0 0 20px rgba(0, 229, 255, 0.3);
+            --accent-gold: #F59E0B;
+            --gradient-1: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+            --shadow-glow: 0 0 20px rgba(6, 182, 212, 0.15);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -61,131 +37,97 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-primary);
+            background: var(--bg-white);
             color: var(--text-primary);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* ========== ANIMATION FOND COSMOS / IA / UNIVERS ========== */
-        #universe-bg {
-            position: fixed;
+        /* ========== VIDÉO D'EN-TÊTE COSMOS/IA ========== */
+        .hero-video-wrapper {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .hero-background-video {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -2;
-            background: radial-gradient(ellipse at 20% 30%, #0a0a2a, #03030f);
-            overflow: hidden;
+            object-fit: cover;
+            z-index: 0;
         }
 
-        .stars {
+        .hero-overlay {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: transparent;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 100%);
+            z-index: 1;
         }
 
-        .star {
-            position: absolute;
-            background-color: white;
-            border-radius: 50%;
-            opacity: 0;
-            animation: twinkle 3s infinite alternate;
-        }
-
-        @keyframes twinkle {
-            0% { opacity: 0; transform: scale(0.8);}
-            100% { opacity: 1; transform: scale(1.2);}
-        }
-
-        .nebula {
-            position: absolute;
-            width: 60%;
-            height: 60%;
-            background: radial-gradient(circle, rgba(0,229,255,0.1) 0%, rgba(59,130,246,0.05) 50%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(60px);
-            animation: drift 25s infinite alternate;
-        }
-
-        @keyframes drift {
-            0% { transform: translate(0%, 0%) scale(1); opacity: 0.4; }
-            100% { transform: translate(10%, 15%) scale(1.3); opacity: 0.7; }
-        }
-
-        .neural-network {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0.15;
-        }
-
-        .neural-line {
-            stroke: #00E5FF;
-            stroke-width: 1;
-            stroke-dasharray: 5;
-            animation: dash 8s linear infinite;
-        }
-
-        @keyframes dash {
-            to { stroke-dashoffset: -100; }
-        }
-
-        .floating-orb {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(0,229,255,0.2), transparent);
-            border-radius: 50%;
-            filter: blur(40px);
-            animation: floatOrb 20s infinite ease-in-out;
-        }
-
-        @keyframes floatOrb {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(5%, 8%); }
-        }
-
-        /* 30% de blanc dominant sur les éléments clés */
-        .site-wrapper, .navbar, .hero-content, .service-card, .calculator-panel, .contact-card, .footer {
-            backdrop-filter: blur(2px);
-        }
-
-        .btn-primary, .btn-outline, .stat-card, .service-card, .calculator-panel, .contact-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .section-title, .hero h1, .badge, .stat-number {
-            text-shadow: 0 0 15px rgba(0,229,255,0.3);
-        }
-
-        /* LAYOUT SANS BOOTSTRAP CONTAINER */
-        .site-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        .hero-content-overlay {
             position: relative;
             z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
         }
 
-        .section-padding {
-            padding: 5rem 0;
+        .hero-content-overlay h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
         }
 
-        /* ========== HEADER ========== */
+        .hero-content-overlay h1 span {
+            background: linear-gradient(135deg, #06B6D4, #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-content-overlay p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+
+        .badge-light {
+            display: inline-block;
+            background: rgba(6, 182, 212, 0.2);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            padding: 0.3rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ========== NAVBAR TRANSPARENTE ========== */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            background: rgba(11, 15, 26, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 229, 255, 0.3);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
             padding: 1rem 0;
+            transition: all 0.3s;
         }
 
         .nav-inner {
@@ -200,7 +142,6 @@
         .logo-img {
             height: 40px;
             width: auto;
-            filter: drop-shadow(0 0 8px #00E5FF);
         }
 
         .nav-links {
@@ -221,7 +162,6 @@
 
         .nav-links a:hover {
             color: var(--accent-cyan);
-            text-shadow: 0 0 8px cyan;
         }
 
         .lang-switch {
@@ -231,9 +171,9 @@
         }
 
         .lang-btn {
-            background: rgba(255,255,255,0.1);
+            background: #f0f0f0;
             border: none;
-            color: white;
+            color: #333;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             cursor: pointer;
@@ -243,15 +183,13 @@
 
         .lang-btn.active {
             background: var(--accent-cyan);
-            color: #0B0F1A;
-            box-shadow: 0 0 12px cyan;
+            color: white;
         }
 
         .navbar-toggler {
             display: none;
             background: none;
             border: none;
-            color: white;
             font-size: 1.5rem;
             cursor: pointer;
         }
@@ -264,10 +202,11 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: rgba(11, 15, 26, 0.95);
+                background: white;
                 padding: 1rem;
                 gap: 1rem;
                 text-align: center;
+                box-shadow: var(--shadow-md);
             }
             .nav-links.show {
                 display: flex;
@@ -275,13 +214,39 @@
             .navbar-toggler {
                 display: block;
             }
-            .lang-switch {
-                margin-left: 0;
-                justify-content: center;
+            .hero-content-overlay h1 {
+                font-size: 2rem;
             }
         }
 
-        /* ========== BOUTONS ========== */
+        /* ========== SECTIONS GÉNÉRALES ========== */
+        .site-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .btn {
             display: inline-block;
             padding: 0.75rem 1.75rem;
@@ -297,112 +262,53 @@
         .btn-primary {
             background: var(--gradient-1);
             color: white;
-            box-shadow: 0 0 10px rgba(0,229,255,0.5);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 20px cyan;
+            box-shadow: var(--shadow-glow);
         }
 
         .btn-outline {
-            background: rgba(255,255,255,0.1);
+            background: transparent;
             border: 1px solid var(--accent-cyan);
             color: var(--accent-cyan);
         }
 
         .btn-outline:hover {
-            background: rgba(0, 229, 255, 0.2);
-            transform: translateY(-2px);
+            background: rgba(6, 182, 212, 0.1);
         }
 
-        /* ========== HERO ========== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            padding-top: 80px;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(0,0,0,0.3);
-            padding: 2rem;
-            border-radius: 2rem;
-            backdrop-filter: blur(8px);
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(0, 229, 255, 0.2);
-            border: 1px solid var(--accent-cyan);
-            border-radius: 50px;
-            padding: 0.3rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--accent-cyan);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 span {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .stats-grid {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .stat-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 1rem;
-            padding: 1rem 2rem;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        /* autres sections identiques mais avec transparence */
-        .service-card, .calculator-panel, .contact-card {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-        }
-
-        .footer {
-            background: rgba(17, 24, 39, 0.8);
-            backdrop-filter: blur(10px);
-        }
-
-        /* responsive gardé */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .section-title { font-size: 1.8rem; }
-            .about-grid { grid-template-columns: 1fr; }
-            .calculator-grid { grid-template-columns: 1fr; }
-            .contact-grid { grid-template-columns: 1fr; }
-        }
-
+        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
+        .service-card {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+        }
+
+        /* About */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -410,16 +316,214 @@
             align-items: center;
         }
 
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .profile-highlight {
+            background: #F3F4F6;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border-left: 4px solid var(--accent-cyan);
+        }
+
+        /* ========== CALCULATEUR AMÉLIORÉ ========== */
         .calculator-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 2rem;
         }
 
+        @media (max-width: 992px) {
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .calculator-panel {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .talent-card {
+            background: #F9FAFB;
+            border: 1px solid var(--border-light);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .talent-card:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 4px 12px rgba(6,182,212,0.1);
+        }
+
+        .talent-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .talent-icon {
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+        }
+
+        .talent-info {
+            flex: 1;
+        }
+
+        .talent-info h5 {
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        .talent-price {
+            font-size: 0.85rem;
+            color: var(--accent-cyan);
+            font-weight: 500;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            border: 1px solid var(--border-light);
+        }
+
+        .quantity-btn {
+            background: #E5E7EB;
+            border: none;
+            color: var(--accent-cyan);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .quantity-btn:hover {
+            background: var(--accent-cyan);
+            color: white;
+        }
+
+        .talent-subtotal {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-align: right;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px dashed var(--border-light);
+        }
+
+        .summary-total-box {
+            background: linear-gradient(135deg, #F0F9FF 0%, #FFFFFF 100%);
+            border: 2px solid var(--accent-cyan);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        #summary-total-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+
+        .discount-badge {
+            background: rgba(245, 158, 11, 0.15);
+            border-radius: 20px;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* Contact */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .contact-list i {
+            color: var(--accent-cyan);
+            width: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: #F9FAFB;
+            border: 1px solid var(--border-light);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+        }
+
+        /* Footer */
+        .footer {
+            background: #F3F4F6;
+            border-top: 1px solid var(--border-light);
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
         }
 
         .footer-grid {
@@ -428,34 +532,80 @@
             gap: 2rem;
         }
 
-        .quantity-control {
+        .footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: #E5E7EB;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            background: rgba(0,0,0,0.5);
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
+            justify-content: center;
+            color: var(--text-primary);
         }
-        .summary-total-box { background: rgba(0,0,0,0.5); border: 1px solid cyan; }
-        .talent-card { background: rgba(255,255,255,0.05); }
-        .profile-highlight { background: rgba(0,0,0,0.4); border-left-color: cyan; }
-        .form-group input, .form-group select, .form-group textarea { background: rgba(0,0,0,0.6); border-color: rgba(255,255,255,0.2); color: white; }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 1rem;
+            padding: 1rem 2rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .w-100 { width: 100%; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-3 { margin-top: 1rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .text-center { text-align: center; }
     </style>
 </head>
 <body>
 
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-    <!-- FOND ANIMÉ COSMOS / IA / UNIVERS -->
-    <div id="universe-bg">
-        <canvas id="neuralCanvas" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 1;"></canvas>
-        <div class="stars" id="starsContainer"></div>
-        <div class="nebula" style="top: 10%; left: -10%;"></div>
-        <div class="nebula" style="bottom: 0%; right: -5%; animation-duration: 35s;"></div>
-        <div class="floating-orb" style="top: 20%; right: 10%;"></div>
-        <div class="floating-orb" style="bottom: 10%; left: 5%; width: 200px; height: 200px; animation-duration: 28s;"></div>
-    </div>
-
+    <!-- HEADER FIXE -->
     <header class="navbar">
         <div class="nav-inner">
             <a href="#hero"><img src="logo.png" alt="TEAM Acquisition" class="logo-img"></a>
@@ -474,10 +624,17 @@
     </header>
 
     <main>
-        <section id="hero" class="hero">
-            <div class="site-wrapper">
-                <div class="hero-content">
-                    <div class="badge" data-key="hero_badge">🌍 Global Talent Acquisition</div>
+        <!-- SECTION HERO AVEC VIDÉO COSMOS/IA -->
+        <div class="hero-video-wrapper" id="hero">
+            <video class="hero-background-video" autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-outer-space-digital-art-3695-large.mp4" type="video/mp4">
+                <!-- Fallback image si la vidéo ne charge pas -->
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600" alt="Space">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content-overlay">
+                <div class="site-wrapper" style="width:100%">
+                    <div class="badge-light" data-key="hero_badge">🌌 AI-Powered | Cosmic Vision</div>
                     <h1 data-key="hero_title">Generate, Convert & Retain <span>Your Clients</span></h1>
                     <p data-key="hero_desc">High-performance sales teams ready to deploy. No recruitment hassle — just results. Quality service at competitive rates.</p>
                     <a href="#calculator" class="btn btn-primary" data-key="hero_btn">Build Your Team →</a>
@@ -488,28 +645,35 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
+        <!-- ABOUT -->
         <section id="about" class="section-padding">
             <div class="site-wrapper">
                 <div class="about-grid">
-                    <div><div class="badge" data-key="about_badge">Who We Are</div>
-                        <h2 class="section-title" style="text-align: left;" data-key="about_title">TEAM Acquisition</h2>
+                    <div>
+                        <div class="badge-light" style="background:#E0F2FE; color:#06B6D4; display:inline-block; margin-bottom:1rem;" data-key="about_badge">Who We Are</div>
+                        <h2 class="section-title" style="text-align: left;">TEAM Acquisition</h2>
                         <p data-key="about_p1">We are a business development partner specializing in deploying high-performance teams to accelerate your growth.</p>
                         <p data-key="about_p2">We connect your business with qualified professionals — SDRs, call centers, Account Managers, and support teams — to generate, convert, and retain your customers.</p>
-                        <div class="profile-highlight"><i class="fas fa-user-tie" style="font-size: 2rem; color: var(--accent-cyan);"></i>
+                        <div class="profile-highlight">
+                            <i class="fas fa-user-tie" style="font-size: 2rem; color: var(--accent-cyan);"></i>
                             <h5 data-key="founder_name">Wells Todison - Founder</h5>
                             <p data-key="founder_desc">Sales development expert with a vision: democratizing access to high-performance sales teams worldwide.</p>
-                            <a href="https://www.linkedin.com/in/wells-todison-473151259/" target="_blank" class="btn btn-outline" data-key="linkedin_btn">View LinkedIn →</a>
+                            <a href="https://www.linkedin.com/in/wells-todison-473151259/" target="_blank" class="btn btn-outline">View LinkedIn →</a>
                         </div>
                     </div>
-                    <div class="about-image"><img src="wells-todison.jpg" alt="TEAM Acquisition Team" style="width:100%; border-radius:1rem;"></div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600" alt="TEAM Acquisition Team">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="section-padding" style="background: rgba(17,24,39,0.6);">
-            <div class="site-wrapper"><div class="badge" style="margin:0 auto 1rem; display:table;" data-key="services_badge">Our Solutions</div>
+        <!-- SERVICES -->
+        <section id="services" class="section-padding" style="background: #F8FAFE;">
+            <div class="site-wrapper">
+                <div class="badge-light" style="background:#E0F2FE; color:#06B6D4; margin:0 auto 1rem; display:table;" data-key="services_badge">Our Solutions</div>
                 <h2 class="section-title" data-key="services_title">Acquisition & Growth Solutions</h2>
                 <p class="section-subtitle" data-key="services_sub">Tailored teams to scale your business efficiently</p>
                 <div class="services-grid">
@@ -520,88 +684,239 @@
             </div>
         </section>
 
+        <!-- CALCULATEUR ENTIÈREMENT FONCTIONNEL -->
         <section id="calculator" class="section-padding">
-            <div class="site-wrapper"><div class="badge" style="margin:0 auto 1rem; display:table;" data-key="calc_badge">🌍 European Quality — Competitive Pricing</div>
+            <div class="site-wrapper">
+                <div class="badge-light" style="background:#E0F2FE; color:#06B6D4; margin:0 auto 1rem; display:table;" data-key="calc_badge">💰 European Quality — Competitive Pricing</div>
                 <h2 class="section-title" data-key="calc_title">Build Your <span style="color:var(--accent-cyan);">Custom Team</span></h2>
                 <p class="section-subtitle" data-key="calc_sub">Select the number of talents you need — volume discounts available</p>
-                <div class="calculator-grid"><div class="calculator-panel" id="calcPanel"></div><div class="calculator-panel" id="summaryPanel"></div></div>
+                <div class="calculator-grid">
+                    <div class="calculator-panel" id="calcPanel"></div>
+                    <div class="calculator-panel" id="summaryPanel"></div>
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="section-padding" style="background: rgba(17,24,39,0.6);">
-            <div class="site-wrapper"><div class="badge" style="margin:0 auto 1rem; display:table;" data-key="contact_badge">Get In Touch</div>
+        <!-- CONTACT -->
+        <section id="contact" class="section-padding" style="background: #F8FAFE;">
+            <div class="site-wrapper">
+                <div class="badge-light" style="background:#E0F2FE; color:#06B6D4; margin:0 auto 1rem; display:table;" data-key="contact_badge">Get In Touch</div>
                 <h2 class="section-title" data-key="contact_title">Contact Us</h2>
                 <p class="section-subtitle" data-key="contact_sub">Ready to scale your team? Let's talk.</p>
-                <div class="contact-grid"><div class="contact-card"><h3 data-key="contact_info_title">TEAM Acquisition</h3>
-                    <ul class="contact-list"><li><i class="fas fa-map-marker-alt"></i> <span data-key="address">Behoririka, Antananarivo, Madagascar</span></li>
-                    <li><i class="fas fa-phone-alt"></i> +261 32 64 123 38</li><li><i class="fas fa-envelope"></i> contact@team-acquisition.com</li>
-                    <li><i class="fas fa-clock"></i> <span data-key="hours">Mon - Sun: 9:30 - 19:30</span></li></ul>
-                    <div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a></div>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>TEAM Acquisition</h3>
+                        <ul class="contact-list">
+                            <li><i class="fas fa-map-marker-alt"></i> <span data-key="address">Behoririka, Antananarivo, Madagascar</span></li>
+                            <li><i class="fas fa-phone-alt"></i> +261 32 64 123 38</li>
+                            <li><i class="fas fa-envelope"></i> contact@team-acquisition.com</li>
+                            <li><i class="fas fa-clock"></i> <span data-key="hours">Mon - Sun: 9:30 - 19:30</span></li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <h3 data-key="form_title">Send a Message</h3>
+                        <form id="contact-form" action="https://formspree.io/f/xnngqnjo" method="POST">
+                            <div class="form-group"><input type="text" name="firstName" placeholder="First Name" required></div>
+                            <div class="form-group"><input type="text" name="lastName" placeholder="Last Name" required></div>
+                            <div class="form-group"><input type="email" name="email" placeholder="Email" required></div>
+                            <div class="form-group"><input type="tel" name="phone" placeholder="Phone"></div>
+                            <div class="form-group"><select name="service" required><option value="">Select a service</option><option value="SDR">SDR Team</option><option value="Call Center">Call Center</option><option value="Sales">Sales Team</option><option value="Support">Support Team</option></select></div>
+                            <div class="form-group"><textarea name="message" rows="4" placeholder="Your message" required></textarea></div>
+                            <button type="submit" class="btn btn-primary w-100" data-key="send_btn">Send Message</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="contact-card"><h3 data-key="form_title">Send a Message</h3>
-                    <form id="contact-form" action="https://formspree.io/f/xnngqnjo" method="POST">
-                        <div class="form-group"><input type="text" name="firstName" placeholder="First Name" data-key-placeholder="firstname" required></div>
-                        <div class="form-group"><input type="text" name="lastName" placeholder="Last Name" data-key-placeholder="lastname" required></div>
-                        <div class="form-group"><input type="email" name="email" placeholder="Email" required></div>
-                        <div class="form-group"><input type="tel" name="phone" placeholder="Phone"></div>
-                        <div class="form-group"><select name="service" required><option value="" data-key="select_option">Select a service</option><option value="SDR">SDR Team</option><option value="Call Center">Call Center</option><option value="Sales">Sales Team</option><option value="Support">Support Team</option></select></div>
-                        <div class="form-group"><textarea name="message" rows="4" placeholder="Your message" required></textarea></div>
-                        <button type="submit" class="btn btn-primary w-100" data-key="send_btn">Send Message</button>
-                    </form>
-                </div></div>
             </div>
         </section>
     </main>
 
-    <footer class="footer"><div class="site-wrapper"><div class="footer-grid"><div><h4>TEAM Acquisition</h4><p style="color:var(--text-secondary);" data-key="footer_tagline">High-performance sales teams deployed worldwide.</p><a href="https://www.linkedin.com/company/team-acquisition/" target="_blank" style="color:var(--accent-cyan);">Follow us on LinkedIn →</a></div>
-    <div><h4 data-key="quick_links">Quick Links</h4><ul style="list-style:none; padding:0;"><li><a href="#services" data-key="nav_services">Services</a></li><li><a href="#calculator" data-key="nav_pricing">Pricing</a></li><li><a href="#contact" data-key="nav_contact">Contact</a></li></ul></div>
-    <div><h4 data-key="legal">Legal</h4><ul style="list-style:none;"><li><a href="#" data-key="privacy">Privacy Policy</a></li><li><a href="#" data-key="terms">Terms of Service</a></li></ul></div></div>
-    <div class="copyright"><p>&copy; <span id="current-year"></span> TEAM Acquisition. <span data-key="rights">All rights reserved.</span></p></div></div></footer>
+    <footer class="footer">
+        <div class="site-wrapper">
+            <div class="footer-grid">
+                <div><h4>TEAM Acquisition</h4><p style="color:var(--text-secondary);" data-key="footer_tagline">High-performance sales teams deployed worldwide.</p><a href="#">Follow us on LinkedIn →</a></div>
+                <div><h4 data-key="quick_links">Quick Links</h4><ul style="list-style:none; padding:0;"><li><a href="#services" data-key="nav_services">Services</a></li><li><a href="#calculator" data-key="nav_pricing">Pricing</a></li><li><a href="#contact" data-key="nav_contact">Contact</a></li></ul></div>
+                <div><h4 data-key="legal">Legal</h4><ul style="list-style:none;"><li><a href="#" data-key="privacy">Privacy Policy</a></li><li><a href="#" data-key="terms">Terms of Service</a></li></ul></div>
+            </div>
+            <div class="copyright"><p>&copy; <span id="current-year"></span> TEAM Acquisition. <span data-key="rights">All rights reserved.</span></p></div>
+        </div>
+    </footer>
 
     <script>
-        // === ANIMATIONS COSMOS (étoiles + réseau de neurones) ===
-        function createStars() { const container = document.getElementById('starsContainer'); for(let i=0;i<300;i++){ let s=document.createElement('div'); s.className='star'; let size=Math.random()*3+1; s.style.width=size+'px'; s.style.height=size+'px'; s.style.left=Math.random()*100+'%'; s.style.top=Math.random()*100+'%'; s.style.animationDelay=Math.random()*5+'s'; s.style.animationDuration=Math.random()*3+2+'s'; container.appendChild(s); } }
-        createStars();
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if(menuToggle) menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
 
-        const canvas = document.getElementById('neuralCanvas'); const ctx = canvas.getContext('2d');
-        function resizeCanvas(){ canvas.width=window.innerWidth; canvas.height=window.innerHeight; }
-        resizeCanvas(); window.addEventListener('resize',resizeCanvas);
-        let points = []; for(let i=0;i<60;i++) points.push({x:Math.random()*canvas.width, y:Math.random()*canvas.height, vx:(Math.random()-0.5)*0.5, vy:(Math.random()-0.5)*0.5});
-        function drawNeural(){ if(!ctx)return; ctx.clearRect(0,0,canvas.width,canvas.height); ctx.strokeStyle='rgba(0,229,255,0.2)'; ctx.lineWidth=0.6;
-            for(let i=0;i<points.length;i++){ points[i].x+=points[i].vx; points[i].y+=points[i].vy; if(points[i].x<0||points[i].x>canvas.width) points[i].vx*=-1; if(points[i].y<0||points[i].y>canvas.height) points[i].vy*=-1; }
-            for(let i=0;i<points.length;i++){ for(let j=i+1;j<points.length;j++){ let dx=points[i].x-points[j].x, dy=points[i].y-points[j].y, dist=Math.hypot(dx,dy); if(dist<150){ ctx.beginPath(); ctx.moveTo(points[i].x,points[i].y); ctx.lineTo(points[j].x,points[j].y); ctx.stroke(); } } }
-            for(let p of points){ ctx.beginPath(); ctx.arc(p.x,p.y,2,0,Math.PI*2); ctx.fillStyle='rgba(0,229,255,0.6)'; ctx.fill(); } requestAnimationFrame(drawNeural); }
-        drawNeural();
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // --- MULTILANGUE (FR/EN) ---
-        const translations = {
-            fr: { nav_about:"À propos", nav_services:"Services", nav_pricing:"Tarifs", nav_contact:"Contact", hero_badge:"🌍 Acquisition de Talents Globale", hero_title:"Générez, Convertissez & Fidélisez <span>Vos Clients</span>", hero_desc:"Des équipes commerciales haute performance prêtes à être déployées. Pas de recrutement, juste des résultats.", hero_btn:"Construire mon équipe →", stat_clients:"Clients servis", stat_avail:"Disponibilité", stat_satisfaction:"Satisfaction", about_badge:"Qui sommes-nous", about_title:"TEAM Acquisition", about_p1:"Nous sommes un partenaire de développement commercial spécialisé dans le déploiement d'équipes performantes.", about_p2:"Nous connectons votre entreprise avec des professionnels qualifiés — SDR, centres d'appels, Account Managers — pour générer, convertir et fidéliser.", founder_name:"Wells Todison - Fondateur", founder_desc:"Expert en développement commercial avec une vision : démocratiser l'accès aux équipes commerciales performantes.", linkedin_btn:"Voir LinkedIn →", services_badge:"Nos Solutions", services_title:"Solutions d'Acquisition & Croissance", services_sub:"Des équipes sur mesure pour développer votre entreprise", service1_title:"Génération de leads", service1_desc:"Équipes SDR et centres d'appels pour remplir votre pipeline.", service2_title:"Closing commercial", service2_desc:"Représentants expérimentés pour convertir les prospects.", service3_title:"Support client", service3_desc:"Support 24/7 pour booster la fidélisation.", calc_badge:"🌍 Qualité européenne — Prix compétitifs", calc_title:"Créez votre <span>Équipe Sur Mesure</span>", calc_sub:"Sélectionnez le nombre de talents — remises de volume", contact_badge:"Contactez-nous", contact_title:"Contact", contact_sub:"Prêt à développer votre équipe ? Parlons-en.", contact_info_title:"TEAM Acquisition", address:"Behoririka, Antananarivo, Madagascar", hours:"Lun - Dim: 9h30 - 19h30", form_title:"Envoyer un message", send_btn:"Envoyer", quick_links:"Liens rapides", legal:"Légal", privacy:"Politique de confidentialité", terms:"Conditions d'utilisation", rights:"Tous droits réservés.", footer_tagline:"Équipes commerciales haute performance déployées dans le monde entier.", select_option:"Choisissez un service" },
-            en: { nav_about:"About", nav_services:"Services", nav_pricing:"Pricing", nav_contact:"Contact", hero_badge:"🌍 Global Talent Acquisition", hero_title:"Generate, Convert & Retain <span>Your Clients</span>", hero_desc:"High-performance sales teams ready to deploy. No recruitment hassle — just results.", hero_btn:"Build Your Team →", stat_clients:"Clients Served", stat_avail:"Availability", stat_satisfaction:"Satisfaction", about_badge:"Who We Are", about_title:"TEAM Acquisition", about_p1:"We are a business development partner specializing in deploying high-performance teams.", about_p2:"We connect your business with qualified professionals — SDRs, call centers, Account Managers — to generate, convert, and retain customers.", founder_name:"Wells Todison - Founder", founder_desc:"Sales development expert with a vision: democratizing access to high-performance sales teams.", linkedin_btn:"View LinkedIn →", services_badge:"Our Solutions", services_title:"Acquisition & Growth Solutions", services_sub:"Tailored teams to scale your business efficiently", service1_title:"Lead Generation", service1_desc:"SDR teams and call centers to fill your pipeline.", service2_title:"Sales Closing", service2_desc:"Experienced sales reps to convert prospects.", service3_title:"Customer Support", service3_desc:"24/7 support teams to boost retention.", calc_badge:"🌍 European Quality — Competitive Pricing", calc_title:"Build Your <span>Custom Team</span>", calc_sub:"Select the number of talents — volume discounts", contact_badge:"Get In Touch", contact_title:"Contact Us", contact_sub:"Ready to scale your team? Let's talk.", contact_info_title:"TEAM Acquisition", address:"Behoririka, Antananarivo, Madagascar", hours:"Mon - Sun: 9:30 - 19:30", form_title:"Send a Message", send_btn:"Send Message", quick_links:"Quick Links", legal:"Legal", privacy:"Privacy Policy", terms:"Terms of Service", rights:"All rights reserved.", footer_tagline:"High-performance sales teams deployed worldwide.", select_option:"Select a service" }
+        // ========== CALCULATOR COMPLET ==========
+        const profiles = {
+            sdr: { nameFr: 'SDR - Prospecting', nameEn: 'SDR - Prospecting', price: 750, count: 0 },
+            callcenter: { nameFr: 'Call Center Operator', nameEn: 'Call Center Operator', price: 490, count: 0 },
+            commercial: { nameFr: 'Sales Representative', nameEn: 'Sales Representative', price: 890, count: 0 },
+            account: { nameFr: 'Account Manager', nameEn: 'Account Manager', price: 1190, count: 0 },
+            support: { nameFr: 'Customer Support', nameEn: 'Customer Support', price: 590, count: 0 }
         };
-        let currentLang = 'fr';
-        function updateLanguage(lang) { currentLang = lang; document.querySelectorAll('[data-key]').forEach(el => { let key = el.getAttribute('data-key'); if(translations[lang][key]) { if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = translations[lang][key]; else if(el.tagName === 'SELECT') { let opt = el.options[0]; if(opt && opt.getAttribute('data-key') === 'select_option') opt.text = translations[lang][key]; } else el.innerHTML = translations[lang][key]; } }); document.querySelectorAll('[data-key-placeholder]').forEach(el => { let key = el.getAttribute('data-key-placeholder'); if(translations[lang][key]) el.placeholder = translations[lang][key]; }); document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active')); document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active'); rebuildCalculatorTexts(); }
-        function rebuildCalculatorTexts() { if(window.refreshCalcUI) window.refreshCalcUI(); }
-        document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => updateLanguage(btn.dataset.lang)));
 
-        // Calculator identique avec maj dynamique
-        const profiles = { sdr: { nameFr: 'SDR', nameEn: 'SDR', price:750, count:0 }, callcenter: { nameFr: 'Call Center', nameEn: 'Call Center', price:490, count:0 }, commercial: { nameFr: 'Commercial', nameEn: 'Sales Rep', price:890, count:0 }, account: { nameFr: 'Account Manager', nameEn: 'Account Manager', price:1190, count:0 }, support: { nameFr: 'Support Client', nameEn: 'Customer Support', price:590, count:0 } };
-        function getDiscountRate(t){ if(t>=20) return 0.05; if(t>=10) return 0.035; if(t>=5) return 0.02; return 0; }
-        function renderCalc() { let html = ''; for(let [k,p] of Object.entries(profiles)){ let name = currentLang==='fr'?p.nameFr:p.nameEn; html+=`<div style="margin-bottom:2rem;"><h3><i class="fas fa-briefcase"></i> ${name}</h3><div class="talent-card"><div class="talent-header"><div class="talent-icon"><i class="fas fa-user"></i></div><div class="talent-info"><h5>${name}</h5><div class="talent-price">€${p.price} / month</div></div><div class="quantity-control"><button class="quantity-btn dec-btn" data-type="${k}">-</button><span class="quantity-value" id="${k}-count">${p.count}</span><button class="quantity-btn inc-btn" data-type="${k}">+</button></div></div><div class="talent-subtotal" id="${k}-subtotal">Subtotal: €${p.count*p.price}</div></div></div>`; }
-            document.getElementById('calcPanel').innerHTML = html; updateSummaryAndEvents(); }
-        function updateSummaryAndEvents(){ let totalMonthly=0, totalTalents=0; for(let [k,p] of Object.entries(profiles)){ totalMonthly+=p.count*p.price; totalTalents+=p.count; document.getElementById(`${k}-count`) && (document.getElementById(`${k}-count`).innerText=p.count); let sub = p.count*p.price; if(document.getElementById(`${k}-subtotal`)) document.getElementById(`${k}-subtotal`).innerHTML=`Subtotal: <span>€${sub.toLocaleString()}</span>`; }
-            let discount=getDiscountRate(totalTalents), grand=totalMonthly*(1-discount); document.getElementById('summary-total-price') && (document.getElementById('summary-total-price').innerHTML=`€${grand.toLocaleString()}`); document.getElementById('total-talents-count') && (document.getElementById('total-talents-count').innerText=totalTalents);
-            let summaryHtml=''; for(let [k,p] of Object.entries(profiles)){ if(p.count>0){ let name=currentLang==='fr'?p.nameFr:p.nameEn; summaryHtml+=`<li style="display:flex;justify-content:space-between;margin-bottom:0.5rem;padding:0.5rem;background:rgba(255,255,255,0.05);border-radius:0.5rem;"><span>${p.count}x ${name}</span><span style="color:var(--accent-cyan);">€${(p.count*p.price).toLocaleString()}</span></li>`; } }
-            if(discount>0) summaryHtml+=`<li style="background:rgba(255,215,0,0.1);padding:0.5rem;border-radius:0.5rem;display:flex;justify-content:space-between;"><span><i class="fas fa-tag"></i> Discount (${(discount*100).toFixed(1)}%)</span><span style="color:gold;">-€${(totalMonthly*discount).toLocaleString()}</span></li>`;
-            if(summaryHtml==='') summaryHtml='<li style="color:var(--text-secondary);">No talent selected</li>';
-            document.getElementById('summary-list') && (document.getElementById('summary-list').innerHTML=summaryHtml);
-            let msg=`Hello TEAM Acquisition, I would like a quote:%0A`; for(let [k,p] of Object.entries(profiles)) if(p.count>0) msg+=`• ${p.count}x ${currentLang==='fr'?p.nameFr:p.nameEn} : €${p.count*p.price}/month%0A`; if(discount>0) msg+=`%0ADiscount ${discount*100}% applied`;
-            let waLink=document.getElementById('demander-devis'); if(waLink) waLink.href=`https://wa.me/261326412338?text=${encodeURIComponent(msg)}`; }
-        function attachEvents(){ document.querySelectorAll('.dec-btn').forEach(btn=>btn.addEventListener('click',()=>{ let t=btn.dataset.type; if(profiles[t] && profiles[t].count>0) profiles[t].count--; renderCalc(); })); document.querySelectorAll('.inc-btn').forEach(btn=>btn.addEventListener('click',()=>{ let t=btn.dataset.type; if(profiles[t]) profiles[t].count++; renderCalc(); })); document.getElementById('reset-calculator') && document.getElementById('reset-calculator').addEventListener('click',()=>{ for(let k of Object.keys(profiles)) profiles[k].count=0; renderCalc(); }); }
-        window.refreshCalcUI = () => { renderCalc(); };
-        function buildSummaryPanel(){ document.getElementById('summaryPanel').innerHTML = `<h3><i class="fas fa-file-invoice-dollar"></i> Your Investment</h3><ul id="summary-list" style="list-style:none;padding:0;margin-bottom:1.5rem;"></ul><div class="summary-total-box"><h4>Total Estimated</h4><div id="summary-total-price">€0</div><small>(per month, excl. taxes)</small><div id="discount-info" style="display:none;"></div><div style="margin:1rem 0;"><i class="fas fa-users"></i> Total talents: <strong id="total-talents-count">0</strong></div><a id="demander-devis" class="btn btn-primary w-100" target="_blank">REQUEST THIS QUOTE</a><button id="reset-calculator" class="btn btn-outline w-100 mt-2">Reset</button><div style="font-size:0.7rem;margin-top:1rem;"><i class="fas fa-shield-alt"></i> 100% satisfaction or refund within 15 days</div></div>`; }
-        buildSummaryPanel(); renderCalc(); attachEvents(); updateLanguage('fr');
-        document.getElementById('current-year').innerText=new Date().getFullYear();
-        document.getElementById('menuToggle').addEventListener('click',()=>{ document.getElementById('navLinks').classList.toggle('show'); });
+        let currentLangCalc = 'fr';
+
+        function getDiscountRate(totalTalents) {
+            if(totalTalents >= 20) return 0.05;
+            if(totalTalents >= 10) return 0.035;
+            if(totalTalents >= 5) return 0.02;
+            return 0;
+        }
+
+        function renderCalculator() {
+            let html = '';
+            for(const [key, p] of Object.entries(profiles)) {
+                const name = currentLangCalc === 'fr' ? p.nameFr : p.nameEn;
+                html += `
+                    <div style="margin-bottom:1.5rem;">
+                        <h4 style="margin-bottom:0.75rem; font-size:1.1rem;"><i class="fas fa-user-circle"></i> ${name}</h4>
+                        <div class="talent-card">
+                            <div class="talent-header">
+                                <div class="talent-icon"><i class="fas fa-briefcase"></i></div>
+                                <div class="talent-info">
+                                    <h5>${name}</h5>
+                                    <div class="talent-price">€${p.price} / month</div>
+                                </div>
+                                <div class="quantity-control">
+                                    <button class="quantity-btn dec-btn" data-type="${key}">-</button>
+                                    <span class="quantity-value" id="${key}-count">${p.count}</span>
+                                    <button class="quantity-btn inc-btn" data-type="${key}">+</button>
+                                </div>
+                            </div>
+                            <div class="talent-subtotal" id="${key}-subtotal">Subtotal: €${(p.count * p.price).toLocaleString()}</div>
+                        </div>
+                    </div>
+                `;
+            }
+            document.getElementById('calcPanel').innerHTML = html;
+            updateSummary();
+            attachQuantityEvents();
+        }
+
+        function attachQuantityEvents() {
+            document.querySelectorAll('.dec-btn').forEach(btn => {
+                btn.removeEventListener('click', window.decHandler);
+                const type = btn.dataset.type;
+                const handler = () => { if(profiles[type] && profiles[type].count > 0) { profiles[type].count--; renderCalculator(); } };
+                btn.addEventListener('click', handler);
+                btn.decHandler = handler;
+            });
+            document.querySelectorAll('.inc-btn').forEach(btn => {
+                btn.removeEventListener('click', window.incHandler);
+                const type = btn.dataset.type;
+                const handler = () => { if(profiles[type]) { profiles[type].count++; renderCalculator(); } };
+                btn.addEventListener('click', handler);
+                btn.incHandler = handler;
+            });
+        }
+
+        function updateSummary() {
+            let totalMonthly = 0, totalTalents = 0;
+            for(const [key, p] of Object.entries(profiles)) {
+                totalMonthly += p.count * p.price;
+                totalTalents += p.count;
+                const subtotalEl = document.getElementById(`${key}-subtotal`);
+                if(subtotalEl) subtotalEl.innerHTML = `Subtotal: €${(p.count * p.price).toLocaleString()}`;
+            }
+            const discountRate = getDiscountRate(totalTalents);
+            const discountAmount = totalMonthly * discountRate;
+            const grandTotal = totalMonthly - discountAmount;
+
+            document.getElementById('summary-total-price').innerHTML = `€${grandTotal.toLocaleString()}`;
+            document.getElementById('total-talents-count').innerHTML = totalTalents;
+
+            let summaryHtml = '';
+            for(const [key, p] of Object.entries(profiles)) {
+                if(p.count > 0) {
+                    const name = currentLangCalc === 'fr' ? p.nameFr : p.nameEn;
+                    summaryHtml += `<li style="display:flex; justify-content:space-between; margin-bottom:0.5rem; padding:0.5rem; background:#F3F4F6; border-radius:0.5rem;">
+                        <span>${p.count}x ${name}</span>
+                        <span style="color:var(--accent-cyan); font-weight:600;">€${(p.count * p.price).toLocaleString()}</span>
+                    </li>`;
+                }
+            }
+            if(discountRate > 0) {
+                summaryHtml += `<li style="display:flex; justify-content:space-between; background:#FEF3C7; padding:0.5rem; border-radius:0.5rem; margin-top:0.5rem;">
+                    <span><i class="fas fa-tag"></i> Discount (${(discountRate*100).toFixed(1)}%)</span>
+                    <span style="color:var(--accent-gold);">-€${discountAmount.toLocaleString()}</span>
+                </li>`;
+            }
+            if(summaryHtml === '') summaryHtml = '<li style="color:var(--text-secondary); font-style:italic;">No talent selected</li>';
+            document.getElementById('summary-list').innerHTML = summaryHtml;
+
+            const discountDiv = document.getElementById('discount-info-calc');
+            if(discountDiv) discountDiv.style.display = discountRate > 0 ? 'inline-block' : 'none';
+
+            let waMsg = `Hello TEAM Acquisition, I would like a quote to build my team.%0A%0A*Team Composition:*%0A`;
+            for(const [key, p] of Object.entries(profiles)) {
+                if(p.count > 0) {
+                    const name = currentLangCalc === 'fr' ? p.nameFr : p.nameEn;
+                    waMsg += `• ${p.count}x ${name} : €${p.count * p.price}/month%0A`;
+                }
+            }
+            if(discountRate > 0) waMsg += `%0A*Discount:* ${(discountRate*100).toFixed(1)}% applied`;
+            const waLink = document.getElementById('demander-devis');
+            if(waLink) waLink.href = `https://wa.me/261326412338?text=${encodeURIComponent(waMsg)}`;
+        }
+
+        // Build summary panel once
+        function buildSummaryPanel() {
+            document.getElementById('summaryPanel').innerHTML = `
+                <h3><i class="fas fa-file-invoice-dollar"></i> Your Investment</h3>
+                <ul id="summary-list" style="list-style:none; padding:0; margin-bottom:1.5rem;"></ul>
+                <div class="summary-total-box">
+                    <h4>Total Estimated</h4>
+                    <div id="summary-total-price">€0</div>
+                    <small>(per month, excl. taxes)</small>
+                    <div id="discount-info-calc" class="discount-badge" style="display:none;"><i class="fas fa-tag"></i> discount applied</div>
+                    <div style="margin:1rem 0;"><i class="fas fa-users"></i> Total talents: <strong id="total-talents-count">0</strong></div>
+                    <a id="demander-devis" class="btn btn-primary w-100" target="_blank">REQUEST THIS QUOTE</a>
+                    <button id="reset-calculator" class="btn btn-outline w-100 mt-2">Reset</button>
+                    <div style="font-size:0.7rem; color:var(--text-secondary); margin-top:1rem;"><i class="fas fa-shield-alt"></i> 100% satisfaction or refund within 15 days</div>
+                </div>
+            `;
+            document.getElementById('reset-calculator').addEventListener('click', () => {
+                for(let k of Object.keys(profiles)) profiles[k].count = 0;
+                renderCalculator();
+            });
+        }
+
+        // Langue
+        const translations = {
+            fr: { nav_about:"À propos", nav_services:"Services", nav_pricing:"Tarifs", nav_contact:"Contact", hero_badge:"🌌 Propulsé par IA | Vision Cosmique", hero_title:"Générez, Convertissez & Fidélisez <span>Vos Clients</span>", hero_desc:"Des équipes commerciales haute performance prêtes à être déployées. Pas de recrutement, juste des résultats.", hero_btn:"Construire mon équipe →", stat_clients:"Clients servis", stat_avail:"Disponibilité", stat_satisfaction:"Satisfaction", about_badge:"Qui sommes-nous", about_p1:"Nous sommes un partenaire de développement commercial spécialisé dans le déploiement d'équipes performantes.", about_p2:"Nous connectons votre entreprise avec des professionnels qualifiés — SDR, centres d'appels, Account Managers — pour générer, convertir et fidéliser.", founder_name:"Wells Todison - Fondateur", founder_desc:"Expert en développement commercial avec une vision : démocratiser l'accès aux équipes commerciales performantes.", services_badge:"Nos Solutions", services_title:"Solutions d'Acquisition & Croissance", services_sub:"Des équipes sur mesure pour développer votre entreprise", service1_title:"Génération de leads", service1_desc:"Équipes SDR et centres d'appels pour remplir votre pipeline.", service2_title:"Closing commercial", service2_desc:"Représentants expérimentés pour convertir les prospects.", service3_title:"Support client", service3_desc:"Support 24/7 pour booster la fidélisation.", calc_badge:"💰 Qualité européenne — Prix compétitifs", calc_title:"Créez votre <span>Équipe Sur Mesure</span>", calc_sub:"Sélectionnez le nombre de talents — remises de volume", contact_badge:"Contactez-nous", contact_title:"Contact", contact_sub:"Prêt à développer votre équipe ? Parlons-en.", address:"Behoririka, Antananarivo, Madagascar", hours:"Lun - Dim: 9h30 - 19h30", form_title:"Envoyer un message", send_btn:"Envoyer", quick_links:"Liens rapides", legal:"Légal", privacy:"Politique de confidentialité", terms:"Conditions d'utilisation", rights:"Tous droits réservés.", footer_tagline:"Équipes commerciales haute performance déployées dans le monde entier." },
+            en: { nav_about:"About", nav_services:"Services", nav_pricing:"Pricing", nav_contact:"Contact", hero_badge:"🌌 AI-Powered | Cosmic Vision", hero_title:"Generate, Convert & Retain <span>Your Clients</span>", hero_desc:"High-performance sales teams ready to deploy. No recruitment hassle — just results.", hero_btn:"Build Your Team →", stat_clients:"Clients Served", stat_avail:"Availability", stat_satisfaction:"Satisfaction", about_badge:"Who We Are", about_p1:"We are a business development partner specializing in deploying high-performance teams.", about_p2:"We connect your business with qualified professionals — SDRs, call centers, Account Managers — to generate, convert, and retain customers.", founder_name:"Wells Todison - Founder", founder_desc:"Sales development expert with a vision: democratizing access to high-performance sales teams.", services_badge:"Our Solutions", services_title:"Acquisition & Growth Solutions", services_sub:"Tailored teams to scale your business efficiently", service1_title:"Lead Generation", service1_desc:"SDR teams and call centers to fill your pipeline.", service2_title:"Sales Closing", service2_desc:"Experienced sales reps to convert prospects.", service3_title:"Customer Support", service3_desc:"24/7 support teams to boost retention.", calc_badge:"💰 European Quality — Competitive Pricing", calc_title:"Build Your <span>Custom Team</span>", calc_sub:"Select the number of talents — volume discounts", contact_badge:"Get In Touch", contact_title:"Contact Us", contact_sub:"Ready to scale your team? Let's talk.", address:"Behoririka, Antananarivo, Madagascar", hours:"Mon - Sun: 9:30 - 19:30", form_title:"Send a Message", send_btn:"Send Message", quick_links:"Quick Links", legal:"Legal", privacy:"Privacy Policy", terms:"Terms of Service", rights:"All rights reserved.", footer_tagline:"High-performance sales teams deployed worldwide." }
+        };
+
+        function updateLanguage(lang) {
+            currentLangCalc = lang;
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if(translations[lang][key]) {
+                    if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = translations[lang][key];
+                    else el.innerHTML = translations[lang][key];
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.lang-btn[data-lang="${lang}"]`).classList.add('active');
+            renderCalculator();
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => updateLanguage(btn.dataset.lang));
+        });
+
+        buildSummaryPanel();
+        renderCalculator();
+        updateLanguage('fr');
     </script>
 </body>
 </html>
