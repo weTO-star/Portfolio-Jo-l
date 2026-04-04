@@ -316,234 +316,393 @@
             </div>
         </section>
 
-        <!-- Section Calculateur (conservée identique) -->
         <section id="calculator" class="py-5">
-            <!-- Le contenu du calculateur reste strictement identique à l'original -->
-            <div class="container animated-section fade-in-up" id="devis-calculator">
-                <div class="section-title text-center mb-5">
-                    <h2 class="text-white">Créez votre devis en direct</h2>
-                    <p class="text-white-50">Sélectionnez les options pour voir votre projet prendre forme</p>
-                </div>
-                <div class="calculator-grid">
-                    <div class="calculator-options-side">
-                        <div class="option-group">
-                            <h3 class="text-white">Type de site</h3>
-                            <div class="option-item-card" data-price="600000" data-type="vitrine" data-label="Site Vitrine">
-                                <div class="option-icon"><i class="fas fa-desktop"></i></div>
-                                <div class="option-content">
-                                    <h5 class="option-label">Site Vitrine</h5>
-                                    <p class="option-description">Un site de présentation avec les informations essentielles et une identité de marque forte.</p>
-                                    <span class="option-price-tag">+600 000 AR</span>
-                                </div>
-                            </div>
-                            <div class="option-item-card" data-price="950000" data-type="ecommerce" data-label="E-commerce">
-                                <div class="option-icon"><i class="fas fa-shopping-cart"></i></div>
-                                <div class="option-content">
-                                    <h5 class="option-label">E-commerce</h5>
-                                    <p class="option-description">Un site marchand complet pour vendre vos produits en ligne de manière sécurisée.</p>
-                                    <span class="option-price-tag">+950 000 AR</span>
-                                </div>
-                            </div>
-                        </div>
+    <style>
+        /* Styles CSS pour le nouveau calculateur d'acquisition */
+        .calculator-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 2fr 1fr;
+        }
 
-                        <div class="option-group">
-                            <h3 class="text-white">Options supplémentaires</h3>
-                            <div class="option-item-card" data-price="200000" data-type="seo" data-label="Optimisation SEO">
-                                <div class="option-icon"><i class="fas fa-chart-line"></i></div>
-                                <div class="option-content">
-                                    <h5 class="option-label">Optimisation SEO</h5>
-                                    <p class="option-description">Pour améliorer votre visibilité et votre classement sur les moteurs de recherche.</p>
-                                    <span class="option-price-tag">+200 000 AR</span>
-                                </div>
-                            </div>
-                            <div class="option-item-card" data-price="400000" data-type="reservation-table" data-label="Réservation de tables">
-                                <div class="option-icon"><i class="fas fa-utensils"></i></div>
-                                <div class="option-content">
-                                    <h5 class="option-label">Réservation de tables</h5>
-                                    <p class="option-description">Un système de réservation intégré pour restaurants et bars.</p>
-                                    <span class="option-price-tag">+400 000 AR</span>
-                                </div>
-                            </div>
-                            <div class="option-item-card" data-price="400000" data-type="reservation-chambre" data-label="Réservation de chambres">
-                                <div class="option-icon"><i class="fas fa-bed"></i></div>
-                                <div class="option-content">
-                                    <h5 class="option-label">Réservation de chambres</h5>
-                                    <p class="option-description">Pour gérer les réservations de votre hôtel ou établissement de manière simple.</p>
-                                    <span class="option-price-tag">+400 000 AR</span>
-                                </div>
-                            </div>
-                            <div class="option-item-card" data-price="380000" data-type="commande" data-label="Commande en ligne">
-                                <div class="option-icon"><i class="fas fa-shopping-basket"></i></div>
-                                <div class="option-content">
-                                    <h5 class="option-label">Commande en ligne</h5>
-                                    <p class="option-description">Permettez à vos clients de commander directement depuis votre site.</p>
-                                    <span class="option-price-tag">+380 000 AR</span>
-                                </div>
-                            </div>
-                            <div class="option-item-card" data-price="200000" data-type="multilingue" data-label="Version multilingue">
-                                <div class="option-icon"><i class="fas fa-globe"></i></div>
-                                <div class="option-content">
-                                    <h5 class="option-label">Version multilingue</h5>
-                                    <p class="option-description">Attirez une clientèle internationale en traduisant votre site en plusieurs langues.</p>
-                                    <span class="option-price-tag">+200 000 AR</span>
-                                </div>
-                            </div>
-                            <div class="option-item-card" data-price="50000" data-type="maintenance" data-label="Maintenance mensuelle">
-                                <div class="option-icon"><i class="fas fa-tools"></i></div>
-                                <div class="option-content">
-                                    <h5 class="option-label">Maintenance mensuelle</h5>
-                                    <p class="option-description">Service continu de maintenance, de mises à jour et d'assistance.</p>
-                                    <span class="option-price-tag">+50 000 AR/mois</span>
-                                </div>
-                            </div>
+        @media (max-width: 992px) {
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .calculator-options-side, .calculator-summary-side {
+            background-color: var(--clr-background-mid);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--eff-border-glow);
+            box-shadow: 0 0 20px var(--eff-shadow-glow);
+            backdrop-filter: blur(5px);
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00FFFF20, #4FC3F720);
+            border: 1px solid var(--clr-primary);
+            border-radius: 50px;
+            padding: 0.25rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--clr-primary);
+            margin-bottom: 1rem;
+        }
+
+        .option-group {
+            margin-bottom: 2rem;
+        }
+
+        .option-group h3 {
+            border-bottom: 2px solid var(--clr-secondary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .option-item-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid transparent;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+            transition: var(--trans-fast);
+            position: relative;
+        }
+
+        .option-item-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--clr-secondary);
+            box-shadow: 0 5px 15px var(--eff-shadow-glow);
+        }
+
+        .option-item-card.selected {
+            border-color: var(--clr-primary);
+            box-shadow: 0 0 20px var(--eff-shadow-glow);
+            background-color: rgba(0, 255, 255, 0.1);
+        }
+
+        .option-icon {
+            font-size: 1.8rem;
+            color: var(--clr-primary);
+            flex-shrink: 0;
+        }
+
+        .option-content h5 {
+            color: var(--clr-accent);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .option-description {
+            font-size: 0.75rem;
+            color: var(--clr-text-subtle);
+            margin-bottom: 0.25rem;
+        }
+
+        .option-price-tag {
+            font-weight: 700;
+            color: var(--clr-primary);
+            font-size: 0.85rem;
+            display: inline-block;
+            background: rgba(0, 255, 255, 0.1);
+            padding: 0.15rem 0.5rem;
+            border-radius: 20px;
+        }
+
+        .roi-badge {
+            font-size: 0.7rem;
+            color: #25D366;
+            margin-left: 0.5rem;
+        }
+
+        .summary-container {
+            position: sticky;
+            top: 100px;
+        }
+
+        .summary-container h3 {
+            border-bottom: 2px solid var(--clr-secondary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        #summary-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+            min-height: 100px;
+        }
+
+        #summary-list li {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 0.6rem 0.8rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 3px solid var(--clr-secondary);
+            font-size: 0.85rem;
+        }
+
+        .summary-total-box {
+            background-color: var(--clr-background-dark);
+            border: 1px solid var(--clr-primary);
+            border-radius: 1rem;
+            padding: 1.2rem;
+            text-align: center;
+            box-shadow: 0 0 10px var(--eff-border-glow);
+        }
+
+        #summary-total-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--clr-primary);
+            display: block;
+            margin-top: 0.3rem;
+        }
+
+        .custom-btn {
+            background-color: var(--clr-primary);
+            border-color: var(--clr-primary);
+            color: var(--clr-background-dark);
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: var(--trans-fast);
+        }
+
+        .custom-btn:hover {
+            background-color: transparent;
+            color: var(--clr-primary);
+            border-color: var(--clr-primary);
+            box-shadow: 0 0 15px var(--eff-shadow-glow);
+        }
+
+        .guarantee-text {
+            font-size: 0.7rem;
+            color: var(--clr-text-subtle);
+            margin-top: 0.8rem;
+        }
+        
+        .highlight {
+            color: #00FFFF;
+            font-weight: bold;
+        }
+    </style>
+    
+    <div class="container animated-section fade-in-up" id="devis-calculator">
+        <div class="text-center mb-4">
+            <div class="section-badge">🚀 Performance garantie</div>
+            <h2 class="text-white">Estimez votre future <span class="highlight">croissance</span></h2>
+            <p class="text-white-50">Sélectionnez les solutions d'acquisition qui feront décoller votre chiffre d'affaires</p>
+        </div>
+        
+        <div class="calculator-grid">
+            <div class="calculator-options-side">
+                <!-- Solution 1 : Équipe de prospection -->
+                <div class="option-group">
+                    <h3 class="text-white"><i class="fas fa-chart-line me-2"></i>Génération de leads</h3>
+                    <div class="option-item-card" data-price="1250000" data-type="sdr" data-label="📞 Équipe SDR dédiée">
+                        <div class="option-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="option-content">
+                            <h5 class="option-label">Équipe SDR dédiée</h5>
+                            <p class="option-description">2 chargés de prospection qualifient vos leads et prennent rendez-vous.</p>
+                            <span class="option-price-tag">1 250 000 AR/mois</span>
+                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +150 leads qualifiés/mois</span>
                         </div>
                     </div>
+                    <div class="option-item-card" data-price="890000" data-type="callcenter" data-label="📢 Centre d'appels entrants/sortants">
+                        <div class="option-icon"><i class="fas fa-headset"></i></div>
+                        <div class="option-content">
+                            <h5 class="option-label">Centre d'appels entrants/sortants</h5>
+                            <p class="option-description">Équipe dédiée à la gestion des app entrants et à la relance sortante.</p>
+                            <span class="option-price-tag">890 000 AR/mois</span>
+                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +300 appels traités/jour</span>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="calculator-summary-side">
-                        <div class="summary-container">
-                            <h3 class="text-white">Votre devis</h3>
-                            <ul id="summary-list">
-                                <li style="color: #888; font-style: italic;">Aucune option sélectionnée</li>
-                            </ul>
-                            <div class="summary-total-box">
-                                <div class="summary-total-text">
-                                    <h4 class="text-white">TOTAL ESTIMÉ :</h4>
-                                    <span id="summary-total-price">0 AR</span>
-                                </div>
-                                <p class="text-white-50 my-3">
-                                    <i class="fas fa-star-of-life"></i> Hébergement, nom de domaine et emails offerts.
-                                </p>
-                                <a id="demander-devis" class="btn btn-primary custom-btn w-100 mb-2" href="https://wa.me/261326412338?text=Bonjour%20TEAM%20Acquisition,%20je%20souhaite%20un%20devis%20pour%20un%20site%20web." target="_blank">Demander ce devis</a>
-                                <button id="reset-calculator" class="btn btn-secondary w-100">Réinitialiser</button>
-                            </div>
+                <!-- Solution 2 : Closing & Performance -->
+                <div class="option-group">
+                    <h3 class="text-white"><i class="fas fa-handshake me-2"></i>Closing & Performance</h3>
+                    <div class="option-item-card" data-price="1800000" data-type="commerciaux" data-label="🤝 2 Commerciaux terrain">
+                        <div class="option-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="option-content">
+                            <h5 class="option-label">2 Commerciaux terrain</h5>
+                            <p class="option-description">Force de vente expérimentée pour convertir vos prospects en clients.</p>
+                            <span class="option-price-tag">1 800 000 AR/mois</span>
+                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +20 rendez-vous clos/mois</span>
+                        </div>
+                    </div>
+                    <div class="option-item-card" data-price="990000" data-type="accountmanager" data-label="💼 Account Manager dédié">
+                        <div class="option-icon"><i class="fas fa-user-check"></i></div>
+                        <div class="option-content">
+                            <h5 class="option-label">Account Manager dédié</h5>
+                            <p class="option-description">Gestion et fidélisation de votre portefeuille clients existant.</p>
+                            <span class="option-price-tag">990 000 AR/mois</span>
+                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +30% de rétention client</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution 3 : Support & Fidélisation -->
+                <div class="option-group">
+                    <h3 class="text-white"><i class="fas fa-heart me-2"></i>Relation client & Fidélisation</h3>
+                    <div class="option-item-card" data-price="650000" data-type="support" data-label="🎧 Support client 7j/7">
+                        <div class="option-icon"><i class="fas fa-life-ring"></i></div>
+                        <div class="option-content">
+                            <h5 class="option-label">Support client 7j/7</h5>
+                            <p class="option-description">Équipe dédiée au SAV, réclamations et assistance technique.</p>
+                            <span class="option-price-tag">650 000 AR/mois</span>
+                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> Satisfaction client garantie</span>
+                        </div>
+                    </div>
+                    <div class="option-item-card" data-price="350000" data-type="crm" data-label="📊 Mise en place CRM + Automation">
+                        <div class="option-icon"><i class="fas fa-robot"></i></div>
+                        <div class="option-content">
+                            <h5 class="option-label">CRM + Automation marketing</h5>
+                            <p class="option-description">HubSpot/Pipedrive + séquences emails/SMS automatisées.</p>
+                            <span class="option-price-tag">350 000 AR (setup unique)</span>
+                            <span class="roi-badge"><i class="fas fa-chart-simple"></i> +40% de conversion</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-white-50 small mt-3 text-center">
+                    <i class="fas fa-check-circle text-primary"></i> Équipes déjà opérationnelles, formation incluse
+                </p>
+            </div>
+
+            <div class="calculator-summary-side">
+                <div class="summary-container">
+                    <h3 class="text-white"><i class="fas fa-file-invoice-dollar me-2"></i>Votre investissement</h3>
+                    <ul id="summary-list">
+                        <li style="color: #888; font-style: italic;">Aucune solution sélectionnée</li>
+                    </ul>
+                    <div class="summary-total-box">
+                        <div class="summary-total-text">
+                            <h4 class="text-white">Budget mensuel estimé</h4>
+                            <span id="summary-total-price">0 AR</span>
+                            <small class="text-white-50 d-block">HT / par mois</small>
+                        </div>
+                        <p class="text-white-50 my-2 small">
+                            <i class="fas fa-gem text-primary"></i> Mise en place sous 48h
+                        </p>
+                        <a id="demander-devis" class="btn btn-primary custom-btn w-100 mb-2" href="https://wa.me/261326412338?text=Bonjour%20TEAM%20Acquisition,%20je%20souhaite%20un%20devis%20pour%20mes%20besoins%20en%20acquisition%20client." target="_blank">
+                            <i class="fab fa-whatsapp me-1"></i> Demander ce devis
+                        </a>
+                        <button id="reset-calculator" class="btn btn-outline-secondary w-100 btn-sm">Réinitialiser</button>
+                        <div class="guarantee-text">
+                            <i class="fas fa-shield-alt"></i> Engagement de résultats : premier mois satisfait ou remboursé
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Script calculateur original conservé -->
-            <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const calculatorOptions = document.querySelectorAll('.option-item-card');
-                const summaryList = document.getElementById('summary-list');
-                const summaryTotalPrice = document.getElementById('summary-total-price');
-                const resetBtn = document.getElementById('reset-calculator');
-                const devisLink = document.getElementById('demander-devis');
+        </div>
+    </div>
 
-                let total = 0;
-                const selectedItems = new Map();
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const calculatorOptions = document.querySelectorAll('.option-item-card');
+        const summaryList = document.getElementById('summary-list');
+        const summaryTotalPrice = document.getElementById('summary-total-price');
+        const resetBtn = document.getElementById('reset-calculator');
+        const devisLink = document.getElementById('demander-devis');
 
-                function formatPrice(price) {
-                    return new Intl.NumberFormat('fr-FR').format(price) + ' AR';
-                }
+        let total = 0;
+        const selectedItems = new Map();
 
-                function updateSummary() {
-                    summaryList.innerHTML = '';
-                    total = 0;
+        function formatPrice(price) {
+            return new Intl.NumberFormat('fr-FR').format(price) + ' AR';
+        }
 
-                    if (selectedItems.size === 0) {
-                        const emptyItem = document.createElement('li');
-                        emptyItem.style.color = '#888';
-                        emptyItem.style.fontStyle = 'italic';
-                        emptyItem.textContent = 'Aucune option sélectionnée';
-                        summaryList.appendChild(emptyItem);
-                    } else {
-                        selectedItems.forEach((price, label) => {
-                            total += price;
-                            const listItem = document.createElement('li');
-                            listItem.style.display = 'flex';
-                            listItem.style.justifyContent = 'space-between';
-                            listItem.style.alignItems = 'center';
-                            listItem.style.padding = '10px';
-                            listItem.style.marginBottom = '5px';
-                            listItem.style.background = 'rgba(255,255,255,0.05)';
-                            listItem.style.borderRadius = '5px';
-                            listItem.style.borderLeft = '3px solid var(--clr-primary)';
-                            
-                            listItem.innerHTML = `
-                                <span style="font-weight: 500;">${label}</span>
-                                <span style="color: var(--clr-primary); font-weight: bold; font-size: 1.1em;">+ ${formatPrice(price)}</span>
-                            `;
-                            summaryList.appendChild(listItem);
-                        });
+        function updateSummary() {
+            summaryList.innerHTML = '';
+            total = 0;
 
-                        const separator = document.createElement('li');
-                        separator.style.borderTop = '2px solid var(--clr-secondary)';
-                        separator.style.margin = '10px 0';
-                        separator.style.padding = '0';
-                        summaryList.appendChild(separator);
-
-                        const totalItem = document.createElement('li');
-                        totalItem.style.display = 'flex';
-                        totalItem.style.justifyContent = 'space-between';
-                        totalItem.style.alignItems = 'center';
-                        totalItem.style.padding = '10px';
-                        totalItem.style.background = 'rgba(0,255,255,0.1)';
-                        totalItem.style.borderRadius = '5px';
-                        totalItem.style.fontWeight = 'bold';
-                        totalItem.style.fontSize = '1.1em';
-                        
-                        totalItem.innerHTML = `
-                            <span>TOTAL :</span>
-                            <span style="color: var(--clr-primary); font-size: 1.2em;">${formatPrice(total)}</span>
-                        `;
-                        summaryList.appendChild(totalItem);
-                    }
-
-                    summaryTotalPrice.textContent = formatPrice(total);
-                    let message = 'Bonjour TEAM Acquisition, je souhaite un devis pour un site web.%0A%0A';
-                    if (selectedItems.size > 0) {
-                        message += '*Options sélectionnées :*%0A';
-                        selectedItems.forEach((price, label) => {
-                            message += `• ${label} : ${formatPrice(price)}%0A`;
-                        });
-                        message += `%0A*TOTAL ESTIMÉ : ${formatPrice(total)}*%0A%0A`;
-                    } else {
-                        message += 'Je souhaite obtenir un devis personnalisé.%0A%0A';
-                    }
-                    message += 'Merci de me recontacter pour discuter de mon projet.';
-                    devisLink.href = `https://wa.me/261326412338?text=${message}`;
-                }
-
-                calculatorOptions.forEach(option => {
-                    option.addEventListener('click', function() {
-                        const price = parseInt(this.dataset.price);
-                        const type = this.dataset.type;
-                        const label = this.dataset.label;
-
-                        if (type === 'vitrine' || type === 'ecommerce') {
-                            calculatorOptions.forEach(otherOption => {
-                                if (otherOption !== this && 
-                                    (otherOption.dataset.type === 'vitrine' || otherOption.dataset.type === 'ecommerce') &&
-                                    otherOption.classList.contains('selected')) {
-                                    otherOption.classList.remove('selected');
-                                    selectedItems.delete(otherOption.dataset.label);
-                                }
-                            });
-                        }
-
-                        if (this.classList.contains('selected')) {
-                            this.classList.remove('selected');
-                            selectedItems.delete(label);
-                        } else {
-                            this.classList.add('selected');
-                            selectedItems.set(label, price);
-                        }
-                        updateSummary();
-                    });
+            if (selectedItems.size === 0) {
+                const emptyItem = document.createElement('li');
+                emptyItem.style.color = '#888';
+                emptyItem.style.fontStyle = 'italic';
+                emptyItem.textContent = 'Aucune solution sélectionnée';
+                summaryList.appendChild(emptyItem);
+            } else {
+                selectedItems.forEach((price, label) => {
+                    total += price;
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <span>${label}</span>
+                        <span style="color: var(--clr-primary); font-weight: bold;">${formatPrice(price)}</span>
+                    `;
+                    summaryList.appendChild(listItem);
                 });
 
-                resetBtn.addEventListener('click', function() {
-                    calculatorOptions.forEach(option => {
-                        option.classList.remove('selected');
-                    });
-                    selectedItems.clear();
-                    updateSummary();
-                });
+                // Ajouter le total
+                const totalItem = document.createElement('li');
+                totalItem.style.background = 'rgba(0,255,255,0.1)';
+                totalItem.style.fontWeight = 'bold';
+                totalItem.style.borderLeftColor = 'var(--clr-primary)';
+                totalItem.innerHTML = `
+                    <span>TOTAL MENSUEL :</span>
+                    <span style="color: var(--clr-primary); font-size: 1.1em;">${formatPrice(total)}</span>
+                `;
+                summaryList.appendChild(totalItem);
+            }
 
+            summaryTotalPrice.textContent = formatPrice(total);
+            
+            // Générer le message WhatsApp personnalisé
+            let message = 'Bonjour TEAM Acquisition, je souhaite un devis pour mes besoins en acquisition client.%0A%0A';
+            if (selectedItems.size > 0) {
+                message += '*Solutions sélectionnées :*%0A';
+                selectedItems.forEach((price, label) => {
+                    message += `• ${label} : ${formatPrice(price)}/mois%0A`;
+                });
+                message += `%0A*BUDGET MENSUEL ESTIMÉ : ${formatPrice(total)}*%0A%0A`;
+            }
+            message += 'Merci de me contacter pour discuter de la mise en place.';
+            devisLink.href = `https://wa.me/261326412338?text=${message}`;
+        }
+
+        // Gestion du clic sur les options
+        calculatorOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const price = parseInt(this.dataset.price);
+                const label = this.dataset.label;
+
+                if (this.classList.contains('selected')) {
+                    this.classList.remove('selected');
+                    selectedItems.delete(label);
+                } else {
+                    this.classList.add('selected');
+                    selectedItems.set(label, price);
+                }
                 updateSummary();
             });
-            </script>
-        </section>
+        });
+
+        // Réinitialisation
+        resetBtn.addEventListener('click', function() {
+            calculatorOptions.forEach(option => {
+                option.classList.remove('selected');
+            });
+            selectedItems.clear();
+            updateSummary();
+        });
+
+        updateSummary();
+    });
+    </script>
+</section>
 
         <!-- Section Contact conservée avec son contenu -->
         <section id="contact" class="py-5 animated-section fade-in-up">
