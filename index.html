@@ -336,128 +336,7 @@
             border-left: 4px solid var(--accent-cyan);
         }
 
-        /* ========== CALCULATEUR AMÉLIORÉ ========== */
-        .calculator-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-        }
-
-        @media (max-width: 992px) {
-            .calculator-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .calculator-panel {
-            background: white;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            border: 1px solid var(--border-light);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .talent-card {
-            background: #F9FAFB;
-            border: 1px solid var(--border-light);
-            border-radius: 0.75rem;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            transition: var(--transition);
-        }
-
-        .talent-card:hover {
-            border-color: var(--accent-cyan);
-            box-shadow: 0 4px 12px rgba(6,182,212,0.1);
-        }
-
-        .talent-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .talent-icon {
-            font-size: 1.5rem;
-            color: var(--accent-cyan);
-        }
-
-        .talent-info {
-            flex: 1;
-        }
-
-        .talent-info h5 {
-            margin-bottom: 0.25rem;
-            font-weight: 600;
-        }
-
-        .talent-price {
-            font-size: 0.85rem;
-            color: var(--accent-cyan);
-            font-weight: 500;
-        }
-
-        .quantity-control {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            border: 1px solid var(--border-light);
-        }
-
-        .quantity-btn {
-            background: #E5E7EB;
-            border: none;
-            color: var(--accent-cyan);
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .quantity-btn:hover {
-            background: var(--accent-cyan);
-            color: white;
-        }
-
-        .talent-subtotal {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-align: right;
-            margin-top: 0.5rem;
-            padding-top: 0.5rem;
-            border-top: 1px dashed var(--border-light);
-        }
-
-        .summary-total-box {
-            background: linear-gradient(135deg, #F0F9FF 0%, #FFFFFF 100%);
-            border: 2px solid var(--accent-cyan);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        #summary-total-price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent-cyan);
-        }
-
-        .discount-badge {
-            background: rgba(245, 158, 11, 0.15);
-            border-radius: 20px;
-            padding: 0.25rem 0.75rem;
-            font-size: 0.75rem;
-            color: var(--accent-gold);
-            display: inline-block;
-            margin-top: 0.5rem;
-        }
-
+       
         /* Contact */
         .contact-grid {
             display: grid;
@@ -613,7 +492,6 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" data-key="nav_about">About</a></li>
                 <li><a href="#services" data-key="nav_services">Services</a></li>
-                <li><a href="#calculator" data-key="nav_pricing">Pricing</a></li>
                 <li><a href="#contact" data-key="nav_contact">Contact</a></li>
                 <li class="lang-switch">
                     <button class="lang-btn active" data-lang="fr">FR</button>
@@ -637,7 +515,6 @@
                     <div class="badge-light" data-key="hero_badge">🌌 AI-Powered | Cosmic Vision</div>
                     <h1 data-key="hero_title">Generate, Convert & Retain <span>Your Clients</span></h1>
                     <p data-key="hero_desc">High-performance sales teams ready to deploy. No recruitment hassle — just results. Quality service at competitive rates.</p>
-                    <a href="#calculator" class="btn btn-primary" data-key="hero_btn">Build Your Team →</a>
                     <div class="stats-grid">
                         <div class="stat-card"><div class="stat-number">50+</div><div class="stat-label" data-key="stat_clients">Clients Served</div></div>
                         <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label" data-key="stat_avail">Availability</div></div>
@@ -684,19 +561,6 @@
             </div>
         </section>
 
-        <!-- CALCULATEUR ENTIÈREMENT FONCTIONNEL -->
-        <section id="calculator" class="section-padding">
-            <div class="site-wrapper">
-                <div class="badge-light" style="background:#E0F2FE; color:#06B6D4; margin:0 auto 1rem; display:table;" data-key="calc_badge">💰 European Quality — Competitive Pricing</div>
-                <h2 class="section-title" data-key="calc_title">Build Your <span style="color:var(--accent-cyan);">Custom Team</span></h2>
-                <p class="section-subtitle" data-key="calc_sub">Select the number of talents you need — volume discounts available</p>
-                <div class="calculator-grid">
-                    <div class="calculator-panel" id="calcPanel"></div>
-                    <div class="calculator-panel" id="summaryPanel"></div>
-                </div>
-            </div>
-        </section>
-
         <!-- CONTACT -->
         <section id="contact" class="section-padding" style="background: #F8FAFE;">
             <div class="site-wrapper">
@@ -739,7 +603,7 @@
         <div class="site-wrapper">
             <div class="footer-grid">
                 <div><h4>TEAM Acquisition</h4><p style="color:var(--text-secondary);" data-key="footer_tagline">High-performance sales teams deployed worldwide.</p><a href="#">Follow us on LinkedIn →</a></div>
-                <div><h4 data-key="quick_links">Quick Links</h4><ul style="list-style:none; padding:0;"><li><a href="#services" data-key="nav_services">Services</a></li><li><a href="#calculator" data-key="nav_pricing">Pricing</a></li><li><a href="#contact" data-key="nav_contact">Contact</a></li></ul></div>
+                <div><h4 data-key="quick_links">Quick Links</h4><ul style="list-style:none; padding:0;"><li><a href="#contact" data-key="nav_contact">Contact</a></li></ul></div>
                 <div><h4 data-key="legal">Legal</h4><ul style="list-style:none;"><li><a href="#" data-key="privacy">Privacy Policy</a></li><li><a href="#" data-key="terms">Terms of Service</a></li></ul></div>
             </div>
             <div class="copyright"><p>&copy; <span id="current-year"></span> TEAM Acquisition. <span data-key="rights">All rights reserved.</span></p></div>
@@ -754,119 +618,6 @@
 
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // ========== CALCULATOR COMPLET ==========
-        const profiles = {
-            sdr: { nameFr: 'SDR - Prospecting', nameEn: 'SDR - Prospecting', price: 750, count: 0 },
-            callcenter: { nameFr: 'Call Center Operator', nameEn: 'Call Center Operator', price: 490, count: 0 },
-            commercial: { nameFr: 'Sales Representative', nameEn: 'Sales Representative', price: 890, count: 0 },
-            account: { nameFr: 'Account Manager', nameEn: 'Account Manager', price: 1190, count: 0 },
-            support: { nameFr: 'Customer Support', nameEn: 'Customer Support', price: 590, count: 0 }
-        };
-
-        let currentLangCalc = 'fr';
-
-        function getDiscountRate(totalTalents) {
-            if(totalTalents >= 20) return 0.05;
-            if(totalTalents >= 10) return 0.035;
-            if(totalTalents >= 5) return 0.02;
-            return 0;
-        }
-
-        function renderCalculator() {
-            let html = '';
-            for(const [key, p] of Object.entries(profiles)) {
-                const name = currentLangCalc === 'fr' ? p.nameFr : p.nameEn;
-                html += `
-                    <div style="margin-bottom:1.5rem;">
-                        <h4 style="margin-bottom:0.75rem; font-size:1.1rem;"><i class="fas fa-user-circle"></i> ${name}</h4>
-                        <div class="talent-card">
-                            <div class="talent-header">
-                                <div class="talent-icon"><i class="fas fa-briefcase"></i></div>
-                                <div class="talent-info">
-                                    <h5>${name}</h5>
-                                    <div class="talent-price">€${p.price} / month</div>
-                                </div>
-                                <div class="quantity-control">
-                                    <button class="quantity-btn dec-btn" data-type="${key}">-</button>
-                                    <span class="quantity-value" id="${key}-count">${p.count}</span>
-                                    <button class="quantity-btn inc-btn" data-type="${key}">+</button>
-                                </div>
-                            </div>
-                            <div class="talent-subtotal" id="${key}-subtotal">Subtotal: €${(p.count * p.price).toLocaleString()}</div>
-                        </div>
-                    </div>
-                `;
-            }
-            document.getElementById('calcPanel').innerHTML = html;
-            updateSummary();
-            attachQuantityEvents();
-        }
-
-        function attachQuantityEvents() {
-            document.querySelectorAll('.dec-btn').forEach(btn => {
-                btn.removeEventListener('click', window.decHandler);
-                const type = btn.dataset.type;
-                const handler = () => { if(profiles[type] && profiles[type].count > 0) { profiles[type].count--; renderCalculator(); } };
-                btn.addEventListener('click', handler);
-                btn.decHandler = handler;
-            });
-            document.querySelectorAll('.inc-btn').forEach(btn => {
-                btn.removeEventListener('click', window.incHandler);
-                const type = btn.dataset.type;
-                const handler = () => { if(profiles[type]) { profiles[type].count++; renderCalculator(); } };
-                btn.addEventListener('click', handler);
-                btn.incHandler = handler;
-            });
-        }
-
-        function updateSummary() {
-            let totalMonthly = 0, totalTalents = 0;
-            for(const [key, p] of Object.entries(profiles)) {
-                totalMonthly += p.count * p.price;
-                totalTalents += p.count;
-                const subtotalEl = document.getElementById(`${key}-subtotal`);
-                if(subtotalEl) subtotalEl.innerHTML = `Subtotal: €${(p.count * p.price).toLocaleString()}`;
-            }
-            const discountRate = getDiscountRate(totalTalents);
-            const discountAmount = totalMonthly * discountRate;
-            const grandTotal = totalMonthly - discountAmount;
-
-            document.getElementById('summary-total-price').innerHTML = `€${grandTotal.toLocaleString()}`;
-            document.getElementById('total-talents-count').innerHTML = totalTalents;
-
-            let summaryHtml = '';
-            for(const [key, p] of Object.entries(profiles)) {
-                if(p.count > 0) {
-                    const name = currentLangCalc === 'fr' ? p.nameFr : p.nameEn;
-                    summaryHtml += `<li style="display:flex; justify-content:space-between; margin-bottom:0.5rem; padding:0.5rem; background:#F3F4F6; border-radius:0.5rem;">
-                        <span>${p.count}x ${name}</span>
-                        <span style="color:var(--accent-cyan); font-weight:600;">€${(p.count * p.price).toLocaleString()}</span>
-                    </li>`;
-                }
-            }
-            if(discountRate > 0) {
-                summaryHtml += `<li style="display:flex; justify-content:space-between; background:#FEF3C7; padding:0.5rem; border-radius:0.5rem; margin-top:0.5rem;">
-                    <span><i class="fas fa-tag"></i> Discount (${(discountRate*100).toFixed(1)}%)</span>
-                    <span style="color:var(--accent-gold);">-€${discountAmount.toLocaleString()}</span>
-                </li>`;
-            }
-            if(summaryHtml === '') summaryHtml = '<li style="color:var(--text-secondary); font-style:italic;">No talent selected</li>';
-            document.getElementById('summary-list').innerHTML = summaryHtml;
-
-            const discountDiv = document.getElementById('discount-info-calc');
-            if(discountDiv) discountDiv.style.display = discountRate > 0 ? 'inline-block' : 'none';
-
-            let waMsg = `Hello TEAM Acquisition, I would like a quote to build my team.%0A%0A*Team Composition:*%0A`;
-            for(const [key, p] of Object.entries(profiles)) {
-                if(p.count > 0) {
-                    const name = currentLangCalc === 'fr' ? p.nameFr : p.nameEn;
-                    waMsg += `• ${p.count}x ${name} : €${p.count * p.price}/month%0A`;
-                }
-            }
-            if(discountRate > 0) waMsg += `%0A*Discount:* ${(discountRate*100).toFixed(1)}% applied`;
-            const waLink = document.getElementById('demander-devis');
-            if(waLink) waLink.href = `https://wa.me/261326412338?text=${encodeURIComponent(waMsg)}`;
-        }
 
         // Build summary panel once
         function buildSummaryPanel() {
