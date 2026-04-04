@@ -11,16 +11,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow"> 
 
-    <title>TEAM Acquisition | Agence d'Acquisition & Solutions Digitales à Madagascar</title>
+    <title>TEAM Acquisition | Global Talent Acquisition & Digital Solutions</title>
 
-    <meta name="description" content="TEAM Acquisition, agence experte en acquisition client à Madagascar. Mise à disposition d'équipes performantes (SDR, commerciaux, support) et création de sites web pour hôtels et restaurants. Générez, convertissez et fidélisez vos clients.">
+    <meta name="description" content="TEAM Acquisition provides high-performance sales teams (SDR, call center, Account Managers) and digital solutions worldwide. Quality service at competitive rates.">
 
-    <meta name="keywords" content="agence acquisition Madagascar, équipe commerciale dédiée, génération de leads Madagascar, centre d'appel, SDR, création site web hôtel, site internet restaurant, solutions digitales, TEAM Acquisition, Wells Todison">
+    <meta name="keywords" content="talent acquisition, SDR team, call center outsourcing, sales team, account manager, website development, international business, TEAM Acquisition">
     <link rel="icon" type="image/x-icon" href="logo.png">
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="logo.png">
     
-    <!-- Pour les différents appareils -->
     <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
     <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
@@ -30,298 +29,326 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    
     <style>
-        /* Styles d'amélioration cohérents avec l'identité TEAM Acquisition */
+        /* ========== NOUVELLE PALETTE DE COULEURS INTERNATIONALES ========== */
         :root {
-            --clr-primary: #00FFFF;
-            --clr-secondary: #4FC3F7;
-            --clr-accent: #FFFFFF;
-            --clr-background-dark: #0A0A1F;
-            --clr-background-mid: #1A1A30;
-            --clr-text-light: #E0E0E0;
-            --clr-text-subtle: #9cecfb;
-            --eff-border-glow: rgba(0, 255, 255, 0.3);
-            --eff-shadow-glow: rgba(0, 255, 255, 0.2);
-            --trans-fast: all 0.3s ease;
+            --bg-primary: #0B1120;
+            --bg-secondary: #111827;
+            --bg-card: #1F2937;
+            --border-light: #374151;
+            --text-primary: #F9FAFB;
+            --text-secondary: #9CA3AF;
+            --accent-cyan: #06B6D4;
+            --accent-gold: #F59E0B;
+            --accent-blue: #3B82F6;
+            --success: #10B981;
+            --gradient-1: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+            --gradient-2: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+            --shadow-glow: 0 0 20px rgba(6, 182, 212, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--clr-background-dark);
-            color: var(--clr-text-light);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
         }
-        
-        /* Badge expert pour mettre en avant l'expertise acquisition */
-        .expert-badge {
+
+        /* ========== LAYOUT SANS BOOTSTRAP CONTAINER ========== */
+        .site-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        /* ========== HEADER ========== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(11, 17, 32, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+            padding: 1rem 0;
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .navbar-toggler {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-secondary);
+                padding: 1rem;
+                gap: 1rem;
+                text-align: center;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .navbar-toggler {
+                display: block;
+            }
+        }
+
+        /* ========== BOUTONS ========== */
+        .btn {
             display: inline-block;
-            background: linear-gradient(135deg, #00FFFF20, #4FC3F720);
-            border: 1px solid var(--clr-primary);
+            padding: 0.75rem 1.75rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        .btn-outline:hover {
+            background: rgba(6, 182, 212, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at 30% 10%, rgba(6, 182, 212, 0.08) 0%, var(--bg-primary) 80%);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(6, 182, 212, 0.15);
+            border: 1px solid var(--accent-cyan);
             border-radius: 50px;
-            padding: 0.25rem 1rem;
+            padding: 0.3rem 1rem;
             font-size: 0.8rem;
             font-weight: 500;
-            color: var(--clr-primary);
-            margin-bottom: 1rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
         }
-        
-        /* Section Hero améliorée */
-        #hero {
-            background: radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, rgba(10, 10, 31, 0.95) 90%);
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
-        
-        .hero-stats {
+
+        .hero h1 span {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
             flex-wrap: wrap;
         }
-        
-        .stat-item {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+
+        .stat-card {
+            background: var(--bg-card);
             border-radius: 1rem;
-            padding: 1rem 1.5rem;
-            border: 1px solid var(--eff-border-glow);
+            padding: 1rem 2rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
         }
-        
+
         .stat-number {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
-            color: var(--clr-primary);
-            display: block;
+            color: var(--accent-cyan);
         }
-        
+
         .stat-label {
             font-size: 0.8rem;
-            color: var(--clr-text-subtle);
+            color: var(--text-secondary);
         }
-        
-        /* Section À propos - mise en avant du profil LinkedIn */
+
+        /* ========== SECTIONS ========== */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+        }
+
         .profile-highlight {
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(79, 195, 247, 0.05));
+            background: var(--bg-card);
             border-radius: 1rem;
             padding: 1.5rem;
             margin-top: 1.5rem;
-            border-left: 4px solid var(--clr-primary);
+            border-left: 4px solid var(--accent-cyan);
         }
-        
-        /* Amélioration des cartes services */
-        .service-card {
-            background: rgba(26, 26, 48, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--eff-border-glow);
-            transition: var(--trans-fast);
-            cursor: pointer;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--clr-primary);
-            box-shadow: 0 10px 30px var(--eff-shadow-glow);
-        }
-        
-        /* Footer amélioré */
-        .footer-links li, .contact-info li {
-            margin-bottom: 0.75rem;
-            transition: var(--trans-fast);
-        }
-        
-        .footer-links li:hover, .contact-info li:hover {
-            transform: translateX(5px);
-        }
-        
-        .social-icon-footer {
-            color: var(--clr-text-subtle);
-            font-size: 1.2rem;
-            transition: var(--trans-fast);
-            display: inline-block;
-            width: 35px;
-            height: 35px;
-            line-height: 35px;
-            text-align: center;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        .social-icon-footer:hover {
-            color: var(--clr-primary);
-            transform: translateY(-3px);
-            background: rgba(0, 255, 255, 0.1);
-        }
-        
-        /* Animation douce pour les sections */
-        .animated-section {
-            opacity: 1;
-            transform: none;
-        }
-        
-        /* Ajustements responsive */
-        @media (max-width: 768px) {
-            .hero-stats {
-                gap: 1rem;
-            }
-            .stat-item {
-                padding: 0.5rem 1rem;
-            }
-            .stat-number {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
-</head>
-<body>
 
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-        height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe>
-    </noscript>
-
-    <div class="background-container" aria-hidden="true">
-        <div class="gradient-overlay"></div>
-        <div id="particles-js"></div>
-        <canvas id="star-field"></canvas>
-    </div>
-
-    <header class="sticky-top" role="banner">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark-transparent py-3" aria-label="Menu principal">
-            <div class="container">
-                <a href="#hero" class="navbar-brand logo" aria-label="Aller à la page d'accueil de TEAM Acquisition">
-                <img src="logo.png" alt="Logo de l'agence TEAM Acquisition" class="img-fluid logo-img" style="height: 40px; width: auto; max-width: 120px;" >
-                </a>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto text-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">À Propos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#services">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="realisations.html">Réalisations</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="equipe.html">Notre Équipe</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="faq.html">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero" class="d-flex align-items-center justify-content-center text-center vh-100 position-relative text-white">
-            <div class="container hero-content animated-section fade-in-up">
-                <div class="expert-badge">Expert en Acquisition Client</div>
-                <h1 class="display-1 fw-bold mb-3">Générer, Convertir et Fidéliser <br> vos clients</h1>
-                <p class="lead mb-4">Plus de clients, moins de gestion : nous mettons à votre disposition une équipe déjà performante. <br> Vos prochains clients sont à un appel près — nous vous connectons aux bonnes équipes.</p>
-                <a href="#services" class="btn btn-primary btn-lg custom-btn">Découvrir nos solutions <i class="fas fa-arrow-down ms-2"></i></a>
-                
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">+50</span>
-                        <span class="stat-label">Clients accompagnés</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">7j/7</span>
-                        <span class="stat-label">Disponibilité</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Satisfaction</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="py-5 bg-mid-dark-bg animated-section fade-in-up">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
-                        <div class="expert-badge">Qui sommes-nous ?</div>
-                        <h2 class="section-title">L'expertise TEAM Acquisition</h2>
-                        <p class="lead">TEAM Acquisition est un partenaire en développement commercial, spécialisé dans la mise à disposition d’équipes performantes pour accélérer la croissance des entreprises.</p>
-                        <p>Nous connectons votre entreprise à des professionnels qualifiés — commerciaux, SDR, centres d’appels, support client et équipes techniques — afin de générer, convertir et fidéliser vos clients.
-                            <br>
-                           Notre approche repose sur la simplicité, la rapidité d’exécution et la performance : vous accédez à des équipes déjà opérationnelles, sans passer par un processus de recrutement long et incertain.</p>
-                        
-                        <div class="profile-highlight">
-                            <i class="fas fa-user-tie fa-2x text-primary mb-2"></i>
-                            <h5 class="text-white">Wells Todison - Fondateur</h5>
-                            <p class="small text-white-50">Expert en acquisition et développement commercial, Wells Todison a fondé TEAM Acquisition avec une vision claire : démocratiser l'accès à des équipes commerciales performantes pour toutes les entreprises à Madagascar.</p>
-                            <a href="https://www.linkedin.com/in/wells-todison-473151259/" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
-                                <i class="fab fa-linkedin me-1"></i> Voir le profil LinkedIn
-                            </a>
-                        </div>
-                        
-                        <a href="equipe.html" class="btn btn-outline-primary mt-3">En savoir plus sur notre histoire</a>
-                    </div>
-                    <div class="col-lg-6">
-                        <img src="wells-todison.jpg" class="img-fluid rounded-3 shadow-lg" alt="Wells Todison et l'équipe TEAM Acquisition">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="py-5 animated-section fade-in-up">
-            <div class="container">
-                <div class="expert-badge text-center d-table mx-auto mb-3">Nos Solutions</div>
-                <h2 class="section-title text-center mb-5">Solutions d’Acquisition & Croissance</h2>
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    <div class="col">
-                        <div class="card h-100 service-card text-center">
-                            <div class="card-body">
-                                <i class="fas fa-chart-line fa-3x mb-3 text-primary"></i>
-                                <h5 class="card-title text-white">Génération de clients</h5>
-                                <p class="card-text text-white">Nous mettons en place des équipes de prospection (SDR, call centers, commerciaux) pour générer des leads qualifiés et alimenter votre croissance.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 service-card text-center">
-                            <div class="card-body">
-                                <i class="fas fa-handshake fa-3x mb-3 text-primary"></i>
-                                <h5 class="card-title text-white">Closing & performance commerciale</h5>
-                                <p class="card-text text-white">Accédez à des commerciaux expérimentés pour transformer vos prospects en clients et maximiser votre chiffre d’affaires.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 service-card text-center">
-                            <div class="card-body">
-                                <i class="fas fa-headset fa-3x mb-3 text-primary"></i>
-                                <h5 class="card-title text-white">Relation client & support</h5>
-                                <p class="card-text text-white">Nous vous connectons à des équipes dédiées au service client, SAV et support technique pour améliorer la satisfaction et la rétention.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-5">
-                    <a href="#contact" class="btn btn-primary btn-lg custom-btn">Explorer les stratégies d’acquisition</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="calculator" class="py-5">
-    <style>
+        /* ========== CALCULATOR (Version Euro) ========== */
         .calculator-grid {
             display: grid;
-            gap: 2rem;
             grid-template-columns: 2fr 1fr;
+            gap: 2rem;
         }
 
         @media (max-width: 992px) {
@@ -330,72 +357,36 @@
             }
         }
 
-        .calculator-options-side, .calculator-summary-side {
-            background-color: var(--clr-background-mid);
+        .calculator-panel {
+            background: var(--bg-card);
             border-radius: 1rem;
-            padding: 2rem;
-            border: 1px solid var(--eff-border-glow);
-            box-shadow: 0 0 20px var(--eff-shadow-glow);
-            backdrop-filter: blur(5px);
-        }
-
-        .section-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #00FFFF20, #4FC3F720);
-            border: 1px solid var(--clr-primary);
-            border-radius: 50px;
-            padding: 0.25rem 1rem;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--clr-primary);
-            margin-bottom: 1rem;
-        }
-
-        .price-advantage {
-            background: rgba(0, 255, 255, 0.15);
-            border-radius: 50px;
-            padding: 0.3rem 1rem;
-            font-size: 0.75rem;
-            color: var(--clr-primary);
-            display: inline-block;
-            margin-bottom: 1.5rem;
-        }
-
-        .option-group {
-            margin-bottom: 2rem;
-        }
-
-        .option-group h3 {
-            border-bottom: 2px solid var(--clr-secondary);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-light);
         }
 
         .talent-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-light);
             border-radius: 0.75rem;
             padding: 1rem;
             margin-bottom: 1rem;
-            transition: var(--trans-fast);
+            transition: var(--transition);
         }
 
         .talent-card:hover {
-            border-color: var(--clr-secondary);
+            border-color: var(--accent-cyan);
         }
 
         .talent-header {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 0.75rem;
             flex-wrap: wrap;
         }
 
         .talent-icon {
             font-size: 1.5rem;
-            color: var(--clr-primary);
+            color: var(--accent-cyan);
         }
 
         .talent-info {
@@ -403,545 +394,666 @@
         }
 
         .talent-info h5 {
-            color: var(--clr-accent);
-            font-weight: 600;
-            margin-bottom: 0;
-            font-size: 1rem;
+            margin-bottom: 0.25rem;
         }
 
         .talent-price {
             font-size: 0.85rem;
-            color: var(--clr-primary);
-            font-weight: 500;
+            color: var(--accent-cyan);
         }
 
         .quantity-control {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 0.3rem 0.8rem;
+            background: var(--bg-primary);
+            padding: 0.25rem 0.75rem;
             border-radius: 50px;
         }
 
         .quantity-btn {
-            background: rgba(0, 255, 255, 0.2);
+            background: rgba(6, 182, 212, 0.2);
             border: none;
-            color: var(--clr-primary);
+            color: var(--accent-cyan);
             width: 28px;
             height: 28px;
             border-radius: 50%;
             cursor: pointer;
-            transition: var(--trans-fast);
-            font-size: 1rem;
             font-weight: bold;
         }
 
         .quantity-btn:hover {
-            background: var(--clr-primary);
-            color: var(--clr-background-dark);
-        }
-
-        .quantity-value {
-            font-weight: 600;
-            min-width: 30px;
-            text-align: center;
-            color: white;
+            background: var(--accent-cyan);
+            color: var(--bg-primary);
         }
 
         .talent-subtotal {
             font-size: 0.8rem;
-            color: var(--clr-text-subtle);
-            margin-top: 0.5rem;
+            color: var(--text-secondary);
             text-align: right;
-            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            margin-top: 0.5rem;
             padding-top: 0.5rem;
-        }
-
-        .talent-subtotal span {
-            color: var(--clr-primary);
-            font-weight: 600;
-        }
-
-        .summary-container {
-            position: sticky;
-            top: 100px;
-        }
-
-        .summary-container h3 {
-            border-bottom: 2px solid var(--clr-secondary);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        #summary-list {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 1.5rem;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        #summary-list li {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 0.5rem 0.8rem;
-            margin-bottom: 0.4rem;
-            border-radius: 0.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-left: 3px solid var(--clr-secondary);
-            font-size: 0.8rem;
+            border-top: 1px dashed var(--border-light);
         }
 
         .summary-total-box {
-            background-color: var(--clr-background-dark);
-            border: 1px solid var(--clr-primary);
+            background: var(--bg-primary);
+            border: 1px solid var(--accent-cyan);
             border-radius: 1rem;
-            padding: 1.2rem;
+            padding: 1.5rem;
             text-align: center;
-            box-shadow: 0 0 10px var(--eff-border-glow);
         }
 
         #summary-total-price {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            color: var(--clr-primary);
-            display: block;
-            margin-top: 0.3rem;
+            color: var(--accent-cyan);
         }
 
         .discount-badge {
-            background: rgba(0, 255, 255, 0.15);
+            background: rgba(245, 158, 11, 0.15);
             border-radius: 20px;
-            padding: 0.2rem 0.8rem;
-            font-size: 0.7rem;
-            color: #FFD700;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            color: var(--accent-gold);
             display: inline-block;
             margin-top: 0.5rem;
         }
 
-        .custom-btn {
-            background-color: var(--clr-primary);
-            border-color: var(--clr-primary);
-            color: var(--clr-background-dark);
-            font-weight: 600;
-            text-transform: uppercase;
-            transition: var(--trans-fast);
+        /* ========== CONTACT ========== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
         }
 
-        .custom-btn:hover {
-            background-color: transparent;
-            color: var(--clr-primary);
-            border-color: var(--clr-primary);
-            box-shadow: 0 0 15px var(--eff-shadow-glow);
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .guarantee-text {
-            font-size: 0.7rem;
-            color: var(--clr-text-subtle);
-            margin-top: 0.8rem;
-        }
-        
-        .highlight {
-            color: #00FFFF;
-            font-weight: bold;
+        .contact-card {
+            background: var(--bg-card);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--border-light);
         }
 
-        .total-talents {
-            font-size: 0.75rem;
-            color: var(--clr-text-subtle);
-            margin-top: 0.8rem;
-            padding-top: 0.8rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        .contact-list {
+            list-style: none;
+            padding: 0;
         }
+
+        .contact-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .contact-list i {
+            color: var(--accent-cyan);
+            width: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+            padding: 3rem 0 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* ========== UTILITAIRES ========== */
+        .text-center { text-align: center; }
+        .mt-3 { margin-top: 1rem; }
+        .mt-4 { margin-top: 1.5rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-3 { margin-bottom: 1rem; }
+        .mb-4 { margin-bottom: 1.5rem; }
+        .mb-5 { margin-bottom: 2rem; }
+        .w-100 { width: 100%; }
     </style>
-    
-    <div class="container animated-section fade-in-up" id="devis-calculator">
-        <div class="text-center mb-4">
-            <div class="section-badge">🌍 Qualité européenne — Prix malgache</div>
-            <h2 class="text-white">Construisez votre <span class="highlight">équipe sur mesure</span></h2>
-            <p class="text-white-50">Sélectionnez le nombre de talents dont vous avez besoin</p>
-            <div class="price-advantage">
-                <i class="fas fa-chart-line me-1"></i> Jusqu'à -70% par rapport aux tarifs européens
-            </div>
+</head>
+<body>
+
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+    <!-- HEADER -->
+    <header class="navbar">
+        <div class="nav-inner">
+            <a href="#hero">
+                <img src="logo.png" alt="TEAM Acquisition" class="logo-img">
+            </a>
+            <button class="navbar-toggler" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#calculator">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-        
-        <div class="calculator-grid">
-            <div class="calculator-options-side">
-                <!-- Profil 1 : SDR -->
-                <div class="option-group">
-                    <h3 class="text-white"><i class="fas fa-chart-line me-2"></i>📞 SDR (Sales Development Representative)</h3>
-                    <div class="talent-card" data-type="sdr" data-price="750">
-                        <div class="talent-header">
-                            <div class="talent-icon"><i class="fas fa-phone-alt"></i></div>
-                            <div class="talent-info">
-                                <h5>SDR - Prospection & qualification</h5>
-                                <div class="talent-price">€750 / agent / mois</div>
-                            </div>
-                            <div class="quantity-control">
-                                <button class="quantity-btn dec-btn" data-type="sdr">-</button>
-                                <span class="quantity-value" id="sdr-count">0</span>
-                                <button class="quantity-btn inc-btn" data-type="sdr">+</button>
-                            </div>
-                        </div>
-                        <div class="talent-subtotal" id="sdr-subtotal">Sous-total : <span>€0</span></div>
-                    </div>
-                </div>
+    </header>
 
-                <!-- Profil 2 : Opérateur Centre d'appel -->
-                <div class="option-group">
-                    <h3 class="text-white"><i class="fas fa-headset me-2"></i>📢 Opérateur Centre d'appel</h3>
-                    <div class="talent-card" data-type="callcenter" data-price="490">
-                        <div class="talent-header">
-                            <div class="talent-icon"><i class="fas fa-headset"></i></div>
-                            <div class="talent-info">
-                                <h5>Opérateur centre d'appel</h5>
-                                <div class="talent-price">€490 / agent / mois</div>
-                            </div>
-                            <div class="quantity-control">
-                                <button class="quantity-btn dec-btn" data-type="callcenter">-</button>
-                                <span class="quantity-value" id="callcenter-count">0</span>
-                                <button class="quantity-btn inc-btn" data-type="callcenter">+</button>
-                            </div>
-                        </div>
-                        <div class="talent-subtotal" id="callcenter-subtotal">Sous-total : <span>€0</span></div>
-                    </div>
-                </div>
-
-                <!-- Profil 3 : Commercial freelance -->
-                <div class="option-group">
-                    <h3 class="text-white"><i class="fas fa-handshake me-2"></i>🤝 Commercial freelance</h3>
-                    <div class="talent-card" data-type="commercial" data-price="890">
-                        <div class="talent-header">
-                            <div class="talent-icon"><i class="fas fa-briefcase"></i></div>
-                            <div class="talent-info">
-                                <h5>Commercial freelance</h5>
-                                <div class="talent-price">€890 / agent / mois</div>
-                            </div>
-                            <div class="quantity-control">
-                                <button class="quantity-btn dec-btn" data-type="commercial">-</button>
-                                <span class="quantity-value" id="commercial-count">0</span>
-                                <button class="quantity-btn inc-btn" data-type="commercial">+</button>
-                            </div>
-                        </div>
-                        <div class="talent-subtotal" id="commercial-subtotal">Sous-total : <span>€0</span></div>
-                    </div>
-                </div>
-
-                <!-- Profil 4 : Account Manager -->
-                <div class="option-group">
-                    <h3 class="text-white"><i class="fas fa-user-check me-2"></i>💼 Account Manager</h3>
-                    <div class="talent-card" data-type="account" data-price="1190">
-                        <div class="talent-header">
-                            <div class="talent-icon"><i class="fas fa-user-tie"></i></div>
-                            <div class="talent-info">
-                                <h5>Account Manager</h5>
-                                <div class="talent-price">€1 190 / agent / mois</div>
-                            </div>
-                            <div class="quantity-control">
-                                <button class="quantity-btn dec-btn" data-type="account">-</button>
-                                <span class="quantity-value" id="account-count">0</span>
-                                <button class="quantity-btn inc-btn" data-type="account">+</button>
-                            </div>
-                        </div>
-                        <div class="talent-subtotal" id="account-subtotal">Sous-total : <span>€0</span></div>
-                    </div>
-                </div>
-
-                <!-- Profil 5 : Support client -->
-                <div class="option-group">
-                    <h3 class="text-white"><i class="fas fa-life-ring me-2"></i>💬 Support client</h3>
-                    <div class="talent-card" data-type="support" data-price="590">
-                        <div class="talent-header">
-                            <div class="talent-icon"><i class="fas fa-headset"></i></div>
-                            <div class="talent-info">
-                                <h5>Support client (SAV)</h5>
-                                <div class="talent-price">€590 / agent / mois</div>
-                            </div>
-                            <div class="quantity-control">
-                                <button class="quantity-btn dec-btn" data-type="support">-</button>
-                                <span class="quantity-value" id="support-count">0</span>
-                                <button class="quantity-btn inc-btn" data-type="support">+</button>
-                            </div>
-                        </div>
-                        <div class="talent-subtotal" id="support-subtotal">Sous-total : <span>€0</span></div>
-                    </div>
-                </div>
-
-                <!-- Services ponctuels : Sites web -->
-                <div class="option-group">
-                    <h3 class="text-white"><i class="fas fa-globe me-2"></i>🏨 Création de sites web (hôtels & restaurants)</h3>
-                    <div class="talent-card" data-type="site" data-price="890" data-onetime="true">
-                        <div class="talent-header">
-                            <div class="talent-icon"><i class="fas fa-hotel"></i></div>
-                            <div class="talent-info">
-                                <h5>Site vitrine premium</h5>
-                                <div class="talent-price">€890 (unique)</div>
-                            </div>
-                            <div class="quantity-control">
-                                <button class="quantity-btn dec-btn" data-type="site">-</button>
-                                <span class="quantity-value" id="site-count">0</span>
-                                <button class="quantity-btn inc-btn" data-type="site">+</button>
-                            </div>
-                        </div>
-                        <div class="talent-subtotal" id="site-subtotal">Sous-total : <span>€0</span></div>
-                    </div>
-                    <div class="talent-card" data-type="ecommerce" data-price="1490" data-onetime="true" style="margin-top: 0.75rem;">
-                        <div class="talent-header">
-                            <div class="talent-icon"><i class="fas fa-shopping-cart"></i></div>
-                            <div class="talent-info">
-                                <h5>E-commerce complet</h5>
-                                <div class="talent-price">€1 490 (unique)</div>
-                            </div>
-                            <div class="quantity-control">
-                                <button class="quantity-btn dec-btn" data-type="ecommerce">-</button>
-                                <span class="quantity-value" id="ecommerce-count">0</span>
-                                <button class="quantity-btn inc-btn" data-type="ecommerce">+</button>
-                            </div>
-                        </div>
-                        <div class="talent-subtotal" id="ecommerce-subtotal">Sous-total : <span>€0</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="calculator-summary-side">
-                <div class="summary-container">
-                    <h3 class="text-white"><i class="fas fa-file-invoice-dollar me-2"></i>Votre investissement</h3>
-                    <ul id="summary-list">
-                        <li style="color: #888; font-style: italic;">Aucun talent sélectionné</li>
-                    </ul>
+    <main>
+        <!-- HERO -->
+        <section id="hero" class="hero">
+            <div class="site-wrapper">
+                <div class="hero-content">
+                    <div class="badge">🌍 Global Talent Acquisition</div>
+                    <h1>Generate, Convert & Retain <span>Your Clients</span></h1>
+                    <p>High-performance sales teams ready to deploy. No recruitment hassle — just results. Quality service at competitive rates.</p>
+                    <a href="#calculator" class="btn btn-primary">Build Your Team →</a>
                     
-                    <div class="summary-total-box">
-                        <div class="summary-total-text">
-                            <h4 class="text-white">Total estimé</h4>
-                            <span id="summary-total-price">€0</span>
-                            <small class="text-white-50 d-block" id="price-period">(par mois, hors taxes)</small>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Clients Served</div>
                         </div>
-                        
-                        <div id="discount-info" class="discount-badge" style="display: none;">
-                            <i class="fas fa-tag"></i> <span id="discount-percent">0%</span> de réduction appliquée
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Availability</div>
                         </div>
-
-                        <div class="total-talents">
-                            <i class="fas fa-users"></i> Total talents : <strong id="total-talents-count">0</strong>
-                        </div>
-
-                        <a id="demander-devis" class="btn btn-primary custom-btn w-100 mb-2 mt-3" href="https://wa.me/261326412338?text=Bonjour%20TEAM%20Acquisition,%20je%20souhaite%20un%20devis%20pour%20constituer%20mon%20%C3%A9quipe." target="_blank">
-                            <i class="fab fa-whatsapp me-1"></i> DEMANDER CE DEVIS
-                        </a>
-                        <button id="reset-calculator" class="btn btn-outline-secondary w-100 btn-sm">Réinitialiser</button>
-                        <div class="guarantee-text mt-2">
-                            <i class="fas fa-shield-alt"></i> 100% satisfait ou remboursé sous 15 jours
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Satisfaction</div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section-padding">
+            <div class="site-wrapper">
+                <div class="about-grid">
+                    <div>
+                        <div class="badge">Who We Are</div>
+                        <h2 class="section-title" style="text-align: left;">TEAM Acquisition</h2>
+                        <p>We are a business development partner specializing in deploying high-performance teams to accelerate your growth.</p>
+                        <p>We connect your business with qualified professionals — SDRs, call centers, Account Managers, and support teams — to generate, convert, and retain your customers.</p>
+                        <div class="profile-highlight">
+                            <i class="fas fa-user-tie" style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 0.5rem; display: inline-block;"></i>
+                            <h5>Wells Todison - Founder</h5>
+                            <p style="color: var(--text-secondary);">Sales development expert with a vision: democratizing access to high-performance sales teams worldwide.</p>
+                            <a href="https://www.linkedin.com/in/wells-todison-473151259/" target="_blank" class="btn btn-outline" style="margin-top: 0.5rem;">View LinkedIn →</a>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="wells-todison.jpg" alt="TEAM Acquisition Team">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="section-padding" style="background: var(--bg-secondary);">
+            <div class="site-wrapper">
+                <div class="badge" style="margin: 0 auto 1rem; display: table;">Our Solutions</div>
+                <h2 class="section-title">Acquisition & Growth Solutions</h2>
+                <p class="section-subtitle">Tailored teams to scale your business efficiently</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Lead Generation</h3>
+                        <p>SDR teams and call centers to fill your pipeline with qualified leads.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Sales Closing</h3>
+                        <p>Experienced sales reps to convert prospects into paying customers.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-headset"></i></div>
+                        <h3>Customer Support</h3>
+                        <p>24/7 support teams to boost retention and satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALCULATOR (Version Euro - Sans container) -->
+        <section id="calculator" class="section-padding">
+            <div class="site-wrapper">
+                <div class="badge" style="margin: 0 auto 1rem; display: table;">🌍 European Quality — Competitive Pricing</div>
+                <h2 class="section-title">Build Your <span style="color: var(--accent-cyan);">Custom Team</span></h2>
+                <p class="section-subtitle">Select the number of talents you need — volume discounts available</p>
+
+                <div class="calculator-grid">
+                    <div class="calculator-panel">
+                        <!-- SDR -->
+                        <div style="margin-bottom: 2rem;">
+                            <h3 style="margin-bottom: 1rem;"><i class="fas fa-chart-line"></i> 📞 SDR (Sales Development)</h3>
+                            <div class="talent-card" data-type="sdr">
+                                <div class="talent-header">
+                                    <div class="talent-icon"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="talent-info">
+                                        <h5>SDR - Prospecting & Qualification</h5>
+                                        <div class="talent-price">€750 / agent / month</div>
+                                    </div>
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn dec-btn" data-type="sdr">-</button>
+                                        <span class="quantity-value" id="sdr-count">0</span>
+                                        <button class="quantity-btn inc-btn" data-type="sdr">+</button>
+                                    </div>
+                                </div>
+                                <div class="talent-subtotal" id="sdr-subtotal">Subtotal: <span>€0</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Call Center -->
+                        <div style="margin-bottom: 2rem;">
+                            <h3 style="margin-bottom: 1rem;"><i class="fas fa-headset"></i> 📢 Call Center Operator</h3>
+                            <div class="talent-card" data-type="callcenter">
+                                <div class="talent-header">
+                                    <div class="talent-icon"><i class="fas fa-headset"></i></div>
+                                    <div class="talent-info">
+                                        <h5>Call Center Operator</h5>
+                                        <div class="talent-price">€490 / agent / month</div>
+                                    </div>
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn dec-btn" data-type="callcenter">-</button>
+                                        <span class="quantity-value" id="callcenter-count">0</span>
+                                        <button class="quantity-btn inc-btn" data-type="callcenter">+</button>
+                                    </div>
+                                </div>
+                                <div class="talent-subtotal" id="callcenter-subtotal">Subtotal: <span>€0</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Commercial -->
+                        <div style="margin-bottom: 2rem;">
+                            <h3 style="margin-bottom: 1rem;"><i class="fas fa-handshake"></i> 🤝 Sales Representative</h3>
+                            <div class="talent-card" data-type="commercial">
+                                <div class="talent-header">
+                                    <div class="talent-icon"><i class="fas fa-briefcase"></i></div>
+                                    <div class="talent-info">
+                                        <h5>Sales Representative</h5>
+                                        <div class="talent-price">€890 / agent / month</div>
+                                    </div>
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn dec-btn" data-type="commercial">-</button>
+                                        <span class="quantity-value" id="commercial-count">0</span>
+                                        <button class="quantity-btn inc-btn" data-type="commercial">+</button>
+                                    </div>
+                                </div>
+                                <div class="talent-subtotal" id="commercial-subtotal">Subtotal: <span>€0</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Account Manager -->
+                        <div style="margin-bottom: 2rem;">
+                            <h3 style="margin-bottom: 1rem;"><i class="fas fa-user-check"></i> 💼 Account Manager</h3>
+                            <div class="talent-card" data-type="account">
+                                <div class="talent-header">
+                                    <div class="talent-icon"><i class="fas fa-user-tie"></i></div>
+                                    <div class="talent-info">
+                                        <h5>Account Manager</h5>
+                                        <div class="talent-price">€1,190 / agent / month</div>
+                                    </div>
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn dec-btn" data-type="account">-</button>
+                                        <span class="quantity-value" id="account-count">0</span>
+                                        <button class="quantity-btn inc-btn" data-type="account">+</button>
+                                    </div>
+                                </div>
+                                <div class="talent-subtotal" id="account-subtotal">Subtotal: <span>€0</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Support -->
+                        <div style="margin-bottom: 2rem;">
+                            <h3 style="margin-bottom: 1rem;"><i class="fas fa-life-ring"></i> 💬 Customer Support</h3>
+                            <div class="talent-card" data-type="support">
+                                <div class="talent-header">
+                                    <div class="talent-icon"><i class="fas fa-headset"></i></div>
+                                    <div class="talent-info">
+                                        <h5>Customer Support Agent</h5>
+                                        <div class="talent-price">€590 / agent / month</div>
+                                    </div>
+                                    <div class="quantity-control">
+                                        <button class="quantity-btn dec-btn" data-type="support">-</button>
+                                        <span class="quantity-value" id="support-count">0</span>
+                                        <button class="quantity-btn inc-btn" data-type="support">+</button>
+                                    </div>
+                                </div>
+                                <div class="talent-subtotal" id="support-subtotal">Subtotal: <span>€0</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="calculator-panel">
+                        <h3><i class="fas fa-file-invoice-dollar"></i> Your Investment</h3>
+                        <ul id="summary-list" style="list-style: none; padding: 0; margin-bottom: 1.5rem;">
+                            <li style="color: var(--text-secondary); font-style: italic;">No talent selected</li>
+                        </ul>
+                        
+                        <div class="summary-total-box">
+                            <h4>Total Estimated</h4>
+                            <div id="summary-total-price">€0</div>
+                            <small>(per month, excl. taxes)</small>
+                            
+                            <div id="discount-info" class="discount-badge" style="display: none;">
+                                <i class="fas fa-tag"></i> <span id="discount-percent">0%</span> discount applied
+                            </div>
+
+                            <div style="margin: 1rem 0;">
+                                <i class="fas fa-users"></i> Total talents: <strong id="total-talents-count">0</strong>
+                            </div>
+
+                            <a id="demander-devis" class="btn btn-primary w-100" href="https://wa.me/261326412338?text=Hello%20TEAM%20Acquisition%2C%20I%20would%20like%20a%20quote%20to%20build%20my%20team." target="_blank">
+                                REQUEST THIS QUOTE
+                            </a>
+                            <button id="reset-calculator" class="btn btn-outline w-100 mt-2">Reset</button>
+                            <div style="font-size: 0.7rem; color: var(--text-secondary); margin-top: 1rem;">
+                                <i class="fas fa-shield-alt"></i> 100% satisfaction or refund within 15 days
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section-padding" style="background: var(--bg-secondary);">
+            <div class="site-wrapper">
+                <div class="badge" style="margin: 0 auto 1rem; display: table;">Get In Touch</div>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Ready to scale your team? Let's talk.</p>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>TEAM Acquisition</h3>
+                        <ul class="contact-list">
+                            <li><i class="fas fa-map-marker-alt"></i> Behoririka, Antananarivo, Madagascar</li>
+                            <li><i class="fas fa-phone-alt"></i> +261 32 64 123 38</li>
+                            <li><i class="fas fa-envelope"></i> contact@team-acquisition.com</li>
+                            <li><i class="fas fa-clock"></i> Mon - Sun: 9:30 - 19:30</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <h3>Send a Message</h3>
+                        <form id="contact-form" action="https://formspree.io/f/xnngqnjo" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="firstName" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="lastName" placeholder="Last Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Phone">
+                            </div>
+                            <div class="form-group">
+                                <select name="service" required>
+                                    <option value="">Select a service</option>
+                                    <option value="SDR">SDR Team</option>
+                                    <option value="Call Center">Call Center</option>
+                                    <option value="Sales">Sales Team</option>
+                                    <option value="Support">Support Team</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" rows="4" placeholder="Your message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="site-wrapper">
+            <div class="footer-grid">
+                <div>
+                    <h4>TEAM Acquisition</h4>
+                    <p style="color: var(--text-secondary);">High-performance sales teams deployed worldwide.</p>
+                    <a href="https://www.linkedin.com/company/team-acquisition/" target="_blank" style="color: var(--accent-cyan);">Follow us on LinkedIn →</a>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#calculator">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="current-year"></span> TEAM Acquisition. All rights reserved.</p>
+            </div>
         </div>
-    </div>
+    </footer>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Configuration des profils
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+        }
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Calculator logic
         const profiles = {
             sdr: { name: 'SDR', price: 750, count: 0, isMonthly: true },
-            callcenter: { name: 'Opérateur centre d\'appel', price: 490, count: 0, isMonthly: true },
-            commercial: { name: 'Commercial freelance', price: 890, count: 0, isMonthly: true },
+            callcenter: { name: 'Call Center Operator', price: 490, count: 0, isMonthly: true },
+            commercial: { name: 'Sales Representative', price: 890, count: 0, isMonthly: true },
             account: { name: 'Account Manager', price: 1190, count: 0, isMonthly: true },
-            support: { name: 'Support client', price: 590, count: 0, isMonthly: true },
-            site: { name: 'Site vitrine premium', price: 890, count: 0, isMonthly: false },
-            ecommerce: { name: 'E-commerce complet', price: 1490, count: 0, isMonthly: false }
+            support: { name: 'Customer Support', price: 590, count: 0, isMonthly: true }
         };
 
-        // Fonction pour calculer la réduction en fonction du nombre total de talents mensuels
         function getDiscountRate(totalTalents) {
-            if (totalTalents >= 20) return 0.05;  // 5%
-            if (totalTalents >= 10) return 0.035; // 3.5%
-            if (totalTalents >= 5) return 0.02;   // 2%
+            if (totalTalents >= 20) return 0.05;
+            if (totalTalents >= 10) return 0.035;
+            if (totalTalents >= 5) return 0.02;
             return 0;
         }
 
-        // Fonction pour mettre à jour l'affichage
         function updateAll() {
             let totalMonthly = 0;
-            let totalOneTime = 0;
             let totalTalents = 0;
             
-            // Calculer les totaux par profil
             for (const [key, profile] of Object.entries(profiles)) {
                 const subtotal = profile.count * profile.price;
                 if (profile.isMonthly) {
                     totalMonthly += subtotal;
                     totalTalents += profile.count;
-                } else {
-                    totalOneTime += subtotal;
                 }
                 
-                // Mettre à jour l'affichage du compteur
-                const countElement = document.getElementById(`${key}-count`);
-                const subtotalElement = document.getElementById(`${key}-subtotal`);
-                if (countElement) countElement.textContent = profile.count;
-                if (subtotalElement) {
-                    subtotalElement.innerHTML = `Sous-total : <span>€${subtotal.toLocaleString('fr-FR')}</span>`;
+                const countEl = document.getElementById(`${key}-count`);
+                const subtotalEl = document.getElementById(`${key}-subtotal`);
+                if (countEl) countEl.textContent = profile.count;
+                if (subtotalEl) {
+                    subtotalEl.innerHTML = `Subtotal: <span>€${subtotal.toLocaleString('fr-FR')}</span>`;
                 }
             }
             
-            // Calculer la réduction
             const discountRate = getDiscountRate(totalTalents);
             const discountAmount = totalMonthly * discountRate;
-            const finalMonthly = totalMonthly - discountAmount;
-            const grandTotal = finalMonthly + totalOneTime;
+            const grandTotal = totalMonthly - discountAmount;
             
-            // Mettre à jour l'affichage des totaux
             document.getElementById('summary-total-price').textContent = `€${grandTotal.toLocaleString('fr-FR')}`;
             document.getElementById('total-talents-count').textContent = totalTalents;
             
-            // Afficher/cacher les informations de réduction
             const discountInfo = document.getElementById('discount-info');
             const discountPercentSpan = document.getElementById('discount-percent');
             if (discountRate > 0) {
-                discountInfo.style.display = 'block';
+                discountInfo.style.display = 'inline-block';
                 discountPercentSpan.textContent = `${(discountRate * 100).toFixed(1)}%`;
             } else {
                 discountInfo.style.display = 'none';
             }
             
-            // Mettre à jour le résumé
-            updateSummaryList(profiles, totalMonthly, discountAmount, finalMonthly, totalOneTime, grandTotal, totalTalents);
-            
-            // Mettre à jour le lien WhatsApp
-            updateWhatsAppLink(profiles, totalMonthly, discountAmount, finalMonthly, totalOneTime, grandTotal, totalTalents, discountRate);
-        }
-        
-        // Mettre à jour la liste de résumé
-        function updateSummaryList(profiles, totalMonthly, discountAmount, finalMonthly, totalOneTime, grandTotal, totalTalents) {
             const summaryList = document.getElementById('summary-list');
             summaryList.innerHTML = '';
-            
             let hasItems = false;
             
-            // Ajouter les talents mensuels
             for (const [key, profile] of Object.entries(profiles)) {
                 if (profile.count > 0) {
                     hasItems = true;
                     const subtotal = profile.count * profile.price;
-                    const period = profile.isMonthly ? '/mois' : '(unique)';
                     const li = document.createElement('li');
+                    li.style.display = 'flex';
+                    li.style.justifyContent = 'space-between';
+                    li.style.marginBottom = '0.5rem';
+                    li.style.padding = '0.5rem';
+                    li.style.background = 'rgba(255,255,255,0.03)';
+                    li.style.borderRadius = '0.5rem';
                     li.innerHTML = `
                         <span>${profile.count}x ${profile.name}</span>
-                        <span style="color: var(--clr-primary); font-weight: bold;">€${subtotal.toLocaleString('fr-FR')}${period}</span>
+                        <span style="color: var(--accent-cyan);">€${subtotal.toLocaleString('fr-FR')}</span>
                     `;
                     summaryList.appendChild(li);
                 }
             }
             
-            // Ajouter la ligne de réduction si applicable
             if (discountAmount > 0) {
                 const li = document.createElement('li');
-                li.style.borderLeftColor = '#FFD700';
-                li.style.background = 'rgba(255, 215, 0, 0.1)';
+                li.style.display = 'flex';
+                li.style.justifyContent = 'space-between';
+                li.style.marginBottom = '0.5rem';
+                li.style.padding = '0.5rem';
+                li.style.background = 'rgba(245, 158, 11, 0.1)';
+                li.style.borderRadius = '0.5rem';
                 li.innerHTML = `
-                    <span><i class="fas fa-tag"></i> Réduction (${((discountAmount/(totalMonthly+discountAmount))*100).toFixed(1)}%)</span>
-                    <span style="color: #FFD700; font-weight: bold;">-€${discountAmount.toLocaleString('fr-FR')}</span>
+                    <span><i class="fas fa-tag"></i> Discount (${(discountRate * 100).toFixed(1)}%)</span>
+                    <span style="color: var(--accent-gold);">-€${discountAmount.toLocaleString('fr-FR')}</span>
                 `;
                 summaryList.appendChild(li);
             }
             
-            // Ajouter le total mensuel après réduction
-            if (totalMonthly > 0 || totalOneTime > 0) {
-                const separator = document.createElement('li');
-                separator.style.borderTop = '1px solid rgba(255,255,255,0.2)';
-                separator.style.margin = '0.5rem 0';
-                separator.style.padding = '0';
-                separator.style.background = 'transparent';
-                summaryList.appendChild(separator);
-                
-                if (totalMonthly > 0) {
-                    const li = document.createElement('li');
-                    li.style.background = 'rgba(0, 255, 255, 0.1)';
-                    li.style.fontWeight = 'bold';
-                    li.innerHTML = `
-                        <span>📅 Total mensuel</span>
-                        <span style="color: var(--clr-primary);">€${finalMonthly.toLocaleString('fr-FR')}</span>
-                    `;
-                    summaryList.appendChild(li);
-                }
-                
-                if (totalOneTime > 0) {
-                    const li = document.createElement('li');
-                    li.style.background = 'rgba(0, 255, 255, 0.1)';
-                    li.style.fontWeight = 'bold';
-                    li.innerHTML = `
-                        <span>⚡ Prestations uniques</span>
-                        <span style="color: var(--clr-primary);">€${totalOneTime.toLocaleString('fr-FR')}</span>
-                    `;
-                    summaryList.appendChild(li);
-                }
-            }
-            
             if (!hasItems) {
                 const li = document.createElement('li');
-                li.style.color = '#888';
+                li.style.color = 'var(--text-secondary)';
                 li.style.fontStyle = 'italic';
-                li.textContent = 'Aucun talent sélectionné';
+                li.textContent = 'No talent selected';
                 summaryList.appendChild(li);
             }
-        }
-        
-        // Mettre à jour le lien WhatsApp
-        function updateWhatsAppLink(profiles, totalMonthly, discountAmount, finalMonthly, totalOneTime, grandTotal, totalTalents, discountRate) {
-            const devisLink = document.getElementById('demander-devis');
-            let message = 'Bonjour TEAM Acquisition, je souhaite un devis pour constituer mon équipe.%0A%0A';
-            message += '*Composition de l\'équipe :*%0A';
             
+            const devisLink = document.getElementById('demander-devis');
+            let message = 'Hello TEAM Acquisition, I would like a quote to build my team.%0A%0A*Team Composition:*%0A';
             for (const [key, profile] of Object.entries(profiles)) {
                 if (profile.count > 0) {
-                    const period = profile.isMonthly ? '/mois' : '(unique)';
-                    message += `• ${profile.count}x ${profile.name} : €${(profile.count * profile.price).toLocaleString('fr-FR')} ${period}%0A`;
+                    message += `• ${profile.count}x ${profile.name} : €${(profile.count * profile.price).toLocaleString('fr-FR')}/month%0A`;
                 }
             }
-            
-            message += `%0A*Total talents mensuels :* ${totalTalents}`;
             if (discountRate > 0) {
-                message += `%0A*Réduction :* ${(discountRate * 100).toFixed(1)}% (-€${discountAmount.toLocaleString('fr-FR')})`;
+                message += `%0A*Discount:* ${(discountRate * 100).toFixed(1)}% applied`;
             }
-            message += `%0A%0A*Total mensuel après réduction :* €${finalMonthly.toLocaleString('fr-FR')}`;
-            if (totalOneTime > 0) {
-                message += `%0A*Prestations uniques :* €${totalOneTime.toLocaleString('fr-FR')}`;
-            }
-            message += `%0A%0A*GRAND TOTAL :* €${grandTotal.toLocaleString('fr-FR')}`;
-            message += `%0A%0AMerci de me recontacter pour finaliser la mise en place.`;
-            
             devisLink.href = `https://wa.me/261326412338?text=${encodeURIComponent(message)}`;
         }
         
-        // Initialiser les contrôleurs
-        const decrementButtons = document.querySelectorAll('.dec-btn');
-        const incrementButtons = document.querySelectorAll('.inc-btn');
-        
-        function changeQuantity(type, delta) {
-            if (profiles[type]) {
-                const newValue = Math.max(0, profiles[type].count + delta);
-                profiles[type].count = newValue;
-                updateAll();
-            }
-        }
-        
-        decrementButtons.forEach(btn => {
+        document.querySelectorAll('.dec-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const type = btn.getAttribute('data-type');
-                changeQuantity(type, -1);
+                if (profiles[type] && profiles[type].count > 0) {
+                    profiles[type].count--;
+                    updateAll();
+                }
             });
         });
         
-        incrementButtons.forEach(btn => {
+        document.querySelectorAll('.inc-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const type = btn.getAttribute('data-type');
-                changeQuantity(type, 1);
+                if (profiles[type]) {
+                    profiles[type].count++;
+                    updateAll();
+                }
             });
         });
         
-        // Bouton reset
         document.getElementById('reset-calculator').addEventListener('click', () => {
             for (const key of Object.keys(profiles)) {
                 profiles[key].count = 0;
@@ -949,146 +1061,7 @@
             updateAll();
         });
         
-        // Initialisation
         updateAll();
-    });
-    </script>
-</section>
-
-        <!-- Section Contact conservée avec son contenu -->
-        <section id="contact" class="py-5 animated-section fade-in-up">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">Contactez-nous</h2>
-                <div class="row">
-                    <div class="col-lg-6 mb-4 mb-lg-0">
-                        <div class="contact-info-card p-4 rounded-3 shadow-lg h-100">
-                            <h3>TEAM Acquisition</h3>
-                            <ul class="list-unstyled contact-list">
-                                <li><i class="fas fa-map-marker-alt"></i> Adresse: Behoririka, Antananarivo (IVD 23 BIS), Madagascar</li>
-                                <li><i class="fas fa-phone-alt"></i> Téléphone: +261 32 64 123 38</li>
-                                <li><i class="fas fa-envelope"></i> Email: contact@team-acquisition.com</li>
-                                <li><i class="fas fa-clock"></i> Horaires: Lundi - Dimanche: 9h30 - 19h30</li>
-                                <li><i class="fas fa-mobile-alt"></i> WhatsApp: +261 32 64 123 38</li>
-                            </ul>
-                            <div class="social-icons mt-4">
-                                <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.linkedin.com/company/team-acquisition/" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                            <div class="map-container">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15443.141527010497!2d47.52187642676722!3d-18.9168430591039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2296489379237c19%3A0xc6e245a4993130d2!2sTEAM%20Acquisition!5e0!3m2!1sfr!2smg!4v1695420000000!5m2!1sfr!2smg" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Map de TEAM Acquisition"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="contact-form-card p-4 rounded-3 shadow-lg h-100">
-                            <h3>Formulaire de Contact</h3>
-                            <form id="contact-form" action="https://formspree.io/f/xnngqnjo" method="POST">
-                                <!-- Formulaire identique à l'original -->
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="firstName" class="form-label">Prénom</label>
-                                        <input type="text" class="form-control" id="firstName" name="firstName" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="lastName" class="form-label">Nom</label>
-                                        <input type="text" class="form-control" id="lastName" name="lastName" required>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="phone" class="form-label">Téléphone</label>
-                                        <input type="tel" class="form-control" id="phone" name="phone" required>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="service" class="form-label">Service</label>
-                                    <select class="form-select" id="service" name="service" required>
-                                        <option value="">Choisissez</option>
-                                        <option value="Site Vitrine">Site Vitrine</option>
-                                        <option value="e-commerce">E-commerce</option>
-                                        <option value="SEO">SEO</option>
-                                        <option value="Refonte">Refonte</option>
-                                        <option value="Autre">Autre</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">Message</label>
-                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                                </div>
-                                <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="consent" name="consent" required>
-                                    <label class="form-check-label" for="consent">J'accepte le traitement de mes données</label>
-                                </div>
-                                <button type="submit" class="btn btn-primary w-100">Envoyer</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Boutons flottants et chatbot conservés -->
-    <section id="floating-buttons" class="floating-buttons-section">
-        <div class="floating-buttons-left">
-            <a href="https://wa.me/261326412338" class="floating-btn btn-whatsapp" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://m.me/your-messenger-id" class="floating-btn btn-messenger" target="_blank" aria-label="Messenger"><i class="fab fa-facebook-messenger"></i></a>
-            <a href="tel:+261326412338" class="floating-btn btn-call" aria-label="Appeler"><i class="fas fa-phone"></i></a>
-        </div>
-        <div class="floating-buttons-right">
-            <a href="#" class="floating-btn btn-chatbot" aria-label="Chatbot" id="chatbot-launcher">
-                <i class="fas fa-comment-dots"></i>
-                <span class="notification-bubble" id="chat-notification">💬</span>
-            </a>
-        </div>
-        <div id="team-chatbot" class="team-chatbot-wrapper">
-            <!-- Chatbot identique à l'original -->
-        </div>
-    </section>
-
-    <footer class="text-white pt-5 pb-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5 class="mb-3">TEAM Acquisition</h5>
-                    <p class="text-white-50">Agence experte en acquisition client et solutions digitales à Madagascar. Mettez fin aux recrutements longs et complexes.</p>
-                    <a href="https://www.linkedin.com/company/team-acquisition/" target="_blank" class="text-white-50 text-decoration-none">
-                        <i class="fab fa-linkedin me-1"></i> Suivez-nous sur LinkedIn
-                    </a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5 class="mb-3">Liens rapides</h5>
-                    <ul class="list-unstyled footer-links">
-                        <li><a href="#services" class="text-white-50 text-decoration-none">Solutions d'acquisition</a></li>
-                        <li><a href="realisations.html" class="text-white-50 text-decoration-none">Nos réalisations</a></li>
-                        <li><a href="equipe.html" class="text-white-50 text-decoration-none">Notre équipe</a></li>
-                        <li><a href="faq.html" class="text-white-50 text-decoration-none">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5 class="mb-3">Contact</h5>
-                    <ul class="list-unstyled contact-info">
-                        <li><i class="fas fa-map-marker-alt me-2"></i> Behoririka, Antananarivo</li>
-                        <li><i class="fas fa-phone-alt me-2"></i> +261 32 64 123 38</li>
-                        <li><i class="fas fa-envelope me-2"></i> contact@team-acquisition.com</li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <div class="text-center">
-                <p class="text-white-50 mb-0">&copy; <span id="current-year"></span> TEAM Acquisition. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts conservés -->
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
